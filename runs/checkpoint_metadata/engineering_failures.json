@@ -70,6 +70,15 @@
       "physics_impact": "none identified in the interior. The affected cells are the outflow boundary itself; the corridor probes are far inside. The free-outfall OPEN boundary is the pre-registered configuration and behaves as designed.",
       "decision": "NOT changed. Altering the boundary treatment or the CFL velocity mid-experiment would change the frozen configuration and invalidate the comparison. The cost is wall-clock time only, and it is recorded rather than optimised away.",
       "for_future_work": "a domain-edge outflow treatment (e.g. normal-depth or critical-depth outflow instead of free drop to bed), or excluding boundary faces from the global CFL reduction, would remove this throttle. Both are engine changes and belong to the aqua-sim backlog, not to this study."
+    },
+    {
+      "id": "ML-4",
+      "measured_limitation": "the execution container is torn down between interactive turns, so the solver only advances WHILE A TURN IS ACTIVE. Background processes do not accumulate compute in the gaps.",
+      "measurement": "summed process wall time from the checkpoint logs against elapsed clock time since the corridor runs began: buckeye 62.2 min solved / 492 min elapsed = 12.6% duty cycle; franklinton 9.5%; pataskala 9.8%. Cross-check on a single interval: 72 min of clock time between watchdog ticks yielded 0.14 model-hours for buckeye, which at its measured 1.83 model-h per wall-hour is 4.6 min of compute \u2014 approximately the length of the turn itself.",
+      "why_it_hid": "every individual mechanism worked. Checkpoint/resume was proven bit-identical, start-up was cached to 0.2 s, the livelock was fixed, and parallelism was restored. Each watchdog tick honestly reported progress. The runs were simply frozen between ticks, and no per-component test could show that.",
+      "consequence": "polling on an hourly watchdog cannot finish these runs. Remaining compute at measured rates: franklinton ~57 min, pataskala ~37 min, buckeye ~6.8 hours (buckeye inflated ~5x by the ML-3 boundary CFL throttle). At a few minutes of compute per tick, buckeye alone would need on the order of 100 ticks.",
+      "affected_scientific_results": "none \u2014 no result is altered, only deferred. The Case B determination rests on surveyed geometry and observed gauge timing, neither of which depends on these runs.",
+      "implication_for_future_work": "sustained simulation needs an execution environment that persists between interactions. This is the concrete justification for moving compute off this platform before any regional-scale benchmark."
     }
   ]
 }
