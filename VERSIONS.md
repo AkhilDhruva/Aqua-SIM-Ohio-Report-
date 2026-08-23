@@ -9,6 +9,7 @@ same principle the rest of this study relies on.
 |---|---|---|
 | `v0.1-archival` | `8d83f195f80cd921eeafc3ba6d537fd37f7ee54a` | Archival import of all work predating this repository. Historical work reconstructed and archived; see README.md for the limits of its retrospective timestamp evidence. |
 | `v0.2` | `c5ff389` | Corridor checkpoint runner and restart-resilience evidence. First entry with genuine Git transaction history. |
+| `v0.2.1` | `da244b2` | Wall-aware checkpointing; deterministic step grid; full state audit; wet-phase A/B restart proven bit-identical; single-core limitation measured; engineering-failure record. |
 
 Everything after `v0.1-archival` carries genuine Git transaction history —
 authored and committed timestamps recorded by Git at the moment of the change,
