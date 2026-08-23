@@ -8,6 +8,7 @@ same principle the rest of this study relies on.
 | Version | Commit | Meaning |
 |---|---|---|
 | `v0.1-archival` | `8d83f195f80cd921eeafc3ba6d537fd37f7ee54a` | Archival import of all work predating this repository. Historical work reconstructed and archived; see README.md for the limits of its retrospective timestamp evidence. |
+| `v0.2` | `c5ff389` | Corridor checkpoint runner and restart-resilience evidence. First entry with genuine Git transaction history. |
 
 Everything after `v0.1-archival` carries genuine Git transaction history —
 authored and committed timestamps recorded by Git at the moment of the change,
@@ -17,7 +18,6 @@ not reconstructed afterwards.
 
 | Version | Contents |
 |---|---|
-| `v0.2` | corridor checkpoint runner and its restart-resilience evidence |
 | `v0.3` | Franklinton corridor result |
 | `v0.4` | Pataskala corridor result |
 | `v0.5` | Buckeye Lake / I-70 corridor result |
