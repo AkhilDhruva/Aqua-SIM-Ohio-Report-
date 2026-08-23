@@ -31,6 +31,13 @@
       "measured_limitation": "the solver executes on ONE core (~100% CPU measured via /proc jiffies: 999/10 s), not four \u2014 elementwise NumPy kernels do not use BLAS threading",
       "consequence": "sequential scheduling buys restart robustness and memory headroom, not compute acceleration; wall-time projections must assume single-core throughput",
       "decision": "solver is NOT being rewritten or parallelized mid-experiment; the limitation is recorded instead"
+    },
+    {
+      "id": "ML-2",
+      "measured_limitation": "restart start-up cost dominated short process lifetimes: rebuilding nest terrain, roughness, culverts, probe geometry and the parent-derived stage BC took ~50 s, while the recycling host was giving processes only 2-5 minutes of life",
+      "measurement": "rate analysis of checkpoint log lines showed the SOLVER is not the bottleneck (~2 wall-min per model-hour in the dry phase); the run was losing most of each lifetime to deterministic setup",
+      "correction": "setup is now cached to a 1 MB npz and reloaded in 0.2 s (250x faster start-up). The cache is a pure function of frozen inputs, and tests/solver_equivalence/test_setup_cache.py proves the reconstruction is array-identical to a fresh build (z, roughness, mask, rain index map, culverts, probe groups, transform, CRS, stage BC).",
+      "affected_scientific_results": "none \u2014 verified identical before any cached run output was used"
     }
   ]
 }
