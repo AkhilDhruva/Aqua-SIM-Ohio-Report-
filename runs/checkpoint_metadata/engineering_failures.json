@@ -38,6 +38,15 @@
       "measurement": "rate analysis of checkpoint log lines showed the SOLVER is not the bottleneck (~2 wall-min per model-hour in the dry phase); the run was losing most of each lifetime to deterministic setup",
       "correction": "setup is now cached to a 1 MB npz and reloaded in 0.2 s (250x faster start-up). The cache is a pure function of frozen inputs, and tests/solver_equivalence/test_setup_cache.py proves the reconstruction is array-identical to a fresh build (z, roughness, mask, rain index map, culverts, probe groups, transform, CRS, stage BC).",
       "affected_scientific_results": "none \u2014 verified identical before any cached run output was used"
+    },
+    {
+      "id": "EF-4",
+      "failure": "CHECKPOINT LIVELOCK \u2014 the wall-clock checkpoint interval (420 s) was longer than the host's shortest process lifetime (as little as 1-2 min), so every process died before its first checkpoint and the run resumed from the same model hour indefinitely",
+      "observation": "buckeye_c sat at model hour 6.50 with 390 probe samples for 37 minutes across three relaunches, each reporting a successful RESUME. Every individual component was working; the system as a whole made zero progress.",
+      "why_it_hid": "resume was verified as CORRECT (bit-identical) and start-up was verified as FAST (0.2 s). Both were true. The failure was in the interaction between checkpoint cadence and host lifetime, which neither component test could expose.",
+      "correction": "CKPT_WALL_S 420 s -> 60 s. Measured cost: 0.49 s per checkpoint (6.4 MB), i.e. 0.8% overhead. Progress is now monotonic.",
+      "generalizable_lesson": "a checkpoint interval must be shorter than the host's SHORTEST observed lifetime, not merely shorter than its average. Averages hide livelock.",
+      "affected_scientific_results": "none \u2014 no result was produced during the stalled period; the cost was wall-clock time only"
     }
   ]
 }

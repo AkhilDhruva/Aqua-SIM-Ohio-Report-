@@ -31,7 +31,12 @@ from qpe_solver import Probes, QPESolver, RainSeries, StageBC, build_idx_map
 import run_nest as RN
 
 CKPT_EVERY_S = 600.0        # model-second checkpoint GRID (absolute-aligned)
-CKPT_WALL_S = 420.0         # ...but never lose more than this much wall time
+CKPT_WALL_S = 60.0          # ...but never lose more than this much wall time.
+#: The host recycles as often as every 1-2 minutes. At 420 s this produced a
+#: LIVELOCK: every process died before its first checkpoint, so the run
+#: resumed from the same model hour indefinitely (observed: 37 min, three
+#: relaunches, zero progress). The interval must be shorter than the host's
+#: shortest lifetime, not merely shorter than its average.
 SNAP_EVERY_S = 3600.0
 
 
