@@ -1,0 +1,468 @@
+{
+  "meta": {
+    "compiled_utc": "2026-08-22T00:00:00Z (compiled during Aug 22 2026 session; event still evolving — I-70 not yet reported reopened)",
+    "event": "Central Ohio flood, rain overnight Wed Aug 19 -> Thu Aug 20 2026; river flooding persisting through Aug 21-22",
+    "timezone_note": "All local times are EDT (UTC-4). UTC values converted by researcher; conversion itself is arithmetic, but the underlying local time carries the stated precision.",
+    "method_note": "Nearly every news/government domain is blocked from this box for direct fetch (egress proxy CONNECT 403 for curl; WebFetch EGRESS_BLOCKED for every outlet tried: nbc4i, 10tv, abc6, wosu, wyso, ideastream, whiznews, yahoo, columbusnavigator, thereportingproject, cedarnews, forth.news, mesonet, weather.gov, waterdata.usgs.gov). ALL facts below therefore come from WebSearch result snippets/summaries, not from full article text. Snippet-derived facts carry transcription risk; confidence levels reflect this.",
+    "day_of_week_anchor": "Wed=Aug 19, Thu=Aug 20, Fri=Aug 21, Sat=Aug 22 (2026)"
+  },
+  "i70_closure": {
+    "location": {
+      "value": "I-70 at/near SR-79 interchange (Exit 129), Licking County, near Buckeye Lake; water source South Fork Licking River",
+      "source": "https://www.nbc4i.com/news/local-news/licking-county/floodwaters-force-i-70-closure-in-licking-county/ ; https://www.10tv.com/article/news/local/odot-flooding-impacts-i-70-near-buckeye-lake-licking-county/530-ddba500d-0f45-4dba-8bf9-37b7b0b260b7",
+      "confidence": "high",
+      "timestamp_precision": "n/a"
+    },
+    "pre_announcement": {
+      "value": "ODOT announced Thu Aug 20 (afternoon/evening) that it WOULD close all lanes of I-70 near Buckeye Lake due to forecast 'historic' flooding; ODOT spokesman Matt Bruning: 'This will be a historic crest as forecast by the National Weather Service.'",
+      "utc": "~2026-08-20T22:49Z if Yahoo URL id 224926023 encodes post time 22:49:26 UTC (= 6:49 p.m. EDT) — INFERRED from URL, not stated",
+      "source": "https://www.yahoo.com/news/weather-news/articles/odot-close-section-70-near-224926023.html ; https://www.whiznews.com/all-lanes-of-i-70-near-buckeye-lake-will-close-due-to-flooding/",
+      "confidence": "high (announcement happened Thu); low (exact announce clock time — inferred)",
+      "timestamp_precision": "day (stated) / minute (inferred only)"
+    },
+    "closure_start_eastbound": {
+      "value": "EB lanes shut down ~6:00 p.m. EDT Thu Aug 20, per ODOT",
+      "local": "2026-08-20 ~18:00 EDT",
+      "utc": "2026-08-20T22:00Z (approx)",
+      "source": "https://www.10tv.com/article/news/local/odot-flooding-impacts-i-70-near-buckeye-lake-licking-county/530-ddba500d-0f45-4dba-8bf9-37b7b0b260b7 (attributed to ODOT; 'eastbound lanes shut down around 6 p.m.')",
+      "confidence": "medium-high (snippet-derived, 'around'); day anchored Thursday by multiple outlets",
+      "timestamp_precision": "hour ('around 6 p.m.')"
+    },
+    "closure_start_westbound": {
+      "value": "WB lanes shut down ~9:00 p.m. EDT Thu Aug 20, per ODOT",
+      "local": "2026-08-20 ~21:00 EDT",
+      "utc": "2026-08-21T01:00Z (approx)",
+      "source": "https://www.10tv.com/article/news/local/odot-flooding-impacts-i-70-near-buckeye-lake-licking-county/530-ddba500d-0f45-4dba-8bf9-37b7b0b260b7 ('westbound lanes shut down around 9 p.m.')",
+      "confidence": "medium-high (snippet-derived, 'around')",
+      "timestamp_precision": "hour"
+    },
+    "closure_start_alternate_account": {
+      "value": "'By 7:30 Thursday night, flooding had forced all lanes in the area to close' — conflicts slightly with 6 p.m./9 p.m. account (may refer to ramps/local lanes). DISCREPANCY FLAGGED.",
+      "utc": "2026-08-20T23:30Z (approx)",
+      "source": "search-snippet attributed to Yahoo/whiznews coverage of the ODOT closure (https://www.yahoo.com/news/weather-news/articles/odot-close-section-70-near-224926023.html or https://www.whiznews.com/flooding-shuts-down-i-70-near-buckeye-lake/)",
+      "confidence": "low (attribution between two articles uncertain; conflicts with ODOT 6/9 p.m. account)",
+      "timestamp_precision": "half-hour"
+    },
+    "closure_extent": {
+      "value": "Both directions closed near Exit 129 (SR-79). Effective through-traffic gap per ODOT detours: EB traffic off at SR-158 (exit ~126, Kirkersville), back on at SR-13 (exit 132, Jacksontown); WB traffic off at US-40 Gratiot exit 142 (Muskingum Co line), back on at SR-310 (exit 118, Etna). Exit-to-exit bounds are implied by the detour routing, not stated as formal closure limits — INFERRED.",
+      "source": "https://abc6onyourside.com/news/local/detours-snarl-travel-between-licking-and-muskingum-counties-as-i-70-ramps-close-buckeye-lake-flooding-water-rain-cleanup-efforts-underway-south-fork-licking-river ; https://www.10tv.com/article/news/local/odot-flooding-impacts-i-70-near-buckeye-lake-licking-county/530-ddba500d-0f45-4dba-8bf9-37b7b0b260b7",
+      "confidence": "high (both-directions at Exit 129); medium (exit-bound interpretation)",
+      "timestamp_precision": "n/a"
+    },
+    "announced_by": {
+      "value": "ODOT (spokesman Matt Bruning quoted); Licking County Sheriff Randy Thorp gave duration/traffic statements. No OSHP announcement found in any snippet.",
+      "source": "https://www.yahoo.com/news/weather-news/articles/odot-close-section-70-near-224926023.html ; https://www.10tv.com/article/news/local/odot-flooding-impacts-i-70-near-buckeye-lake-licking-county/530-ddba500d-0f45-4dba-8bf9-37b7b0b260b7",
+      "confidence": "high",
+      "timestamp_precision": "n/a"
+    },
+    "expected_reopen": {
+      "value": "Closed 'until at least 5 p.m. Friday Aug 21' (ODOT/press); Sheriff Thorp: expected to continue through Friday; NWS: river to crest late Friday morning then recede; flood gauge near interstate not expected to fall below flood stage until ~11 p.m. Sat Aug 22 EDT (= 2026-08-23T03:00Z).",
+      "utc": "reopen floor 2026-08-21T21:00Z; below-flood-stage forecast 2026-08-23T03:00Z",
+      "source": "https://abc6onyourside.com/news/local/detours-snarl-travel-between-licking-and-muskingum-counties-as-i-70-ramps-close-buckeye-lake-flooding-water-rain-cleanup-efforts-underway-south-fork-licking-river ; https://www.10tv.com/article/news/local/odot-flooding-impacts-i-70-near-buckeye-lake-licking-county/530-ddba500d-0f45-4dba-8bf9-37b7b0b260b7",
+      "confidence": "high (as forecasts/statements)",
+      "timestamp_precision": "hour"
+    },
+    "actual_reopen": {
+      "value": "NOT FOUND as of research time (Aug 22). No article reporting actual reopening located; searches on 'reopened'/'remains closed' return only closure coverage.",
+      "source": "multiple searches Aug 22 2026",
+      "confidence": "high that no reopening had been reported in indexed coverage at research time",
+      "timestamp_precision": "n/a"
+    },
+    "context_severity": {
+      "value": "ODOT: water rose to a level seen only twice before in the past decade. Resident Bob Slater compared to 1968 flood (photo of father standing on flooded freeway).",
+      "source": "search snippet (10tv/abc6 coverage) ; https://abc6onyourside.com/news/local/buckeye-lake-flooding-turns-streets-into-waterways-causes-evacuations-licking-county-fairfield-northbank-walnut-road-walnut-township-koa-scott-brockway-bob-slater-1968",
+      "confidence": "medium",
+      "timestamp_precision": "n/a"
+    }
+  },
+  "us40_detour": {
+    "designated": {
+      "value": "YES — ODOT designated official signed detours using US-40. Press wording: 'The Ohio Department of Transportation announced the closure of I-70 in both directions, with State Route 40 serving as the detour.'",
+      "source": "https://www.thereportingproject.org / columbusnavigator syndication snippet; primary detour text below from abc6/10tv citing ODOT",
+      "confidence": "high",
+      "timestamp_precision": "day (Thu Aug 20 evening, concurrent with closure)"
+    },
+    "exact_wording_eastbound": {
+      "value": "'I-70 EB (detour: SR 158 NB to U.S. 40 EB to SR 13 SB to I-70 EB)' — per ODOT",
+      "source": "https://abc6onyourside.com/news/local/detours-snarl-travel-between-licking-and-muskingum-counties-as-i-70-ramps-close-buckeye-lake-flooding-water-rain-cleanup-efforts-underway-south-fork-licking-river",
+      "confidence": "high (identical wording in abc6, 10tv, whiznews snippets)",
+      "timestamp_precision": "n/a"
+    },
+    "exact_wording_westbound": {
+      "value": "'I-70 WB (detour: I-70 WB to U.S. 40 Gratiot exit 142 to U.S. 40 WB to SR 310 SB to I-70 WB)' — per ODOT; 10tv phrasing: drivers take the detour in Gratiot near the Muskingum/Licking county line (exit 142), head north to Route 40, travel west to SR 310, return to I-70 WB",
+      "source": "https://abc6onyourside.com/news/local/detours-snarl-travel-between-licking-and-muskingum-counties-as-i-70-ramps-close-buckeye-lake-flooding-water-rain-cleanup-efforts-underway-south-fork-licking-river ; https://www.10tv.com/article/news/local/odot-flooding-impacts-i-70-near-buckeye-lake-licking-county/530-ddba500d-0f45-4dba-8bf9-37b7b0b260b7",
+      "confidence": "high",
+      "timestamp_precision": "n/a"
+    },
+    "designating_agency": {
+      "value": "ODOT ('According to ODOT' in both abc6 and 10tv). Not attributed to OSHP anywhere found.",
+      "source": "as above",
+      "confidence": "high",
+      "timestamp_precision": "n/a"
+    }
+  },
+  "traffic_displacement_e2": {
+    "status": "WEAK / MOSTLY NOT FOUND — separate from E1 designation (which is confirmed)",
+    "evidence": [
+      {
+        "value": "abc6 headline (observational): 'Detours snarl travel near Buckeye Lake as I-70 ramps close' — between Licking and Muskingum counties; body advisory: 'The official detours will likely be more congested than usual, so give yourself extra travel time.'",
+        "source": "https://abc6onyourside.com/news/local/detours-snarl-travel-between-licking-and-muskingum-counties-as-i-70-ramps-close-buckeye-lake-flooding-water-rain-cleanup-efforts-underway-south-fork-licking-river",
+        "confidence": "medium (headline asserts snarled travel; body text is anticipatory not measured)",
+        "timestamp_precision": "day (Fri Aug 21 approx, publication)"
+      },
+      {
+        "value": "Licking County Sheriff Randy Thorp 'advised drivers to expect heavier traffic on the detour route as the closure continues' — anticipatory, not observed.",
+        "source": "https://www.10tv.com/article/news/local/odot-flooding-impacts-i-70-near-buckeye-lake-licking-county/530-ddba500d-0f45-4dba-8bf9-37b7b0b260b7",
+        "confidence": "high (statement made); n/a as observation",
+        "timestamp_precision": "day"
+      },
+      {
+        "value": "NO reports found of measured/observed congestion specifically on US-40 through Etna or Pataskala (note: the WB detour's US-40 leg runs Gratiot->Jacksontown->Hebron->SR-310, passing near Etna Township at its west end; Pataskala proper is north of US-40 and its own roads were flood-closed). No speed/volume data reachable (OHGO blocked).",
+        "source": "multiple targeted searches, Aug 22 2026",
+        "confidence": "high that nothing was found (absence of evidence, not evidence of absence)",
+        "timestamp_precision": "n/a"
+      }
+    ]
+  },
+  "nws_warnings": [
+    {
+      "warning": "Flood Watch (pre-event)",
+      "detail": "Flood Watch for Columbus/surrounding counties through Wednesday night (Aug 19); 10tv weather blog lists Flood Watch in effect until 10 a.m. EDT Thu Aug 20 (2026-08-20T14:00Z)",
+      "issuance_utc": "not found",
+      "source": "https://news.yahoo.com/news/flood-watch-issued-columbus-surrounding-162438551.html ; https://www.10tv.com/article/weather/weather-blog/weather-impact-alert-locally-heavy-rain-late-wednesday-overnight/530-fee524d1-d73c-4de6-ab44-23e3b0fff9dc ; https://www.weather.gov/iln/20260820",
+      "confidence": "medium",
+      "timestamp_precision": "expiration to the hour; issuance unknown"
+    },
+    {
+      "warning": "Flash Flood Warning(s), Franklin + surrounding counties",
+      "detail": "NBC4 headline: 'Flash flood warnings issued for Franklin and surrounding Ohio counties' — warnings covered Franklin, Fairfield, Licking; Madison, Fayette, Delaware, Pickaway 'on notice'. Individual FFW issuance clock times NOT retrievable (weather.gov/mesonet/IEM archive all blocked from this box).",
+      "issuance_utc": "overnight/early morning Aug 20 (before 04:45 EDT upgrade); exact times not found",
+      "source": "https://www.nbc4i.com/news/local-news/central-ohio-news/flash-flood-warnings-issued-for-franklin-and-surrounding-ohio-counties/",
+      "confidence": "high (warnings existed); low (times)",
+      "timestamp_precision": "night-of (coarse)"
+    },
+    {
+      "warning": "FLASH FLOOD EMERGENCY, Franklin County area",
+      "detail": "'At approximately 4:45 a.m. Thursday [Aug 20], the National Weather Service issued a flash flood emergency notification for the Franklin County area' — NBC4 live coverage. NWS described conditions as dangerous and life-threatening, told people not to travel unless evacuating/fleeing.",
+      "issuance_local": "2026-08-20 ~04:45 EDT",
+      "issuance_utc": "2026-08-20T08:45Z (approx)",
+      "source": "https://www.nbc4i.com/news/local-news/central-ohio-news/flash-flood-warnings-issued-for-franklin-and-surrounding-ohio-counties/",
+      "confidence": "high (repeated across searches, single-source NBC4 snippet)",
+      "timestamp_precision": "minute ('approximately 4:45 a.m.')"
+    },
+    {
+      "warning": "Areal Flood Warning, Franklin County (+Delaware, Fairfield)",
+      "detail": "10tv weather blog: 'A Flood Warning was issued for Franklin County until 4:15 p.m.' (Thu Aug 20 = 2026-08-20T20:15Z expiration), along with Delaware and Fairfield counties. Issuance time not stated.",
+      "issuance_utc": "not found; expiration 2026-08-20T20:15Z",
+      "source": "https://www.10tv.com/article/weather/weather-blog/weather-impact-alert-locally-heavy-rain-late-wednesday-overnight/530-fee524d1-d73c-4de6-ab44-23e3b0fff9dc",
+      "confidence": "medium (snippet)",
+      "timestamp_precision": "expiration to minute; day inferred Thursday"
+    },
+    {
+      "warning": "River Flood Warning, South Fork Licking River near I-70 near Buckeye Lake (BCLO1)",
+      "detail": "Listed on NWS ILN event page for Aug 19-20 2026 ('minor flooding forecast until Friday evening' in early version); later record-crest forecast 883.5 ft (see gauge section).",
+      "issuance_utc": "not found",
+      "source": "https://www.weather.gov/iln/20260820 (via search snippet)",
+      "confidence": "high (warning existed)",
+      "timestamp_precision": "coarse"
+    },
+    {
+      "warning": "River Flood Warning, South Fork Licking River near Hebron (BEEO1)",
+      "detail": "Extended until Saturday morning (Aug 22); minor occurring, moderate forecast; at 6:15 a.m. EDT Fri Aug 21 stage 11.7 ft; forecast crest 12.0 ft Friday afternoon; impacts at 12.0 ft: water onto sections of Mill Dam Road; backwater flooding in Greenbriar Estates Mobile Home Park, water surrounding some homes along Greenbriar Lane East.",
+      "issuance_utc": "extension reported Fri Aug 21; original issuance not found",
+      "source": "https://www.forth.news/stories/CeDwrJhEHdBUjuJQfoYTf (carries NWS product text; blocked for fetch, content via snippet) ; gauge page https://water.noaa.gov/gauges/beeo1",
+      "confidence": "medium-high",
+      "timestamp_precision": "minute for the 6:15 a.m. observation"
+    },
+    {
+      "warning": "River Flood Warning, South Fork Licking River at Heath (upgraded)",
+      "detail": "Forecast severity changed Minor -> Moderate; moderate flooding occurring/forecast until Friday morning; at 19.0 ft much of Licking View Drive flooded, water approaching homes near Creekview Drive; 'between 2 and 4 inches of rain fell in the warned area.'",
+      "issuance_utc": "not found",
+      "source": "weather.gov product text via search snippet (scoped weather.gov search); gauge https://water.weather.gov/ahps2/inundation/index.php?gage=sfho1",
+      "confidence": "medium",
+      "timestamp_precision": "coarse"
+    },
+    {
+      "warning": "River Flood Warning, Scioto River at Columbus Frank Rd",
+      "detail": "Listed on NWS ILN Aug 19-20 event page; city cited crest forecast 24 ft ~2 p.m. EDT Thu Aug 20 (18:00Z), 22.9 ft at 9 a.m. EDT (13:00Z).",
+      "issuance_utc": "not found",
+      "source": "https://www.weather.gov/iln/20260820 ; https://www.nbc4i.com/news/local-news/central-ohio-news/flash-flood-warnings-issued-for-franklin-and-surrounding-ohio-counties/",
+      "confidence": "medium-high",
+      "timestamp_precision": "hour for stage/crest statements"
+    },
+    {
+      "warning": "River Flood Warning, South Fork Licking River at Pataskala (early, superseded)",
+      "detail": "Reporting Project: flood warning for the South Fork 'until August 20' with crest forecast 11.6 ft in the afternoon before falling below flood stage late that afternoon (early Thursday forecast, later overtaken by events at other gauges).",
+      "issuance_utc": "not found",
+      "source": "https://www.thereportingproject.org/a-flash-food-swept-through-pataskala-early-thursday-leaving-a-path-of-destruction-and-a-muddy-mess-and-moving-on-to-hebron/",
+      "confidence": "medium (snippet; gauge identity Pataskala-vs-Hebron slightly ambiguous)",
+      "timestamp_precision": "day"
+    },
+    {
+      "warning": "AMBIGUOUS-DATE ITEM (likely NOT this event)",
+      "detail": "Cedar News: NWS Flood Warning for northern Fairfield, east-central Franklin, southwestern Licking (Reynoldsburg, Gahanna, Pataskala, Summit Station, Beechwood Trails, Etna, Kirkersville) 'issued at 2:24 a.m. EDT Sunday ... until 8:00 a.m. EDT Sunday' after 2-3 inches of rain. Aug 20 2026 was a Thursday — 'Sunday' means this is probably the Aug 16 2026 precursor event. DO NOT score against Aug 19-20 without verification.",
+      "issuance_utc": "2026-08-16T06:24Z IF Sunday Aug 16 — inferred, unverified",
+      "source": "https://cedarnews.net/newstasks/943826/ohio-flood-warning-issued-for-fairfield-franklin-and-licking-counties-after-2-3-inches-of-rain/",
+      "confidence": "low for event attribution; the 2:24 a.m. issuance time itself is quoted verbatim",
+      "timestamp_precision": "minute, wrong-day risk"
+    }
+  ],
+  "sf_licking_gauge_statements": [
+    {
+      "gauge": "South Fork Licking River at/near I-70 near Buckeye Lake (NWS id BCLO1; page title 'at Buckeye Lake near Watkins Island')",
+      "statement": "Forecast crest 883.5 ft — would be a RECORD; previous record 882.9 ft on 2020-03-21 — per NWS Wilmington",
+      "time": "forecast issued Thu Aug 20 2026",
+      "source": "https://www.yahoo.com/news/weather-news/articles/odot-close-section-70-near-224926023.html (NWS Wilmington cited) ; https://water.noaa.gov/gauges/bclo1",
+      "confidence": "high",
+      "timestamp_precision": "day"
+    },
+    {
+      "gauge": "BCLO1",
+      "statement": "Impact threshold (NWS impact statement wording): 'At 883.0 feet, both eastbound and westbound lanes of Interstate 70 are closed from flooding near Exit 129, with over a foot of water likely on both eastbound and westbound lanes.'",
+      "time": "static impact statement",
+      "source": "https://www.wunderground.com/severe/us/oh/buckeye-lake (carries NWS product text)",
+      "confidence": "high",
+      "timestamp_precision": "n/a"
+    },
+    {
+      "gauge": "BCLO1",
+      "statement": "Observed stage 881.54 ft (village officials) around time of mandatory-evacuation announcement Thu evening Aug 20; forecast crest 883.5 ft",
+      "time_local": "2026-08-20 evening EDT",
+      "utc": "~2026-08-21T00:00Z (coarse)",
+      "source": "https://spectrumnews1.com/oh/columbus/news/2026/08/21/mandatory-evacuation-ordered-for-part-of-buckeye-lake-as-floodwaters-rise",
+      "confidence": "medium-high",
+      "timestamp_precision": "evening (coarse)"
+    },
+    {
+      "gauge": "BCLO1",
+      "statement": "'At 8:45 AM EDT Friday [Aug 21] the stage was 882.8 feet'; river 'forecast to oscillate above flood stage with a maximum value of 882.9 feet late this morning' — i.e., actual crest ~882.8-882.9 ft near/at (not above) the 2020 record, BELOW the 883.5 forecast; peak timing late Friday morning Aug 21 (forecast wording).",
+      "time_local": "2026-08-21 08:45 EDT",
+      "utc": "2026-08-21T12:45Z",
+      "source": "https://www.wunderground.com/severe/us/oh/buckeye-lake (NWS product text via snippet)",
+      "confidence": "medium-high (verbatim-looking NWS text via snippet); observed crest value/time not independently confirmed",
+      "timestamp_precision": "minute for the 8:45 a.m. observation; 'late morning' coarse for peak"
+    },
+    {
+      "gauge": "BCLO1 vicinity",
+      "statement": "NWS (press): river point expected to crest late Friday morning, recede in afternoon; flood gauge near interstate not expected below flood stage until ~11 p.m. Sat Aug 22 EDT (2026-08-23T03:00Z)",
+      "source": "https://www.10tv.com/article/news/local/odot-flooding-impacts-i-70-near-buckeye-lake-licking-county/530-ddba500d-0f45-4dba-8bf9-37b7b0b260b7 ; abc6 detours article",
+      "confidence": "high (as forecast statements)",
+      "timestamp_precision": "hour"
+    }
+  ],
+  "buckeye_lake": {
+    "voluntary_evacuation": {
+      "value": "Village placed under VOLUNTARY evacuation Thursday (daytime) Aug 20, upgraded as conditions worsened",
+      "utc": "day-level only",
+      "source": "https://www.wosu.org/2026-08-21/buckeye-lake-under-mandatory-evacuation-from-severe-flooding (and sister public-radio syndications)",
+      "confidence": "medium-high",
+      "timestamp_precision": "day"
+    },
+    "mandatory_evacuation": {
+      "value": "Village of Buckeye Lake MANDATORY evacuation order effective 8:00 p.m. EDT Thu Aug 20; applies to all properties west of the SR-79/SR-360 intersection within the village (one syndication rendered it 'SR 260' — SR-360 is the plausible route; WHIO headline simply 'west of SR 79'); Mayor Linda Goodman; in effect 24 hours unless lifted earlier; issued after consulting emergency management.",
+      "local": "2026-08-20 20:00 EDT",
+      "utc": "2026-08-21T00:00Z",
+      "source": "https://spectrumnews1.com/oh/columbus/news/2026/08/21/mandatory-evacuation-ordered-for-part-of-buckeye-lake-as-floodwaters-rise ; https://www.nbc4i.com/news/local-news/licking-county/mandatory-evacuation-ordered-for-buckeye-lake/ ; https://www.whio.com/news/local/mandatory-evacuation-place-licking-county/M2PS6OYMUNGN5PDKPEP7BXP7ME/ ; https://abc6onyourside.com/news/local/village-of-buckeye-lake-issues-mandatory-evacuation-order-interstate-70",
+      "confidence": "high (8 p.m. effective time, west-of-SR-79 area); low (exact cross-route number 360 vs 260)",
+      "timestamp_precision": "minute (stated effective time)"
+    },
+    "koa_and_estates": {
+      "value": "Parts of Buckeye Lake Estates mobile home park AND the Buckeye Lake/Columbus East KOA campground submerged (Mayor Goodman); high water destroyed some RVs at the KOA; KOA is one of the lowest-lying spots in the area. Two water rescues Thursday morning Aug 20, several more at Buckeye Lake Estates. No separate KOA-specific evacuation clock time found — KOA falls under the general evacuation timeline.",
+      "utc": "rescues morning of 2026-08-20 (~10:00-16:00Z window, coarse)",
+      "source": "https://www.wosu.org/2026-08-21/buckeye-lake-under-mandatory-evacuation-from-severe-flooding ; https://abc6onyourside.com/news/local/buckeye-lake-flooding-turns-streets-into-waterways-causes-evacuations-licking-county-fairfield-northbank-walnut-road-walnut-township-koa-scott-brockway-bob-slater-1968",
+      "confidence": "high (submergence/RVs); medium (rescue count/time)",
+      "timestamp_precision": "morning (coarse)"
+    },
+    "lake_level_and_dam": {
+      "value": "NO statements found on Buckeye Lake pool level, ODNR dam operations, or spillway operation during this event. Static reference (Buckeye Lake Beacon, 2018-19 articles): full pool 891.63 ft msl; Sellers Point spillway crest 892.21 ft msl; AMIL spillway in village opens automatically ~6 inches above spillway level; Sellers Point discharges up to ~2,000 cfs. The 881.5-883.5 ft figures in evacuation coverage are the RIVER gauge (BCLO1) datum, not lake pool elevation.",
+      "source": "https://www.buckeyelakebeacon.net/articles/whats-full-pool/ (static); event searches found nothing on dam ops",
+      "confidence": "high that no event-specific dam/spillway statement surfaced in searches",
+      "timestamp_precision": "n/a"
+    },
+    "local_streets": {
+      "value": "Parts of Northbank Road and Walnut Road under water and shut down (still, as of abc6 article ~Fri Aug 21); cars swamped, basements flooded; Walnut Township (Fairfield Co) side also affected. Shelter: Our Lady of Mount Carmel Catholic Church providing shelter and food.",
+      "source": "https://abc6onyourside.com/news/local/buckeye-lake-flooding-turns-streets-into-waterways-causes-evacuations-licking-county-fairfield-northbank-walnut-road-walnut-township-koa-scott-brockway-bob-slater-1968 ; nbc4i evacuation article (shelter)",
+      "confidence": "medium-high",
+      "timestamp_precision": "day"
+    }
+  },
+  "pataskala_closures": [
+    {
+      "fact": "Closed roads (city/police-relayed list via 10tv): Columbus Road SW at Broad Street SW; Columbus Road at Zachary Road; Beecher Road SW at 20 Grand Road SW; East Broad Street at Taylor Road; Etna Parkway; Outville Road SW at Beecher Road; Beaver Run Road SE at Canyon Road SE",
+      "time": "reported morning Thu Aug 20 2026 (article updated through the day)",
+      "utc": "~2026-08-20T09:00-16:00Z window; earliest syndication of parent article 2026-08-20T09:09Z (Yahoo URL id 090939291 — INFERRED from URL)",
+      "source": "https://www.10tv.com/article/news/local/flash-flooding-multiple-water-rescues-road-closures-central-ohio/530-597690d8-bef7-41a7-8788-c3a9a9941992 ; syndicated https://www.yahoo.com/news/weather-news/articles/flash-flooding-leads-multiple-water-090939291.html",
+      "confidence": "high (street list); low (whether list present in earliest 09:09Z version)",
+      "timestamp_precision": "morning (coarse); list-specific time unknown"
+    },
+    {
+      "fact": "'Almost every road in and out of Pataskala was closed' — phrasing appears in columbusnavigator.com retrospective (and syndications). Earliest official-equivalent statement found: Licking County Sheriff's Office post Thursday morning: 'significant rainfall has occurred overnight in Southwestern Licking County, extending from the Pataskala/Etna area east to the Buckeye Lake Region.' Reporting Project (published Thu Aug 20): 'almost all thru roads in Pataskala were dangerously under water.' No timestamped police/city 'nearly all roads closed' bulletin located.",
+      "utc": "morning 2026-08-20 (coarse)",
+      "source": "https://www.columbusnavigator.com/columbus-flooding-august-2026/ ; https://www.thereportingproject.org/a-flash-food-swept-through-pataskala-early-thursday-leaving-a-path-of-destruction-and-a-muddy-mess-and-moving-on-to-hebron/",
+      "confidence": "medium (claim widely echoed; no primary bulletin with clock time)",
+      "timestamp_precision": "morning (coarse) — earliest exact timestamp NOT FOUND"
+    },
+    {
+      "fact": "Residents awakened ~4:30 a.m. EDT by torrential rain; 3-4.5 inches fell in a few hours, on top of ~a foot in parts of Licking County over prior two weeks; water covered much of Ridgely Tract Road between SR-79 and the South Fork, surrounding two homes; mobile-home park next to the river in old-town Pataskala hit hard; driveway to Pataskala City Hall flooded",
+      "utc": "onset ~2026-08-20T08:30Z",
+      "source": "https://www.thereportingproject.org/a-flash-food-swept-through-pataskala-early-thursday-leaving-a-path-of-destruction-and-a-muddy-mess-and-moving-on-to-hebron/",
+      "confidence": "medium-high",
+      "timestamp_precision": "half-hour for onset"
+    },
+    {
+      "fact": "West Licking Fire District rescued multiple people from downtown Pataskala Thursday morning; shelters opened in Pataskala (Old West Licking Station 401, 428 Jefferson St), Heath, and Hebron (per Licking County Regional Communications Center)",
+      "utc": "morning 2026-08-20 (coarse)",
+      "source": "https://www.10tv.com/article/news/local/flash-flooding-multiple-water-rescues-road-closures-central-ohio/530-597690d8-bef7-41a7-8788-c3a9a9941992",
+      "confidence": "high",
+      "timestamp_precision": "morning (coarse)"
+    },
+    {
+      "fact": "Basement flooding + school impacts: Southwest Licking, Licking Heights, Licking Valley, Granville districts on two-hour delay; Southwest Licking, Lakewood, Licking Heights reported closed Aug 20 (delay-vs-closed conflict in snippets — both reported)",
+      "utc": "2026-08-20 morning",
+      "source": "https://www.thereportingproject.org/flash-flooding-fills-basements-closes-roads-delays-school-start-in-several-licking-county-districts/",
+      "confidence": "medium (snippet conflict delay vs closed)",
+      "timestamp_precision": "day"
+    },
+    {
+      "fact": "~30 Hebron residents evacuated from Greenbriar Village neighborhood (Greenbriar Estates Mobile Home Park area matches BEEO1 impact statement); Hebron shelter at New Life Church, 925 W Main St",
+      "utc": "2026-08-20 (day)",
+      "source": "https://www.thereportingproject.org/flash-flooding-fills-basements-closes-roads-delays-school-start-in-several-licking-county-districts/ (via snippet)",
+      "confidence": "medium-high",
+      "timestamp_precision": "day"
+    }
+  ],
+  "franklin_closures": [
+    {
+      "fact": "I-71 closed between I-70 and I-270 (south side) by Columbus police due to high water; I-71 at Frank Road and SR-104 REOPENED at 8:50 a.m. EDT after being closed nearly three hours -> closure start ~5:50-6:00 a.m. EDT (INFERRED from 'nearly three hours')",
+      "local": "closed ~05:50-06:00 EDT; reopened 08:50 EDT, Thu Aug 20",
+      "utc": "closed ~2026-08-20T09:50Z (inferred); reopened 2026-08-20T12:50Z (stated)",
+      "source": "https://www.nbc4i.com/news/local-news/central-ohio-news/flash-flood-warnings-issued-for-franklin-and-surrounding-ohio-counties/",
+      "confidence": "high (reopen time stated); medium (start time inferred)",
+      "timestamp_precision": "minute (reopen); inferred (start)"
+    },
+    {
+      "fact": "ODOT warned of lane closures I-71 South beyond Frank Road and I-71 North beyond I-270",
+      "utc": "2026-08-20 morning",
+      "source": "https://www.10tv.com/article/news/local/flash-flooding-multiple-water-rescues-road-closures-central-ohio/530-597690d8-bef7-41a7-8788-c3a9a9941992",
+      "confidence": "medium-high",
+      "timestamp_precision": "morning (coarse)"
+    },
+    {
+      "fact": "8:10 a.m. EDT Thu Aug 20: City of Columbus activated the Franklinton floodwall and installed floodgates on Greenlawn Avenue and Harmon Avenue (rising Scioto). Resulting closures: Greenlawn Ave closed between Front St and Harmon Ave; Harmon Ave closed north of Frank Rd; ramps from I-71 to Greenlawn closed.",
+      "local": "2026-08-20 08:10 EDT",
+      "utc": "2026-08-20T12:10Z",
+      "source": "https://www.nbc4i.com/news/local-news/central-ohio-news/flash-flood-warnings-issued-for-franklin-and-surrounding-ohio-counties/ ; https://abc6onyourside.com/news/local/franklinton-floodwall-activated-as-heavy-rains-close-i-71-greenlawn-and-harmon-avenues-school-delays-storm-rain-floods-road-conditions-traffic ; https://www.wosu.org/2026-08-20/franklinton-floodwall-activated-after-recent-floods-in-columbus",
+      "confidence": "high",
+      "timestamp_precision": "minute"
+    },
+    {
+      "fact": "Floodwall/floodgates taken down: 'just before 4 p.m.' per Columbus Water & Power spokesperson (day inferred Thu Aug 20 — Scioto crest forecast 2 p.m. same day; 10tv headline 'Franklinton floodwall taken down after heavy rainfall')",
+      "utc": "~2026-08-20T19:55Z (day inferred)",
+      "source": "https://www.10tv.com/article/news/local/franklinton-floodwall-activated-flooding-impacts-columbus/530-09319c64-c19f-445e-9d74-55c6706b9a0e ; https://abc6onyourside.com/news/local/columbus-activates-franklinton-floodwall-amid-heavy-rainfall",
+      "confidence": "medium (day inferred)",
+      "timestamp_precision": "quarter-hour, day inferred"
+    },
+    {
+      "fact": "SR-315 closed near downtown Columbus due to flooding (NBC4 URL slug; likely same Thu morning — date not confirmed from snippet)",
+      "utc": "probably 2026-08-20 morning — UNCONFIRMED date",
+      "source": "https://www.nbc4i.com/news/local-news/columbus/state-route-315-closed-near-downtown-columbus-due-to-flooding/",
+      "confidence": "low (article date unverified; could be from earlier August 2026 storm)",
+      "timestamp_precision": "unknown"
+    },
+    {
+      "fact": "Scioto River (Columbus, Frank Rd gauge context): 22.9 ft at 9:00 a.m. EDT; expected crest 24 ft ~2:00 p.m. EDT Thu Aug 20 (Mayor Ginther briefing)",
+      "utc": "obs 2026-08-20T13:00Z; forecast crest 2026-08-20T18:00Z",
+      "source": "https://www.nbc4i.com/news/local-news/central-ohio-news/flash-flood-warnings-issued-for-franklin-and-surrounding-ohio-counties/",
+      "confidence": "high",
+      "timestamp_precision": "hour"
+    },
+    {
+      "fact": "Columbus Fire water rescue, West Broad Street near Washington Boulevard, ~4:00 a.m. EDT Thu Aug 20; one person rescued",
+      "utc": "2026-08-20T08:00Z (approx)",
+      "source": "https://www.10tv.com/article/news/local/flash-flooding-multiple-water-rescues-road-closures-central-ohio/530-597690d8-bef7-41a7-8788-c3a9a9941992",
+      "confidence": "high",
+      "timestamp_precision": "hour ('around 4 a.m.')"
+    },
+    {
+      "fact": "Columbus firefighters: at least five water rescues between 4:30 and 7:00 a.m. EDT (near Downtown, south Columbus, North Linden, Grove City, Gahanna areas per NBC4)",
+      "utc": "2026-08-20T08:30Z-11:00Z",
+      "source": "https://spectrumnews1.com/oh/columbus/news/2026/08/20/heavy-rain-floods-columbus-roads--prompts-rescues ; nbc4i live blog",
+      "confidence": "high",
+      "timestamp_precision": "window"
+    },
+    {
+      "fact": "Gender Road homeless encampments (3600 block, at Blacklick Creek, Canal Winchester area, SE Columbus): first responders called ~11:30 a.m. EDT Thu Aug 20; camps washed away, water 5-10 ft deep; 5 people + dog initially missing, ~100 emergency personnel; 2 pulled from Blacklick Creek by CFD; all accounted for per Columbus police 'just before 4 p.m.' EDT",
+      "utc": "call 2026-08-20T15:30Z; all-clear ~2026-08-20T19:55Z",
+      "source": "https://www.10tv.com/article/news/local/flooding-gender-road-columbus-homeless-encampments/530-84573dd8-dbab-4cfc-ad0b-ed9f91a34aff ; https://abc6onyourside.com/news/local/columbus-ohio-fire-cfd-responds-major-medical-emergency-water-rescue-gender-road-flooding-weather-storms-rain ; https://spectrumnews1.com/oh/columbus/news/2026/08/20/homeless-camps-swept-away-in-columbus-area-flooding ; https://www.nbc4i.com/news/local-news/columbus/2-rescued-several-missing-at-southeast-columbus-homeless-camp-near-flooded-creek/",
+      "confidence": "high",
+      "timestamp_precision": "half-hour (call), quarter-hour (all-clear)"
+    }
+  ],
+  "high_water_marks": [
+    {
+      "fact": "USGS high-water-mark survey / Flood Event Viewer entry for this event: NOT FOUND (searches Aug 22 2026; event 2 days old). USGS STN/Flood Event Viewer and waterdata.usgs.gov unreachable from this box (proxy 403).",
+      "source": "https://www.usgs.gov/tools/flood-event-viewer (generic); targeted searches empty",
+      "confidence": "high that nothing indexed yet",
+      "timestamp_precision": "n/a"
+    },
+    {
+      "fact": "ODOT post-event photo sets: none found indexed. Best geolocated+timestamped visuals found: (1) aerial photo of Pataskala floods, taken Aug 20 2026, credited Luke Krafft, in NBC4 viewer-photo gallery — location precision: city-scale; (2) 10tv/abc6 video of I-70/Buckeye Lake closure Aug 20-21 (ODOT preparing closure) — corridor-scale; (3) abc6 imagery of Northbank/Walnut roads underwater (Fri Aug 21) — street-scale; (4) NBC4 viewer photo call article for Thursday-morning floods (crowdsourced, mixed precision); (5) YouTube: 'Buckeye Lake flooding' short (rHisKGTuNVw) and abc6 segment (ikXnIQzom1c), day-scale timestamps.",
+      "source": "https://www.nbc4i.com/news/local-news/central-ohio-news/nbc4-wants-to-see-your-photos-of-thursday-morning-floods-in-columbus/ ; https://www.youtube.com/shorts/rHisKGTuNVw ; https://www.youtube.com/watch?v=ikXnIQzom1c",
+      "confidence": "medium",
+      "timestamp_precision": "day-scale for photos; none carry clock-time metadata in snippets"
+    },
+    {
+      "fact": "Usable point-observation proxies with location precision from press: Ridgely Tract Rd (between SR-79 and South Fork) water surrounding two homes, Thu Aug 20 (street-scale); I-70 Exit 129 'over a foot of water' on both lanes when gauge >=883.0 ft (NWS impact statement, tied to gauge datum); Greenbriar Lane East homes surrounded at BEEO1 12.0 ft (street-scale, tied to gauge)",
+      "source": "thereportingproject.org Pataskala article; wunderground/NWS impact statements",
+      "confidence": "medium-high",
+      "timestamp_precision": "day / gauge-linked"
+    }
+  ],
+  "rainfall_verification": [
+    {
+      "claim": "CMH (John Glenn) 6.03 in",
+      "finding": "PARTIALLY VERIFIED, ATTRIBUTION UNCLEAR: '6.03' for Columbus (John Glenn) appears in 10tv weather-blog 'Ohio rainfall reports after 11 consecutive days of rain in August' — which is a MULTI-DAY August cumulative report (same article lists Pataskala 9.53 in), NOT confirmed as the Aug 19-20 storm total. Event-specific press instead quotes: '3+ inches in 12 hours, some areas 4-5 inches' (Mayor Ginther, Aug 20) and an earlier-August daily record of 3.17 in (vs prior 2.67) at Columbus. Could not confirm 6.03 as an NWS PNS event total.",
+      "source": "https://www.10tv.com/article/weather/weather-blog/ohio-rainfall-reports-after-august/530-395da1d7-beec-42c0-9330-0c0454ef9675",
+      "confidence": "medium that the figure exists in that 10tv report; low that it is the Aug 19-20 event total"
+    },
+    {
+      "claim": "Pataskala 5.36 / 5.04 / 4.69 / 4.32 in",
+      "finding": "NOT VERIFIED: exact figures found in no snippet. Related verified statements: Reporting Project '3 to 4.5 inches in a few hours' overnight Aug 19-20 in Pataskala; 10tv multi-day report lists Pataskala 9.53 in (11-day cumulative). NWS PNS with station-level event totals could not be retrieved (weather.gov, mesonet, CoCoRaHS all blocked; snippets don't surface it).",
+      "source": "https://www.thereportingproject.org/a-flash-food-swept-through-pataskala-early-thursday-leaving-a-path-of-destruction-and-a-muddy-mess-and-moving-on-to-hebron/ ; 10tv rainfall blog",
+      "confidence": "n/a — unverified"
+    },
+    {
+      "claim": "Buckeye Lake 2.48 in",
+      "finding": "NOT VERIFIED: exact figure found nowhere in indexed snippets.",
+      "source": "targeted exact-phrase searches, empty",
+      "confidence": "n/a — unverified"
+    },
+    {
+      "claim": "Franklin+Licking heaviest band 4-7 in",
+      "finding": "VERIFIED: 'The National Weather Service says 4 to 7 inches of rain fell in the heaviest-hit parts of Franklin and Licking counties during the Aug. 19-20 storm system' — repeated across multiple outlets (columbusnavigator, public-radio syndications). NWS ILN event page weather.gov/iln/20260820 exists ('August 19-20, 2026 -- Flooding'); its warned-area text says 'between 2 and 4.5 inches' fell during the flash-flood phase; NBC4 cited 2-4.5 in for Franklin/Fairfield/Licking early Thursday.",
+      "source": "https://www.columbusnavigator.com/columbus-flooding-august-2026/ ; https://www.weather.gov/iln/20260820 ; https://www.nbc4i.com/news/local-news/central-ohio-news/flash-flood-warnings-issued-for-franklin-and-surrounding-ohio-counties/",
+      "confidence": "high (4-7 in NWS attribution via press); the NWS page itself could not be fetched directly"
+    },
+    {
+      "claim": "sourcing chain generally",
+      "finding": "NWS PNS / CoCoRaHS primary lists unreachable from this box. All rainfall figures above rest on press paraphrase of NWS except the 10tv weather-blog station list (likely compiled from NWS/CoCoRaHS reports, basis not stated in snippet).",
+      "source": "n/a",
+      "confidence": "n/a"
+    }
+  ],
+  "ohgo_probe": {
+    "method": "curl -s -o /dev/null -w %{http_code} via mandatory egress proxy (HTTPS_PROXY=http://127.0.0.1:46273), Aug 22 2026",
+    "results": {
+      "https://ohgo.com/": "000 (curl 56: CONNECT tunnel failed, response 403 from proxy)",
+      "https://www.ohgo.com/": "000 (CONNECT 403)",
+      "https://api.ohgo.com/": "000 (CONNECT 403)",
+      "https://publicapi.ohgo.com/": "000 (CONNECT 403)",
+      "https://publicapi.ohgo.com/api/v1/incidents": "000 (CONNECT 403)",
+      "https://api.ohgo.com/api/v1/incidents": "000 (CONNECT 403)"
+    },
+    "interpretation": "All OHGO hosts are blocked at the network egress proxy (HTTP CONNECT rejected with 403). No HTTP status from OHGO itself was ever received. WebFetch is likewise egress-blocked for these hosts.",
+    "historical_data_question": "COULD NOT TEST from this box. Not verified whether historical Aug 19-20 incident/speed data is retrievable, with or without a key. Prior general knowledge (UNVERIFIED HERE, low confidence): OHGO public API requires a free registered API key and serves current/real-time conditions rather than a public historical archive.",
+    "also_blocked": "waterservices.usgs.gov, waterdata.usgs.gov, api.water.usgs.gov, water.noaa.gov, api.weather.gov, forecast.weather.gov, mesonet.agron.iastate.edu (IEM VTEC archive), cocorahs.org — all CONNECT 403; historical gauge/warning archives unreachable.",
+    "confidence": "high (probe results as observed)"
+  }
+}

@@ -1,0 +1,405 @@
+{
+ "source_note": "Discharge = NWM v3 operational analysis_assim (gauge-nudged) at NWM reaches crosswalked to USGS gage IDs via NWM retrospective-3.0 chrtout.zarr gage_id/lat/lon. All direct gauge APIs (USGS waterservices/waterdata/labs, NWPS, api.weather.gov, IEM, CUAHSI) blocked from this host. Names inferred, unverified. Window 2026-08-18T00Z..2026-08-22T04Z hourly.",
+ "sites": [
+  {
+   "site_no": "03144816",
+   "name": "South Fork Licking River below Kirkersville, OH",
+   "name_confidence": "medium",
+   "lat": 39.96412,
+   "lon": -82.5948,
+   "nwm_feature_id": 15365423,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 8480.1,
+   "peak_discharge_utc": "2026-08-20T13:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 333.7,
+   "rise_start_utc": "2026-08-20T08:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 4846.2,
+   "n_points": 101,
+   "in_boxes": []
+  },
+  {
+   "site_no": "03145000",
+   "name": "South Fork Licking River near Hebron, OH",
+   "name_confidence": "medium",
+   "lat": 39.993,
+   "lon": -82.47089,
+   "nwm_feature_id": 15365291,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 4232.1,
+   "peak_discharge_utc": "2026-08-21T17:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 2409.0,
+   "rise_start_utc": "2026-08-21T12:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 451.0,
+   "n_points": 101,
+   "in_boxes": []
+  },
+  {
+   "site_no": "03145173",
+   "name": "Licking basin site SW of Newark, OH",
+   "name_confidence": "low",
+   "lat": 40.03011,
+   "lon": -82.42094,
+   "nwm_feature_id": 15363573,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 12514.5,
+   "peak_discharge_utc": "2026-08-20T15:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 2659.4,
+   "rise_start_utc": "2026-08-20T11:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 1120.5,
+   "n_points": 101,
+   "in_boxes": []
+  },
+  {
+   "site_no": "03145483",
+   "name": "Raccoon Creek at/near Granville, OH",
+   "name_confidence": "medium",
+   "lat": 40.06841,
+   "lon": -82.55043,
+   "nwm_feature_id": 15363353,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 4121.6,
+   "peak_discharge_utc": "2026-08-20T17:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 639.0,
+   "rise_start_utc": "2026-08-20T09:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 2309.6,
+   "n_points": 101,
+   "in_boxes": []
+  },
+  {
+   "site_no": "03145534",
+   "name": "Raccoon Creek at Newark, OH",
+   "name_confidence": "low",
+   "lat": 40.05549,
+   "lon": -82.41962,
+   "nwm_feature_id": 15363491,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 6340.0,
+   "peak_discharge_utc": "2026-08-20T16:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 1080.1,
+   "rise_start_utc": "2026-08-20T11:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 543.5,
+   "n_points": 101,
+   "in_boxes": []
+  },
+  {
+   "site_no": "03146000",
+   "name": "Licking R basin (coords suggest N Fork at Utica), OH",
+   "name_confidence": "low",
+   "lat": 40.22807,
+   "lon": -82.45061,
+   "nwm_feature_id": 15362745,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 2241.1,
+   "peak_discharge_utc": "2026-08-20T19:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 243.0,
+   "rise_start_utc": "2026-08-20T07:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 205.2,
+   "n_points": 101,
+   "in_boxes": []
+  },
+  {
+   "site_no": "03220000",
+   "name": "Mill Creek near Bellepoint, OH",
+   "name_confidence": "medium",
+   "lat": 40.24976,
+   "lon": -83.18358,
+   "nwm_feature_id": 5215441,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 2872.1,
+   "peak_discharge_utc": "2026-08-20T15:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 282.7,
+   "rise_start_utc": "2026-08-19T23:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 329.8,
+   "n_points": 101,
+   "in_boxes": []
+  },
+  {
+   "site_no": "03221000",
+   "name": "Scioto River below O'Shaughnessy Dam nr Dublin, OH",
+   "name_confidence": "medium",
+   "lat": 40.1426,
+   "lon": -83.1209,
+   "nwm_feature_id": 5215647,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 9640.2,
+   "peak_discharge_utc": "2026-08-20T14:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 7700.2,
+   "rise_start_utc": null,
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 1931.4,
+   "n_points": 101,
+   "in_boxes": []
+  },
+  {
+   "site_no": "03221646",
+   "name": "Scioto River (Columbus/Grandview reach), OH",
+   "name_confidence": "low",
+   "lat": 39.98877,
+   "lon": -83.06754,
+   "nwm_feature_id": 5218149,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 14689.8,
+   "peak_discharge_utc": "2026-08-20T11:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 7436.9,
+   "rise_start_utc": "2026-08-20T09:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 346.1,
+   "n_points": 101,
+   "in_boxes": [
+    "franklinton"
+   ]
+  },
+  {
+   "site_no": "03226800",
+   "name": "Olentangy River near Worthington, OH",
+   "name_confidence": "high",
+   "lat": 40.10316,
+   "lon": -83.03545,
+   "nwm_feature_id": 5215055,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 7940.1,
+   "peak_discharge_utc": "2026-08-20T09:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 1050.1,
+   "rise_start_utc": "2026-08-19T07:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 190.3,
+   "n_points": 101,
+   "in_boxes": []
+  },
+  {
+   "site_no": "03227107",
+   "name": "Olentangy River at Columbus, OH",
+   "name_confidence": "medium",
+   "lat": 39.98252,
+   "lon": -83.02124,
+   "nwm_feature_id": 5218153,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 15553.6,
+   "peak_discharge_utc": "2026-08-20T12:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 1450.0,
+   "rise_start_utc": "2026-08-20T00:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 609.2,
+   "n_points": 101,
+   "in_boxes": [
+    "franklinton"
+   ]
+  },
+  {
+   "site_no": "03227500",
+   "name": "Scioto River at Columbus, OH",
+   "name_confidence": "high",
+   "lat": 39.92131,
+   "lon": -83.00834,
+   "nwm_feature_id": 5218167,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 29300.2,
+   "peak_discharge_utc": "2026-08-20T14:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 10400.2,
+   "rise_start_utc": "2026-08-20T09:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 363.0,
+   "n_points": 101,
+   "in_boxes": []
+  },
+  {
+   "site_no": "03228300",
+   "name": "Big Walnut Creek near Sunbury/Galena, OH",
+   "name_confidence": "medium",
+   "lat": 40.23138,
+   "lon": -82.85595,
+   "nwm_feature_id": 5213097,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 1999.9,
+   "peak_discharge_utc": "2026-08-20T07:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 321.5,
+   "rise_start_utc": "2026-08-20T02:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 1129.0,
+   "n_points": 101,
+   "in_boxes": []
+  },
+  {
+   "site_no": "03228500",
+   "name": "Big Walnut Creek at Central College, OH",
+   "name_confidence": "high",
+   "lat": 40.10249,
+   "lon": -82.88305,
+   "nwm_feature_id": 5213261,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 2730.2,
+   "peak_discharge_utc": "2026-08-20T21:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 181.2,
+   "rise_start_utc": "2026-08-20T05:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 49.4,
+   "n_points": 101,
+   "in_boxes": []
+  },
+  {
+   "site_no": "03228805",
+   "name": "Alum Creek below Alum Creek Dam (Africa), OH",
+   "name_confidence": "medium",
+   "lat": 40.1834,
+   "lon": -82.96207,
+   "nwm_feature_id": 5213149,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 766.0,
+   "peak_discharge_utc": "2026-08-20T09:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 727.8,
+   "rise_start_utc": null,
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 17.3,
+   "n_points": 101,
+   "in_boxes": []
+  },
+  {
+   "site_no": "03229500",
+   "name": "Big Walnut Creek at Rees, OH",
+   "name_confidence": "medium",
+   "lat": 39.84959,
+   "lon": -82.97124,
+   "nwm_feature_id": 5217115,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 17985.4,
+   "peak_discharge_utc": "2026-08-21T05:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 3500.0,
+   "rise_start_utc": "2026-08-20T11:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 1363.5,
+   "n_points": 101,
+   "in_boxes": []
+  },
+  {
+   "site_no": "03229610",
+   "name": "Lower Big Walnut/Scioto confluence reach, OH",
+   "name_confidence": "low",
+   "lat": 39.76894,
+   "lon": -83.00486,
+   "nwm_feature_id": 5218213,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 31359.4,
+   "peak_discharge_utc": "2026-08-21T06:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 14340.2,
+   "rise_start_utc": "2026-08-20T18:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 4214.1,
+   "n_points": 101,
+   "in_boxes": []
+  },
+  {
+   "site_no": "03230450",
+   "name": "Hellbranch Run near Harrisburg, OH",
+   "name_confidence": "medium",
+   "lat": 39.84938,
+   "lon": -83.156,
+   "nwm_feature_id": 5217811,
+   "params": [
+    "00060 (discharge, NWM analysis_assim surrogate)"
+   ],
+   "peak_stage_ft": null,
+   "peak_stage_utc": null,
+   "peak_discharge_cfs": 1416.5,
+   "peak_discharge_utc": "2026-08-20T23:00Z",
+   "pre_event_stage_ft": null,
+   "pre_event_discharge_cfs_median_aug18": 484.5,
+   "rise_start_utc": "2026-08-20T09:00Z",
+   "rise_criterion": "Q > 1.5x Aug-18 median (stage unavailable)",
+   "max_abs_nudge_cfs": 767.7,
+   "n_points": 101,
+   "in_boxes": []
+  }
+ ]
+}

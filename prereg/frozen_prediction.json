@@ -1,0 +1,23 @@
+{
+  "frozen_utc_note": "predictions frozen before effect data",
+  "aoi_wgs84": [
+    -83.2,
+    39.8,
+    -82.45,
+    40.2
+  ],
+  "variants": {
+    "mid": {
+      "run_id": "1e1646c983b3b8bc",
+      "terrain_digest": "4e302716957dc2b6",
+      "peak_depth_m": 24.8789,
+      "run_dir": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/run_mid"
+    },
+    "low": {
+      "run_id": "b322e85c559c8728",
+      "terrain_digest": "4e302716957dc2b6",
+      "peak_depth_m": 21.0525,
+      "run_dir": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/run_low"
+    }
+  }
+}

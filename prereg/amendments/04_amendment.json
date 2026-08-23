@@ -1,0 +1,6 @@
+{
+  "utc": "after extended-parent inspection",
+  "finding": "the scalar drainage term (storm-sewer proxy, 5 mm/hr effective) linearly drains routed river water \u2014 the extended parent's I-70/South Fork probe decays at exactly 0.005 m/hr after the flash peak instead of rising to the observed Aug 21 fluvial crest. Structural cause identified BEFORE seeing any nest result: multi-day river routing was never in this term's design scope (also absent: baseflow, upstream-of-domain inflow, Buckeye Lake dam/spillway operations).",
+  "action": "the pre-registered buckeye nest runs unchanged (drainage on); an additional SENSITIVITY member run_nest_buckeye_B_ext_nodrain disables the drain proxy to isolate how much of the missing crest that term explains. Labeled post-hoc sensitivity \u2014 never merged into the primary scoring.",
+  "flag": "post-effect, hypothesis-driven sensitivity; primary scoring remains the pre-registered configuration"
+}

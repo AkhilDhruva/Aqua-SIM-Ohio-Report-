@@ -1,0 +1,535 @@
+{
+  "protocol": "prediction frozen (see frozen_prediction.json run_ids) before observed locations were collected; sensors were terrain-auto-placed; FAR not computable from press data",
+  "detect_depth_m": 0.15,
+  "neighborhood_m": 250.0,
+  "variants": [
+    {
+      "variant": "mid",
+      "run_id": "1e1646c983b3b8bc",
+      "detected": 17,
+      "of": 17,
+      "pod": 1.0,
+      "locations": [
+        {
+          "name": "Greenlawn Ave (Front St\u2013Harmon Ave), Columbus",
+          "lat": 39.94,
+          "lon": -83.008,
+          "kind": "road closed by high water",
+          "geocode_confidence": "high",
+          "sources": [
+            "columbusnavigator.com/columbus-flooding-august-2026",
+            "10tv.com flash-flooding-multiple-water-rescues"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 2.375,
+          "detected": true,
+          "wet_cell_percentile": 98.5
+        },
+        {
+          "name": "I-71 closed between I-70 and I-270 (south)",
+          "lat": 39.931,
+          "lon": -82.986,
+          "kind": "interstate closed by high water",
+          "geocode_confidence": "high",
+          "sources": [
+            "columbusnavigator.com",
+            "spectrumnews1.com heavy-rain-floods-columbus-roads"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.425,
+          "detected": true,
+          "wet_cell_percentile": 85.2
+        },
+        {
+          "name": "Jackson Pike, south Columbus",
+          "lat": 39.913,
+          "lon": -83.018,
+          "kind": "vehicle water rescue",
+          "geocode_confidence": "medium",
+          "sources": [
+            "sundayguardianlive.com flash-flooding-in-ohio",
+            "columbusnavigator.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 3.083,
+          "detected": true,
+          "wet_cell_percentile": 99.3
+        },
+        {
+          "name": "West Broad St, Franklinton/Hilltop",
+          "lat": 39.9585,
+          "lon": -83.05,
+          "kind": "vehicle water rescue",
+          "geocode_confidence": "medium",
+          "sources": [
+            "sundayguardianlive.com",
+            "columbusnavigator.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 3.737,
+          "detected": true,
+          "wet_cell_percentile": 99.6
+        },
+        {
+          "name": "Gender Rd 3600 blk (Big Walnut Creek camp, 13 rescued)",
+          "lat": 39.889,
+          "lon": -82.828,
+          "kind": "water rescue, encampment flooded",
+          "geocode_confidence": "medium",
+          "sources": [
+            "10tv.com",
+            "spectrumnews1.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 1.705,
+          "detected": true,
+          "wet_cell_percentile": 96.8
+        },
+        {
+          "name": "Sweetser Ct 3300 blk (boy swept at bridge)",
+          "lat": 40.017,
+          "lon": -82.967,
+          "kind": "water rescue",
+          "geocode_confidence": "low",
+          "sources": [
+            "10tv.com",
+            "spectrumnews1.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.822,
+          "detected": true,
+          "wet_cell_percentile": 91.2
+        },
+        {
+          "name": "North Linden, Columbus",
+          "lat": 40.023,
+          "lon": -82.97,
+          "kind": "water rescues in neighborhood",
+          "geocode_confidence": "medium",
+          "sources": [
+            "columbusnavigator.com",
+            "nbc4i.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.746,
+          "detected": true,
+          "wet_cell_percentile": 90.4
+        },
+        {
+          "name": "Grove City",
+          "lat": 39.881,
+          "lon": -83.093,
+          "kind": "water rescues",
+          "geocode_confidence": "medium",
+          "sources": [
+            "columbusnavigator.com",
+            "nbc4i.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.258,
+          "detected": true,
+          "wet_cell_percentile": 79.8
+        },
+        {
+          "name": "Gahanna (Big Walnut Creek)",
+          "lat": 40.019,
+          "lon": -82.879,
+          "kind": "water rescues",
+          "geocode_confidence": "medium",
+          "sources": [
+            "columbusnavigator.com",
+            "nbc4i.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 2.402,
+          "detected": true,
+          "wet_cell_percentile": 98.5
+        },
+        {
+          "name": "SR-674 at Lithopolis Rd",
+          "lat": 39.833,
+          "lon": -82.828,
+          "kind": "all lanes closed",
+          "geocode_confidence": "low",
+          "sources": [
+            "10tv.com",
+            "columbusnavigator.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.545,
+          "detected": true,
+          "wet_cell_percentile": 87.6
+        },
+        {
+          "name": "Franklinton floodwall activated (Scioto high water)",
+          "lat": 39.956,
+          "lon": -83.023,
+          "kind": "floodwall activation",
+          "geocode_confidence": "high",
+          "sources": [
+            "wosu.org 2026-08-20 franklinton-floodwall-activated",
+            "10tv.com franklinton-floodwall"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 2.074,
+          "detected": true,
+          "wet_cell_percentile": 97.9
+        },
+        {
+          "name": "Pataskala \u2014 Main St nr Broad St (basements pumped; nearly all roads closed)",
+          "lat": 39.993,
+          "lon": -82.674,
+          "kind": "town-wide road flooding + basements",
+          "geocode_confidence": "high",
+          "sources": [
+            "thereportingproject.org flash-flood-pataskala-hebron",
+            "10tv.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 3.54,
+          "detected": true,
+          "wet_cell_percentile": 99.6
+        },
+        {
+          "name": "Hebron \u2014 Greenbriar Village MHP (~30 evacuated)",
+          "lat": 39.962,
+          "lon": -82.492,
+          "kind": "evacuation",
+          "geocode_confidence": "medium",
+          "sources": [
+            "thereportingproject.org",
+            "spectrumnews1.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 1.09,
+          "detected": true,
+          "wet_cell_percentile": 93.6
+        },
+        {
+          "name": "Buckeye Lake \u2014 KOA campground / mandatory evac W of SR-79",
+          "lat": 39.935,
+          "lon": -82.482,
+          "kind": "mandatory evacuation, roads under water",
+          "geocode_confidence": "high",
+          "sources": [
+            "thereportingproject.org",
+            "columbusnavigator.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 1.466,
+          "detected": true,
+          "wet_cell_percentile": 95.8
+        },
+        {
+          "name": "Reynoldsburg",
+          "lat": 39.955,
+          "lon": -82.812,
+          "kind": "among worst-flooded communities",
+          "geocode_confidence": "medium",
+          "sources": [
+            "thereportingproject.org",
+            "columbusnavigator.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.254,
+          "detected": true,
+          "wet_cell_percentile": 79.6
+        },
+        {
+          "name": "New Albany (major roads closed)",
+          "lat": 40.081,
+          "lon": -82.809,
+          "kind": "roads closed",
+          "geocode_confidence": "medium",
+          "sources": [
+            "columbusnavigator.com",
+            "nbc4i.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 1.873,
+          "detected": true,
+          "wet_cell_percentile": 97.4
+        },
+        {
+          "name": "Pickerington (major roads closed)",
+          "lat": 39.884,
+          "lon": -82.753,
+          "kind": "roads closed",
+          "geocode_confidence": "medium",
+          "sources": [
+            "columbusnavigator.com",
+            "nbc4i.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 2.709,
+          "detected": true,
+          "wet_cell_percentile": 99.0
+        }
+      ]
+    },
+    {
+      "variant": "low",
+      "run_id": "b322e85c559c8728",
+      "detected": 17,
+      "of": 17,
+      "pod": 1.0,
+      "locations": [
+        {
+          "name": "Greenlawn Ave (Front St\u2013Harmon Ave), Columbus",
+          "lat": 39.94,
+          "lon": -83.008,
+          "kind": "road closed by high water",
+          "geocode_confidence": "high",
+          "sources": [
+            "columbusnavigator.com/columbus-flooding-august-2026",
+            "10tv.com flash-flooding-multiple-water-rescues"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.942,
+          "detected": true,
+          "wet_cell_percentile": 94.8
+        },
+        {
+          "name": "I-71 closed between I-70 and I-270 (south)",
+          "lat": 39.931,
+          "lon": -82.986,
+          "kind": "interstate closed by high water",
+          "geocode_confidence": "high",
+          "sources": [
+            "columbusnavigator.com",
+            "spectrumnews1.com heavy-rain-floods-columbus-roads"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.379,
+          "detected": true,
+          "wet_cell_percentile": 86.5
+        },
+        {
+          "name": "Jackson Pike, south Columbus",
+          "lat": 39.913,
+          "lon": -83.018,
+          "kind": "vehicle water rescue",
+          "geocode_confidence": "medium",
+          "sources": [
+            "sundayguardianlive.com flash-flooding-in-ohio",
+            "columbusnavigator.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.923,
+          "detected": true,
+          "wet_cell_percentile": 94.6
+        },
+        {
+          "name": "West Broad St, Franklinton/Hilltop",
+          "lat": 39.9585,
+          "lon": -83.05,
+          "kind": "vehicle water rescue",
+          "geocode_confidence": "medium",
+          "sources": [
+            "sundayguardianlive.com",
+            "columbusnavigator.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 2.455,
+          "detected": true,
+          "wet_cell_percentile": 99.5
+        },
+        {
+          "name": "Gender Rd 3600 blk (Big Walnut Creek camp, 13 rescued)",
+          "lat": 39.889,
+          "lon": -82.828,
+          "kind": "water rescue, encampment flooded",
+          "geocode_confidence": "medium",
+          "sources": [
+            "10tv.com",
+            "spectrumnews1.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 1.587,
+          "detected": true,
+          "wet_cell_percentile": 98.0
+        },
+        {
+          "name": "Sweetser Ct 3300 blk (boy swept at bridge)",
+          "lat": 40.017,
+          "lon": -82.967,
+          "kind": "water rescue",
+          "geocode_confidence": "low",
+          "sources": [
+            "10tv.com",
+            "spectrumnews1.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.769,
+          "detected": true,
+          "wet_cell_percentile": 93.2
+        },
+        {
+          "name": "North Linden, Columbus",
+          "lat": 40.023,
+          "lon": -82.97,
+          "kind": "water rescues in neighborhood",
+          "geocode_confidence": "medium",
+          "sources": [
+            "columbusnavigator.com",
+            "nbc4i.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.676,
+          "detected": true,
+          "wet_cell_percentile": 91.9
+        },
+        {
+          "name": "Grove City",
+          "lat": 39.881,
+          "lon": -83.093,
+          "kind": "water rescues",
+          "geocode_confidence": "medium",
+          "sources": [
+            "columbusnavigator.com",
+            "nbc4i.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.198,
+          "detected": true,
+          "wet_cell_percentile": 79.0
+        },
+        {
+          "name": "Gahanna (Big Walnut Creek)",
+          "lat": 40.019,
+          "lon": -82.879,
+          "kind": "water rescues",
+          "geocode_confidence": "medium",
+          "sources": [
+            "columbusnavigator.com",
+            "nbc4i.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 1.978,
+          "detected": true,
+          "wet_cell_percentile": 98.9
+        },
+        {
+          "name": "SR-674 at Lithopolis Rd",
+          "lat": 39.833,
+          "lon": -82.828,
+          "kind": "all lanes closed",
+          "geocode_confidence": "low",
+          "sources": [
+            "10tv.com",
+            "columbusnavigator.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.523,
+          "detected": true,
+          "wet_cell_percentile": 89.6
+        },
+        {
+          "name": "Franklinton floodwall activated (Scioto high water)",
+          "lat": 39.956,
+          "lon": -83.023,
+          "kind": "floodwall activation",
+          "geocode_confidence": "high",
+          "sources": [
+            "wosu.org 2026-08-20 franklinton-floodwall-activated",
+            "10tv.com franklinton-floodwall"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.793,
+          "detected": true,
+          "wet_cell_percentile": 93.4
+        },
+        {
+          "name": "Pataskala \u2014 Main St nr Broad St (basements pumped; nearly all roads closed)",
+          "lat": 39.993,
+          "lon": -82.674,
+          "kind": "town-wide road flooding + basements",
+          "geocode_confidence": "high",
+          "sources": [
+            "thereportingproject.org flash-flood-pataskala-hebron",
+            "10tv.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 2.943,
+          "detected": true,
+          "wet_cell_percentile": 99.7
+        },
+        {
+          "name": "Hebron \u2014 Greenbriar Village MHP (~30 evacuated)",
+          "lat": 39.962,
+          "lon": -82.492,
+          "kind": "evacuation",
+          "geocode_confidence": "medium",
+          "sources": [
+            "thereportingproject.org",
+            "spectrumnews1.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 1.006,
+          "detected": true,
+          "wet_cell_percentile": 95.3
+        },
+        {
+          "name": "Buckeye Lake \u2014 KOA campground / mandatory evac W of SR-79",
+          "lat": 39.935,
+          "lon": -82.482,
+          "kind": "mandatory evacuation, roads under water",
+          "geocode_confidence": "high",
+          "sources": [
+            "thereportingproject.org",
+            "columbusnavigator.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.966,
+          "detected": true,
+          "wet_cell_percentile": 95.0
+        },
+        {
+          "name": "Reynoldsburg",
+          "lat": 39.955,
+          "lon": -82.812,
+          "kind": "among worst-flooded communities",
+          "geocode_confidence": "medium",
+          "sources": [
+            "thereportingproject.org",
+            "columbusnavigator.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 0.24,
+          "detected": true,
+          "wet_cell_percentile": 81.5
+        },
+        {
+          "name": "New Albany (major roads closed)",
+          "lat": 40.081,
+          "lon": -82.809,
+          "kind": "roads closed",
+          "geocode_confidence": "medium",
+          "sources": [
+            "columbusnavigator.com",
+            "nbc4i.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 1.641,
+          "detected": true,
+          "wet_cell_percentile": 98.2
+        },
+        {
+          "name": "Pickerington (major roads closed)",
+          "lat": 39.884,
+          "lon": -82.753,
+          "kind": "roads closed",
+          "geocode_confidence": "medium",
+          "sources": [
+            "columbusnavigator.com",
+            "nbc4i.com"
+          ],
+          "in_domain": true,
+          "peak_depth_m": 2.168,
+          "detected": true,
+          "wet_cell_percentile": 99.1
+        }
+      ]
+    }
+  ]
+}

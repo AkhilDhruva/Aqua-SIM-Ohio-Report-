@@ -1,0 +1,115 @@
+{
+  "nest": "franklinton",
+  "dx": 6.0,
+  "seed": 20260822,
+  "n_crossings": 40,
+  "n_added": 11,
+  "sample_n": 11,
+  "counts": {
+    "TRUE": 7,
+    "LIKELY": 3,
+    "FALSE_POSITIVE": 1
+  },
+  "precision": 0.909,
+  "sample": [
+    {
+      "x": 323520.5,
+      "y": 4425611.2,
+      "embank_m": 5.14,
+      "added": true,
+      "embank_1m": 4.86,
+      "chan_ok": true,
+      "class": "TRUE"
+    },
+    {
+      "x": 323316.6,
+      "y": 4425536.9,
+      "embank_m": 1.42,
+      "added": true,
+      "embank_1m": 2.66,
+      "chan_ok": true,
+      "class": "TRUE"
+    },
+    {
+      "x": 323622.7,
+      "y": 4425648.4,
+      "embank_m": 1.35,
+      "added": true,
+      "embank_1m": 1.42,
+      "chan_ok": false,
+      "class": "LIKELY"
+    },
+    {
+      "x": 324348.3,
+      "y": 4425499.3,
+      "embank_m": 2.55,
+      "added": true,
+      "embank_1m": 2.33,
+      "chan_ok": true,
+      "class": "TRUE"
+    },
+    {
+      "x": 324775.6,
+      "y": 4425593.5,
+      "embank_m": 7.84,
+      "added": true,
+      "embank_1m": 8.77,
+      "chan_ok": true,
+      "class": "TRUE"
+    },
+    {
+      "x": 324928.8,
+      "y": 4425796.3,
+      "embank_m": 2.54,
+      "added": true,
+      "embank_1m": 3.72,
+      "chan_ok": false,
+      "class": "LIKELY"
+    },
+    {
+      "x": 323220.5,
+      "y": 4425779.3,
+      "embank_m": 4.57,
+      "added": true,
+      "embank_1m": 4.67,
+      "chan_ok": true,
+      "class": "TRUE"
+    },
+    {
+      "x": 323341.1,
+      "y": 4427392.1,
+      "embank_m": 5.32,
+      "added": true,
+      "embank_1m": 5.68,
+      "chan_ok": true,
+      "class": "TRUE"
+    },
+    {
+      "x": 324252.9,
+      "y": 4422219.9,
+      "embank_m": 2.18,
+      "added": true,
+      "embank_1m": 2.77,
+      "chan_ok": true,
+      "class": "TRUE"
+    },
+    {
+      "x": 324184.3,
+      "y": 4422329.7,
+      "embank_m": 1.87,
+      "added": true,
+      "embank_1m": 1.69,
+      "chan_ok": false,
+      "class": "LIKELY"
+    },
+    {
+      "x": 324092.5,
+      "y": 4422601.3,
+      "embank_m": 1.31,
+      "added": true,
+      "embank_1m": 0.52,
+      "chan_ok": false,
+      "class": "FALSE_POSITIVE"
+    }
+  ]
+}

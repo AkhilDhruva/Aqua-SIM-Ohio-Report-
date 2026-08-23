@@ -1,0 +1,13 @@
+{
+  "utc": "after gauge-agent return, before any effect-side (closure/warning) research was read",
+  "reason": "include the S Fork Licking blw Kirkersville gauged reach (03144816, 39.964 -82.595) inside the pataskala nest as a timing anchor; gauge LOCATION is infrastructure (cause-side) \u2014 its observed series stays unread until scoring",
+  "changes": {
+    "pataskala.bbox_wgs84": [
+      -82.72,
+      39.945,
+      -82.585,
+      40.025
+    ]
+  },
+  "note": "observed hydrograph source is NWM analysis_assim (USGS-assimilated) because direct USGS endpoints are egress-blocked; labeled as such in scoring"
+}

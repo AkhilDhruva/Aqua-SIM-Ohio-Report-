@@ -1,0 +1,121 @@
+{
+  "run_dir": "run_qpeB_parent",
+  "groups": {
+    "i70_sr79_sf_licking": {
+      "n_cells": 1,
+      "first": {
+        "caution_0.15": {
+          "model_h": 15.08,
+          "utc": "08-20 09:05Z"
+        },
+        "impassable_0.30": {
+          "model_h": 16.42,
+          "utc": "08-20 10:25Z"
+        }
+      },
+      "peak_maxcell_m": 0.304,
+      "peak_utc": "08-20 10:39Z",
+      "final_maxcell_m": 0.24,
+      "stage_series_max_m": {
+        "peak_m": 268.702,
+        "peak_utc": "08-20 10:39Z"
+      }
+    },
+    "us40_etna": {
+      "n_cells": 1,
+      "first": {
+        "caution_0.15": null,
+        "impassable_0.30": null
+      },
+      "peak_maxcell_m": 0.002,
+      "peak_utc": "08-20 09:21Z",
+      "final_maxcell_m": 0.0,
+      "stage_series_max_m": {
+        "peak_m": 324.743,
+        "peak_utc": "08-20 09:21Z"
+      }
+    },
+    "pataskala_main_broad": {
+      "n_cells": 1,
+      "first": {
+        "caution_0.15": null,
+        "impassable_0.30": null
+      },
+      "peak_maxcell_m": 0.003,
+      "peak_utc": "08-20 07:17Z",
+      "final_maxcell_m": 0.0,
+      "stage_series_max_m": {
+        "peak_m": 302.74,
+        "peak_utc": "08-20 07:17Z"
+      }
+    },
+    "franklinton_wbroad": {
+      "n_cells": 1,
+      "first": {
+        "caution_0.15": null,
+        "impassable_0.30": null
+      },
+      "peak_maxcell_m": 0.041,
+      "peak_utc": "08-20 07:59Z",
+      "final_maxcell_m": 0.0,
+      "stage_series_max_m": {
+        "peak_m": 218.558,
+        "peak_utc": "08-20 07:59Z"
+      }
+    }
+  },
+  "leads": [
+    {
+      "anchor": "wbroad_rescue",
+      "desc": "CFD water rescue W Broad St ~4 a.m. EDT",
+      "probe": "franklinton_wbroad",
+      "observed_utc": "2026-08-20T08:00Z",
+      "precision": "hour",
+      "model_warning": null,
+      "lead_min": null
+    },
+    {
+      "anchor": "ffe_franklin",
+      "desc": "NWS Flash Flood Emergency, Franklin Co",
+      "probe": "franklinton_wbroad",
+      "observed_utc": "2026-08-20T08:45Z",
+      "precision": "minute",
+      "model_warning": null,
+      "lead_min": null
+    },
+    {
+      "anchor": "pataskala_onset",
+      "desc": "Pataskala torrential onset (residents awakened)",
+      "probe": "pataskala_main_broad",
+      "observed_utc": "2026-08-20T08:30Z",
+      "precision": "half-hour",
+      "model_warning": null,
+      "lead_min": null
+    },
+    {
+      "anchor": "i70_eb_closure",
+      "desc": "ODOT closes I-70 EB at Exit 129",
+      "probe": "i70_sr79_sf_licking",
+      "observed_utc": "2026-08-20T22:00Z",
+      "precision": "hour",
+      "model_warning": {
+        "model_h": 16.42,
+        "utc": "08-20 10:25Z"
+      },
+      "lead_min": 695.0
+    },
+    {
+      "anchor": "i70_wb_closure",
+      "desc": "ODOT closes I-70 WB at Exit 129",
+      "probe": "i70_sr79_sf_licking",
+      "observed_utc": "2026-08-21T01:00Z",
+      "precision": "hour",
+      "model_warning": {
+        "model_h": 16.42,
+        "utc": "08-20 10:25Z"
+      },
+      "lead_min": 875.0
+    }
+  ],
+  "stage_checks": []
+}

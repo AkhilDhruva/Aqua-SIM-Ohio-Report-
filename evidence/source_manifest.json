@@ -1,0 +1,77 @@
+{
+  "generated_utc": "2026-08-23T06:21:42.153793+00:00",
+  "engine": {
+    "repository": "akhildhruva/aqua-sim",
+    "commit": "0b452c9d5ccffd88ea8308322087b09807242b4b",
+    "note": "the simulator itself was NOT modified by this study; this repository consumes it as an installed library"
+  },
+  "bulk_inputs_not_committed": {
+    "rationale": "public, re-downloadable, and 8.8 GB; identity is preserved by URL + checksum below rather than by storing the bytes",
+    "rainfall_qpe": {
+      "bucket": "noaa-mrms-pds.s3.amazonaws.com",
+      "products": {
+        "A_radar_only": {
+          "product": "RadarOnly_QPE_15M_00.00",
+          "cadence_min": 15,
+          "n_files": 108,
+          "sha256_recorded": true,
+          "first_valid_utc": "2026-08-19T17:15:00Z",
+          "last_valid_utc": "2026-08-20T20:00:00Z"
+        },
+        "B_multisensor": {
+          "product": "MultiSensor_QPE_01H_Pass2_00.00",
+          "cadence_min": 60,
+          "n_files": 27,
+          "sha256_recorded": true,
+          "first_valid_utc": "2026-08-19T18:00:00Z",
+          "last_valid_utc": "2026-08-20T20:00:00Z"
+        }
+      },
+      "per_file_sha256": "analysis/qpe_validation/qpe_inventory.json"
+    },
+    "terrain_1m_lidar": {
+      "bucket": "prd-tnm.s3.amazonaws.com",
+      "collection": "StagedProducts/Elevation/1m/Projects",
+      "projects": [
+        "OH_Statewide_Phase3_2021_B21 (franklinton)",
+        "OH_Statewide_Phase2_2020_B20 (pataskala, buckeye)"
+      ],
+      "n_tiles": 9,
+      "per_tile_record": "evidence/dem1m_tile_inventory.json"
+    },
+    "terrain_13_arcsec": {
+      "bucket": "prd-tnm.s3.amazonaws.com",
+      "tiles": [
+        "USGS_13_n41w083",
+        "USGS_13_n41w084",
+        "USGS_13_n40w083",
+        "USGS_13_n40w084"
+      ],
+      "use": "60 m parent domain"
+    },
+    "hydrography": {
+      "source": "USGS NHD HU8 High Resolution",
+      "units": [
+        "05060001 (Scioto)",
+        "05040006 (Licking)"
+      ],
+      "layer": "NHDFlowline"
+    },
+    "roads": {
+      "source": "USGS National Transportation Dataset, Ohio",
+      "note": "MAF/TIGER-derived (source_dat 2018 May MAF/TIGER); census.gov TIGER was egress-blocked from the study host",
+      "summary": "evidence/ntd_roads_summary.json"
+    },
+    "river_response": {
+      "source": "NOAA NWM v3 analysis_assim channel_rt",
+      "bucket": "noaa-nwm-pds",
+      "caveat": "USGS-nudged proxy, discharge only; direct USGS endpoints were egress-blocked",
+      "records": "evidence/gauge_metadata/"
+    }
+  },
+  "effect_corpus": {
+    "locations": "evidence/effect_locations/observed_flooding.json",
+    "closures_and_warnings": "evidence/road_closures/effect_research.json",
+    "caveat": "press/NWS-quoted; several timestamps approximate or inferred and labelled per-fact"
+  }
+}

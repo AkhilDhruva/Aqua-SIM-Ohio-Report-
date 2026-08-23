@@ -1,0 +1,62 @@
+[
+  {
+    "nest": "buckeye_c",
+    "complete": false,
+    "covered_model_hours": [
+      0.02,
+      6.0
+    ],
+    "n_samples": 360,
+    "t0_utc": "2026-08-19T18:00:00Z",
+    "thresholds_m": {
+      "caution": 0.15,
+      "impassable": 0.3
+    },
+    "probes": [
+      {
+        "probe": "i70_sf_licking",
+        "n_road_cells": 325,
+        "road_peak_m": 0.0,
+        "road_peak_utc": "08-19 18:01Z",
+        "road_caution_utc": null,
+        "road_impassable_utc": null,
+        "channel_peak_m": 0.0,
+        "road_minus_channel_peak_m": 0.0,
+        "diagnosis": "DRY"
+      },
+      {
+        "probe": "i70_sr79",
+        "n_road_cells": 325,
+        "road_peak_m": 0.0,
+        "road_peak_utc": "08-19 18:01Z",
+        "road_caution_utc": null,
+        "road_impassable_utc": null,
+        "channel_peak_m": 0.0,
+        "road_minus_channel_peak_m": 0.0,
+        "diagnosis": "DRY"
+      },
+      {
+        "probe": "sr79_hebron_rd",
+        "n_road_cells": 144,
+        "road_peak_m": 0.0,
+        "road_peak_utc": "08-19 18:01Z",
+        "road_caution_utc": null,
+        "road_impassable_utc": null,
+        "channel_peak_m": 0.0,
+        "road_minus_channel_peak_m": 0.0,
+        "diagnosis": "DRY"
+      },
+      {
+        "probe": "us40_hebron",
+        "n_road_cells": 173,
+        "road_peak_m": 0.0,
+        "road_peak_utc": "08-19 18:01Z",
+        "road_caution_utc": null,
+        "road_impassable_utc": null,
+        "channel_peak_m": 0.0,
+        "road_minus_channel_peak_m": 0.0,
+        "diagnosis": "DRY"
+      }
+    ]
+  }
+]

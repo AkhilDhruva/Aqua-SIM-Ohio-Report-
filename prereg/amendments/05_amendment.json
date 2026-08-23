@@ -1,0 +1,29 @@
+{
+  "utc": "compute amendment #4 \u2014 measured infeasibility, not a scientific choice",
+  "reason": "the wide nests were killed after measurement showed the storm-phase CFL cost is unaffordable: frame intervals grew 0.2 -> 29.5 -> 101.2 min as the parent's deep river stage reached the nest boundaries (dt = cfl*dx/sqrt(g*h) collapses below 1 s, ~5000 steps per simulated hour over 1.5-3M cells). Remaining work measured at 30-100+ h per nest on 4 cores.",
+  "changes": {
+    "domains": "corridor extents replace wide extents; RESOLUTION IS PRESERVED (6 m; pataskala 8 m) \u2014 extent was cut rather than physics resolution, the lesser compromise",
+    "franklinton_c": [
+      -83.058,
+      39.948,
+      -83.015,
+      39.985
+    ],
+    "pataskala_c": [
+      -82.7,
+      39.955,
+      -82.585,
+      39.998
+    ],
+    "buckeye_c": [
+      -82.512,
+      39.918,
+      -82.462,
+      39.968
+    ],
+    "window": "0-22 h for all three (was 26 / 56 h)",
+    "bc": "boundary stages reconstructed from completed parent FRAMES (30-min cadence) rather than the 300 s live record, since the live record only covers the original wide perimeters; cadence limitation recorded in each BC file"
+  },
+  "scientific_justification_for_the_22h_window": "the Case A vs Case B discriminator does NOT require the Aug 21 fluvial crest. The parent claimed 'I-70 impassable' at model hour 16.4 (10:25Z Aug 20). Whether that signal is real road inundation or 60 m smearing of adjacent channel water is decided AT THAT MOMENT, by comparing carriageway cells against channel cells at 6 m. That is a 0-22 h question. The separate question of whether the model can reproduce the delayed fluvial crest is already answered NEGATIVELY by the extended parent (drainage-proxy defect) and is reported as a limitation.",
+  "cost": "franklinton_c loses the Scioto 03221646 gauge probe (outside the corridor); buckeye_c loses nothing after the north extension; wide partial output retained under run_nest_*_wide_partial"
+}

@@ -1,0 +1,18 @@
+{
+  "utc": "before any effect-side agent results were read",
+  "reason": "compute budget: 4 CPU cores / 15 GB RAM; NumPy single-core throughput ~2e7 cell-steps/s makes 4-5 m nests (>8e11 cell-steps) infeasible in-session",
+  "changes": {
+    "franklinton.target_dx_m": 6.0,
+    "pataskala.target_dx_m": 6.0,
+    "buckeye.target_dx_m": 5.0,
+    "buckeye.bbox_wgs84": [
+      -82.53,
+      39.905,
+      -82.44,
+      39.965
+    ],
+    "nest_frame_interval": "3600 s (timing analysis uses 60 s probes, not frames)",
+    "sim_window": "t0 = first QPE interval with AOI-mean rate > 0.5 mm/h minus 1 h; end = last wet interval + 4 h drain-down; cap 16 h"
+  },
+  "note": "driven purely by hardware; no effect data consulted"
+}

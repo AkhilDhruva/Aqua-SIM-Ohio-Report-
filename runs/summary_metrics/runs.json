@@ -1,0 +1,49 @@
+{
+  "note": "run_id is a content hash of inputs+provenance; identical inputs regenerate it exactly",
+  "runs": [
+    {
+      "run": "run_qpeA_parent",
+      "run_id": "2a844e332814811b",
+      "nx": 1082,
+      "ny": 762,
+      "dx_m": 60.0,
+      "frames": 50,
+      "peak_depth_m": 8.5848,
+      "aoi": null
+    },
+    {
+      "run": "run_qpeB_parent",
+      "run_id": "1aa854e66261da3b",
+      "nx": 1082,
+      "ny": 762,
+      "dx_m": 60.0,
+      "frames": 51,
+      "peak_depth_m": 14.7936,
+      "aoi": null
+    },
+    {
+      "run": "run_qpeB_parent_ext",
+      "run_id": "7276a41723806bba",
+      "nx": 1082,
+      "ny": 762,
+      "dx_m": 60.0,
+      "frames": 113,
+      "peak_depth_m": 15.0435,
+      "aoi": null
+    },
+    {
+      "run": "uniform_mid (Phase 1, frozen)",
+      "run_id": "1e1646c983b3b8bc",
+      "dx_m": 60.0,
+      "peak_depth_m": 24.8789,
+      "terrain_digest": "4e302716957dc2b6"
+    },
+    {
+      "run": "uniform_low (Phase 1, frozen)",
+      "run_id": "b322e85c559c8728",
+      "dx_m": 60.0,
+      "peak_depth_m": 21.0525,
+      "terrain_digest": "4e302716957dc2b6"
+    }
+  ]
+}

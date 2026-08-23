@@ -1,0 +1,520 @@
+{
+ "site_no": "03144816",
+ "name": "South Fork Licking River below Kirkersville, OH",
+ "name_confidence": "medium",
+ "lat": 39.96412,
+ "lon": -82.5948,
+ "nwm_feature_id": 15365423,
+ "source": "NOAA NWM operational analysis_assim channel_rt tm00 (s3://noaa-nwm-pds), gauge-nudged model analysis. NOT raw USGS IV (all USGS/NOAA/IEM APIs blocked from this host). Stage not available.",
+ "units": {
+  "discharge_cfs": "cfs",
+  "nudge_cfs": "cfs (assimilation increment; nonzero => live gauge assimilated)"
+ },
+ "series": [
+  {
+   "time_utc": "2026-08-18T00:00Z",
+   "discharge_cfs": 1070.0,
+   "nudge_cfs": 65.7
+  },
+  {
+   "time_utc": "2026-08-18T01:00Z",
+   "discharge_cfs": 1000.1,
+   "nudge_cfs": 53.0
+  },
+  {
+   "time_utc": "2026-08-18T02:00Z",
+   "discharge_cfs": 888.9,
+   "nudge_cfs": 53.7
+  },
+  {
+   "time_utc": "2026-08-18T03:00Z",
+   "discharge_cfs": 870.2,
+   "nudge_cfs": 81.2
+  },
+  {
+   "time_utc": "2026-08-18T04:00Z",
+   "discharge_cfs": 783.6,
+   "nudge_cfs": 90.1
+  },
+  {
+   "time_utc": "2026-08-18T05:00Z",
+   "discharge_cfs": 728.2,
+   "nudge_cfs": 100.3
+  },
+  {
+   "time_utc": "2026-08-18T06:00Z",
+   "discharge_cfs": 688.6,
+   "nudge_cfs": 110.9
+  },
+  {
+   "time_utc": "2026-08-18T07:00Z",
+   "discharge_cfs": 530.1,
+   "nudge_cfs": 92.5
+  },
+  {
+   "time_utc": "2026-08-18T08:00Z",
+   "discharge_cfs": 529.0,
+   "nudge_cfs": 96.1
+  },
+  {
+   "time_utc": "2026-08-18T09:00Z",
+   "discharge_cfs": 453.4,
+   "nudge_cfs": 82.3
+  },
+  {
+   "time_utc": "2026-08-18T10:00Z",
+   "discharge_cfs": 392.0,
+   "nudge_cfs": 69.9
+  },
+  {
+   "time_utc": "2026-08-18T11:00Z",
+   "discharge_cfs": 349.3,
+   "nudge_cfs": 61.4
+  },
+  {
+   "time_utc": "2026-08-18T12:00Z",
+   "discharge_cfs": 318.2,
+   "nudge_cfs": 55.4
+  },
+  {
+   "time_utc": "2026-08-18T13:00Z",
+   "discharge_cfs": 270.9,
+   "nudge_cfs": 80.9
+  },
+  {
+   "time_utc": "2026-08-18T14:00Z",
+   "discharge_cfs": 272.3,
+   "nudge_cfs": 68.2
+  },
+  {
+   "time_utc": "2026-08-18T15:00Z",
+   "discharge_cfs": 260.6,
+   "nudge_cfs": 65.3
+  },
+  {
+   "time_utc": "2026-08-18T16:00Z",
+   "discharge_cfs": 243.7,
+   "nudge_cfs": 60.4
+  },
+  {
+   "time_utc": "2026-08-18T17:00Z",
+   "discharge_cfs": 234.8,
+   "nudge_cfs": 60.7
+  },
+  {
+   "time_utc": "2026-08-18T18:00Z",
+   "discharge_cfs": 225.3,
+   "nudge_cfs": 57.9
+  },
+  {
+   "time_utc": "2026-08-18T19:00Z",
+   "discharge_cfs": 210.8,
+   "nudge_cfs": 54.0
+  },
+  {
+   "time_utc": "2026-08-18T20:00Z",
+   "discharge_cfs": 201.6,
+   "nudge_cfs": 51.6
+  },
+  {
+   "time_utc": "2026-08-18T21:00Z",
+   "discharge_cfs": 193.2,
+   "nudge_cfs": 48.4
+  },
+  {
+   "time_utc": "2026-08-18T22:00Z",
+   "discharge_cfs": 186.8,
+   "nudge_cfs": 47.0
+  },
+  {
+   "time_utc": "2026-08-18T23:00Z",
+   "discharge_cfs": 186.8,
+   "nudge_cfs": 31.4
+  },
+  {
+   "time_utc": "2026-08-19T00:00Z",
+   "discharge_cfs": 182.6,
+   "nudge_cfs": 31.1
+  },
+  {
+   "time_utc": "2026-08-19T01:00Z",
+   "discharge_cfs": 158.9,
+   "nudge_cfs": 21.9
+  },
+  {
+   "time_utc": "2026-08-19T02:00Z",
+   "discharge_cfs": 150.4,
+   "nudge_cfs": 36.0
+  },
+  {
+   "time_utc": "2026-08-19T03:00Z",
+   "discharge_cfs": 144.4,
+   "nudge_cfs": 34.3
+  },
+  {
+   "time_utc": "2026-08-19T04:00Z",
+   "discharge_cfs": 146.2,
+   "nudge_cfs": 35.3
+  },
+  {
+   "time_utc": "2026-08-19T05:00Z",
+   "discharge_cfs": 140.6,
+   "nudge_cfs": 34.3
+  },
+  {
+   "time_utc": "2026-08-19T06:00Z",
+   "discharge_cfs": 136.3,
+   "nudge_cfs": 32.8
+  },
+  {
+   "time_utc": "2026-08-19T07:00Z",
+   "discharge_cfs": 131.4,
+   "nudge_cfs": 31.1
+  },
+  {
+   "time_utc": "2026-08-19T08:00Z",
+   "discharge_cfs": 128.2,
+   "nudge_cfs": 30.4
+  },
+  {
+   "time_utc": "2026-08-19T09:00Z",
+   "discharge_cfs": 125.0,
+   "nudge_cfs": 29.3
+  },
+  {
+   "time_utc": "2026-08-19T10:00Z",
+   "discharge_cfs": 120.4,
+   "nudge_cfs": 27.9
+  },
+  {
+   "time_utc": "2026-08-19T11:00Z",
+   "discharge_cfs": 118.3,
+   "nudge_cfs": 27.2
+  },
+  {
+   "time_utc": "2026-08-19T12:00Z",
+   "discharge_cfs": 114.8,
+   "nudge_cfs": 26.1
+  },
+  {
+   "time_utc": "2026-08-19T13:00Z",
+   "discharge_cfs": 110.9,
+   "nudge_cfs": 25.1
+  },
+  {
+   "time_utc": "2026-08-19T14:00Z",
+   "discharge_cfs": 110.9,
+   "nudge_cfs": 25.1
+  },
+  {
+   "time_utc": "2026-08-19T15:00Z",
+   "discharge_cfs": 105.6,
+   "nudge_cfs": 23.3
+  },
+  {
+   "time_utc": "2026-08-19T16:00Z",
+   "discharge_cfs": 104.9,
+   "nudge_cfs": 23.0
+  },
+  {
+   "time_utc": "2026-08-19T17:00Z",
+   "discharge_cfs": 102.1,
+   "nudge_cfs": 22.2
+  },
+  {
+   "time_utc": "2026-08-19T18:00Z",
+   "discharge_cfs": 99.2,
+   "nudge_cfs": 21.2
+  },
+  {
+   "time_utc": "2026-08-19T19:00Z",
+   "discharge_cfs": 96.1,
+   "nudge_cfs": 20.5
+  },
+  {
+   "time_utc": "2026-08-19T20:00Z",
+   "discharge_cfs": 93.6,
+   "nudge_cfs": 19.8
+  },
+  {
+   "time_utc": "2026-08-19T21:00Z",
+   "discharge_cfs": 99.6,
+   "nudge_cfs": 7.4
+  },
+  {
+   "time_utc": "2026-08-19T22:00Z",
+   "discharge_cfs": 102.4,
+   "nudge_cfs": -15.5
+  },
+  {
+   "time_utc": "2026-08-19T23:00Z",
+   "discharge_cfs": 90.8,
+   "nudge_cfs": -29.0
+  },
+  {
+   "time_utc": "2026-08-20T00:00Z",
+   "discharge_cfs": 170.2,
+   "nudge_cfs": -30.0
+  },
+  {
+   "time_utc": "2026-08-20T01:00Z",
+   "discharge_cfs": 322.1,
+   "nudge_cfs": -17.7
+  },
+  {
+   "time_utc": "2026-08-20T02:00Z",
+   "discharge_cfs": 335.1,
+   "nudge_cfs": -30.7
+  },
+  {
+   "time_utc": "2026-08-20T03:00Z",
+   "discharge_cfs": 297.7,
+   "nudge_cfs": -41.0
+  },
+  {
+   "time_utc": "2026-08-20T04:00Z",
+   "discharge_cfs": 301.2,
+   "nudge_cfs": -32.8
+  },
+  {
+   "time_utc": "2026-08-20T05:00Z",
+   "discharge_cfs": 322.8,
+   "nudge_cfs": -45.9
+  },
+  {
+   "time_utc": "2026-08-20T06:00Z",
+   "discharge_cfs": 343.3,
+   "nudge_cfs": -102.1
+  },
+  {
+   "time_utc": "2026-08-20T07:00Z",
+   "discharge_cfs": 465.8,
+   "nudge_cfs": -339.7
+  },
+  {
+   "time_utc": "2026-08-20T08:00Z",
+   "discharge_cfs": 1129.7,
+   "nudge_cfs": -1334.2
+  },
+  {
+   "time_utc": "2026-08-20T09:00Z",
+   "discharge_cfs": 2476.6,
+   "nudge_cfs": -3037.1
+  },
+  {
+   "time_utc": "2026-08-20T10:00Z",
+   "discharge_cfs": 3714.4,
+   "nudge_cfs": -4846.2
+  },
+  {
+   "time_utc": "2026-08-20T11:00Z",
+   "discharge_cfs": 2758.8,
+   "nudge_cfs": -3966.5
+  },
+  {
+   "time_utc": "2026-08-20T12:00Z",
+   "discharge_cfs": 4152.3,
+   "nudge_cfs": -1415.8
+  },
+  {
+   "time_utc": "2026-08-20T13:00Z",
+   "discharge_cfs": 8480.1,
+   "nudge_cfs": 1166.8
+  },
+  {
+   "time_utc": "2026-08-20T14:00Z",
+   "discharge_cfs": 7449.3,
+   "nudge_cfs": 1384.0
+  },
+  {
+   "time_utc": "2026-08-20T15:00Z",
+   "discharge_cfs": 6201.6,
+   "nudge_cfs": 1314.8
+  },
+  {
+   "time_utc": "2026-08-20T16:00Z",
+   "discharge_cfs": 4657.7,
+   "nudge_cfs": 937.3
+  },
+  {
+   "time_utc": "2026-08-20T17:00Z",
+   "discharge_cfs": 3451.7,
+   "nudge_cfs": 681.9
+  },
+  {
+   "time_utc": "2026-08-20T18:00Z",
+   "discharge_cfs": 8055.3,
+   "nudge_cfs": 2544.1
+  },
+  {
+   "time_utc": "2026-08-20T19:00Z",
+   "discharge_cfs": 6975.7,
+   "nudge_cfs": 2162.7
+  },
+  {
+   "time_utc": "2026-08-20T20:00Z",
+   "discharge_cfs": 6392.3,
+   "nudge_cfs": 1981.9
+  },
+  {
+   "time_utc": "2026-08-20T21:00Z",
+   "discharge_cfs": 5265.4,
+   "nudge_cfs": 1575.0
+  },
+  {
+   "time_utc": "2026-08-20T22:00Z",
+   "discharge_cfs": 4543.2,
+   "nudge_cfs": 1329.6
+  },
+  {
+   "time_utc": "2026-08-20T23:00Z",
+   "discharge_cfs": 3683.0,
+   "nudge_cfs": 1028.4
+  },
+  {
+   "time_utc": "2026-08-21T00:00Z",
+   "discharge_cfs": 2368.6,
+   "nudge_cfs": 609.2
+  },
+  {
+   "time_utc": "2026-08-21T01:00Z",
+   "discharge_cfs": 1160.1,
+   "nudge_cfs": 265.9
+  },
+  {
+   "time_utc": "2026-08-21T02:00Z",
+   "discharge_cfs": 1173.2,
+   "nudge_cfs": 263.1
+  },
+  {
+   "time_utc": "2026-08-21T03:00Z",
+   "discharge_cfs": 984.6,
+   "nudge_cfs": 211.5
+  },
+  {
+   "time_utc": "2026-08-21T04:00Z",
+   "discharge_cfs": 866.3,
+   "nudge_cfs": 181.9
+  },
+  {
+   "time_utc": "2026-08-21T05:00Z",
+   "discharge_cfs": 768.4,
+   "nudge_cfs": 161.4
+  },
+  {
+   "time_utc": "2026-08-21T06:00Z",
+   "discharge_cfs": 685.8,
+   "nudge_cfs": 138.8
+  },
+  {
+   "time_utc": "2026-08-21T07:00Z",
+   "discharge_cfs": 614.8,
+   "nudge_cfs": 122.5
+  },
+  {
+   "time_utc": "2026-08-21T08:00Z",
+   "discharge_cfs": 555.9,
+   "nudge_cfs": 108.8
+  },
+  {
+   "time_utc": "2026-08-21T09:00Z",
+   "discharge_cfs": 497.2,
+   "nudge_cfs": 96.4
+  },
+  {
+   "time_utc": "2026-08-21T10:00Z",
+   "discharge_cfs": 449.2,
+   "nudge_cfs": 85.1
+  },
+  {
+   "time_utc": "2026-08-21T11:00Z",
+   "discharge_cfs": 414.6,
+   "nudge_cfs": 77.3
+  },
+  {
+   "time_utc": "2026-08-21T12:00Z",
+   "discharge_cfs": 381.4,
+   "nudge_cfs": 69.6
+  },
+  {
+   "time_utc": "2026-08-21T13:00Z",
+   "discharge_cfs": 326.0,
+   "nudge_cfs": 56.5
+  },
+  {
+   "time_utc": "2026-08-21T14:00Z",
+   "discharge_cfs": 350.7,
+   "nudge_cfs": 62.9
+  },
+  {
+   "time_utc": "2026-08-21T15:00Z",
+   "discharge_cfs": 328.1,
+   "nudge_cfs": 58.3
+  },
+  {
+   "time_utc": "2026-08-21T16:00Z",
+   "discharge_cfs": 320.0,
+   "nudge_cfs": 56.9
+  },
+  {
+   "time_utc": "2026-08-21T17:00Z",
+   "discharge_cfs": 297.0,
+   "nudge_cfs": 73.5
+  },
+  {
+   "time_utc": "2026-08-21T18:00Z",
+   "discharge_cfs": 283.9,
+   "nudge_cfs": 69.9
+  },
+  {
+   "time_utc": "2026-08-21T19:00Z",
+   "discharge_cfs": 272.3,
+   "nudge_cfs": 68.5
+  },
+  {
+   "time_utc": "2026-08-21T20:00Z",
+   "discharge_cfs": 255.0,
+   "nudge_cfs": 65.3
+  },
+  {
+   "time_utc": "2026-08-21T21:00Z",
+   "discharge_cfs": 240.5,
+   "nudge_cfs": 60.4
+  },
+  {
+   "time_utc": "2026-08-21T22:00Z",
+   "discharge_cfs": 231.7,
+   "nudge_cfs": 59.0
+  },
+  {
+   "time_utc": "2026-08-21T23:00Z",
+   "discharge_cfs": 223.2,
+   "nudge_cfs": 56.5
+  },
+  {
+   "time_utc": "2026-08-22T00:00Z",
+   "discharge_cfs": 212.2,
+   "nudge_cfs": 53.3
+  },
+  {
+   "time_utc": "2026-08-22T01:00Z",
+   "discharge_cfs": 193.9,
+   "nudge_cfs": 56.5
+  },
+  {
+   "time_utc": "2026-08-22T02:00Z",
+   "discharge_cfs": 194.2,
+   "nudge_cfs": 47.0
+  },
+  {
+   "time_utc": "2026-08-22T03:00Z",
+   "discharge_cfs": 184.7,
+   "nudge_cfs": 44.5
+  },
+  {
+   "time_utc": "2026-08-22T04:00Z",
+   "discharge_cfs": 178.3,
+   "nudge_cfs": 42.4
+  }
+ ]
+}

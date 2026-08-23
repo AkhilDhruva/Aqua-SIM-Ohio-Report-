@@ -1,0 +1,421 @@
+{
+    "metadata": {
+        ".zattrs": {
+            "NCO": "netCDF Operators version 5.1.4 (Homepage = http://nco.sf.net, Code = http://github.com/nco/nco)",
+            "TITLE": "OUTPUT FROM WRF-Hydro v5.3.0-alpha1",
+            "code_version": "v5.3.0-alpha1",
+            "coordinates": "elevation order gage_id",
+            "featureType": "timeSeries",
+            "history": "Thu Sep 28 07:58:36 2023: ncatted -O -a missing_value,streamflow,o,l,-999900 -a missing_value,q_lateral,o,l,-99990 -a missing_value,velocity,o,l,-999900 -a missing_value,qSfcLatRunoff,o,l,-999900000 -a missing_value,qBucket,o,l,-999900000 -a missing_value,qBtmVertRunoff,o,l,-9999000 /glade/scratch/mazrooei/NWMV30/Retro_comp//2023/202301050100.CHRTOUT_DOMAIN1.tmp /glade/scratch/mazrooei/NWMV30/Retro_comp//2023/202301050100.CHRTOUT_DOMAIN1.tmp\nThu Sep 28 07:58:35 2023: ncatted -O -a _FillValue,streamflow,o,l,-999900 -a _FillValue,q_lateral,o,l,-99990 -a _FillValue,velocity,o,l,-999900 -a _FillValue,qSfcLatRunoff,o,l,-999900000 -a _FillValue,qBucket,o,l,-999900000 -a _FillValue,qBtmVertRunoff,o,l,-9999000 /glade/scratch/mazrooei/NWMV30/Retro_comp//2023/202301050100.CHRTOUT_DOMAIN1.tmp /glade/scratch/mazrooei/NWMV30/Retro_comp//2023/202301050100.CHRTOUT_DOMAIN1.tmp\nThu Sep 28 07:58:33 2023: ncatted -O -a valid_range,streamflow,o,l,0,5000000 -a valid_range,q_lateral,o,l,0,500000 -a valid_range,velocity,o,l,0,5000000 -a valid_range,qSfcLatRunoff,o,l,0,2000000000 -a valid_range,qBucket,o,l,0,2000000000 -a valid_range,qBtmVertRunoff,o,l,0,20000000 /glade/scratch/mazrooei/NWMV30/Retro_comp//2023/202301050100.CHRTOUT_DOMAIN1.tmp /glade/scratch/mazrooei/NWMV30/Retro_comp//2023/202301050100.CHRTOUT_DOMAIN1.tmp\nThu Sep 28 07:58:25 2023: ncap2 -O -s streamflow=pack_int(streamflow,0.01,0.0) -s q_lateral=pack_int(q_lateral,0.1,0.0) -s velocity=pack_int(velocity,0.01,0.0) -s qSfcLatRunoff=pack_int(qSfcLatRunoff,1.e-05,0.0) -s qBucket=pack_int(qBucket,1.e-05,0.0) -s qBtmVertRunoff=pack_int(qBtmVertRunoff,0.001,0.0) /glade/campaign/ral/hap/mazrooei/NWMV30/Sym_Retro_run//2023/202301050100.CHRTOUT_DOMAIN1 /glade/scratch/mazrooei/NWMV30/Retro_comp//2023/202301050100.CHRTOUT_DOMAIN1.tmp",
+            "model_configuration": "retrospective",
+            "proj4": "+proj=lcc +units=m +a=6370000.0 +b=6370000.0 +lat_1=30.0 +lat_2=60.0 +lat_0=40.0 +lon_0=-97.0 +x_0=0 +y_0=0 +k_0=1.0 +nadgrids=@"
+        },
+        ".zgroup": {
+            "zarr_format": 2
+        },
+        "crs/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "|S1",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "crs/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "_CoordinateAxes": "latitude longitude",
+            "esri_pe_string": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]];-400 -400 1000000000;-100000 10000;-100000 10000;8.98315284119521E-09;0.001;0.001;IsHighPrecision",
+            "grid_mapping_name": "latitude longitude",
+            "inverse_flattening": 298.2572326660156,
+            "long_name": "CRS definition",
+            "longitude_of_prime_meridian": 0.0,
+            "semi_major_axis": 6378137.0,
+            "semi_minor_axis": 6356752.5,
+            "spatial_ref": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]];-400 -400 1000000000;-100000 10000;-100000 10000;8.98315284119521E-09;0.001;0.001;IsHighPrecision",
+            "transform_name": "latitude longitude"
+        },
+        "elevation/.zarray": {
+            "chunks": [
+                2776734
+            ],
+            "compressor": {
+                "id": "zstd",
+                "level": 9
+            },
+            "dtype": "<f4",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                2776734
+            ],
+            "zarr_format": 2
+        },
+        "elevation/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "feature_id"
+            ],
+            "long_name": "feature elevation",
+            "units": "meters"
+        },
+        "feature_id/.zarray": {
+            "chunks": [
+                2776734
+            ],
+            "compressor": {
+                "id": "zstd",
+                "level": 9
+            },
+            "dtype": "<i8",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                2776734
+            ],
+            "zarr_format": 2
+        },
+        "feature_id/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "feature_id"
+            ],
+            "cf_role": "timeseries_id",
+            "comment": "NHDPlusv2 ComIDs within CONUS, arbitrary Reach IDs outside of CONUS",
+            "long_name": "Reach ID"
+        },
+        "gage_id/.zarray": {
+            "chunks": [
+                2776734
+            ],
+            "compressor": {
+                "id": "zstd",
+                "level": 9
+            },
+            "dtype": "|S15",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                2776734
+            ],
+            "zarr_format": 2
+        },
+        "gage_id/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "feature_id"
+            ],
+            "coordinates": "lat lon",
+            "long_name": "NHD Gage Event ID from SOURCE_FEA field in Gages feature class"
+        },
+        "latitude/.zarray": {
+            "chunks": [
+                2776734
+            ],
+            "compressor": {
+                "id": "zstd",
+                "level": 9
+            },
+            "dtype": "<f4",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                2776734
+            ],
+            "zarr_format": 2
+        },
+        "latitude/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "feature_id"
+            ],
+            "long_name": "feature latitude",
+            "standard_name": "latitude",
+            "units": "degrees_north"
+        },
+        "longitude/.zarray": {
+            "chunks": [
+                2776734
+            ],
+            "compressor": {
+                "id": "zstd",
+                "level": 9
+            },
+            "dtype": "<f4",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                2776734
+            ],
+            "zarr_format": 2
+        },
+        "longitude/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "feature_id"
+            ],
+            "long_name": "feature longitude",
+            "standard_name": "longitude",
+            "units": "degrees_east"
+        },
+        "order/.zarray": {
+            "chunks": [
+                2776734
+            ],
+            "compressor": {
+                "id": "zstd",
+                "level": 9
+            },
+            "dtype": "<i4",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                2776734
+            ],
+            "zarr_format": 2
+        },
+        "order/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "feature_id"
+            ],
+            "long_name": "stream order"
+        },
+        "qBtmVertRunoff/.zarray": {
+            "chunks": [
+                672,
+                30000
+            ],
+            "compressor": {
+                "id": "zstd",
+                "level": 9
+            },
+            "dtype": "<i4",
+            "fill_value": -9999000,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                385704,
+                2776734
+            ],
+            "zarr_format": 2
+        },
+        "qBtmVertRunoff/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time",
+                "feature_id"
+            ],
+            "add_offset": 0.0,
+            "coordinates": "latitude longitude",
+            "grid_mapping": "crs",
+            "long_name": "Runoff from bottom of soil to bucket",
+            "missing_value": -9999000,
+            "scale_factor": 0.0010000000474974513,
+            "units": "m3",
+            "valid_range": [
+                0,
+                20000000
+            ]
+        },
+        "qBucket/.zarray": {
+            "chunks": [
+                672,
+                30000
+            ],
+            "compressor": {
+                "id": "zstd",
+                "level": 9
+            },
+            "dtype": "<i4",
+            "fill_value": -999900000,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                385704,
+                2776734
+            ],
+            "zarr_format": 2
+        },
+        "qBucket/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time",
+                "feature_id"
+            ],
+            "add_offset": 0.0,
+            "coordinates": "latitude longitude",
+            "grid_mapping": "crs",
+            "long_name": "Flux from gw bucket",
+            "missing_value": -999900000,
+            "scale_factor": 9.999999747378752e-06,
+            "units": "m3 s-1",
+            "valid_range": [
+                0,
+                2000000000
+            ]
+        },
+        "qSfcLatRunoff/.zarray": {
+            "chunks": [
+                672,
+                30000
+            ],
+            "compressor": {
+                "id": "zstd",
+                "level": 9
+            },
+            "dtype": "<i4",
+            "fill_value": -999900000,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                385704,
+                2776734
+            ],
+            "zarr_format": 2
+        },
+        "qSfcLatRunoff/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time",
+                "feature_id"
+            ],
+            "add_offset": 0.0,
+            "coordinates": "latitude longitude",
+            "grid_mapping": "crs",
+            "long_name": "Runoff from terrain routing",
+            "missing_value": -999900000,
+            "scale_factor": 9.999999747378752e-06,
+            "units": "m3 s-1",
+            "valid_range": [
+                0,
+                2000000000
+            ]
+        },
+        "q_lateral/.zarray": {
+            "chunks": [
+                672,
+                30000
+            ],
+            "compressor": {
+                "id": "zstd",
+                "level": 9
+            },
+            "dtype": "<i4",
+            "fill_value": -99990,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                385704,
+                2776734
+            ],
+            "zarr_format": 2
+        },
+        "q_lateral/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time",
+                "feature_id"
+            ],
+            "add_offset": 0.0,
+            "coordinates": "latitude longitude",
+            "grid_mapping": "crs",
+            "long_name": "Runoff into channel reach",
+            "missing_value": -99990,
+            "scale_factor": 0.10000000149011612,
+            "units": "m3 s-1",
+            "valid_range": [
+                0,
+                500000
+            ]
+        },
+        "streamflow/.zarray": {
+            "chunks": [
+                672,
+                30000
+            ],
+            "compressor": {
+                "id": "zstd",
+                "level": 9
+            },
+            "dtype": "<i4",
+            "fill_value": -999900,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                385704,
+                2776734
+            ],
+            "zarr_format": 2
+        },
+        "streamflow/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time",
+                "feature_id"
+            ],
+            "add_offset": 0.0,
+            "coordinates": "latitude longitude",
+            "grid_mapping": "crs",
+            "long_name": "River Flow",
+            "missing_value": -999900,
+            "scale_factor": 0.009999999776482582,
+            "units": "m3 s-1"
+        },
+        "time/.zarray": {
+            "chunks": [
+                672
+            ],
+            "compressor": {
+                "id": "zstd",
+                "level": 9
+            },
+            "dtype": "<i8",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                385704
+            ],
+            "zarr_format": 2
+        },
+        "time/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "calendar": "proleptic_gregorian",
+            "long_name": "valid output time",
+            "standard_name": "time",
+            "units": "hours since 1979-02-01T01:00:00"
+        },
+        "velocity/.zarray": {
+            "chunks": [
+                672,
+                30000
+            ],
+            "compressor": {
+                "id": "zstd",
+                "level": 9
+            },
+            "dtype": "<i4",
+            "fill_value": -999900,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                385704,
+                2776734
+            ],
+            "zarr_format": 2
+        },
+        "velocity/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time",
+                "feature_id"
+            ],
+            "add_offset": 0.0,
+            "coordinates": "latitude longitude",
+            "grid_mapping": "crs",
+            "long_name": "River Velocity",
+            "missing_value": -999900,
+            "scale_factor": 0.009999999776482582,
+            "units": "m s-1"
+        }
+    },
+    "zarr_consolidated_format": 1
+}

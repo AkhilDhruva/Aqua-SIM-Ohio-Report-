@@ -1,0 +1,97 @@
+{
+ "source": "USGS National Transportation Dataset (NTD) Ohio, TIGER-derived (source_dat='2018 May MAF/TIGER' etc.)",
+ "reason": "www2.census.gov blocked (HTTP 000, TIGER2024 and TIGER2023, 2 tries each); NTD substitute from reachable prd-tnm bucket",
+ "files": [
+  "roads/TRAN_Ohio/Shape/Trans_RoadSegment_0.shp (550000 feats)",
+  "roads/TRAN_Ohio/Shape/Trans_RoadSegment_1.shp (395437 feats)"
+ ],
+ "crs": "EPSG:4269",
+ "county_totals": {
+  "Franklin_39049": 57296,
+  "Licking_39089": 24795
+ },
+ "name_field_note": "NTD 'name' holds local street name; route numbers in interstate/us_route/state_rout fields. Interstates use TIGER style name 'I- 70'. Where no local name exists, name is 'State Rte N' (e.g. 'State Rte 158').",
+ "pataskala_box": {
+  "US_40": {
+   "us_route": "40",
+   "names": {
+    "National Rd": 67,
+    "National Rd SW": 8,
+    "Main St": 2
+   },
+   "mtfcc": "S1200"
+  },
+  "SR_310": {
+   "state_rout": "310 (+ one '16,310')",
+   "names": {
+    "Hazelton-Etna Rd SW": 71,
+    "Columbus Granville Rd": 1
+   }
+  },
+  "SR_16": {
+   "state_rout": "16",
+   "names": {
+    "Broad St SW": 20,
+    "Columbus-Newark Rd": 15,
+    "W Broad St": 8,
+    "E Broad St": 6
+   }
+  },
+  "Broad": [
+   "Broad St SW",
+   "W Broad St",
+   "E Broad St",
+   "Broadway St",
+   "Broad View Ct"
+  ],
+  "Main": [
+   "Main St"
+  ],
+  "I_70_also_clips_box": {
+   "name": "I- 70",
+   "mtfcc": "S1100",
+   "segs": 18
+  },
+  "SR_158": {
+   "names": {
+    "State Rte 158": 3
+   }
+  }
+ },
+ "buckeye_box": {
+  "I_70": {
+   "name": "I- 70",
+   "mtfcc": "S1100",
+   "interstate": "70",
+   "segs": 23
+  },
+  "SR_79": {
+   "state_rout": "79",
+   "names": {
+    "Hebron Rd": 58,
+    "Walnut Rd": 16,
+    "Walnut St": 15
+   }
+  },
+  "US_40_also": {
+   "us_route": "40",
+   "names": {
+    "E Main St": 28,
+    "National Rd SE": 25,
+    "W Main St": 13
+   }
+  },
+  "SR_360": {
+   "state_rout": "360",
+   "names": {
+    "N Bank Rd": 15
+   }
+  }
+ },
+ "literal_TIGER_FULLNAME_strings_not_found": [
+  "US Hwy 40",
+  "State Rte 310",
+  "State Rte 16",
+  "State Rte 79"
+ ]
+}

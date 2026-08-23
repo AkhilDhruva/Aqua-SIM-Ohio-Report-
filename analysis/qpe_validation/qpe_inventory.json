@@ -1,0 +1,1530 @@
+{
+ "products": {
+  "A": {
+   "name": "RadarOnly_QPE_15M_00.00",
+   "cadence_min": 15,
+   "files": [
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-171500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-171500.grib2",
+     "sha256": "684f6040d928f29d0f6d990dc0d5bf1ecc8c860bdda26f2e11514ec7ec95f220",
+     "valid_time_utc": "2026-08-19T17:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-173000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-173000.grib2",
+     "sha256": "e7973cd850e2edb4a8a631005100b38105b3342adce0aec51140af6e1bb59f5d",
+     "valid_time_utc": "2026-08-19T17:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-174500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-174500.grib2",
+     "sha256": "d144e7582b668d33ce2d31229ce3e3c58f3c29ca1898d54db0f4f08cd9b8e18c",
+     "valid_time_utc": "2026-08-19T17:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-180000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-180000.grib2",
+     "sha256": "30caee4d761b8395d79ccb7eeb698dee3a744c74c59c8ba15e948eeece4dd4a5",
+     "valid_time_utc": "2026-08-19T18:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-181500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-181500.grib2",
+     "sha256": "ba619cd1c218f7dab2d6d293e63c94ba9e11e5c74087c8f6985e599fb7665baf",
+     "valid_time_utc": "2026-08-19T18:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-183000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-183000.grib2",
+     "sha256": "26ed16395d81bb8893c7111d315c3260799d87bafc11f0191bf09e7226bec6eb",
+     "valid_time_utc": "2026-08-19T18:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-184500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-184500.grib2",
+     "sha256": "10cc1680b8ade7d36f0bd52f552a660c112d39a16a3c7656be7aa9078f21a0b1",
+     "valid_time_utc": "2026-08-19T18:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-190000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-190000.grib2",
+     "sha256": "7f1c2768159e8994333a16e6fb98d34a1268e39fe5826e7d3f647afa1715e32f",
+     "valid_time_utc": "2026-08-19T19:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-191500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-191500.grib2",
+     "sha256": "4294ca9842a9eed3ee74405965063a31b08020f176c22f7df29e26a853c33854",
+     "valid_time_utc": "2026-08-19T19:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-193000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-193000.grib2",
+     "sha256": "9e28903469fb4f976b5196dead9fb623e1ee20d9531e048c65ea0f8817ed4dcd",
+     "valid_time_utc": "2026-08-19T19:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-194500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-194500.grib2",
+     "sha256": "ad58973ec981daf9a52475af81efeca1c15ef6683524b2af5d762490cbac7860",
+     "valid_time_utc": "2026-08-19T19:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-200000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-200000.grib2",
+     "sha256": "e4e1e27a7006f644c1ef65c744a9083a8bee9f7301454ddcf4648b0cc4367609",
+     "valid_time_utc": "2026-08-19T20:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-201500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-201500.grib2",
+     "sha256": "9f2edf42d249d0720b0303df70bbe85406dc4f09718a9ed97f55405b976ea604",
+     "valid_time_utc": "2026-08-19T20:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-203000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-203000.grib2",
+     "sha256": "3034dc99b5d4738e4da663e21c97afdcdcac51c5c868f8671010146a7bc13adb",
+     "valid_time_utc": "2026-08-19T20:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-204500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-204500.grib2",
+     "sha256": "779798b51e2794b2750e8606a8cec272046c68a9caf56971e201f07fdd0cb510",
+     "valid_time_utc": "2026-08-19T20:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-210000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-210000.grib2",
+     "sha256": "00ece9660e334261284bc530e82af6d01dbdb4b9cdbc94921839ff5daf7baa3e",
+     "valid_time_utc": "2026-08-19T21:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-211500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-211500.grib2",
+     "sha256": "0a746e0ff4c62e3c2900baf18248edd0d137d7fdd2ffd8d52cc88f851fe87151",
+     "valid_time_utc": "2026-08-19T21:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-213000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-213000.grib2",
+     "sha256": "5a315281cc9ad28f94cec713eee3a964a31c9aa638ae1cfb5c3ca65df4094373",
+     "valid_time_utc": "2026-08-19T21:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-214500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-214500.grib2",
+     "sha256": "b3a93c3fa77b9e25d4f3dc9846baafdec75c0372ad021a087e7a072b1ab82e91",
+     "valid_time_utc": "2026-08-19T21:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-220000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-220000.grib2",
+     "sha256": "5ce53568e2d70238bfbc457fff3ab849f57b36b107b0555021ef694efb168cc6",
+     "valid_time_utc": "2026-08-19T22:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-221500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-221500.grib2",
+     "sha256": "e8c9171d343852f34c60ac2a043f5af237418c7edb0ecc6925316bfc045248a9",
+     "valid_time_utc": "2026-08-19T22:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-223000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-223000.grib2",
+     "sha256": "41f108514f8f37da3b0a9d6ed397af3a752446c8d159d1d617c754a4271ff2e6",
+     "valid_time_utc": "2026-08-19T22:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-224500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-224500.grib2",
+     "sha256": "1e3662ab75301fad84faa39210281a7abd50b12a8608618153668c24854f9fbd",
+     "valid_time_utc": "2026-08-19T22:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-230000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-230000.grib2",
+     "sha256": "b7e4c72d36ad1f3f9ace9a071646e076078b20d4957daf1fb5b52488f371e24c",
+     "valid_time_utc": "2026-08-19T23:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-231500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-231500.grib2",
+     "sha256": "3ef6139d67c092bb48372e494ea0cd52aabcf0f260b9196772157cc2b7617cd9",
+     "valid_time_utc": "2026-08-19T23:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-233000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-233000.grib2",
+     "sha256": "3aadd0660fe5e72f48a3a5a8a3b6d3ec0620703740f1b9c247b42c1d33c3ff6a",
+     "valid_time_utc": "2026-08-19T23:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260819/MRMS_RadarOnly_QPE_15M_00.00_20260819-234500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260819-234500.grib2",
+     "sha256": "617b806d8735dabb3cc2027f279bcd37a41af6053ac843a177a903583c2eaa12",
+     "valid_time_utc": "2026-08-19T23:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-000000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-000000.grib2",
+     "sha256": "b32e853831a35f5b2d2071870c08c96996aa716822cdd3f91a15531120eea6d5",
+     "valid_time_utc": "2026-08-20T00:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-001500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-001500.grib2",
+     "sha256": "7cbd66ae2d56c015b4ab937fc561b1da0fbe447c9dc28f0f77270f5f193b391e",
+     "valid_time_utc": "2026-08-20T00:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-003000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-003000.grib2",
+     "sha256": "9f2c4bf3ed98d3ecfd968eb564183813e41ee3c4ef892747c6bef38dd72cdcab",
+     "valid_time_utc": "2026-08-20T00:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-004500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-004500.grib2",
+     "sha256": "7794059a432b76e8739e8243445e6f300be1d094f36b257aafd49ff2354b4541",
+     "valid_time_utc": "2026-08-20T00:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-010000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-010000.grib2",
+     "sha256": "176d327d818307676865765af3079a1f28bff8ce4f938ab5ef7ad4a2eb8188ce",
+     "valid_time_utc": "2026-08-20T01:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-011500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-011500.grib2",
+     "sha256": "28cff95331da450dd9c65970b8320e603af6db5f8db4acba4e0fda096f38b036",
+     "valid_time_utc": "2026-08-20T01:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-013000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-013000.grib2",
+     "sha256": "7893dd46273513fffce5e3f84a4bbd8807a5b8938a85e5312bdb54f2c2415c14",
+     "valid_time_utc": "2026-08-20T01:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-014500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-014500.grib2",
+     "sha256": "4ea355f251038e6cbb3c5689071128c2f993921d1c1544ba4bdcd6492ce3d7f3",
+     "valid_time_utc": "2026-08-20T01:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-020000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-020000.grib2",
+     "sha256": "a12cd22bf0dffe2d3cae866e51147cf2cb9d316ff9aa47c227111b3a3f77c932",
+     "valid_time_utc": "2026-08-20T02:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-021500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-021500.grib2",
+     "sha256": "e784c4e7b17e9876cd112467151a5158ee5b15b32e45b7d8166ef8bcae82bafd",
+     "valid_time_utc": "2026-08-20T02:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-023000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-023000.grib2",
+     "sha256": "93531cf8bb9638a9a0adafae1864003b99f7e7c211f884e978cc3d5ad70055ff",
+     "valid_time_utc": "2026-08-20T02:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-024500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-024500.grib2",
+     "sha256": "bb16d78facfbe89d2ded0c1c68b7a10aa32b693f093f3209a18b288d77fba83f",
+     "valid_time_utc": "2026-08-20T02:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-030000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-030000.grib2",
+     "sha256": "7d644ba4723db0e3615eb2daaafe9d562859a1b67b30ed388c13d7361f6460ca",
+     "valid_time_utc": "2026-08-20T03:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-031500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-031500.grib2",
+     "sha256": "ade49b4af596e6753ebd4bf291dac766db0587d4c30a6ed56ec6926e360ec6ba",
+     "valid_time_utc": "2026-08-20T03:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-033000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-033000.grib2",
+     "sha256": "59a870ccfce54edd5ad651da715f426e8eaeab70e6925bf831d7f1ce2eb080d3",
+     "valid_time_utc": "2026-08-20T03:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-034500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-034500.grib2",
+     "sha256": "f4145e118114132d7588032373b95e20fcc09c0d11788230e7852070d8068104",
+     "valid_time_utc": "2026-08-20T03:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-040000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-040000.grib2",
+     "sha256": "894f54d0205844e953185cde2ac5d4b897c331b767ce80ebc7525a9169bcab9d",
+     "valid_time_utc": "2026-08-20T04:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-041500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-041500.grib2",
+     "sha256": "062ed7d1473e3ddbcf41ce4b7fd11c272940763301b2da180dd8fbe0d0a8ebc6",
+     "valid_time_utc": "2026-08-20T04:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-043000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-043000.grib2",
+     "sha256": "49fd294dc43aafb36c56d13ff6bf2f9c30c61ffa271a89c9bffa0a262c42641c",
+     "valid_time_utc": "2026-08-20T04:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-044500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-044500.grib2",
+     "sha256": "9cb2f83843215db0897fa2c1fc1235cecac02686655a513dd20900394562d92b",
+     "valid_time_utc": "2026-08-20T04:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-050000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-050000.grib2",
+     "sha256": "effabea36a362d7bc5786cbee5c555430c9c92f47f99e5737f04db50360e53fe",
+     "valid_time_utc": "2026-08-20T05:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-051500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-051500.grib2",
+     "sha256": "17077eb2d9b20a0feae0c0c00134345ae7bbd5fcac780382ad96431db2fc1236",
+     "valid_time_utc": "2026-08-20T05:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-053000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-053000.grib2",
+     "sha256": "2377d4f9c4b7fec29e5c11d7b3a6537a9f175681c9efe1ce3f07395b5f0cec41",
+     "valid_time_utc": "2026-08-20T05:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-054500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-054500.grib2",
+     "sha256": "59aeb3d30c95bba70c7628a996bb0be2a09461e4680eccafd2053473a16808fc",
+     "valid_time_utc": "2026-08-20T05:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-060000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-060000.grib2",
+     "sha256": "8ef2a108c914d5ba57e5870400cd02a9560d83a7eceba88e1b52cd44ce308548",
+     "valid_time_utc": "2026-08-20T06:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-061500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-061500.grib2",
+     "sha256": "417b92c0c2e5ce67e65ec995d571301b404edcf7b17846b50d224f10eb17f4c2",
+     "valid_time_utc": "2026-08-20T06:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-063000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-063000.grib2",
+     "sha256": "71136430501ea131edaefdcd33c900cfee66bc93b4380ad01632c4fd26b31c10",
+     "valid_time_utc": "2026-08-20T06:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-064500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-064500.grib2",
+     "sha256": "2a4d53a1914fb6e25ee3df0399aaac03a603ef0d01cd56476f9f1b68ee173609",
+     "valid_time_utc": "2026-08-20T06:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-070000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-070000.grib2",
+     "sha256": "acbafc99ea9ab38e24c45690c1f8d6d6438071f2b2cc985b777fb60b485ad558",
+     "valid_time_utc": "2026-08-20T07:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-071500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-071500.grib2",
+     "sha256": "d6b05d6581a9da9af3674fbc94f5b5086e389fae78cecc9f8a93396a4efcceca",
+     "valid_time_utc": "2026-08-20T07:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-073000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-073000.grib2",
+     "sha256": "1650b89069a544fcce172d93ee2fda71374332cfad270c92b60546e173d902e3",
+     "valid_time_utc": "2026-08-20T07:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-074500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-074500.grib2",
+     "sha256": "0f20478451c0d00eef025eed4c0e8cb54aa8c4eb83e5731cce4cf0ccb7e5a7ba",
+     "valid_time_utc": "2026-08-20T07:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-080000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-080000.grib2",
+     "sha256": "7cda1ead840a955d83114a8d69275b76813702fc5043ffc2c7736fed9a88d00e",
+     "valid_time_utc": "2026-08-20T08:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-081500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-081500.grib2",
+     "sha256": "5a16b3a17a52bb92e4255190775eb8d23ed88261ef7fa4b79bd4ebe2e2d1fbf6",
+     "valid_time_utc": "2026-08-20T08:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-083000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-083000.grib2",
+     "sha256": "12323a198bf97b9822ae73c33295a4ea4c7c45464e14d59459f3a3f907cf3948",
+     "valid_time_utc": "2026-08-20T08:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-084500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-084500.grib2",
+     "sha256": "e341d21f40e4029875736e428d0b68fbd7e079667fbc7fb8e942330f9dc1adf7",
+     "valid_time_utc": "2026-08-20T08:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-090000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-090000.grib2",
+     "sha256": "8e086c164bde273bd705f0e09274a8f571b60c8fe894f80eb18245b0248d1f60",
+     "valid_time_utc": "2026-08-20T09:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-091500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-091500.grib2",
+     "sha256": "a0d04e57ecb62837ac7bc44ad4645c51ac13d4a04975eb93aef86714dcde2251",
+     "valid_time_utc": "2026-08-20T09:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-093000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-093000.grib2",
+     "sha256": "ff453152829a534ed7bc46675696739b05e766b1d7c30e791cfe04ccdb7cdf54",
+     "valid_time_utc": "2026-08-20T09:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-094500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-094500.grib2",
+     "sha256": "113d796903fc59ec61ed16af4f342a88ee152240cb4fbcb7570f146e05410d4e",
+     "valid_time_utc": "2026-08-20T09:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-100000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-100000.grib2",
+     "sha256": "b9a433d0d2e04f99d7ee95ce02470a6ee63f1bb6d0dc7825e0b953a16c6c9cd9",
+     "valid_time_utc": "2026-08-20T10:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-101500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-101500.grib2",
+     "sha256": "391c41be1af4053b040cd479906e4ea05feafe4e006b365c4fc7d6bd64170494",
+     "valid_time_utc": "2026-08-20T10:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-103000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-103000.grib2",
+     "sha256": "3d441578c3743860c0301f6041b84240ce5fbe877982bbf8f369692ae3ce7835",
+     "valid_time_utc": "2026-08-20T10:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-104500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-104500.grib2",
+     "sha256": "d4c5907796fee24e233f52a65b107bd0b94c67ced678120b0323a67a94c9cc5e",
+     "valid_time_utc": "2026-08-20T10:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-110000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-110000.grib2",
+     "sha256": "1c86e58e2b32e9e3ecf3b555798963909ba242bd6761ee3b0301abb465af3ffc",
+     "valid_time_utc": "2026-08-20T11:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-111500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-111500.grib2",
+     "sha256": "419be9e68915a422b5f6d1ec8dca3a96563b5cb77ba2ce974de28cb9ca21d58a",
+     "valid_time_utc": "2026-08-20T11:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-113000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-113000.grib2",
+     "sha256": "e9e9e00f816c0b6b1811bbde644ae1dc56b516cb722e7dc767572937b015efe3",
+     "valid_time_utc": "2026-08-20T11:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-114500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-114500.grib2",
+     "sha256": "dd09dbb812ce03ef7f2cff0c0a22627312de1ca7f1f21c4d80aaad1707793a3a",
+     "valid_time_utc": "2026-08-20T11:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-120000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-120000.grib2",
+     "sha256": "361ec39e31bffb8811edce23e6b1d26fe9b4650ff3f01bf97d07e4a72c6e8c1e",
+     "valid_time_utc": "2026-08-20T12:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-121500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-121500.grib2",
+     "sha256": "440873562de541e23dd51d32e0a41eb159ea42baf5fe12c4ea1ce9a2ba05b8e7",
+     "valid_time_utc": "2026-08-20T12:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-123000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-123000.grib2",
+     "sha256": "430cfbd47e1d387848fc626c5a9320e48062ce6339fef9a900e16a9ccff3de4f",
+     "valid_time_utc": "2026-08-20T12:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-124500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-124500.grib2",
+     "sha256": "fc1374d30478c1e2c8a05eac7c7a1b85dc26c526d930a64ca73e7a340fb5bef5",
+     "valid_time_utc": "2026-08-20T12:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-130000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-130000.grib2",
+     "sha256": "94ae5bf5feec4f8e38b3a9d9cf95c29102cc909c25ca237dd6e7ad26a31ffdcc",
+     "valid_time_utc": "2026-08-20T13:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-131500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-131500.grib2",
+     "sha256": "caefbb84733bbc1812c678e3b8d32d976b6f8890a8cd0e68432c08331d914cc6",
+     "valid_time_utc": "2026-08-20T13:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-133000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-133000.grib2",
+     "sha256": "266c4a695f32584af45269f06a27fc44849e57767e7318bd8c32f2f3cf573341",
+     "valid_time_utc": "2026-08-20T13:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-134500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-134500.grib2",
+     "sha256": "940bf209da8c1f6ee0d9baa350266d60cf8d1576cde5d56b370a1f15b7f8fdfc",
+     "valid_time_utc": "2026-08-20T13:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-140000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-140000.grib2",
+     "sha256": "8b345656431954e0995fe715e5974db3ba8355a10548b37d89479bbf09016240",
+     "valid_time_utc": "2026-08-20T14:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-141500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-141500.grib2",
+     "sha256": "e8088a0384ac654966602eae8e8b19ad07fa97cc0e55f94339c77831c1813760",
+     "valid_time_utc": "2026-08-20T14:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-143000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-143000.grib2",
+     "sha256": "e2cffb0744f296406d4e42a1bd17ea824460cdb428b6d693857c14042933be15",
+     "valid_time_utc": "2026-08-20T14:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-144500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-144500.grib2",
+     "sha256": "f5d0d2af13f46138a98e7c5773b07ce5d14a6dea68df86e3b47b960761b9e936",
+     "valid_time_utc": "2026-08-20T14:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-150000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-150000.grib2",
+     "sha256": "42ecbd6e441d18402a263ef4349ecc1d0f4d7b3c4451082e6144059bb04df181",
+     "valid_time_utc": "2026-08-20T15:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-151500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-151500.grib2",
+     "sha256": "81ffa6e00baa4845c2c9a2410a7fc8707d15475e954ced5f656d40f6bd107008",
+     "valid_time_utc": "2026-08-20T15:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-153000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-153000.grib2",
+     "sha256": "161e429beaca33f7abd67120bc27378d640fcb46023e0ec7c36694380a1accbb",
+     "valid_time_utc": "2026-08-20T15:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-154500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-154500.grib2",
+     "sha256": "c231538df8f5c536226794c93419d318683e0cf1c0ceffd8d1fc6941a159668b",
+     "valid_time_utc": "2026-08-20T15:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-160000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-160000.grib2",
+     "sha256": "b944848ad3d3879e934b07993b5b3eb603309bccb759d94e87e8af89885b25e9",
+     "valid_time_utc": "2026-08-20T16:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-161500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-161500.grib2",
+     "sha256": "7a9e62395607ea23b4ec019ddc893934b2735a027a7e3d2d7539db2619af8fb9",
+     "valid_time_utc": "2026-08-20T16:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-163000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-163000.grib2",
+     "sha256": "d62faf21c1976c6cebe9249c4a9526f9f0d6db6c56d96a50d54af61a8f771648",
+     "valid_time_utc": "2026-08-20T16:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-164500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-164500.grib2",
+     "sha256": "e4e28168d54a1cf27411b6179ae3412ebb7579fb17ac2d7f8d5e2f4baf00e4bb",
+     "valid_time_utc": "2026-08-20T16:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-170000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-170000.grib2",
+     "sha256": "c1adc71e12449d5d9711debf2cc79bcf398a0fde97b80397da9391e31e4ea76c",
+     "valid_time_utc": "2026-08-20T17:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-171500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-171500.grib2",
+     "sha256": "3edcd8b880a9374bfa3c2ef801d650d36ab6f750506935a6213ced7b179699ad",
+     "valid_time_utc": "2026-08-20T17:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-173000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-173000.grib2",
+     "sha256": "cc4794dac854eee010e42f27b173b3ac61c3ac275cf68d18cab407845de6e7d3",
+     "valid_time_utc": "2026-08-20T17:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-174500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-174500.grib2",
+     "sha256": "b3ae6755a751d08c078b55970ed1cd64ef75c10f60e384b669dfc0ddaa53d98a",
+     "valid_time_utc": "2026-08-20T17:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-180000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-180000.grib2",
+     "sha256": "8af391aee19ae9fba23d74a87c2a19bca20b4bf240d8e85c4ab3d25ae076b493",
+     "valid_time_utc": "2026-08-20T18:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-181500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-181500.grib2",
+     "sha256": "294453416ac2e0d1496a70085d888f819a27aeb12dbdfad544f1e7649b91cd75",
+     "valid_time_utc": "2026-08-20T18:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-183000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-183000.grib2",
+     "sha256": "3a021a5e07bfe48166791ecbfe196b2037c4a79c6c2c710d16b43f34296df9b9",
+     "valid_time_utc": "2026-08-20T18:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-184500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-184500.grib2",
+     "sha256": "fdb9840440cacef9f7a92471158ac1565d01d28e4746932cda69eb25daf9afe0",
+     "valid_time_utc": "2026-08-20T18:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-190000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-190000.grib2",
+     "sha256": "8f2653365598a579fd4b5dd7212843dae02d65e7ac5e357147d7389e81d3e343",
+     "valid_time_utc": "2026-08-20T19:00:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-191500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-191500.grib2",
+     "sha256": "d7d8b466c9ab674b62d3754b04be79f94e4bed3f4056a4a4f39c6b8dfb16a8f8",
+     "valid_time_utc": "2026-08-20T19:15:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-193000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-193000.grib2",
+     "sha256": "a3680aeacf866fd5af14294fdd6dc4ea42c3f4751b88e3c01969facc8e0b7548",
+     "valid_time_utc": "2026-08-20T19:30:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-194500.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-194500.grib2",
+     "sha256": "aacc388618628f0751056daa33003ab3a5ba22929e89f2c537120bb9170fa026",
+     "valid_time_utc": "2026-08-20T19:45:00Z"
+    },
+    {
+     "key": "CONUS/RadarOnly_QPE_15M_00.00/20260820/MRMS_RadarOnly_QPE_15M_00.00_20260820-200000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/A/MRMS_RadarOnly_QPE_15M_00.00_20260820-200000.grib2",
+     "sha256": "a894e5cab97eec5d13da5058030a4a6ca979f7b539688944436b0a2585543a8a",
+     "valid_time_utc": "2026-08-20T20:00:00Z"
+    }
+   ],
+   "point_totals_mm": {
+    "CMH_airport": 82.6,
+    "Pataskala": 66.4,
+    "Buckeye_Lake": 48.2,
+    "Franklinton": 71.5
+   },
+   "aoi_mean_total_mm": 59.92,
+   "aoi_mean_series": [
+    {
+     "valid_utc": "2026-08-19T17:15:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-19T17:30:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-19T17:45:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-19T18:00:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-19T18:15:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-19T18:30:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-19T18:45:00Z",
+     "mm": 0.0042
+    },
+    {
+     "valid_utc": "2026-08-19T19:00:00Z",
+     "mm": 0.0382
+    },
+    {
+     "valid_utc": "2026-08-19T19:15:00Z",
+     "mm": 0.1955
+    },
+    {
+     "valid_utc": "2026-08-19T19:30:00Z",
+     "mm": 0.3618
+    },
+    {
+     "valid_utc": "2026-08-19T19:45:00Z",
+     "mm": 0.3634
+    },
+    {
+     "valid_utc": "2026-08-19T20:00:00Z",
+     "mm": 0.3243
+    },
+    {
+     "valid_utc": "2026-08-19T20:15:00Z",
+     "mm": 0.2048
+    },
+    {
+     "valid_utc": "2026-08-19T20:30:00Z",
+     "mm": 0.2583
+    },
+    {
+     "valid_utc": "2026-08-19T20:45:00Z",
+     "mm": 0.236
+    },
+    {
+     "valid_utc": "2026-08-19T21:00:00Z",
+     "mm": 0.2594
+    },
+    {
+     "valid_utc": "2026-08-19T21:15:00Z",
+     "mm": 0.2156
+    },
+    {
+     "valid_utc": "2026-08-19T21:30:00Z",
+     "mm": 0.1827
+    },
+    {
+     "valid_utc": "2026-08-19T21:45:00Z",
+     "mm": 0.0489
+    },
+    {
+     "valid_utc": "2026-08-19T22:00:00Z",
+     "mm": 0.1408
+    },
+    {
+     "valid_utc": "2026-08-19T22:15:00Z",
+     "mm": 0.1614
+    },
+    {
+     "valid_utc": "2026-08-19T22:30:00Z",
+     "mm": 0.0977
+    },
+    {
+     "valid_utc": "2026-08-19T22:45:00Z",
+     "mm": 0.2495
+    },
+    {
+     "valid_utc": "2026-08-19T23:00:00Z",
+     "mm": 0.6457
+    },
+    {
+     "valid_utc": "2026-08-19T23:15:00Z",
+     "mm": 0.7285
+    },
+    {
+     "valid_utc": "2026-08-19T23:30:00Z",
+     "mm": 0.5015
+    },
+    {
+     "valid_utc": "2026-08-19T23:45:00Z",
+     "mm": 0.3911
+    },
+    {
+     "valid_utc": "2026-08-20T00:00:00Z",
+     "mm": 0.4163
+    },
+    {
+     "valid_utc": "2026-08-20T00:15:00Z",
+     "mm": 0.5371
+    },
+    {
+     "valid_utc": "2026-08-20T00:30:00Z",
+     "mm": 0.5009
+    },
+    {
+     "valid_utc": "2026-08-20T00:45:00Z",
+     "mm": 0.5318
+    },
+    {
+     "valid_utc": "2026-08-20T01:00:00Z",
+     "mm": 0.3868
+    },
+    {
+     "valid_utc": "2026-08-20T01:15:00Z",
+     "mm": 0.4345
+    },
+    {
+     "valid_utc": "2026-08-20T01:30:00Z",
+     "mm": 0.4117
+    },
+    {
+     "valid_utc": "2026-08-20T01:45:00Z",
+     "mm": 0.5154
+    },
+    {
+     "valid_utc": "2026-08-20T02:00:00Z",
+     "mm": 0.4527
+    },
+    {
+     "valid_utc": "2026-08-20T02:15:00Z",
+     "mm": 0.3467
+    },
+    {
+     "valid_utc": "2026-08-20T02:30:00Z",
+     "mm": 0.3157
+    },
+    {
+     "valid_utc": "2026-08-20T02:45:00Z",
+     "mm": 0.2852
+    },
+    {
+     "valid_utc": "2026-08-20T03:00:00Z",
+     "mm": 0.2049
+    },
+    {
+     "valid_utc": "2026-08-20T03:15:00Z",
+     "mm": 0.3083
+    },
+    {
+     "valid_utc": "2026-08-20T03:30:00Z",
+     "mm": 0.4514
+    },
+    {
+     "valid_utc": "2026-08-20T03:45:00Z",
+     "mm": 0.6166
+    },
+    {
+     "valid_utc": "2026-08-20T04:00:00Z",
+     "mm": 0.7981
+    },
+    {
+     "valid_utc": "2026-08-20T04:15:00Z",
+     "mm": 0.9412
+    },
+    {
+     "valid_utc": "2026-08-20T04:30:00Z",
+     "mm": 1.0029
+    },
+    {
+     "valid_utc": "2026-08-20T04:45:00Z",
+     "mm": 0.8771
+    },
+    {
+     "valid_utc": "2026-08-20T05:00:00Z",
+     "mm": 0.8156
+    },
+    {
+     "valid_utc": "2026-08-20T05:15:00Z",
+     "mm": 0.7583
+    },
+    {
+     "valid_utc": "2026-08-20T05:30:00Z",
+     "mm": 0.822
+    },
+    {
+     "valid_utc": "2026-08-20T05:45:00Z",
+     "mm": 1.0527
+    },
+    {
+     "valid_utc": "2026-08-20T06:00:00Z",
+     "mm": 0.9195
+    },
+    {
+     "valid_utc": "2026-08-20T06:15:00Z",
+     "mm": 1.316
+    },
+    {
+     "valid_utc": "2026-08-20T06:30:00Z",
+     "mm": 1.8471
+    },
+    {
+     "valid_utc": "2026-08-20T06:45:00Z",
+     "mm": 1.9623
+    },
+    {
+     "valid_utc": "2026-08-20T07:00:00Z",
+     "mm": 2.1022
+    },
+    {
+     "valid_utc": "2026-08-20T07:15:00Z",
+     "mm": 2.5956
+    },
+    {
+     "valid_utc": "2026-08-20T07:30:00Z",
+     "mm": 2.591
+    },
+    {
+     "valid_utc": "2026-08-20T07:45:00Z",
+     "mm": 2.9858
+    },
+    {
+     "valid_utc": "2026-08-20T08:00:00Z",
+     "mm": 3.3727
+    },
+    {
+     "valid_utc": "2026-08-20T08:15:00Z",
+     "mm": 3.3616
+    },
+    {
+     "valid_utc": "2026-08-20T08:30:00Z",
+     "mm": 2.9898
+    },
+    {
+     "valid_utc": "2026-08-20T08:45:00Z",
+     "mm": 3.5199
+    },
+    {
+     "valid_utc": "2026-08-20T09:00:00Z",
+     "mm": 3.0818
+    },
+    {
+     "valid_utc": "2026-08-20T09:15:00Z",
+     "mm": 2.7073
+    },
+    {
+     "valid_utc": "2026-08-20T09:30:00Z",
+     "mm": 1.9539
+    },
+    {
+     "valid_utc": "2026-08-20T09:45:00Z",
+     "mm": 1.2227
+    },
+    {
+     "valid_utc": "2026-08-20T10:00:00Z",
+     "mm": 0.7709
+    },
+    {
+     "valid_utc": "2026-08-20T10:15:00Z",
+     "mm": 0.4027
+    },
+    {
+     "valid_utc": "2026-08-20T10:30:00Z",
+     "mm": 0.1227
+    },
+    {
+     "valid_utc": "2026-08-20T10:45:00Z",
+     "mm": 0.0289
+    },
+    {
+     "valid_utc": "2026-08-20T11:00:00Z",
+     "mm": 0.0261
+    },
+    {
+     "valid_utc": "2026-08-20T11:15:00Z",
+     "mm": 0.0524
+    },
+    {
+     "valid_utc": "2026-08-20T11:30:00Z",
+     "mm": 0.248
+    },
+    {
+     "valid_utc": "2026-08-20T11:45:00Z",
+     "mm": 0.2238
+    },
+    {
+     "valid_utc": "2026-08-20T12:00:00Z",
+     "mm": 0.0739
+    },
+    {
+     "valid_utc": "2026-08-20T12:15:00Z",
+     "mm": 0.0151
+    },
+    {
+     "valid_utc": "2026-08-20T12:30:00Z",
+     "mm": 0.0003
+    },
+    {
+     "valid_utc": "2026-08-20T12:45:00Z",
+     "mm": 0.0012
+    },
+    {
+     "valid_utc": "2026-08-20T13:00:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-20T13:15:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-20T13:30:00Z",
+     "mm": 0.0004
+    },
+    {
+     "valid_utc": "2026-08-20T13:45:00Z",
+     "mm": 0.0069
+    },
+    {
+     "valid_utc": "2026-08-20T14:00:00Z",
+     "mm": 0.0057
+    },
+    {
+     "valid_utc": "2026-08-20T14:15:00Z",
+     "mm": 0.0003
+    },
+    {
+     "valid_utc": "2026-08-20T14:30:00Z",
+     "mm": 0.0003
+    },
+    {
+     "valid_utc": "2026-08-20T14:45:00Z",
+     "mm": 0.0002
+    },
+    {
+     "valid_utc": "2026-08-20T15:00:00Z",
+     "mm": 0.0006
+    },
+    {
+     "valid_utc": "2026-08-20T15:15:00Z",
+     "mm": 0.0002
+    },
+    {
+     "valid_utc": "2026-08-20T15:30:00Z",
+     "mm": 0.0001
+    },
+    {
+     "valid_utc": "2026-08-20T15:45:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-20T16:00:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-20T16:15:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-20T16:30:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-20T16:45:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-20T17:00:00Z",
+     "mm": 0.0002
+    },
+    {
+     "valid_utc": "2026-08-20T17:15:00Z",
+     "mm": 0.0005
+    },
+    {
+     "valid_utc": "2026-08-20T17:30:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-20T17:45:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-20T18:00:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-20T18:15:00Z",
+     "mm": 0.0038
+    },
+    {
+     "valid_utc": "2026-08-20T18:30:00Z",
+     "mm": 0.0038
+    },
+    {
+     "valid_utc": "2026-08-20T18:45:00Z",
+     "mm": 0.0005
+    },
+    {
+     "valid_utc": "2026-08-20T19:00:00Z",
+     "mm": 0.0003
+    },
+    {
+     "valid_utc": "2026-08-20T19:15:00Z",
+     "mm": 0.0013
+    },
+    {
+     "valid_utc": "2026-08-20T19:30:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-20T19:45:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-20T20:00:00Z",
+     "mm": 0.0023
+    }
+   ],
+   "aoi_mean_series_hourly": [
+    {
+     "valid_utc": "2026-08-19T18:00:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-19T19:00:00Z",
+     "mm": 0.0424
+    },
+    {
+     "valid_utc": "2026-08-19T20:00:00Z",
+     "mm": 1.245
+    },
+    {
+     "valid_utc": "2026-08-19T21:00:00Z",
+     "mm": 0.9584
+    },
+    {
+     "valid_utc": "2026-08-19T22:00:00Z",
+     "mm": 0.5879
+    },
+    {
+     "valid_utc": "2026-08-19T23:00:00Z",
+     "mm": 1.1544
+    },
+    {
+     "valid_utc": "2026-08-20T00:00:00Z",
+     "mm": 2.0374
+    },
+    {
+     "valid_utc": "2026-08-20T01:00:00Z",
+     "mm": 1.9566
+    },
+    {
+     "valid_utc": "2026-08-20T02:00:00Z",
+     "mm": 1.8143
+    },
+    {
+     "valid_utc": "2026-08-20T03:00:00Z",
+     "mm": 1.1525
+    },
+    {
+     "valid_utc": "2026-08-20T04:00:00Z",
+     "mm": 2.1744
+    },
+    {
+     "valid_utc": "2026-08-20T05:00:00Z",
+     "mm": 3.6369
+    },
+    {
+     "valid_utc": "2026-08-20T06:00:00Z",
+     "mm": 3.5524
+    },
+    {
+     "valid_utc": "2026-08-20T07:00:00Z",
+     "mm": 7.2277
+    },
+    {
+     "valid_utc": "2026-08-20T08:00:00Z",
+     "mm": 11.5451
+    },
+    {
+     "valid_utc": "2026-08-20T09:00:00Z",
+     "mm": 12.9531
+    },
+    {
+     "valid_utc": "2026-08-20T10:00:00Z",
+     "mm": 6.6549
+    },
+    {
+     "valid_utc": "2026-08-20T11:00:00Z",
+     "mm": 0.5804
+    },
+    {
+     "valid_utc": "2026-08-20T12:00:00Z",
+     "mm": 0.5981
+    },
+    {
+     "valid_utc": "2026-08-20T13:00:00Z",
+     "mm": 0.0166
+    },
+    {
+     "valid_utc": "2026-08-20T14:00:00Z",
+     "mm": 0.0131
+    },
+    {
+     "valid_utc": "2026-08-20T15:00:00Z",
+     "mm": 0.0013
+    },
+    {
+     "valid_utc": "2026-08-20T16:00:00Z",
+     "mm": 0.0004
+    },
+    {
+     "valid_utc": "2026-08-20T17:00:00Z",
+     "mm": 0.0002
+    },
+    {
+     "valid_utc": "2026-08-20T18:00:00Z",
+     "mm": 0.0006
+    },
+    {
+     "valid_utc": "2026-08-20T19:00:00Z",
+     "mm": 0.0084
+    },
+    {
+     "valid_utc": "2026-08-20T20:00:00Z",
+     "mm": 0.0036
+    }
+   ]
+  },
+  "B": {
+   "name": "MultiSensor_QPE_01H_Pass2_00.00",
+   "cadence_min": 60,
+   "files": [
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260819/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-180000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-180000.grib2",
+     "sha256": "24654ec50374895f04cb6a9967f829a8d6241f39437c91372fe7effae8b20281",
+     "valid_time_utc": "2026-08-19T18:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260819/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-190000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-190000.grib2",
+     "sha256": "02462b1eb5d3da194531d406c2d04c86162f75e0cca0bb47118f18d62593144a",
+     "valid_time_utc": "2026-08-19T19:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260819/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-200000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-200000.grib2",
+     "sha256": "2cf166bbaba256a8403ad43ef7ff8bf63909245cf9bbc7a5813ec02b140400b5",
+     "valid_time_utc": "2026-08-19T20:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260819/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-210000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-210000.grib2",
+     "sha256": "b4b0305afc46d8effc38acd26d5693a007ac8aaf6caa53d9255433c28bbae643",
+     "valid_time_utc": "2026-08-19T21:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260819/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-220000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-220000.grib2",
+     "sha256": "ad3223c8bbdf0c1315285335afab6d0176f53c516b4aa914e5b3bd964b95309e",
+     "valid_time_utc": "2026-08-19T22:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260819/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-230000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-230000.grib2",
+     "sha256": "21300c963d4a7c7b76c80d7464bc9a5751a18ed928381370255c1f87ab4e2269",
+     "valid_time_utc": "2026-08-19T23:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-000000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-000000.grib2",
+     "sha256": "0ebe20f687c67020f6a36048cde30d2fbb7a2fa732bb398164caa6840d1535bf",
+     "valid_time_utc": "2026-08-20T00:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-010000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-010000.grib2",
+     "sha256": "be1e34966fb919c54ecc6139fd7c51a10e807a9efb09ba7a01f0918bf2001830",
+     "valid_time_utc": "2026-08-20T01:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-020000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-020000.grib2",
+     "sha256": "528dc488a1ce8e28f172634c67904fd40434083f1fc4252e176d4616fe83c886",
+     "valid_time_utc": "2026-08-20T02:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-030000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-030000.grib2",
+     "sha256": "e9a854df13ea7960a844fc1dd325a61aaa24c4f83f170ffb31012b51b747627b",
+     "valid_time_utc": "2026-08-20T03:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-040000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-040000.grib2",
+     "sha256": "edf48766f6d52a4796b383a77e110d07e2f833c688e58094eab7168a95a6973e",
+     "valid_time_utc": "2026-08-20T04:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-050000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-050000.grib2",
+     "sha256": "f77ed8165585fd4c31fcea86448beb1c25c22d899a7a0d080a61d53e0e69ec0d",
+     "valid_time_utc": "2026-08-20T05:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-060000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-060000.grib2",
+     "sha256": "e21924ca31c7c9a43909d68c4b1ab94ac61a7dd0d50e81ef19690d253be0d7f5",
+     "valid_time_utc": "2026-08-20T06:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-070000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-070000.grib2",
+     "sha256": "4a4eb38c46ac0fdfd1e699b84f91d26c4597e0ee852de3623b8c0e399a8adb35",
+     "valid_time_utc": "2026-08-20T07:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-080000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-080000.grib2",
+     "sha256": "f1db7c382aeb108764586c204a70b1ac75c00a87dcdafc3f119355fa43133d17",
+     "valid_time_utc": "2026-08-20T08:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-090000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-090000.grib2",
+     "sha256": "8fb5ebe5391249bd833882ef49b133686c35e006f858257f27e181c690754e99",
+     "valid_time_utc": "2026-08-20T09:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-100000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-100000.grib2",
+     "sha256": "7d169cbf2f1082ca6202c235af287e30fe2cbcd50713855addf166810c49a87b",
+     "valid_time_utc": "2026-08-20T10:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-110000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-110000.grib2",
+     "sha256": "980488b616a2ed472ff53b5aed990113c7b98f16a1d235515780da010c5277c0",
+     "valid_time_utc": "2026-08-20T11:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-120000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-120000.grib2",
+     "sha256": "12bf4f7b5ecf121551bd68bc472a09f8caceb8c53815fc55dba8a004fa2a4326",
+     "valid_time_utc": "2026-08-20T12:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-130000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-130000.grib2",
+     "sha256": "8319dac852ec13caa096f98a5adfba419f206bce0162a45bdf71b842377c5cc3",
+     "valid_time_utc": "2026-08-20T13:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-140000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-140000.grib2",
+     "sha256": "518b809d558bca31be2eec106796cd7702d12542e3f3515a0da4a46d2f9d64b7",
+     "valid_time_utc": "2026-08-20T14:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-150000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-150000.grib2",
+     "sha256": "435af71a28b3f167254a41df8f79fa90d950f2119ec1cf4235551682f7b711cd",
+     "valid_time_utc": "2026-08-20T15:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-160000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-160000.grib2",
+     "sha256": "95d5d9ee76bdc8e1265ebb7847e795f318ee59ff2a22293f6686db74ed870294",
+     "valid_time_utc": "2026-08-20T16:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-170000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-170000.grib2",
+     "sha256": "a7a2df3b11b451b5efd980054122b227a5c2bef5066c1e6350700ff6f9826beb",
+     "valid_time_utc": "2026-08-20T17:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-180000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-180000.grib2",
+     "sha256": "b137ad8e279aa099ca4ddb718e87e1d6883c921fe3cce307e6794278e29de366",
+     "valid_time_utc": "2026-08-20T18:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-190000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-190000.grib2",
+     "sha256": "5d0df8c8cb6910c346ee5fb993cc3e99e89557be3327a9c34b73a2ff3018f9ab",
+     "valid_time_utc": "2026-08-20T19:00:00Z"
+    },
+    {
+     "key": "CONUS/MultiSensor_QPE_01H_Pass2_00.00/20260820/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-200000.grib2.gz",
+     "local_path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-200000.grib2",
+     "sha256": "65926ef6098241f7d1878daac5bef21b19c8ec2f320badbde2d49ccdaa3cfc78",
+     "valid_time_utc": "2026-08-20T20:00:00Z"
+    }
+   ],
+   "point_totals_mm": {
+    "CMH_airport": 99.7,
+    "Pataskala": 94.1,
+    "Buckeye_Lake": 60.5,
+    "Franklinton": 85.8
+   },
+   "aoi_mean_total_mm": 69.97,
+   "aoi_mean_series": [
+    {
+     "valid_utc": "2026-08-19T18:00:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-19T19:00:00Z",
+     "mm": 0.0272
+    },
+    {
+     "valid_utc": "2026-08-19T20:00:00Z",
+     "mm": 0.98
+    },
+    {
+     "valid_utc": "2026-08-19T21:00:00Z",
+     "mm": 0.8862
+    },
+    {
+     "valid_utc": "2026-08-19T22:00:00Z",
+     "mm": 0.8061
+    },
+    {
+     "valid_utc": "2026-08-19T23:00:00Z",
+     "mm": 0.6658
+    },
+    {
+     "valid_utc": "2026-08-20T00:00:00Z",
+     "mm": 1.7697
+    },
+    {
+     "valid_utc": "2026-08-20T01:00:00Z",
+     "mm": 1.9395
+    },
+    {
+     "valid_utc": "2026-08-20T02:00:00Z",
+     "mm": 2.0278
+    },
+    {
+     "valid_utc": "2026-08-20T03:00:00Z",
+     "mm": 0.8572
+    },
+    {
+     "valid_utc": "2026-08-20T04:00:00Z",
+     "mm": 2.6078
+    },
+    {
+     "valid_utc": "2026-08-20T05:00:00Z",
+     "mm": 5.4264
+    },
+    {
+     "valid_utc": "2026-08-20T06:00:00Z",
+     "mm": 4.4907
+    },
+    {
+     "valid_utc": "2026-08-20T07:00:00Z",
+     "mm": 8.7123
+    },
+    {
+     "valid_utc": "2026-08-20T08:00:00Z",
+     "mm": 15.4462
+    },
+    {
+     "valid_utc": "2026-08-20T09:00:00Z",
+     "mm": 13.4345
+    },
+    {
+     "valid_utc": "2026-08-20T10:00:00Z",
+     "mm": 8.8051
+    },
+    {
+     "valid_utc": "2026-08-20T11:00:00Z",
+     "mm": 0.6418
+    },
+    {
+     "valid_utc": "2026-08-20T12:00:00Z",
+     "mm": 0.4294
+    },
+    {
+     "valid_utc": "2026-08-20T13:00:00Z",
+     "mm": 0.002
+    },
+    {
+     "valid_utc": "2026-08-20T14:00:00Z",
+     "mm": 0.0036
+    },
+    {
+     "valid_utc": "2026-08-20T15:00:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-20T16:00:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-20T17:00:00Z",
+     "mm": 0.0
+    },
+    {
+     "valid_utc": "2026-08-20T18:00:00Z",
+     "mm": 0.0002
+    },
+    {
+     "valid_utc": "2026-08-20T19:00:00Z",
+     "mm": 0.006
+    },
+    {
+     "valid_utc": "2026-08-20T20:00:00Z",
+     "mm": 0.001
+    }
+   ]
+  }
+ },
+ "gauge_comparison": [
+  {
+   "site": "CMH_airport",
+   "observed_mm": 153.2,
+   "qpeA_mm": 82.6,
+   "qpeB_mm": 99.7,
+   "bias_A_pct": -46.1,
+   "bias_B_pct": -34.9
+  },
+  {
+   "site": "Pataskala",
+   "observed_mm": 123.2,
+   "qpeA_mm": 66.4,
+   "qpeB_mm": 94.1,
+   "bias_A_pct": -46.1,
+   "bias_B_pct": -23.6
+  },
+  {
+   "site": "Buckeye_Lake",
+   "observed_mm": 63.0,
+   "qpeA_mm": 48.2,
+   "qpeB_mm": 60.5,
+   "bias_A_pct": -23.5,
+   "bias_B_pct": -4.0
+  },
+  {
+   "site": "Franklinton",
+   "observed_mm": null,
+   "qpeA_mm": 71.5,
+   "qpeB_mm": 85.8,
+   "bias_A_pct": null,
+   "bias_B_pct": null
+  }
+ ],
+ "reader": "rasterio",
+ "notes": "Source: s3://noaa-mrms-pds (AWS Open Data), reachable via proxy; all 135 objects downloaded on first pass, gunzipped, sha256 of each .grib2 in sha256sums.txt. QPE-A = RadarOnly_QPE_15M_00.00 (exists for both dates; 108 files valid 2026-08-19T17:15Z..2026-08-20T20:00Z so its summed accumulation period 17:00Z->20:00Z exactly matches QPE-B's 27 hourly files valid 18Z..20Z). Grid: 3500x7000, 0.01 deg, GDAL transform origin (-130.0, 55.0), lat descending from 55.0; CRS is GRIB-native geographic (sphere a=6378160). Units mm; nodata not flagged in metadata - negative values (-3 observed, also -1 per spec) masked as missing before all statistics. No AOI cells were missing in any timestep; no timesteps absent from S3. All-zero AOI fields occur only at the dry start (19th 17:15-19:00Z) and after the event ended (~13Z on the 20th) - consistent between products, not an anomaly. AOI mean = arithmetic mean over the 75x40-cell window (-83.20,39.80,-82.45,40.20); point values are nearest-cell. Pataskala observed_mm is the mean of 4 gauges (136.1/128.0/119.1/109.7). Franklinton has no gauge; modeled totals only. Both products verify low against gauges over this 27-h window (A -24..-46%, B -4..-35%); bias reported, NOT corrected. Observed 'event totals' may include rain outside the hindcast window, which would inflate apparent negative bias. Reader: rasterio (GDAL GRIB driver) opened all files; pygrib fallback not needed."
+}

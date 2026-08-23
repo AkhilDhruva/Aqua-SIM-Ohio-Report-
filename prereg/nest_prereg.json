@@ -1,0 +1,109 @@
+{
+  "purpose": "PRE-REGISTRATION of the Phase-2 nested-hindcast design. Written BEFORE any effect-side research (closure timestamps, gauge peaks, warning times) was read by the orchestrator. Every choice below is cause-side: terrain, QPE, road/stream geometry, standard engineering thresholds. Nothing here may be changed after effect data is read, except compute-budget coarsening of dx, which must be logged with its reason.",
+  "written_utc": "2026-08-22T05:0xZ (before recon agents returned)",
+  "nests": {
+    "franklinton": {
+      "bbox_wgs84": [-83.07, 39.93, -82.97, 39.99],
+      "role": "urban pluvial + Scioto river interaction",
+      "target_dx_m": 4.0,
+      "notes": "buildings as closed cells if footprint data reachable; floodwall present in LiDAR"
+    },
+    "pataskala": {
+      "bbox_wgs84": [-82.72, 39.945, -82.61, 40.025],
+      "role": "flash-pluvial / small-channel / road-crossing test; includes US-40 (National Road) corridor through Etna for the detour analysis",
+      "target_dx_m": 5.0
+    },
+    "buckeye": {
+      "bbox_wgs84": [-82.53, 39.905, -82.43, 39.965],
+      "role": "South Fork Licking + Buckeye Lake + I-70 embankment / SR-79 crossing hydraulics",
+      "target_dx_m": 4.0
+    }
+  },
+  "forcing": {
+    "primary": "MRMS MultiSensor_QPE_01H_Pass2 (QPE-B, retrospective best estimate)",
+    "operational_replay": "MRMS RadarOnly QPE (QPE-A, 15-min if available) — used for lead-time analysis; solver is causal so a single QPE-A-forced run IS a chronological replay; QPE-A product latency (~2 min) is added when quoting warning times",
+    "no_calibration": "QPE is never scaled/corrected using flood observations; gauge-vs-QPE bias is reported, not applied",
+    "sim_window_utc": ["2026-08-19T18:00Z", "2026-08-20T12:00Z minimum; extended to cover QPE rain end + 4 h drain-down"]
+  },
+  "infiltration_ensemble": {
+    "I0": "0 mm/hr (saturated antecedent bound) — primary, all runs",
+    "I1": "3 mm/hr constant (saturated clay-loam steady rate) — sensitivity, pataskala nest + parent",
+    "I2": "soil-derived — only if a reachable soils dataset is found; else declared not run"
+  },
+  "boundary_conditions": {
+    "method": "Dirichlet stage strips on nest edges taken from the 60 m parent QPE-B run, recorded at <=5-min cadence at nest boundary cells; nests also receive full QPE rain-on-grid",
+    "franklinton_caveat": "parent domain ends at 40.20N; Scioto/Olentangy inflow generated north of that is NOT represented — mainstem stage will be biased low; declared, not tuned"
+  },
+  "hydraulic_geometry_policy": {
+    "culverts": "at each TIGER road x NHD flowline crossing where the DTM shows a continuous embankment (no open water gap along the flowline), add an orifice connection with cd_area = 1.5 m^2 (typical single box culvert), crest = embankment top; bridges (gaps already present in bare-earth DTM) are left as-is",
+    "manning": {"roads_buffer_8m": 0.013, "nhd_channel_buffer_10m": 0.035, "default": 0.05},
+    "buildings": "closed no-flow cells where footprint coverage >= 0.5 and dx <= 10 m, if footprint data reachable",
+    "no_effect_tuning": "no geometry, roughness, or threshold may be adjusted using observed flood locations/timings"
+  },
+  "road_inundation_thresholds": {
+    "caution_m": 0.15,
+    "impassable_m": 0.30,
+    "basis": "FHWA/NWS guidance: ~12 in of moving water floats passenger vehicles",
+    "warning_definition": "t_warn(road segment) = first model time when >= 3 contiguous carriageway cells exceed impassable_m",
+    "segments_of_record": ["I-70 at SR-79 / South Fork Licking crossing", "US-40 through Etna-Pataskala corridor", "SR-310 Main St Pataskala incl. South Fork crossing", "SR-79 near lake", "West Broad St Franklinton"]
+  },
+  "scoring_definitions": {
+    "gauge_comparison": "for any USGS gauge inside a nest: model water-surface stage at gauge cell vs observed stage; report rise-limb RMSE, peak error (m), time-to-peak error (min), threshold-crossing timing error (min); observed datum offset handled by comparing RISE above pre-event baseline, not absolute stage",
+    "lead_time": "LeadTime_i = T_observed_impact_i - T_model_warning_i using QPE-A replay; negative lead times reported as-is",
+    "extent": "qualitative overlay + wet-area fraction per corridor; no threshold retuning"
+  },
+  "frozen_runs_untouched": ["run_mid", "run_low"],
+  "repo_untouched": "/home/user/aqua-sim is never modified",
+  "amendments": [
+    {
+      "utc": "before any effect-side agent results were read",
+      "reason": "compute budget: 4 CPU cores / 15 GB RAM; NumPy single-core throughput ~2e7 cell-steps/s makes 4-5 m nests (>8e11 cell-steps) infeasible in-session",
+      "changes": {
+        "franklinton.target_dx_m": 6.0,
+        "pataskala.target_dx_m": 6.0,
+        "buckeye.target_dx_m": 5.0,
+        "buckeye.bbox_wgs84": [-82.53, 39.905, -82.44, 39.965],
+        "nest_frame_interval": "3600 s (timing analysis uses 60 s probes, not frames)",
+        "sim_window": "t0 = first QPE interval with AOI-mean rate > 0.5 mm/h minus 1 h; end = last wet interval + 4 h drain-down; cap 16 h"
+      },
+      "note": "driven purely by hardware; no effect data consulted"
+    },
+    {
+      "utc": "after gauge-agent return, before any effect-side (closure/warning) research was read",
+      "reason": "include the S Fork Licking blw Kirkersville gauged reach (03144816, 39.964 -82.595) inside the pataskala nest as a timing anchor; gauge LOCATION is infrastructure (cause-side) — its observed series stays unread until scoring",
+      "changes": {"pataskala.bbox_wgs84": [-82.72, 39.945, -82.585, 40.025]},
+      "note": "observed hydrograph source is NWM analysis_assim (USGS-assimilated) because direct USGS endpoints are egress-blocked; labeled as such in scoring"
+    },
+    {
+      "utc": "AFTER effect research was read — declared transparently",
+      "reason": "the I-70/Buckeye Lake closure was driven by the SLOW fluvial crest of the South Fork Licking (observed crest ~Aug 21 midday, ~43-46 h after model t0), far beyond the pre-registered 26 h cap. Extending the simulated window is justified by basin-routing first principles (a ~700 km^2 basin with in-line lake storage has >24 h lag); a longer window cannot steer the model toward the observed answer — it only lets the model's own dynamics play out. No forcing, geometry, roughness or threshold was changed.",
+      "changes": {
+        "parent_extended_run": "run_qpeB_parent_ext with cap 56 h (rain unchanged; ends 13Z Aug 20; everything after is pure routing)",
+        "buckeye.target_dx_m": 6.0,
+        "buckeye.window_cap_h": 56,
+        "buckeye.parent_bc_source": "run_qpeB_parent_ext"
+      },
+      "flag": "this amendment postdates effect exposure and is labeled as such in all reporting"
+    },
+    {
+      "utc": "after extended-parent inspection",
+      "finding": "the scalar drainage term (storm-sewer proxy, 5 mm/hr effective) linearly drains routed river water — the extended parent's I-70/South Fork probe decays at exactly 0.005 m/hr after the flash peak instead of rising to the observed Aug 21 fluvial crest. Structural cause identified BEFORE seeing any nest result: multi-day river routing was never in this term's design scope (also absent: baseflow, upstream-of-domain inflow, Buckeye Lake dam/spillway operations).",
+      "action": "the pre-registered buckeye nest runs unchanged (drainage on); an additional SENSITIVITY member run_nest_buckeye_B_ext_nodrain disables the drain proxy to isolate how much of the missing crest that term explains. Labeled post-hoc sensitivity — never merged into the primary scoring.",
+      "flag": "post-effect, hypothesis-driven sensitivity; primary scoring remains the pre-registered configuration"
+    },
+    {
+      "utc": "compute amendment #4 — measured infeasibility, not a scientific choice",
+      "reason": "the wide nests were killed after measurement showed the storm-phase CFL cost is unaffordable: frame intervals grew 0.2 -> 29.5 -> 101.2 min as the parent's deep river stage reached the nest boundaries (dt = cfl*dx/sqrt(g*h) collapses below 1 s, ~5000 steps per simulated hour over 1.5-3M cells). Remaining work measured at 30-100+ h per nest on 4 cores.",
+      "changes": {
+        "domains": "corridor extents replace wide extents; RESOLUTION IS PRESERVED (6 m; pataskala 8 m) — extent was cut rather than physics resolution, the lesser compromise",
+        "franklinton_c": [-83.058, 39.948, -83.015, 39.985],
+        "pataskala_c": [-82.7, 39.955, -82.585, 39.998],
+        "buckeye_c": [-82.512, 39.918, -82.462, 39.968],
+        "window": "0-22 h for all three (was 26 / 56 h)",
+        "bc": "boundary stages reconstructed from completed parent FRAMES (30-min cadence) rather than the 300 s live record, since the live record only covers the original wide perimeters; cadence limitation recorded in each BC file"
+      },
+      "scientific_justification_for_the_22h_window": "the Case A vs Case B discriminator does NOT require the Aug 21 fluvial crest. The parent claimed 'I-70 impassable' at model hour 16.4 (10:25Z Aug 20). Whether that signal is real road inundation or 60 m smearing of adjacent channel water is decided AT THAT MOMENT, by comparing carriageway cells against channel cells at 6 m. That is a 0-22 h question. The separate question of whether the model can reproduce the delayed fluvial crest is already answered NEGATIVELY by the extended parent (drainage-proxy defect) and is reported as a limitation.",
+      "cost": "franklinton_c loses the Scioto 03221646 gauge probe (outside the corridor); buckeye_c loses nothing after the north extension; wide partial output retained under run_nest_*_wide_partial"
+    }
+  ]
+}

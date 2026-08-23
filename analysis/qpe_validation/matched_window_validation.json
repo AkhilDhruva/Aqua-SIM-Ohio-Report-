@@ -1,0 +1,75 @@
+{
+  "Pataskala": {
+    "obs_in": [
+      5.36,
+      5.04,
+      4.69,
+      4.32,
+      4.27,
+      3.67
+    ],
+    "note": "NWS event page (multiple gauges)",
+    "qpeA_point_in": 2.61,
+    "qpeA_nb_in": [
+      2.43,
+      2.93,
+      3.55
+    ],
+    "qpeB_point_in": 3.7,
+    "qpeB_nb_in": [
+      3.42,
+      3.83,
+      4.35
+    ]
+  },
+  "BuckeyeLake": {
+    "obs_in": [
+      2.48
+    ],
+    "note": "NWS event page (single gauge, unverified in press)",
+    "qpeA_point_in": 1.9,
+    "qpeA_nb_in": [
+      1.69,
+      2.07,
+      2.44
+    ],
+    "qpeB_point_in": 2.38,
+    "qpeB_nb_in": [
+      2.08,
+      2.41,
+      2.69
+    ]
+  },
+  "CMH_airport": {
+    "obs_in": null,
+    "note": "6.03 in EXCLUDED: multi-day cumulative, not event total",
+    "qpeA_point_in": 3.25,
+    "qpeA_nb_in": [
+      2.91,
+      3.55,
+      4.45
+    ],
+    "qpeB_point_in": 3.93,
+    "qpeB_nb_in": [
+      3.61,
+      4.06,
+      4.85
+    ]
+  },
+  "Franklinton": {
+    "obs_in": null,
+    "note": "no gauge",
+    "qpeA_point_in": 2.81,
+    "qpeA_nb_in": [
+      2.59,
+      2.97,
+      3.46
+    ],
+    "qpeB_point_in": 3.38,
+    "qpeB_nb_in": [
+      3.24,
+      3.43,
+      3.83
+    ]
+  }
+}

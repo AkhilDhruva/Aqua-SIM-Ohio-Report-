@@ -1,0 +1,80 @@
+{
+  "question": "Was the parent model's early I-70 threshold crossing (model hour 16.4 = 2026-08-20T10:25Z) the SAME causal mechanism that closed I-70 at hour 28 (22:00Z)? Case A = genuinely predictive fluvial pathway; Case B = coincidental early local wetting.",
+  "verdict": "CASE B \u2014 the early signal is NOT the fluvial pathway that closed the road.",
+  "confidence": "high for the parent (60 m) signal; nest dynamics pending as confirmation of mechanism, not of direction",
+  "evidence": [
+    {
+      "line": "1. Observed routing timing (model-independent)",
+      "facts": {
+        "parent_impassable_h": 16.4,
+        "upstream_kirkersville_peak_h": 19.0,
+        "downstream_hebron_buckeye_peak_h": 47.0,
+        "observed_routing_lag_h": 28.0,
+        "bclo1_crest_at_I70_h": 42.8,
+        "odot_closure_h": 28.0
+      },
+      "argument": "A routed flood wave cannot reach a downstream point before its own upstream peak. The parent declared I-70 impassable 2.6 h BEFORE the upstream South Fork gauge at Kirkersville even peaked, and 26 h before the crest at the crossing itself. The signal therefore cannot be the wave that closed the road.",
+      "source": "NOAA NWM v3 analysis_assim (USGS-nudged) + NWS/press anchors"
+    },
+    {
+      "line": "2. Sub-grid geometry (deterministic, storm-independent)",
+      "facts": {
+        "parent_cell_bed_m": 267.45,
+        "channel_invert_m": 265.57,
+        "carriageway_median_m": 269.51,
+        "deficit_m": 2.07,
+        "position_channel0_road1": 0.48,
+        "parent_water_surface_at_impassable_m": 267.75,
+        "freeboard_to_real_pavement_m": 1.77
+      },
+      "argument": "The single 60 m cell at the I-70/South Fork crossing carries a bed 2.07 m below the true carriageway, roughly midway to the channel invert. When that cell reports 0.30 m ('impassable'), its water surface is still 1.77 m BELOW the real pavement. The parent is reporting channel/floodplain water as road inundation.",
+      "source": "USGS 3DEP 1 m LiDAR vs the 60 m resampled parent grid"
+    }
+  ],
+  "bias_direction": {
+    "headline": "Smearing inflates apparent Case A at stream crossings, and suppresses detection where the coarse bed sits above the pavement.",
+    "inflating_case_A": [
+      {
+        "probe": "wbroad_hilltop",
+        "freeboard_m": 4.15
+      },
+      {
+        "probe": "sr310_sf_crossing",
+        "freeboard_m": 3.44
+      },
+      {
+        "probe": "i70_sf_licking",
+        "freeboard_m": 1.77
+      }
+    ],
+    "trustworthy_within_0.5m": [
+      "sr79_hebron_rd",
+      "main_broad_pataskala",
+      "us40_hebron",
+      "kirkersville_gauge_03144816",
+      "franklinton_core"
+    ],
+    "suppressing_detection": [
+      {
+        "probe": "us40_east",
+        "freeboard_m": -0.55
+      },
+      {
+        "probe": "i70_sr79",
+        "freeboard_m": -0.71
+      },
+      {
+        "probe": "us40_etna",
+        "freeboard_m": -3.18
+      },
+      {
+        "probe": "olentangy_gauge_03227107",
+        "freeboard_m": -5.04
+      }
+    ],
+    "net": "3 of 12 corridor probes generate false 'impassable' declarations; 4 of 12 would miss real road flooding. A 60 m screening grid is therefore NOT usable for road-level closure decisions in either direction."
+  },
+  "consequence_for_the_earlier_claim": "The previously reported '+695 min lead time' on the I-70 closure is RETRACTED as a like-for-like warning claim. The model was not 11.6 h early on the same event; it was signalling a different (pluvial/channel) mechanism at a location whose coarse-grid elevation is not the road surface.",
+  "what_the_model_genuinely_could_not_do": "Reproduce the delayed fluvial crest at all: the extended 56 h parent decays at the drainage-proxy rate (0.005 m/hr) instead of rising to the hour-43 crest. Two structural causes: (a) the scalar storm-drain term bleeds routed river water; (b) no lake storage, dam/spillway operation, baseflow, or upstream-of-domain inflow is represented. The 28 h observed routing lag is outside the model's physics as configured.",
+  "pending": "Corridor nests at 6-8 m will show whether the carriageway cells themselves wet at the flash peak \u2014 confirming mechanism. Direction of the finding does not depend on them."
+}

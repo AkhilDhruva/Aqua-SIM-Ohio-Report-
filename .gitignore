@@ -1,0 +1,12 @@
+# Bulk public inputs — replaceable; identity preserved in evidence/source_manifest.json
+data/raw/
+data/cache/
+checkpoints/
+*.tif
+*.grib2
+*.npy
+*.npz
+*.woff2
+__pycache__/
+*.pyc
+_print.html

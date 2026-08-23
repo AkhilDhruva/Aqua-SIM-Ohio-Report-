@@ -1,0 +1,11 @@
+{
+  "utc": "AFTER effect research was read \u2014 declared transparently",
+  "reason": "the I-70/Buckeye Lake closure was driven by the SLOW fluvial crest of the South Fork Licking (observed crest ~Aug 21 midday, ~43-46 h after model t0), far beyond the pre-registered 26 h cap. Extending the simulated window is justified by basin-routing first principles (a ~700 km^2 basin with in-line lake storage has >24 h lag); a longer window cannot steer the model toward the observed answer \u2014 it only lets the model's own dynamics play out. No forcing, geometry, roughness or threshold was changed.",
+  "changes": {
+    "parent_extended_run": "run_qpeB_parent_ext with cap 56 h (rain unchanged; ends 13Z Aug 20; everything after is pure routing)",
+    "buckeye.target_dx_m": 6.0,
+    "buckeye.window_cap_h": 56,
+    "buckeye.parent_bc_source": "run_qpeB_parent_ext"
+  },
+  "flag": "this amendment postdates effect exposure and is labeled as such in all reporting"
+}

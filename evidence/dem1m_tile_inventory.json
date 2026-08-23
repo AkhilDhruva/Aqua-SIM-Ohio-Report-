@@ -1,0 +1,249 @@
+{
+ "boxes": {
+  "franklinton": [
+   -83.07,
+   39.93,
+   -82.97,
+   39.99
+  ],
+  "pataskala": [
+   -82.72,
+   39.945,
+   -82.61,
+   40.025
+  ],
+  "buckeye": [
+   -82.53,
+   39.905,
+   -82.43,
+   39.965
+  ]
+ },
+ "boxes_utm17": {
+  "franklinton": [
+   323118,
+   4421846,
+   331811,
+   4428699
+  ],
+  "pataskala": [
+   353060,
+   4422894,
+   362618,
+   4431949
+  ],
+  "buckeye": [
+   369216,
+   4418192,
+   377871,
+   4424993
+  ]
+ },
+ "projects": [
+  "OH_Statewide_Phase3_2021_B21 (franklinton)",
+  "OH_Statewide_Phase2_2020_B20 (pataskala, buckeye)"
+ ],
+ "tile_naming_note": "USGS 1m tile y-index is the NORTH edge /10000 (tile yN spans northing (N-1)e4..Ne4); x-index is west edge /10000",
+ "tiles": [
+  {
+   "key": "StagedProducts/Elevation/1m/Projects/OH_Statewide_Phase3_2021_B21/TIFF/USGS_1M_17_x32y443_OH_Statewide_Phase3_2021_B21.tif",
+   "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x32y443_OH_Statewide_Phase3_2021_B21.tif",
+   "sha256_first_1MB": "1ac4083e6e1c2033d33af3799eef84ec7d359bc541e4b1db6187f5339ae87943",
+   "box_membership": [
+    "franklinton"
+   ],
+   "size_mb": 319.6,
+   "crs": "EPSG:26917",
+   "res": [
+    1.0,
+    1.0
+   ],
+   "nodata": -999999.0,
+   "dtype": "float32",
+   "bounds_utm17": [
+    319994,
+    4419994,
+    330006,
+    4430006
+   ]
+  },
+  {
+   "key": "StagedProducts/Elevation/1m/Projects/OH_Statewide_Phase3_2021_B21/TIFF/USGS_1M_17_x33y443_OH_Statewide_Phase3_2021_B21.tif",
+   "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x33y443_OH_Statewide_Phase3_2021_B21.tif",
+   "sha256_first_1MB": "dd053ca530588944e9088abc861278480ee65b011e8ef1f07a67a44a8411f377",
+   "box_membership": [
+    "franklinton"
+   ],
+   "size_mb": 323.8,
+   "crs": "EPSG:26917",
+   "res": [
+    1.0,
+    1.0
+   ],
+   "nodata": -999999.0,
+   "dtype": "float32",
+   "bounds_utm17": [
+    329994,
+    4419994,
+    340006,
+    4430006
+   ]
+  },
+  {
+   "key": "StagedProducts/Elevation/1m/Projects/OH_Statewide_Phase2_2020_B20/TIFF/USGS_1M_17_x35y443_OH_Statewide_Phase2_2020_B20.tif",
+   "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x35y443_OH_Statewide_Phase2_2020_B20.tif",
+   "sha256_first_1MB": "e809f9f1b5f8181e104f14489e43ec193c19ec10465f2dab5a9b39070e917bd4",
+   "box_membership": [
+    "pataskala"
+   ],
+   "size_mb": 291.0,
+   "crs": "EPSG:26917",
+   "res": [
+    1.0,
+    1.0
+   ],
+   "nodata": -999999.0,
+   "dtype": "float32",
+   "bounds_utm17": [
+    349994,
+    4419994,
+    360006,
+    4430006
+   ]
+  },
+  {
+   "key": "StagedProducts/Elevation/1m/Projects/OH_Statewide_Phase2_2020_B20/TIFF/USGS_1M_17_x35y444_OH_Statewide_Phase2_2020_B20.tif",
+   "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x35y444_OH_Statewide_Phase2_2020_B20.tif",
+   "sha256_first_1MB": "115335be3bfd28a3411aad3c2d3c1cbc43567cbeadf47bc51192ae34dd4d24ee",
+   "box_membership": [
+    "pataskala"
+   ],
+   "size_mb": 295.8,
+   "crs": "EPSG:26917",
+   "res": [
+    1.0,
+    1.0
+   ],
+   "nodata": -999999.0,
+   "dtype": "float32",
+   "bounds_utm17": [
+    349994,
+    4429994,
+    360006,
+    4440006
+   ]
+  },
+  {
+   "key": "StagedProducts/Elevation/1m/Projects/OH_Statewide_Phase2_2020_B20/TIFF/USGS_1M_17_x36y442_OH_Statewide_Phase2_2020_B20.tif",
+   "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x36y442_OH_Statewide_Phase2_2020_B20.tif",
+   "sha256_first_1MB": "c9ca1dde2be74c710f07aea14eda15bda889bfdae43ac8a87cc14400cc53cb60",
+   "box_membership": [
+    "buckeye"
+   ],
+   "size_mb": 283.6,
+   "crs": "EPSG:26917",
+   "res": [
+    1.0,
+    1.0
+   ],
+   "nodata": -999999.0,
+   "dtype": "float32",
+   "bounds_utm17": [
+    359994,
+    4409994,
+    370006,
+    4420006
+   ]
+  },
+  {
+   "key": "StagedProducts/Elevation/1m/Projects/OH_Statewide_Phase2_2020_B20/TIFF/USGS_1M_17_x36y443_OH_Statewide_Phase2_2020_B20.tif",
+   "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x36y443_OH_Statewide_Phase2_2020_B20.tif",
+   "sha256_first_1MB": "0b021dd3a76162ad15624b5ee78d94439a69ca867df0903a7a83ac414aad16f2",
+   "box_membership": [
+    "pataskala",
+    "buckeye"
+   ],
+   "size_mb": 292.5,
+   "crs": "EPSG:26917",
+   "res": [
+    1.0,
+    1.0
+   ],
+   "nodata": -999999.0,
+   "dtype": "float32",
+   "bounds_utm17": [
+    359994,
+    4419994,
+    370006,
+    4430006
+   ]
+  },
+  {
+   "key": "StagedProducts/Elevation/1m/Projects/OH_Statewide_Phase2_2020_B20/TIFF/USGS_1M_17_x36y444_OH_Statewide_Phase2_2020_B20.tif",
+   "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x36y444_OH_Statewide_Phase2_2020_B20.tif",
+   "sha256_first_1MB": "c3f533d4e40465c8afa9ae9a9993d36f460a8871c70c39a8e7a3b34f505069bd",
+   "box_membership": [
+    "pataskala"
+   ],
+   "size_mb": 306.7,
+   "crs": "EPSG:26917",
+   "res": [
+    1.0,
+    1.0
+   ],
+   "nodata": -999999.0,
+   "dtype": "float32",
+   "bounds_utm17": [
+    359994,
+    4429994,
+    370006,
+    4440006
+   ]
+  },
+  {
+   "key": "StagedProducts/Elevation/1m/Projects/OH_Statewide_Phase2_2020_B20/TIFF/USGS_1M_17_x37y442_OH_Statewide_Phase2_2020_B20.tif",
+   "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x37y442_OH_Statewide_Phase2_2020_B20.tif",
+   "sha256_first_1MB": "c3c5adb0ebd0dfbeeedd9a136c7dce9def989123f28557ea9361968ed20892ac",
+   "box_membership": [
+    "buckeye"
+   ],
+   "size_mb": 281.1,
+   "crs": "EPSG:26917",
+   "res": [
+    1.0,
+    1.0
+   ],
+   "nodata": -999999.0,
+   "dtype": "float32",
+   "bounds_utm17": [
+    369994,
+    4409994,
+    380006,
+    4420006
+   ]
+  },
+  {
+   "key": "StagedProducts/Elevation/1m/Projects/OH_Statewide_Phase2_2020_B20/TIFF/USGS_1M_17_x37y443_OH_Statewide_Phase2_2020_B20.tif",
+   "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x37y443_OH_Statewide_Phase2_2020_B20.tif",
+   "sha256_first_1MB": "a320ac182f09ae2d468057a6884d47879bf2c32289b2d461071e0a025c797cfa",
+   "box_membership": [
+    "buckeye"
+   ],
+   "size_mb": 276.9,
+   "crs": "EPSG:26917",
+   "res": [
+    1.0,
+    1.0
+   ],
+   "nodata": -999999.0,
+   "dtype": "float32",
+   "bounds_utm17": [
+    369994,
+    4419994,
+    380006,
+    4430006
+   ]
+  }
+ ],
+ "gaps": []
+}

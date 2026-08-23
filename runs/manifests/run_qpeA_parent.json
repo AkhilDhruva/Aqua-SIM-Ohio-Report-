@@ -1,0 +1,187 @@
+{
+  "format_version": "2.0",
+  "run_id": "2a844e332814811b",
+  "aoi": "Greater Columbus OH \u2014 Aug 19-20 2026 \u2014 MRMS QPE-A forcing \u2014 screening 60 m",
+  "grid": {
+    "nx": 1082,
+    "ny": 762,
+    "dx_m": 60.0,
+    "crs": "EPSG:32617"
+  },
+  "units": {
+    "elevation": "m",
+    "depth": "m",
+    "velocity": "m/s",
+    "time": "s"
+  },
+  "time_axis_s": [
+    0.0,
+    1800.0,
+    3600.0,
+    5400.0,
+    7200.0,
+    9000.0,
+    10800.0,
+    12600.0,
+    14400.0,
+    16200.0,
+    18000.0,
+    19800.0,
+    21600.0,
+    23400.0,
+    25200.0,
+    27000.0,
+    28800.0,
+    30600.0,
+    32400.0,
+    34200.0,
+    36000.0,
+    37800.0,
+    39600.0,
+    41400.0,
+    43200.0,
+    45000.0,
+    46800.0,
+    48600.0,
+    50400.0,
+    52200.0,
+    54000.0,
+    55800.0,
+    57600.0,
+    59400.0,
+    61200.0,
+    63000.0,
+    64800.0,
+    66600.0,
+    68400.0,
+    70200.0,
+    72000.0,
+    73800.0,
+    75600.0,
+    77400.0,
+    79200.0,
+    81000.0,
+    82800.0,
+    84600.0,
+    86400.0,
+    88200.0
+  ],
+  "frame_count": 50,
+  "peak_depth_m": 8.5848,
+  "hazard": {
+    "debris_factor": 0.5,
+    "hr_bands": {
+      "low": 0.75,
+      "moderate": 1.25,
+      "significant": 2.0
+    },
+    "depth_critical_m": 0.5
+  },
+  "provenance": {
+    "terrain_source": "DEMSource",
+    "terrain_digest": "4e302716957dc2b6",
+    "resolution_m": 60.0,
+    "crs": "EPSG:32617",
+    "solver_scheme": "local_inertial",
+    "manning_representative": 0.03,
+    "storm": {
+      "rainfall_mm_per_hr": 11.38,
+      "duration_hours": 24.5,
+      "drainage_capacity_mm_per_hr": 10.0,
+      "drainage_blockage": 0.5
+    },
+    "solver": {
+      "cfl": 0.7,
+      "total_time_s": 88200.0,
+      "output_interval_s": 1800.0,
+      "backend": "QPESolver"
+    },
+    "terrain_meta": {
+      "source": "DEMSource",
+      "source_path": [
+        "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/tiles/USGS_13_n41w083.tif",
+        "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/tiles/USGS_13_n41w084.tif",
+        "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/tiles/USGS_13_n40w083.tif",
+        "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/tiles/USGS_13_n40w084.tif"
+      ],
+      "resolution_m": 60.0,
+      "target_crs": "EPSG:32617",
+      "wgs84_bounds": [
+        -84.00055555639318,
+        38.99944444420663,
+        -81.99944444350564,
+        41.000555556194854
+      ],
+      "aoi_bounds": [
+        -83.2,
+        39.8,
+        -82.45,
+        40.2
+      ],
+      "note": "reprojected to metric UTM; bare-earth DEM used as flow surface"
+    }
+  },
+  "nodes": [
+    {
+      "name": "Low Point 1",
+      "x": 274,
+      "y": 563,
+      "threshold_elevation": 163.101
+    },
+    {
+      "name": "Low Point 2",
+      "x": 156,
+      "y": 357,
+      "threshold_elevation": 176.158
+    },
+    {
+      "name": "Low Point 3",
+      "x": 268,
+      "y": 754,
+      "threshold_elevation": 203.417
+    },
+    {
+      "name": "Low Point 4",
+      "x": 381,
+      "y": 638,
+      "threshold_elevation": 216.213
+    },
+    {
+      "name": "Low Point 5",
+      "x": 466,
+      "y": 761,
+      "threshold_elevation": 222.635
+    },
+    {
+      "name": "Low Point 6",
+      "x": 254,
+      "y": 273,
+      "threshold_elevation": 223.433
+    },
+    {
+      "name": "Low Point 7",
+      "x": 473,
+      "y": 548,
+      "threshold_elevation": 224.402
+    },
+    {
+      "name": "Low Point 8",
+      "x": 373,
+      "y": 464,
+      "threshold_elevation": 227.061
+    },
+    {
+      "name": "Low Point 9",
+      "x": 573,
+      "y": 685,
+      "threshold_elevation": 228.285
+    },
+    {
+      "name": "Low Point 10",
+      "x": 140,
+      "y": 192,
+      "threshold_elevation": 231.069
+    }
+  ],
+  "alerts_file": "alerts.json"
+}

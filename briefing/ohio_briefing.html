@@ -1,0 +1,592 @@
+<title>Grid Resolution and Road Closures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#EDF0F1;
+  --surface:#F7F9F9;
+  --surface-sunk:#E3E8EA;
+  --ink:#0F1C21;
+  --ink-soft:#41555C;
+  --ink-faint:#6C7F86;
+  --rule:#C6D0D3;
+  --rule-strong:#9FADB2;
+  --water:#1D5C6B;
+  --water-fill:#1D5C6B26;
+  --terrain:#8A7B63;
+  --terrain-fill:#8A7B6333;
+  --alert:#A8322B;
+  --alert-bg:#A8322B14;
+  --verified:#3F6B4A;
+  --verified-bg:#3F6B4A14;
+  --caution:#9A6B1E;
+  --shadow:0 1px 2px #0f1c210f, 0 8px 24px #0f1c210a;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0C1417;
+    --surface:#121E22;
+    --surface-sunk:#0A1013;
+    --ink:#DEE7E9;
+    --ink-soft:#A2B3B8;
+    --ink-faint:#7B8E94;
+    --rule:#26383E;
+    --rule-strong:#3D555C;
+    --water:#57AEC1;
+    --water-fill:#57AEC130;
+    --terrain:#BCA47E;
+    --terrain-fill:#BCA47E33;
+    --alert:#E5786C;
+    --alert-bg:#E5786C1A;
+    --verified:#7FB48D;
+    --verified-bg:#7FB48D1A;
+    --caution:#D3A257;
+    --shadow:0 1px 2px #0000004d, 0 8px 24px #00000038;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0C1417;
+  --surface:#121E22;
+  --surface-sunk:#0A1013;
+  --ink:#DEE7E9;
+  --ink-soft:#A2B3B8;
+  --ink-faint:#7B8E94;
+  --rule:#26383E;
+  --rule-strong:#3D555C;
+  --water:#57AEC1;
+  --water-fill:#57AEC130;
+  --terrain:#BCA47E;
+  --terrain-fill:#BCA47E33;
+  --alert:#E5786C;
+  --alert-bg:#E5786C1A;
+  --verified:#7FB48D;
+  --verified-bg:#7FB48D1A;
+  --caution:#D3A257;
+  --shadow:0 1px 2px #0000004d, 0 8px 24px #00000038;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16.5px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px 96px}
+.col{max-width:68ch}
+h1,h2,h3{font-family:"IBM Plex Serif",Georgia,serif;text-wrap:balance;margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,monospace}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- masthead ---------- */
+.mast{border-bottom:1px solid var(--rule-strong);padding:44px 0 26px;margin-bottom:40px}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-faint);margin:0 0 18px
+}
+.mast h1{font-size:clamp(30px,4.4vw,46px);line-height:1.12;font-weight:600;letter-spacing:-.015em}
+.mast .standfirst{
+  font-size:19px;line-height:1.5;color:var(--ink-soft);margin:18px 0 0;max-width:60ch;
+}
+.metarow{
+  display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:26px;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-faint)
+}
+.metarow b{font-weight:500;color:var(--ink-soft)}
+
+.disclaim{
+  margin:26px 0 0;padding:14px 16px;border-left:3px solid var(--caution);
+  background:var(--surface);font-size:14px;line-height:1.55;color:var(--ink-soft);
+  max-width:76ch;border-radius:0 4px 4px 0
+}
+
+/* ---------- bottom line ---------- */
+.blu{
+  margin:0 0 52px;padding:30px 32px;background:var(--surface);
+  border:1px solid var(--rule);border-radius:6px;box-shadow:var(--shadow)
+}
+.blu h2{font-size:13px;font-family:"IBM Plex Mono",monospace;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-faint);font-weight:500;margin-bottom:20px}
+.blu ul{margin:0;padding:0;list-style:none;display:grid;gap:18px}
+.blu li{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.chip{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;
+  text-transform:uppercase;padding:4px 9px;border-radius:3px;white-space:nowrap;
+  margin-top:3px;font-weight:500
+}
+.chip.ok{background:var(--verified-bg);color:var(--verified);border:1px solid var(--verified)}
+.chip.no{background:var(--alert-bg);color:var(--alert);border:1px solid var(--alert)}
+.chip.watch{background:var(--surface-sunk);color:var(--caution);border:1px solid var(--caution)}
+.blu li p{margin:0;font-size:16px}
+.blu li p b{font-weight:600}
+
+/* ---------- sections ---------- */
+section{margin:0 0 62px;scroll-margin-top:20px}
+.shead{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;
+  border-top:1px solid var(--rule);padding-top:22px;margin-bottom:22px}
+.snum{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-faint);
+  letter-spacing:.08em;padding-top:6px}
+.shead h2{font-size:clamp(21px,2.6vw,27px);font-weight:600;letter-spacing:-.01em}
+.shead .sub{grid-column:2;font-size:14.5px;color:var(--ink-faint);margin-top:6px}
+p{margin:0 0 17px}
+.col p:last-child{margin-bottom:0}
+strong{font-weight:600}
+em.term{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:.9em;
+  background:var(--surface-sunk);padding:1px 5px;border-radius:3px}
+
+/* ---------- figures ---------- */
+figure{margin:30px 0;padding:0}
+.figbox{background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  padding:22px 24px 18px;overflow-x:auto}
+figcaption{font-size:13.5px;color:var(--ink-faint);margin-top:14px;line-height:1.5;max-width:74ch}
+figcaption b{color:var(--ink-soft);font-weight:500}
+svg{display:block;max-width:100%;height:auto}
+.svglabel{font-family:"IBM Plex Mono",monospace;font-size:11px;fill:var(--ink-soft)}
+.svglabel.faint{fill:var(--ink-faint);font-size:10px}
+.svglabel.alert{fill:var(--alert);font-weight:500}
+.svglabel.water{fill:var(--water)}
+
+/* ---------- tables ---------- */
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--rule)}
+thead th{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-faint);font-weight:500;
+  background:var(--surface-sunk);white-space:nowrap
+}
+tbody tr:last-child td{border-bottom:none}
+td.n{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+td.name{font-weight:500}
+tr.flag td{background:var(--alert-bg)}
+tr.good td{background:var(--verified-bg)}
+.verdict{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.03em}
+.verdict.bad{color:var(--alert)}
+.verdict.fine{color:var(--verified)}
+.verdict.mid{color:var(--caution)}
+
+/* ---------- callout ---------- */
+.pull{
+  margin:32px 0;padding:24px 28px;border-left:4px solid var(--alert);
+  background:var(--alert-bg);border-radius:0 6px 6px 0
+}
+.pull p{margin:0;font-family:"IBM Plex Serif",Georgia,serif;font-size:19px;line-height:1.48}
+.pull .attrib{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-faint);
+  margin-top:12px;letter-spacing:.04em}
+
+/* ---------- recommendations ---------- */
+.recs{display:grid;gap:2px;background:var(--rule);border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+.rec{background:var(--surface);padding:22px 26px}
+.rec h3{font-size:17px;font-weight:600;margin-bottom:8px}
+.rec p{font-size:15px;color:var(--ink-soft);margin:0}
+.rec .tag{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:10px}
+
+/* ---------- limits ---------- */
+.limits{display:grid;gap:14px;margin-top:8px}
+.limit{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;
+  font-size:15px;color:var(--ink-soft)}
+.limit .dot{width:7px;height:7px;border-radius:50%;background:var(--alert);margin-top:9px}
+.limit b{color:var(--ink);font-weight:600}
+
+footer{border-top:1px solid var(--rule-strong);padding-top:24px;margin-top:70px;
+  font-size:13px;color:var(--ink-faint);line-height:1.6}
+footer a{color:var(--water)}
+@media (max-width:640px){
+  .wrap{padding:0 18px 64px}
+  .shead{grid-template-columns:1fr;gap:4px}
+  .shead .sub{grid-column:1}
+  .blu{padding:22px 20px}
+  .blu li{grid-template-columns:1fr;gap:8px}
+}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Independent hindcast study &middot; Central Ohio flood of 19–20 August 2026</p>
+  <h1>What a rainfall flood model can and cannot be trusted to decide</h1>
+  <p class="standfirst">A blind reconstruction of the Franklin and Licking County flood, tested against
+  what actually happened — and a specific, quantified limit on using regional flood screening for
+  road-closure decisions.</p>
+  <div class="metarow">
+    <span><b>Prepared</b> 23 August 2026</span>
+    <span><b>Domain</b> Greater Columbus &amp; western Licking County</span>
+    <span><b>Forcing</b> NOAA MRMS radar QPE</span>
+    <span><b>Terrain</b> USGS 3DEP 1&nbsp;m LiDAR</span>
+    <span><b>Status</b> Research — not operationally validated</span>
+  </div>
+  <p class="disclaim"><b>What this document is.</b> An independent technical study produced with a
+  research flood simulator. It is not a product of, endorsed by, or reviewed by ODOT, the National
+  Weather Service, USGS, or any Ohio agency. Observed impacts are drawn from public reporting and
+  public data; several timestamps are approximate or inferred and are labelled as such. Nothing here
+  should be used as the basis of an operational decision without agency review and independent
+  verification.</p>
+</header>
+
+<div class="blu">
+  <h2>Bottom line</h2>
+  <ul>
+    <li><span class="chip ok">Holds up</span>
+      <p><b>Regional screening works.</b> Driven only by published rainfall and public terrain — with
+      predictions frozen before any flood report was consulted — the model placed 16 of 17 documented
+      flood locations among its deepest water. Against a matched random baseline that outcome would
+      occur by chance about 3–7% of the time.</p></li>
+    <li><span class="chip no">Does not hold up</span>
+      <p><b>Road-level closure calls from a 60&nbsp;m grid are unsafe.</b> At the I-70 crossing of the
+      South Fork Licking River, the coarse model declares the interstate impassable while its own
+      water surface sits <b>1.77&nbsp;m below the actual pavement</b>. The flooding it sees is the
+      channel, not the roadway.</p></li>
+    <li><span class="chip no">Retracted</span>
+      <p><b>The apparent 11.6-hour warning on the I-70 closure does not survive scrutiny.</b> The
+      model's early signal arrived before the upstream river gauge had even peaked, so it cannot be
+      the flood wave that closed the road. We report it as a false positive, not a lead time.</p></li>
+    <li><span class="chip watch">Operationally useful</span>
+      <p><b>The observed routing lag is the real warning asset.</b> The South Fork crest took roughly
+      28 hours to travel from Kirkersville to the Buckeye Lake reach. That lag — measured, not
+      modelled — is genuine, actionable lead time for the I-70 corridor.</p></li>
+  </ul>
+</div>
+
+<section>
+  <div class="shead">
+    <div class="snum">01</div>
+    <h2>What was tested, and how the test was kept honest</h2>
+    <p class="sub">Cause data in, predictions frozen, impacts gathered only afterwards</p>
+  </div>
+  <div class="col">
+    <p>The simulator was given two things and nothing else: the rainfall that fell, and the shape of
+    the ground. Rainfall came from NOAA's Multi-Radar Multi-Sensor system — both the low-latency
+    radar-only product that would have been available in real time, and the gauge-corrected
+    retrospective product. Terrain came from USGS 3DEP, at 1&nbsp;m resolution over the study
+    corridors.</p>
+    <p>The order of operations is what makes the result meaningful. Sensor locations were placed
+    automatically by the terrain itself, not by hand. The predictions were then sealed under
+    content-derived identifiers. Only after that were the seventeen documented flood locations
+    collected from public reporting and scored by a script whose thresholds were fixed in advance.
+    No rainfall, roughness, terrain, or threshold was ever adjusted to improve agreement with a
+    known outcome.</p>
+    <p>Rainfall was checked against gauges over <em class="term">matched accumulation windows</em>
+    and the difference reported rather than corrected. Over the storm window the retrospective
+    product landed within 4% of the Buckeye Lake observation and inside the spread of the Pataskala
+    gauges; the radar-only product ran materially low in this warm-rain convective event, which is a
+    real limitation of that feed and is carried forward as such.</p>
+  </div>
+</section>
+
+<section>
+  <div class="shead">
+    <div class="snum">02</div>
+    <h2>The finding that matters for infrastructure</h2>
+    <p class="sub">A 60-metre cell cannot tell a roadway from the stream beneath it</p>
+  </div>
+  <div class="col">
+    <p>A regional screening grid divides the landscape into 60-metre squares and gives each square a
+    single ground elevation. Where a highway crosses a stream, that one square contains the
+    carriageway, the embankment, and the channel bed all at once. Whichever elevation the grid
+    adopts becomes the level at which "the road" floods in the model.</p>
+    <p>At the I-70 crossing of the South Fork Licking River, the grid adopted an elevation of
+    <span class="mono">267.45&nbsp;m</span> — roughly halfway between the channel invert at
+    <span class="mono">265.57&nbsp;m</span> and the true carriageway at
+    <span class="mono">269.51&nbsp;m</span>. The consequence is direct and measurable.</p>
+  </div>
+
+  <figure>
+    <div class="figbox">
+      <svg viewBox="0 0 660 330" role="img" aria-label="Cross-section at the I-70 crossing of the South Fork Licking River, comparing the 60 metre model's ground elevation and water surface against the surveyed carriageway elevation.">
+        <!-- elevation gridlines: 266 268 270 -->
+        <g stroke="var(--rule)" stroke-width="1">
+          <line x1="56" y1="248" x2="632" y2="248"/>
+          <line x1="56" y1="183" x2="632" y2="183"/>
+          <line x1="56" y1="118" x2="632" y2="118"/>
+        </g>
+        <g class="svglabel faint" text-anchor="end">
+          <text x="48" y="252">266 m</text>
+          <text x="48" y="187">268 m</text>
+          <text x="48" y="122">270 m</text>
+        </g>
+
+        <!-- terrain profile: banks down to invert 265.57 (y=267) -->
+        <path d="M56 214 L170 219 L232 232 L262 267 L300 269 L338 267 L368 232 L430 219 L632 212 L632 316 L56 316 Z"
+              fill="var(--terrain-fill)" stroke="var(--terrain)" stroke-width="1.5"/>
+
+        <!-- embankment + deck at 269.51 (y=134) -->
+        <path d="M196 134 L404 134 L404 152 L368 232 L262 267 L232 232 L196 152 Z"
+              fill="var(--terrain-fill)" stroke="var(--terrain)" stroke-width="1.5" opacity="0.9"/>
+        <rect x="196" y="127" width="208" height="8" fill="var(--ink)" opacity="0.82"/>
+        <text class="svglabel" x="300" y="118" text-anchor="middle">I-70 carriageway · 269.51 m</text>
+
+        <!-- 60 m parent cell extent -->
+        <rect x="150" y="96" width="300" height="220" fill="none" stroke="var(--rule-strong)"
+              stroke-width="1" stroke-dasharray="3 3"/>
+        <text class="svglabel faint" x="300" y="90" text-anchor="middle">one 60 m screening cell</text>
+
+        <!-- parent modelled water surface 267.75 (y=191) -->
+        <rect x="150" y="191" width="300" height="125" fill="var(--water-fill)"/>
+        <line x1="150" y1="191" x2="450" y2="191" stroke="var(--water)" stroke-width="2"/>
+        <text class="svglabel water" x="462" y="195">model water surface · 267.75 m</text>
+        <text class="svglabel faint" x="462" y="209">the grid calls this “impassable”</text>
+
+        <!-- parent bed 267.45 (y=201) -->
+        <line x1="150" y1="201" x2="450" y2="201" stroke="var(--water)" stroke-width="1.5"
+              stroke-dasharray="6 4" opacity="0.75"/>
+        <text class="svglabel faint" x="462" y="240">grid ground elevation · 267.45 m</text>
+
+        <!-- freeboard arrow between 267.75 (191) and 269.51 (134) -->
+        <g stroke="var(--alert)" stroke-width="1.5">
+          <line x1="120" y1="191" x2="120" y2="134"/>
+          <line x1="114" y1="139" x2="120" y2="134"/><line x1="126" y1="139" x2="120" y2="134"/>
+          <line x1="114" y1="186" x2="120" y2="191"/><line x1="126" y1="186" x2="120" y2="191"/>
+        </g>
+        <text class="svglabel alert" x="112" y="166" text-anchor="end">1.77 m</text>
+        <text class="svglabel alert" x="112" y="180" text-anchor="end">still dry</text>
+
+        <text class="svglabel faint" x="300" y="292" text-anchor="middle">South Fork Licking River · invert 265.57 m</text>
+      </svg>
+    </div>
+    <figcaption><b>Surveyed section versus screening grid, I-70 at the South Fork Licking River.</b>
+    Ground profile and carriageway elevation from USGS 3DEP 1&nbsp;m LiDAR; grid elevation and water
+    surface from the 60&nbsp;m screening run at the moment it crossed its impassability threshold.
+    The model is not wrong about there being water — it is wrong about where that water is.</figcaption>
+  </figure>
+
+  <div class="col">
+    <p>This is not a single unlucky location. Applying the same measurement across twelve monitored
+    corridor points shows the error runs in both directions, which matters: a coarse grid can invent
+    a closure, and it can also miss one.</p>
+  </div>
+
+  <figure>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Corridor point</th>
+            <th>Grid water surface at “impassable”</th>
+            <th>Surveyed pavement</th>
+            <th>Freeboard</th>
+            <th>Reading</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="flag"><td class="name">W Broad St, Hilltop</td><td class="n">218.82</td><td class="n">222.97</td><td class="n">+4.15</td><td class="verdict bad">floods a dry road</td></tr>
+          <tr class="flag"><td class="name">SR-310 at South Fork</td><td class="n">313.30</td><td class="n">316.73</td><td class="n">+3.44</td><td class="verdict bad">floods a dry road</td></tr>
+          <tr class="flag"><td class="name">I-70 at South Fork</td><td class="n">267.75</td><td class="n">269.51</td><td class="n">+1.77</td><td class="verdict bad">floods a dry road</td></tr>
+          <tr class="good"><td class="name">SR-79 / Hebron Rd</td><td class="n">269.49</td><td class="n">269.41</td><td class="n">−0.08</td><td class="verdict fine">grid ≈ pavement</td></tr>
+          <tr class="good"><td class="name">Main St at Broad, Pataskala</td><td class="n">303.04</td><td class="n">302.86</td><td class="n">−0.18</td><td class="verdict fine">grid ≈ pavement</td></tr>
+          <tr class="good"><td class="name">US-40, Hebron</td><td class="n">271.57</td><td class="n">271.28</td><td class="n">−0.29</td><td class="verdict fine">grid ≈ pavement</td></tr>
+          <tr class="good"><td class="name">South Fork at Kirkersville</td><td class="n">280.01</td><td class="n">279.65</td><td class="n">−0.36</td><td class="verdict fine">grid ≈ pavement</td></tr>
+          <tr class="good"><td class="name">Franklinton core</td><td class="n">215.78</td><td class="n">215.40</td><td class="n">−0.38</td><td class="verdict fine">grid ≈ pavement</td></tr>
+          <tr><td class="name">US-40, east of Etna</td><td class="n">297.44</td><td class="n">296.89</td><td class="n">−0.55</td><td class="verdict mid">under-reports</td></tr>
+          <tr><td class="name">I-70 at SR-79</td><td class="n">269.86</td><td class="n">269.16</td><td class="n">−0.71</td><td class="verdict mid">under-reports</td></tr>
+          <tr><td class="name">US-40, Etna</td><td class="n">325.04</td><td class="n">321.86</td><td class="n">−3.18</td><td class="verdict mid">under-reports</td></tr>
+          <tr><td class="name">Olentangy at Columbus</td><td class="n">221.95</td><td class="n">216.91</td><td class="n">−5.04</td><td class="verdict mid">under-reports</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption>All elevations in metres, NAVD88. <b>Freeboard</b> is the height of the surveyed
+    carriageway above the water surface at which the 60&nbsp;m grid declares that road impassable.
+    A positive value means the grid reports a flooded road while the pavement is still dry by that
+    margin. A negative value means the grid's ground sits above the real road, so genuine street
+    flooding goes unseen. Three of twelve points invent closures; four would miss them.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="shead">
+    <div class="snum">03</div>
+    <h2>Why the early I-70 signal was not a warning</h2>
+    <p class="sub">A flood wave cannot arrive downstream before it peaks upstream</p>
+  </div>
+  <div class="col">
+    <p>The screening run crossed its impassability threshold at the I-70 corridor at
+    <span class="mono">10:25Z on 20 August</span>, roughly eleven and a half hours before ODOT closed
+    the interstate. Taken at face value that looks like a substantial early warning. It is not, and
+    the reason is visible in the observed river record rather than in the model.</p>
+    <p>The South Fork Licking River gauge upstream at Kirkersville did not peak until
+    <span class="mono">13:00Z</span> — two and a half hours <em>after</em> the model's signal. The
+    downstream response in the Buckeye Lake reach did not peak until the following afternoon, a
+    routing lag of about twenty-eight hours. Water that closed I-70 had not yet been delivered to the
+    upstream gauge when the model announced the road was impassable.</p>
+  </div>
+
+  <figure>
+    <div class="figbox">
+      <svg viewBox="0 0 660 252" role="img" aria-label="Timeline showing the model's threshold crossing occurring before the upstream river peak, the road closure, and the crest at the crossing.">
+        <line x1="40" y1="150" x2="628" y2="150" stroke="var(--rule-strong)" stroke-width="1.5"/>
+        <g stroke="var(--rule)" stroke-width="1">
+          <line x1="236" y1="145" x2="236" y2="155"/>
+          <line x1="432" y1="145" x2="432" y2="155"/>
+        </g>
+        <g class="svglabel faint" text-anchor="middle">
+          <text x="52" y="168">20 Aug 06Z</text>
+          <text x="236" y="168">20 Aug 18Z</text>
+          <text x="432" y="168">21 Aug 06Z</text>
+          <text x="612" y="168">21 Aug 18Z</text>
+        </g>
+
+        <!-- model signal 10:25Z, drawn BELOW the axis to clear the upstream peak -->
+        <g>
+          <line x1="112" y1="150" x2="112" y2="192" stroke="var(--alert)" stroke-width="2"/>
+          <circle cx="112" cy="192" r="4" fill="var(--alert)"/>
+          <text class="svglabel alert" x="112" y="210" text-anchor="middle">model says impassable</text>
+          <text class="svglabel faint" x="112" y="224" text-anchor="middle">10:25Z</text>
+        </g>
+        <!-- upstream peak 13:00Z -->
+        <g>
+          <line x1="154" y1="150" x2="154" y2="110" stroke="var(--water)" stroke-width="2"/>
+          <circle cx="154" cy="110" r="4" fill="var(--water)"/>
+          <text class="svglabel water" x="154" y="100" text-anchor="middle">upstream gauge peaks</text>
+          <text class="svglabel faint" x="154" y="86" text-anchor="middle">13:00Z</text>
+        </g>
+        <!-- ODOT closure 22:00Z -->
+        <g>
+          <line x1="301" y1="150" x2="301" y2="60" stroke="var(--ink-soft)" stroke-width="2"/>
+          <circle cx="301" cy="60" r="4" fill="var(--ink-soft)"/>
+          <text class="svglabel" x="301" y="50" text-anchor="middle">ODOT closes I-70</text>
+          <text class="svglabel faint" x="301" y="36" text-anchor="middle">22:00Z</text>
+        </g>
+        <!-- crest at the crossing 21 Aug 12:45Z -->
+        <g>
+          <line x1="542" y1="150" x2="542" y2="110" stroke="var(--water)" stroke-width="2"/>
+          <circle cx="542" cy="110" r="4" fill="var(--water)"/>
+          <text class="svglabel water" x="542" y="100" text-anchor="middle">crest at the crossing</text>
+          <text class="svglabel faint" x="542" y="86" text-anchor="middle">12:45Z</text>
+        </g>
+        <!-- observed routing lag: upstream peak -> downstream peak -->
+        <g stroke="var(--terrain)" stroke-width="1.5">
+          <line x1="154" y1="244" x2="612" y2="244"/>
+          <line x1="154" y1="238" x2="154" y2="250"/>
+          <line x1="612" y1="238" x2="612" y2="250"/>
+        </g>
+        <text class="svglabel" x="383" y="236" text-anchor="middle" fill="var(--terrain)">observed routing lag &#8776; 28 h</text>
+      </svg>
+    </div>
+    <figcaption><b>Sequence of the South Fork Licking response.</b> River timings from NOAA National
+    Water Model analysis fields assimilated to live USGS gauges; closure time as announced by ODOT
+    and reported in press coverage; crest elevation and timing from National Weather Service product
+    text quoted in reporting. The model's signal precedes the upstream peak, which rules it out as
+    the same physical event.</figcaption>
+  </figure>
+
+  <div class="pull">
+    <p>We are withdrawing the eleven-and-a-half-hour lead time. The model was not early about the
+    closure; it was reporting a different kind of water, in a place its grid could not resolve.</p>
+    <p class="attrib">Formal retraction — recorded in the study's determination file</p>
+  </div>
+</section>
+
+<section>
+  <div class="shead">
+    <div class="snum">04</div>
+    <h2>What the model could not do at all</h2>
+    <p class="sub">Multi-day river routing is outside its represented physics</p>
+  </div>
+  <div class="col">
+    <p>Extending the simulation to fifty-six hours to reach for the observed crest exposed a
+    structural defect rather than a tuning problem. After the rainfall stops, water at the I-70
+    corridor recedes at a constant rate that exactly matches the model's drainage parameter, instead
+    of rising toward the crest that actually arrived a day later.</p>
+    <p>Two causes, both identified before any comparison to the observed crest. The model's storm-drain
+    term removes water uniformly across the domain, so it drains routed river water that should be
+    travelling downstream. And nothing in the configuration represents lake storage, dam or spillway
+    operation, baseflow, or inflow entering from beyond the domain boundary. The twenty-eight-hour
+    lag through the Buckeye Lake system is precisely the process the configuration omits.</p>
+    <p>This is reported as a discovered defect. A sensitivity run isolating the drainage term is
+    queued, and it will quantify the term's contribution rather than fix the outcome.</p>
+  </div>
+</section>
+
+<section>
+  <div class="shead">
+    <div class="snum">05</div>
+    <h2>What this means for Ohio infrastructure decisions</h2>
+    <p class="sub">Four recommendations that follow directly from the measurements above</p>
+  </div>
+  <div class="recs">
+    <div class="rec">
+      <span class="tag">Recommendation 01</span>
+      <h3>Use regional flood screening for staging, not for closures</h3>
+      <p>The 60-metre screen reliably identifies which corridors and neighbourhoods will be in
+      trouble, which is exactly what resource pre-positioning, crew staging, and shelter activation
+      need. It should not be permitted to generate road-open or road-closed guidance, in either
+      direction, at any crossing.</p>
+    </div>
+    <div class="rec">
+      <span class="tag">Recommendation 02</span>
+      <h3>Tie closure thresholds to surveyed pavement elevations</h3>
+      <p>Every point where the model's ground elevation and the surveyed carriageway diverge by more
+      than half a metre is a place where automated guidance will be wrong. The fix is inexpensive:
+      pair each flood-prone crossing with its surveyed pavement elevation and evaluate the modelled
+      water surface against that number, not against a grid cell.</p>
+    </div>
+    <div class="rec">
+      <span class="tag">Recommendation 03</span>
+      <h3>Treat upstream gauges as the warning instrument for the I-70 corridor</h3>
+      <p>The measured twenty-eight-hour travel time between the Kirkersville reach and the Buckeye
+      Lake reach is real lead time available today, from instruments already in the ground. For this
+      corridor a gauge-threshold rule offers warning that no rainfall model in this study matched.</p>
+    </div>
+    <div class="rec">
+      <span class="tag">Recommendation 04</span>
+      <h3>Verify culvert and bridge openings before trusting fine-scale results</h3>
+      <p>Detecting stream crossings automatically from elevation data reached 91–96% precision
+      against 1&nbsp;m LiDAR across three corridors, which is useful but not sufficient. A crossing
+      wrongly modelled as solid embankment creates a dam that does not exist — and a high-resolution
+      model can be confidently wrong in a way a coarse one is not.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="shead">
+    <div class="snum">06</div>
+    <h2>Limitations</h2>
+    <p class="sub">Stated plainly, because they bound every claim above</p>
+  </div>
+  <div class="limits">
+    <div class="limit"><span class="dot"></span><p><b>No false-alarm rate.</b> Public reporting records
+    what flooded, never what stayed dry. Without an authoritative record of roads that remained open,
+    the model's tendency to over-predict cannot be quantified — only its detection can.</p></div>
+    <div class="limit"><span class="dot"></span><p><b>River observations are a proxy.</b> Direct USGS
+    endpoints were unreachable from the study environment. River timings come from National Water
+    Model analysis fields that assimilate live USGS gauges — closely anchored to observation, but not
+    raw observation, and carrying discharge only. No stage comparison, and therefore no stage error
+    statistic, is possible here.</p></div>
+    <div class="limit"><span class="dot"></span><p><b>Several impact timestamps are approximate.</b>
+    Closure and rescue times come from press accounts, some phrased as "around" a given hour, and at
+    least one closure start is inferred rather than stated. Two independently reported accounts of
+    the I-70 closure time disagree by roughly ninety minutes.</p></div>
+    <div class="limit"><span class="dot"></span><p><b>Fine-scale simulations are still running.</b>
+    The corridor models at 6–8&nbsp;m will confirm the mechanism identified here by showing directly
+    whether carriageway cells wet during the storm. The direction of the finding does not depend on
+    them — it rests on surveyed elevations and observed gauge timing — but the dynamic confirmation
+    is not yet complete.</p></div>
+    <div class="limit"><span class="dot"></span><p><b>Buildings are not represented.</b> Building
+    footprint sources were unreachable from the study environment, so urban flow obstruction in
+    Franklinton is modelled by terrain alone.</p></div>
+    <div class="limit"><span class="dot"></span><p><b>One methodological change followed exposure to
+    outcome data.</b> The simulation window was extended after the observed crest timing was known.
+    It is logged as such in the study record. All forcing, geometry, roughness, and thresholds were
+    fixed beforehand and never altered.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p><b>Data sources.</b> Rainfall: NOAA Multi-Radar Multi-Sensor QPE, radar-only 15-minute and
+  multi-sensor hourly products, retrieved from the NOAA Open Data bucket with per-file checksums.
+  Terrain: USGS 3DEP 1&nbsp;m and 1/3-arcsecond elevation. Hydrography: USGS National Hydrography
+  Dataset. Roads: USGS National Transportation Dataset. River response: NOAA National Water Model
+  version 3 analysis fields. Impacts, closures, and warning times: public reporting and National
+  Weather Service product text quoted therein.</p>
+  <p>Predictions were sealed under content-derived run identifiers before outcome data was collected,
+  and the analysis is reproducible from the recorded inputs. Prepared as independent research; not
+  an official product of any agency.</p>
+</footer>
+
+</div>

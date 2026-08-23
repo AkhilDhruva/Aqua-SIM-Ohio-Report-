@@ -1,0 +1,14 @@
+{
+  "mid": {
+    "cell_base_rate": 0.1712,
+    "neighborhood_base_rate": 0.914,
+    "mc_mean_hits_of_17": 15.55,
+    "mc_P(17_of_17)": 0.22265
+  },
+  "low": {
+    "cell_base_rate": 0.136,
+    "neighborhood_base_rate": 0.8953,
+    "mc_mean_hits_of_17": 15.22,
+    "mc_P(17_of_17)": 0.1555
+  }
+}

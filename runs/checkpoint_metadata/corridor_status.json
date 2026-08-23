@@ -1,0 +1,38 @@
+{
+  "note": "corridor nests were still solving when this archive was created; their probe series and results land in later tags",
+  "runs": [
+    {
+      "nest": "buckeye_c",
+      "status": "IN PROGRESS at archival time",
+      "dir": "corridor_buckeye_c_B",
+      "probe_samples": 380,
+      "model_hours_covered": [
+        0.02,
+        6.33
+      ],
+      "target_model_hours": 20.0
+    },
+    {
+      "nest": "franklinton_c",
+      "status": "IN PROGRESS at archival time",
+      "dir": "corridor_franklinton_c_B",
+      "probe_samples": 480,
+      "model_hours_covered": [
+        0.02,
+        7.98
+      ],
+      "target_model_hours": 20.0
+    },
+    {
+      "nest": "pataskala_c",
+      "status": "IN PROGRESS at archival time",
+      "dir": "corridor_pataskala_c_B",
+      "probe_samples": 400,
+      "model_hours_covered": [
+        0.02,
+        6.65
+      ],
+      "target_model_hours": 20.0
+    }
+  ]
+}
