@@ -1,38 +1,70 @@
 {
-  "note": "corridor nests were still solving when this archive was created; their probe series and results land in later tags",
+  "updated_utc": "2026-08-23T06:28:50.243316+00:00",
+  "execution_note": "The study host recycles every few hours. Corridor solves checkpoint atomically every 10 model-minutes and resume automatically.",
+  "observed_recycles": 4,
+  "resume_evidence": [
+    {
+      "event": "recycle 2",
+      "resumed_at_model_hours": [
+        6.1,
+        7.33,
+        4.5
+      ],
+      "probe_history_preserved": [
+        366,
+        441,
+        271
+      ],
+      "note": "probe series continuous across the boundary; no gap or duplicate"
+    },
+    {
+      "event": "recycle 4",
+      "resumed_at_model_hours": [
+        6.27,
+        7.83,
+        6.83
+      ],
+      "note": "scheduling changed to SEQUENTIAL PRIORITY after this recycle \u2014 three concurrent solves on four cores were not converging before the next recycle, so runs now execute one at a time in priority order"
+    }
+  ],
+  "priority_order": [
+    "buckeye_c (I-70 Case A/B confirmation)",
+    "franklinton_c (urban pluvial + Scioto)",
+    "pataskala_c (flash-pluvial + gauged reach)"
+  ],
   "runs": [
     {
       "nest": "buckeye_c",
-      "status": "IN PROGRESS at archival time",
-      "dir": "corridor_buckeye_c_B",
+      "target_model_hours": 20.0,
+      "status": "IN PROGRESS",
       "probe_samples": 380,
       "model_hours_covered": [
         0.02,
         6.33
       ],
-      "target_model_hours": 20.0
+      "probe_groups": 8
     },
     {
       "nest": "franklinton_c",
-      "status": "IN PROGRESS at archival time",
-      "dir": "corridor_franklinton_c_B",
+      "target_model_hours": 20.0,
+      "status": "IN PROGRESS",
       "probe_samples": 480,
       "model_hours_covered": [
         0.02,
         7.98
       ],
-      "target_model_hours": 20.0
+      "probe_groups": 4
     },
     {
       "nest": "pataskala_c",
-      "status": "IN PROGRESS at archival time",
-      "dir": "corridor_pataskala_c_B",
+      "target_model_hours": 20.0,
+      "status": "IN PROGRESS",
       "probe_samples": 400,
       "model_hours_covered": [
         0.02,
         6.65
       ],
-      "target_model_hours": 20.0
+      "probe_groups": 10
     }
   ]
 }
