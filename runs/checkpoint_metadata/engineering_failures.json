@@ -57,6 +57,19 @@
       "correction": "parallel execution restored, capped at nproc-1 to leave a core for the OS and analysis tooling; priority order retained so the highest-value run starts first after a recycle",
       "affected_scientific_results": "none \u2014 scheduling changes cannot alter a deterministic solve; the cost was wall-clock time only",
       "execution_environment_note": "compute runs on a remote 4-core Intel Xeon @2.10GHz VM with 15 GB RAM and NO GPU (no NVIDIA device nodes, no CUDA). Local operator hardware is not involved in the computation. Any GPU or many-core acceleration is therefore a change of execution environment, not a code change, and is deliberately deferred until after this experiment."
+    },
+    {
+      "id": "ML-3",
+      "measured_limitation": "buckeye_c solves 6-8x slower than the other corridors (1.83 model-hours per wall-hour vs 10.8 franklinton / 15.1 pataskala) despite fewer cells than pataskala and shallower water than franklinton",
+      "diagnosis": "its global CFL timestep is VELOCITY-limited at 21.35 m/s while the others are wave-limited at 3-4 m/s. The 21.35 m/s occurs on exactly 5 cells of the SOUTHERN DOMAIN EDGE, where the OPEN boundary places a ghost dry cell at the live cell's own bed: deep channel water therefore sees a free drop of its full depth over one cell width and exits at high speed. dt = cfl*dx/(v+sqrt(g*h)) is global, so five boundary cells throttle 0.68M cells.",
+      "ruled_out": [
+        "thin-film velocity spike \u2014 the fastest face carries 882 mm of water and the value is identical at min_depth 1e-3, 1e-4 and 1e-5",
+        "stage-BC jet \u2014 max velocity anywhere on the BC ring is 1.39 m/s, and zero cells above 5 m/s lie within two cells of the ring",
+        "interior instability \u2014 interior maximum is 3.47 m/s with NO cells above 5 m/s anywhere in the domain"
+      ],
+      "physics_impact": "none identified in the interior. The affected cells are the outflow boundary itself; the corridor probes are far inside. The free-outfall OPEN boundary is the pre-registered configuration and behaves as designed.",
+      "decision": "NOT changed. Altering the boundary treatment or the CFL velocity mid-experiment would change the frozen configuration and invalidate the comparison. The cost is wall-clock time only, and it is recorded rather than optimised away.",
+      "for_future_work": "a domain-edge outflow treatment (e.g. normal-depth or critical-depth outflow instead of free drop to bed), or excluding boundary faces from the global CFL reduction, would remove this throttle. Both are engine changes and belong to the aqua-sim backlog, not to this study."
     }
   ]
 }
