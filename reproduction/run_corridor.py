@@ -18,7 +18,7 @@ Outputs into corridor_<nest>_<tag><suffix>/:
     meta.json      provenance, geometry counts, culvert log
 No repo files are touched.
 """
-import argparse, json, os, sys, time
+import argparse, json, math, os, sys, time
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -30,7 +30,8 @@ from prep_qpe import intervals_from_npz
 from qpe_solver import Probes, QPESolver, RainSeries, StageBC, build_idx_map
 import run_nest as RN
 
-CKPT_EVERY_S = 600.0        # model seconds between checkpoints
+CKPT_EVERY_S = 600.0        # model-second checkpoint GRID (absolute-aligned)
+CKPT_WALL_S = 420.0         # ...but never lose more than this much wall time
 SNAP_EVERY_S = 3600.0
 
 
@@ -38,6 +39,101 @@ def atomic_savez(path, **kw):
     tmp = path + ".tmp.npz"
     np.savez_compressed(tmp, **kw)
     os.replace(tmp, path)
+
+
+
+
+def save_ckpt(path, solver, peak, probes, snaps, snap_t):
+    """Checkpoint EVERY stateful quantity carried across steps.
+
+    Audited against NumpyShallowWaterSolver/QPESolver: h, qx, qy, time, CFL
+    bookkeeping (_max_h, _max_face_v), cumulative infiltration, running peak,
+    snapshots, and the probe scheduler INCLUDING its _next deadline (restoring
+    it as time+interval can skip a sample and shift the probe grid). RainSeries
+    interval cache, StageBC interpolation, culvert transfers and scalar
+    drainage are stateless or deterministic in model time — not duplicated.
+    """
+    kw = {f"snap{i}": s for i, s in enumerate(snaps)}
+    atomic_savez(path, h=solver.h, qx=solver.qx, qy=solver.qy,
+                 t=np.array([solver.time_s]), peak=peak,
+                 mx=np.array([solver._max_h]),
+                 mv=np.array([solver._max_face_v]),
+                 shape=np.array(list(solver.h.shape)),
+                 pt=np.array(probes.t),
+                 pr=np.array([json.dumps(probes.records)]),
+                 pn=np.array([probes._next]),
+                 snap_t=np.array(snap_t, dtype=float),
+                 **({"ci": solver._cum_infil}
+                    if solver._cum_infil is not None else {}),
+                 **kw)
+
+
+def load_ckpt(path, solver, probes):
+    """Restore save_ckpt output; returns (peak, snaps, snap_t) or None."""
+    if not os.path.exists(path):
+        return None
+    d = np.load(path, allow_pickle=True)
+    if tuple(d["shape"]) != tuple(solver.h.shape):
+        return None
+    solver.h = d["h"]; solver.qx = d["qx"]; solver.qy = d["qy"]
+    solver.time_s = float(d["t"][0])
+    solver._max_h = float(d["mx"][0])
+    solver._max_face_v = float(d["mv"][0])
+    if solver._cum_infil is not None and "ci" in d:
+        solver._cum_infil = d["ci"]
+    probes.t = list(d["pt"])
+    probes.records = json.loads(str(d["pr"][0]))
+    probes._next = float(d["pn"][0]) if "pn" in d \
+        else solver.time_s + probes.interval_s
+    snap_t = list(d["snap_t"]) if "snap_t" in d else []
+    snaps = [d[f"snap{i}"] for i in range(len(snap_t))]
+    return d["peak"], snaps, snap_t
+
+
+def _grid_next(t, step):
+    return (math.floor(t / step + 1e-9) + 1) * step
+
+
+def step_loop(solver, peak, probes, snaps, snap_t, t_end, ckpt_path=None,
+              log_prefix="", wall_ckpt_s=CKPT_WALL_S):
+    """Deterministic stepping loop shared by production runs and the
+    checkpoint-equivalence test.
+
+    dt is clipped ONLY by boundaries fixed in MODEL time (the absolute
+    CKPT_EVERY_S grid, the snapshot grid, t_end), so the step sequence is
+    identical whether or not the run was ever interrupted. Wall-clock pressure
+    saves AFTER whichever step is in flight completes, without clipping dt, so
+    it cannot perturb the solution either.
+    """
+    next_ck = _grid_next(solver.time_s, CKPT_EVERY_S)
+    next_sn = _grid_next(solver.time_s, SNAP_EVERY_S)
+    wall_last = wall0 = time.time()
+    while solver.time_s < t_end - 1e-9:
+        dt = min(solver.adaptive_dt(), t_end - solver.time_s,
+                 next_ck - solver.time_s, next_sn - solver.time_s)
+        if dt <= 0:
+            break
+        solver.step(dt)
+        np.maximum(peak, solver.h, out=peak)
+        if solver.time_s >= next_sn - 1e-9:
+            snaps.append(np.round(solver.h, 3).astype(np.float32))
+            snap_t.append(solver.time_s)
+            next_sn = _grid_next(solver.time_s, SNAP_EVERY_S)
+        due_model = solver.time_s >= next_ck - 1e-9
+        due_wall = ckpt_path is not None and \
+            (time.time() - wall_last) >= wall_ckpt_s
+        if due_model or due_wall:
+            if ckpt_path is not None:
+                save_ckpt(ckpt_path, solver, peak, probes, snaps, snap_t)
+                wall_last = time.time()
+                print(f"{log_prefix} h={solver.time_s/3600:5.2f}  "
+                      f"peak={peak.max():5.2f} m  "
+                      f"wall={(time.time()-wall0)/60:5.1f}m"
+                      + ("  [wall-ckpt]" if (due_wall and not due_model) else ""),
+                      flush=True)
+            if due_model:
+                next_ck = _grid_next(solver.time_s, CKPT_EVERY_S)
+    return peak, snaps, snap_t
 
 
 def main():
@@ -149,52 +245,15 @@ def main():
     ck = os.path.join(out, "state.npz")
     peak = np.zeros((ny, nx))
     snaps, snap_t = [], []
-    if os.path.exists(ck):
-        d = np.load(ck, allow_pickle=True)
-        if tuple(d["shape"]) == (ny, nx):
-            solver.h = d["h"]; solver.qx = d["qx"]; solver.qy = d["qy"]
-            solver.time_s = float(d["t"][0])
-            solver._max_h = float(d["mx"][0]); solver._max_face_v = float(d["mv"][0])
-            if solver._cum_infil is not None and "ci" in d:
-                solver._cum_infil = d["ci"]
-            peak = d["peak"]
-            probes.t = list(d["pt"])
-            probes.records = json.loads(str(d["pr"][0]))
-            probes._next = solver.time_s + 60.0
-            snap_t = list(d["snap_t"]) if "snap_t" in d else []
-            snaps = [d[f"snap{i}"] for i in range(len(snap_t))]
-            print(f"[{a.nest}] RESUMED at model hour {solver.time_s/3600:.2f} "
-                  f"({len(probes.t)} probe samples)", flush=True)
+    restored = load_ckpt(ck, solver, probes)
+    if restored is not None:
+        peak, snaps, snap_t = restored
+        print(f"[{a.nest}] RESUMED at model hour {solver.time_s/3600:.2f} "
+              f"({len(probes.t)} probe samples)", flush=True)
 
-    def save():
-        kw = {f"snap{i}": s for i, s in enumerate(snaps)}
-        atomic_savez(ck, h=solver.h, qx=solver.qx, qy=solver.qy,
-                     t=np.array([solver.time_s]), peak=peak,
-                     mx=np.array([solver._max_h]), mv=np.array([solver._max_face_v]),
-                     shape=np.array([ny, nx]), pt=np.array(probes.t),
-                     pr=np.array([json.dumps(probes.records)]),
-                     snap_t=np.array(snap_t, dtype=float),
-                     **({"ci": solver._cum_infil} if solver._cum_infil is not None else {}),
-                     **kw)
-
-    next_ck = solver.time_s + CKPT_EVERY_S
-    next_sn = (int(solver.time_s / SNAP_EVERY_S) + 1) * SNAP_EVERY_S
-    wall = time.time()
-    while solver.time_s < t_end:
-        dt = min(solver.adaptive_dt(), t_end - solver.time_s,
-                 next_ck - solver.time_s, next_sn - solver.time_s)
-        if dt <= 0:
-            break
-        solver.step(dt)
-        np.maximum(peak, solver.h, out=peak)
-        if solver.time_s >= next_sn - 1e-9:
-            snaps.append(np.round(solver.h, 3).astype(np.float32))
-            snap_t.append(solver.time_s); next_sn += SNAP_EVERY_S
-        if solver.time_s >= next_ck - 1e-9:
-            save(); next_ck += CKPT_EVERY_S
-            print(f"[{a.nest}] h={solver.time_s/3600:5.2f}  peak={peak.max():5.2f} m  "
-                  f"wall={(time.time()-wall)/60:5.1f}m", flush=True)
-    save()
+    peak, snaps, snap_t = step_loop(solver, peak, probes, snaps, snap_t, t_end,
+                                    ckpt_path=ck, log_prefix=f"[{a.nest}]")
+    save_ckpt(ck, solver, peak, probes, snaps, snap_t)
     probes.dump(os.path.join(out, "probes.json"), probes.meta)
     atomic_savez(os.path.join(out, "peak.npz"), peak=peak,
                  transform=np.array(gt[:6]), shape=np.array([ny, nx]))

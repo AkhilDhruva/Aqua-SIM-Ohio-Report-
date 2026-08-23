@@ -1,0 +1,36 @@
+{
+  "updated_utc": "2026-08-23T07:06:17.451677+00:00",
+  "purpose": "Engineering failures and measured limitations are part of the reproducibility record, not noise to be deleted.",
+  "entries": [
+    {
+      "id": "EF-1",
+      "failure": "launcher process guard used a full-command-line match (pgrep -f), which matched the bash wrapper whose command text CONTAINED the script \u2014 false-positive 'run already active'",
+      "effect": "the watchdog would have refused every legitimate restart; with the host recycling every ~3 h, no corridor run would ever have advanced again",
+      "detection": "manual audit during a watchdog tick (launcher reported a run active while ps showed no python3 solver)",
+      "correction": "guard now matches only real python3 processes (ps comm=='python3' AND args ~ run_corridor.py)",
+      "affected_scientific_results": "none identified"
+    },
+    {
+      "id": "EF-2",
+      "failure": "corridor_analysis.py labelled a partial run FINAL because a stale meta.json from a short smoke test satisfied the completeness check",
+      "effect": "a partial probe series could have been reported as a final result",
+      "detection": "self-review of the first analysis output",
+      "correction": "completeness now requires the probe series to actually reach the run's target window",
+      "affected_scientific_results": "none \u2014 caught before any partial output was used in a claim"
+    },
+    {
+      "id": "EF-3",
+      "failure": "probe scheduler deadline (_next) was restored as time+interval instead of its saved value",
+      "effect": "a restart could silently skip one probe sample and shift the probe grid; probe continuity LOOKED fine while the schedule drifted",
+      "detection": "state audit prompted by external review before the wet-phase equivalence test",
+      "correction": "_next is now saved in and restored from the checkpoint; the wet-phase A/B test compares every probe record bitwise",
+      "affected_scientific_results": "none for completed analyses (all published probe series came from runs without a mid-interval restart of this kind)"
+    },
+    {
+      "id": "ML-1",
+      "measured_limitation": "the solver executes on ONE core (~100% CPU measured via /proc jiffies: 999/10 s), not four \u2014 elementwise NumPy kernels do not use BLAS threading",
+      "consequence": "sequential scheduling buys restart robustness and memory headroom, not compute acceleration; wall-time projections must assume single-core throughput",
+      "decision": "solver is NOT being rewritten or parallelized mid-experiment; the limitation is recorded instead"
+    }
+  ]
+}
