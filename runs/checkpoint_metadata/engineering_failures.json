@@ -47,6 +47,16 @@
       "correction": "CKPT_WALL_S 420 s -> 60 s. Measured cost: 0.49 s per checkpoint (6.4 MB), i.e. 0.8% overhead. Progress is now monotonic.",
       "generalizable_lesson": "a checkpoint interval must be shorter than the host's SHORTEST observed lifetime, not merely shorter than its average. Averages hide livelock.",
       "affected_scientific_results": "none \u2014 no result was produced during the stalled period; the cost was wall-clock time only"
+    },
+    {
+      "id": "EF-5",
+      "failure": "MISDIAGNOSIS \u2014 concurrent corridor runs were abandoned for sequential execution on the belief that three solves on four cores 'were not converging before the next recycle'",
+      "actual_cause": "the runs were not converging because of the EF-4 checkpoint livelock (checkpoint interval longer than host lifetime), which applied equally to sequential execution. Core contention was not the cause.",
+      "effect": "three of four cores sat idle while a single-threaded solver ran; total throughput was roughly one third of what the host could deliver",
+      "detection": "a direct capacity check (nproc, load average, per-process CPU) prompted by the question of whether the work could be parallelised",
+      "correction": "parallel execution restored, capped at nproc-1 to leave a core for the OS and analysis tooling; priority order retained so the highest-value run starts first after a recycle",
+      "affected_scientific_results": "none \u2014 scheduling changes cannot alter a deterministic solve; the cost was wall-clock time only",
+      "execution_environment_note": "compute runs on a remote 4-core Intel Xeon @2.10GHz VM with 15 GB RAM and NO GPU (no NVIDIA device nodes, no CUDA). Local operator hardware is not involved in the computation. Any GPU or many-core acceleration is therefore a change of execution environment, not a code change, and is deliberately deferred until after this experiment."
     }
   ]
 }
