@@ -1,0 +1,11 @@
+buckeye_c is DELIBERATELY HELD on this host.
+
+Its checkpoint (model hour 7.7322) and frozen configuration are preserved
+byte-for-byte for off-platform continuation. Do NOT restart it here, and do NOT
+re-scope its domain or alter its OPEN boundary: the primary run must resume from
+this exact state with the same solver, setup cache, forcing, terrain, parameters
+and runner commit.
+
+A smaller or repositioned Buckeye domain may be run LATER only as an explicitly
+labelled post-hoc sensitivity member — never as a replacement for this primary
+run.

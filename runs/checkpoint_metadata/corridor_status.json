@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-08-23T06:28:50.243316+00:00",
+  "updated_utc": "2026-08-25T19:15:29.631052+00:00",
   "execution_note": "The study host recycles every few hours. Corridor solves checkpoint atomically every 10 model-minutes and resume automatically.",
   "observed_recycles": 4,
   "resume_evidence": [
@@ -66,5 +66,24 @@
       ],
       "probe_groups": 10
     }
-  ]
+  ],
+  "buckeye_primary_handoff": {
+    "status": "HELD on the study host for off-platform continuation",
+    "frozen_at_model_hour": 7.7322,
+    "probe_samples": 463,
+    "reason": "ML-4 \u2014 the study host tears the container down between turns (~10% duty cycle); ~6.7 core-hours remain to reach hour 20",
+    "preserved_exactly": [
+      "solver",
+      "setup cache (terrain, roughness, culverts, probe cells, rain index map, stage BC)",
+      "MRMS QPE-B forcing",
+      "domain extent",
+      "OPEN boundary treatment",
+      "all parameters",
+      "engine commit 0b452c9d5"
+    ],
+    "explicitly_not_changed": "the domain is NOT re-scoped and the OPEN boundary is NOT modified. A smaller or repositioned Buckeye domain may be run later only as an explicitly labelled post-hoc sensitivity member, never as a replacement for this primary run.",
+    "gate": "crosshost_equivalence.py advances the frozen checkpoint 600 model-s and compares SHA-256 of h, qx, qy and peak plus max_h, max_face_v, volume and probe count against reference.json. PASS is required before resuming; FAIL means different host arithmetic and the run must not be continued as the same experiment.",
+    "gate_self_test": "PASS on the originating host (deterministic, verified twice)",
+    "bundle": "handoff/buckeye_primary/ (scripts, Dockerfile, pinned requirements, reference hashes); the 21 MB data payload \u2014 frozen checkpoint, setup cache and forcing \u2014 is delivered separately as an archive"
+  }
 }

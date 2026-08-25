@@ -1,0 +1,18 @@
+{
+  "start_model_hour": 7.732249,
+  "end_model_hour": 7.898916,
+  "advance_s": 600.0,
+  "h": "897df703dfb3e51e7fe07bbde4857ef279779488199760735496dae4b441d943",
+  "qx": "324617600cfda64437cfd6086d0141bedf612c2e3e4aa58c95b0d912dda596ce",
+  "qy": "b15dbcd0340edf6f739a464a80e548cde89d80e4c19b86c711571cf277af144a",
+  "peak": "d5f877fd7b05edfe2faf506f3eb859823efd8dabd3b5e06ab4d6a77a02589608",
+  "max_h": "0.7477923588942839",
+  "max_face_v": "3.1526055221470886",
+  "volume": "9197.116469562672",
+  "n_probe_samples": 473,
+  "emitted_on": {
+    "platform": "linux",
+    "python": "3.11.15",
+    "numpy": "2.4.6"
+  }
+}
