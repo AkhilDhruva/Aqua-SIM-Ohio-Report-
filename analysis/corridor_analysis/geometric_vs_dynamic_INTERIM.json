@@ -1,0 +1,53 @@
+{
+  "generated_utc": "2026-08-25T21:17:29.963967+00:00",
+  "status": "INTERIM \u2014 both corridor runs are PARTIAL (franklinton to model hour 11.98, pataskala to 14.65 of a 20 h target). Storm is hours 13-16, so pataskala has entered it and franklinton has not.",
+  "why_this_is_reportable_now": "the geometric smearing prediction was made from terrain alone, before any nest dynamics existed. Pataskala has now run into the storm, so the prediction can be checked point by point against the dynamics for the first time.",
+  "comparison": [
+    {
+      "probe": "main_broad_pataskala",
+      "freeboard_m": -0.18,
+      "geometric_prediction": "grid bed ~ pavement, so parent road depths are physically meaningful here",
+      "dynamic_outcome": {
+        "road_peak_m": 3.62,
+        "channel_peak_m": 4.38
+      },
+      "verdict": "CONFIRMED \u2014 the carriageway itself floods to 3.62 m. Consistent with the observed report that nearly every road in and out of Pataskala closed and basements were pumped."
+    },
+    {
+      "probe": "sr310_sf_crossing",
+      "freeboard_m": 3.44,
+      "geometric_prediction": "parent floods a DRY road \u2014 its bed sits 3.44 m below the carriageway, so 'impassable' there would be channel water",
+      "dynamic_outcome": {
+        "road_peak_m": 0.2,
+        "channel_peak_m": 4.26
+      },
+      "verdict": "CONFIRMED \u2014 channel 4.26 m while the carriageway reaches only 0.20 m, a 4.07 m differential. This is the smearing mechanism observed directly in the dynamics."
+    },
+    {
+      "probe": "us40_east",
+      "freeboard_m": -0.55,
+      "geometric_prediction": "grid bed slightly ABOVE the road, so the coarse model under-reports",
+      "dynamic_outcome": {
+        "road_peak_m": 0.14,
+        "channel_peak_m": 1.43
+      },
+      "verdict": "channel wet, road essentially dry at this stage"
+    },
+    {
+      "probe": "us40_etna",
+      "freeboard_m": -3.18,
+      "geometric_prediction": "strongly under-reports",
+      "dynamic_outcome": {
+        "road_peak_m": 0.04,
+        "channel_peak_m": 0.22
+      },
+      "verdict": "dry so far"
+    }
+  ],
+  "significance": "The terrain-only classification is being validated point by point by independent dynamics: where the coarse cell was road-like the fine model finds genuine carriageway flooding, and where the coarse cell was channel-like the fine model finds a deep channel beside a dry road. This is the mechanism behind the Case B retraction, now seen in the physics rather than inferred from elevations alone.",
+  "caveats": [
+    "both runs are PARTIAL; peaks will rise further",
+    "this is Pataskala, NOT the I-70 crossing \u2014 the Buckeye primary run is held for off-platform continuation and remains the decisive test for I-70",
+    "sr310_sf_crossing is classified PARTIAL by the scorer only because its road depth sits in the 0.15-0.30 m caution band; the road-vs-channel differential is the informative quantity"
+  ]
+}

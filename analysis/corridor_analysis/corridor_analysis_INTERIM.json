@@ -1,0 +1,122 @@
+[
+  {
+    "nest": "franklinton_c",
+    "complete": false,
+    "covered_model_hours": [
+      0.02,
+      11.98
+    ],
+    "n_samples": 720,
+    "t0_utc": "2026-08-19T18:00:00Z",
+    "thresholds_m": {
+      "caution": 0.15,
+      "impassable": 0.3
+    },
+    "probes": [
+      {
+        "probe": "wbroad_hilltop",
+        "n_road_cells": 93,
+        "road_peak_m": 0.008,
+        "road_peak_utc": "08-20 04:59Z",
+        "road_caution_utc": null,
+        "road_impassable_utc": null,
+        "channel_peak_m": null,
+        "road_minus_channel_peak_m": null,
+        "diagnosis": "DRY"
+      },
+      {
+        "probe": "franklinton_core",
+        "n_road_cells": 400,
+        "road_peak_m": 0.281,
+        "road_peak_utc": "08-20 05:45Z",
+        "road_caution_utc": "08-20 04:35Z",
+        "road_impassable_utc": null,
+        "channel_peak_m": null,
+        "road_minus_channel_peak_m": null,
+        "diagnosis": "PARTIAL"
+      },
+      {
+        "probe": "olentangy_gauge_03227107",
+        "n_road_cells": 116,
+        "road_peak_m": 0.378,
+        "road_peak_utc": "08-20 01:37Z",
+        "road_caution_utc": "08-20 01:05Z",
+        "road_impassable_utc": "08-20 01:15Z",
+        "channel_peak_m": 0.378,
+        "road_minus_channel_peak_m": 0.0,
+        "diagnosis": "CONFIRMED_ROAD_INUNDATION"
+      }
+    ]
+  },
+  {
+    "nest": "pataskala_c",
+    "complete": false,
+    "covered_model_hours": [
+      0.02,
+      14.65
+    ],
+    "n_samples": 880,
+    "t0_utc": "2026-08-19T18:00:00Z",
+    "thresholds_m": {
+      "caution": 0.15,
+      "impassable": 0.3
+    },
+    "probes": [
+      {
+        "probe": "us40_etna",
+        "n_road_cells": 186,
+        "road_peak_m": 0.04,
+        "road_peak_utc": "08-20 07:55Z",
+        "road_caution_utc": null,
+        "road_impassable_utc": null,
+        "channel_peak_m": 0.223,
+        "road_minus_channel_peak_m": -0.184,
+        "diagnosis": "DRY"
+      },
+      {
+        "probe": "us40_east",
+        "n_road_cells": 203,
+        "road_peak_m": 0.143,
+        "road_peak_utc": "08-20 08:39Z",
+        "road_caution_utc": null,
+        "road_impassable_utc": null,
+        "channel_peak_m": 1.427,
+        "road_minus_channel_peak_m": -1.284,
+        "diagnosis": "SMEARED_channel_wet_road_dry"
+      },
+      {
+        "probe": "main_broad_pataskala",
+        "n_road_cells": 400,
+        "road_peak_m": 3.62,
+        "road_peak_utc": "08-20 08:39Z",
+        "road_caution_utc": "08-20 05:58Z",
+        "road_impassable_utc": "08-20 06:12Z",
+        "channel_peak_m": 4.38,
+        "road_minus_channel_peak_m": -0.76,
+        "diagnosis": "CONFIRMED_ROAD_INUNDATION"
+      },
+      {
+        "probe": "sr310_sf_crossing",
+        "n_road_cells": 79,
+        "road_peak_m": 0.195,
+        "road_peak_utc": "08-20 08:39Z",
+        "road_caution_utc": "08-20 07:05Z",
+        "road_impassable_utc": null,
+        "channel_peak_m": 4.265,
+        "road_minus_channel_peak_m": -4.07,
+        "diagnosis": "PARTIAL"
+      },
+      {
+        "probe": "kirkersville_gauge_03144816",
+        "n_road_cells": 171,
+        "road_peak_m": 1.965,
+        "road_peak_utc": "08-20 08:39Z",
+        "road_caution_utc": "08-20 07:11Z",
+        "road_impassable_utc": "08-20 07:51Z",
+        "channel_peak_m": 1.965,
+        "road_minus_channel_peak_m": 0.0,
+        "diagnosis": "CONFIRMED_ROAD_INUNDATION"
+      }
+    ]
+  }
+]
