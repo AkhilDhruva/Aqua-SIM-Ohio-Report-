@@ -1,0 +1,407 @@
+{
+  "purpose": "test whether ML-3's open-boundary velocity is confined to the domain edge and whether it reaches the probes",
+  "threshold_fast_ms": 5.0,
+  "runs": [
+    {
+      "run_dir": "corridor_franklinton_c_B",
+      "t_h": 12.9063,
+      "domain_cells": [
+        698,
+        628
+      ],
+      "dx_m": 6.0,
+      "min_depth_m": 0.0001,
+      "max_v_all_faces_ms": 26.482,
+      "max_v_excluding_one_edge_ring_ms": 4.955,
+      "max_v_excluding_two_edge_rings_ms": 4.955,
+      "verdict": "BOUNDARY_ARTIFACT_CONFINED_TO_EDGE_ROWS",
+      "edge_exclusion_profile": [
+        {
+          "exclude_rings": 0,
+          "max_v_ms": 26.482,
+          "faces_over_5ms": 5,
+          "median_hflow_of_fast_m": 0.7916
+        },
+        {
+          "exclude_rings": 1,
+          "max_v_ms": 4.955,
+          "faces_over_5ms": 0,
+          "median_hflow_of_fast_m": null
+        },
+        {
+          "exclude_rings": 2,
+          "max_v_ms": 4.955,
+          "faces_over_5ms": 0,
+          "median_hflow_of_fast_m": null
+        },
+        {
+          "exclude_rings": 3,
+          "max_v_ms": 4.955,
+          "faces_over_5ms": 0,
+          "median_hflow_of_fast_m": null
+        },
+        {
+          "exclude_rings": 5,
+          "max_v_ms": 4.955,
+          "faces_over_5ms": 0,
+          "median_hflow_of_fast_m": null
+        },
+        {
+          "exclude_rings": 10,
+          "max_v_ms": 4.955,
+          "faces_over_5ms": 0,
+          "median_hflow_of_fast_m": null
+        },
+        {
+          "exclude_rings": 25,
+          "max_v_ms": 4.955,
+          "faces_over_5ms": 0,
+          "median_hflow_of_fast_m": null
+        },
+        {
+          "exclude_rings": 50,
+          "max_v_ms": 4.955,
+          "faces_over_5ms": 0,
+          "median_hflow_of_fast_m": null
+        }
+      ],
+      "interior_fast_faces_beyond_5_rings": [],
+      "probe_groups": [
+        {
+          "group": "franklinton_core",
+          "n_cells": 400,
+          "min_dist_to_edge_cells": 96,
+          "max_speed_ms": 0.351,
+          "max_depth_m": 0.346,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "olentangy_gauge_03227107",
+          "n_cells": 116,
+          "min_dist_to_edge_cells": 0,
+          "max_speed_ms": 0.652,
+          "max_depth_m": 0.473,
+          "boundary_adjacent": true
+        },
+        {
+          "group": "olentangy_gauge_03227107__channel",
+          "n_cells": 116,
+          "min_dist_to_edge_cells": 0,
+          "max_speed_ms": 0.652,
+          "max_depth_m": 0.473,
+          "boundary_adjacent": true
+        },
+        {
+          "group": "wbroad_hilltop",
+          "n_cells": 93,
+          "min_dist_to_edge_cells": 82,
+          "max_speed_ms": 0.42,
+          "max_depth_m": 0.0078,
+          "boundary_adjacent": false
+        }
+      ],
+      "contaminated_probe_groups": [],
+      "boundary_adjacent_probe_groups": [
+        "olentangy_gauge_03227107",
+        "olentangy_gauge_03227107__channel"
+      ]
+    },
+    {
+      "run_dir": "corridor_pataskala_c_B",
+      "t_h": 15.6667,
+      "domain_cells": [
+        619,
+        1239
+      ],
+      "dx_m": 8.0,
+      "min_depth_m": 0.0001,
+      "max_v_all_faces_ms": 8.345,
+      "max_v_excluding_one_edge_ring_ms": 7.67,
+      "max_v_excluding_two_edge_rings_ms": 7.67,
+      "verdict": "INTERIOR_VELOCITY_NOT_EXPLAINED_BY_BOUNDARY",
+      "edge_exclusion_profile": [
+        {
+          "exclude_rings": 0,
+          "max_v_ms": 8.345,
+          "faces_over_5ms": 51,
+          "median_hflow_of_fast_m": 1.5929
+        },
+        {
+          "exclude_rings": 1,
+          "max_v_ms": 7.67,
+          "faces_over_5ms": 42,
+          "median_hflow_of_fast_m": 1.9977
+        },
+        {
+          "exclude_rings": 2,
+          "max_v_ms": 7.67,
+          "faces_over_5ms": 39,
+          "median_hflow_of_fast_m": 2.3331
+        },
+        {
+          "exclude_rings": 3,
+          "max_v_ms": 7.67,
+          "faces_over_5ms": 37,
+          "median_hflow_of_fast_m": 2.364
+        },
+        {
+          "exclude_rings": 5,
+          "max_v_ms": 7.67,
+          "faces_over_5ms": 35,
+          "median_hflow_of_fast_m": 2.4309
+        },
+        {
+          "exclude_rings": 10,
+          "max_v_ms": 7.67,
+          "faces_over_5ms": 35,
+          "median_hflow_of_fast_m": 2.4309
+        },
+        {
+          "exclude_rings": 25,
+          "max_v_ms": 7.67,
+          "faces_over_5ms": 31,
+          "median_hflow_of_fast_m": 2.364
+        },
+        {
+          "exclude_rings": 50,
+          "max_v_ms": 7.182,
+          "faces_over_5ms": 24,
+          "median_hflow_of_fast_m": 2.6651
+        }
+      ],
+      "interior_fast_faces_beyond_5_rings": [
+        {
+          "n_faces": 35,
+          "max_v_ms": 7.67,
+          "median_hflow_m": 2.431,
+          "median_froude": 1.39,
+          "n_thin_film_hflow_under_0p5m": 6,
+          "n_channel_like_hflow_over_1m": 21
+        }
+      ],
+      "probe_groups": [
+        {
+          "group": "kirkersville_gauge_03144816",
+          "n_cells": 171,
+          "min_dist_to_edge_cells": 78,
+          "max_speed_ms": 4.977,
+          "max_depth_m": 2.8977,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "kirkersville_gauge_03144816__channel",
+          "n_cells": 171,
+          "min_dist_to_edge_cells": 78,
+          "max_speed_ms": 4.977,
+          "max_depth_m": 2.8977,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "main_broad_pataskala",
+          "n_cells": 400,
+          "min_dist_to_edge_cells": 95,
+          "max_speed_ms": 6.808,
+          "max_depth_m": 3.6929,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "main_broad_pataskala__channel",
+          "n_cells": 145,
+          "min_dist_to_edge_cells": 99,
+          "max_speed_ms": 6.808,
+          "max_depth_m": 4.4619,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "sr310_sf_crossing",
+          "n_cells": 79,
+          "min_dist_to_edge_cells": 176,
+          "max_speed_ms": 4.834,
+          "max_depth_m": 0.2,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "sr310_sf_crossing__channel",
+          "n_cells": 89,
+          "min_dist_to_edge_cells": 165,
+          "max_speed_ms": 5.064,
+          "max_depth_m": 4.2727,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "us40_east",
+          "n_cells": 203,
+          "min_dist_to_edge_cells": 54,
+          "max_speed_ms": 0.823,
+          "max_depth_m": 0.2151,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "us40_east__channel",
+          "n_cells": 131,
+          "min_dist_to_edge_cells": 57,
+          "max_speed_ms": 0.91,
+          "max_depth_m": 1.4584,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "us40_etna",
+          "n_cells": 186,
+          "min_dist_to_edge_cells": 70,
+          "max_speed_ms": 0.614,
+          "max_depth_m": 0.0417,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "us40_etna__channel",
+          "n_cells": 46,
+          "min_dist_to_edge_cells": 1,
+          "max_speed_ms": 0.578,
+          "max_depth_m": 0.2266,
+          "boundary_adjacent": true
+        }
+      ],
+      "contaminated_probe_groups": [
+        "main_broad_pataskala",
+        "main_broad_pataskala__channel",
+        "sr310_sf_crossing__channel"
+      ],
+      "boundary_adjacent_probe_groups": [
+        "us40_etna__channel"
+      ]
+    },
+    {
+      "run_dir": "corridor_buckeye_c_B",
+      "t_h": 7.7322,
+      "domain_cells": [
+        937,
+        727
+      ],
+      "dx_m": 6.0,
+      "min_depth_m": 0.0001,
+      "max_v_all_faces_ms": 3.12,
+      "max_v_excluding_one_edge_ring_ms": 1.718,
+      "max_v_excluding_two_edge_rings_ms": 0.68,
+      "verdict": "NO_FACE_ANYWHERE_EXCEEDS_5_M_S",
+      "edge_exclusion_profile": [
+        {
+          "exclude_rings": 0,
+          "max_v_ms": 3.12,
+          "faces_over_5ms": 0,
+          "median_hflow_of_fast_m": null
+        },
+        {
+          "exclude_rings": 1,
+          "max_v_ms": 1.718,
+          "faces_over_5ms": 0,
+          "median_hflow_of_fast_m": null
+        },
+        {
+          "exclude_rings": 2,
+          "max_v_ms": 0.68,
+          "faces_over_5ms": 0,
+          "median_hflow_of_fast_m": null
+        },
+        {
+          "exclude_rings": 3,
+          "max_v_ms": 0.546,
+          "faces_over_5ms": 0,
+          "median_hflow_of_fast_m": null
+        },
+        {
+          "exclude_rings": 5,
+          "max_v_ms": 0.546,
+          "faces_over_5ms": 0,
+          "median_hflow_of_fast_m": null
+        },
+        {
+          "exclude_rings": 10,
+          "max_v_ms": 0.546,
+          "faces_over_5ms": 0,
+          "median_hflow_of_fast_m": null
+        },
+        {
+          "exclude_rings": 25,
+          "max_v_ms": 0.521,
+          "faces_over_5ms": 0,
+          "median_hflow_of_fast_m": null
+        },
+        {
+          "exclude_rings": 50,
+          "max_v_ms": 0.309,
+          "faces_over_5ms": 0,
+          "median_hflow_of_fast_m": null
+        }
+      ],
+      "interior_fast_faces_beyond_5_rings": [],
+      "probe_groups": [
+        {
+          "group": "i70_sf_licking",
+          "n_cells": 325,
+          "min_dist_to_edge_cells": 226,
+          "max_speed_ms": 0.0,
+          "max_depth_m": 0.0,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "i70_sf_licking__channel",
+          "n_cells": 184,
+          "min_dist_to_edge_cells": 296,
+          "max_speed_ms": 0.0,
+          "max_depth_m": 0.0,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "i70_sr79",
+          "n_cells": 325,
+          "min_dist_to_edge_cells": 192,
+          "max_speed_ms": 0.0,
+          "max_depth_m": 0.0,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "i70_sr79__channel",
+          "n_cells": 330,
+          "min_dist_to_edge_cells": 235,
+          "max_speed_ms": 0.0,
+          "max_depth_m": 0.0,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "sr79_hebron_rd",
+          "n_cells": 144,
+          "min_dist_to_edge_cells": 258,
+          "max_speed_ms": 0.0,
+          "max_depth_m": 0.0,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "sr79_hebron_rd__channel",
+          "n_cells": 158,
+          "min_dist_to_edge_cells": 265,
+          "max_speed_ms": 0.0,
+          "max_depth_m": 0.0005,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "us40_hebron",
+          "n_cells": 173,
+          "min_dist_to_edge_cells": 119,
+          "max_speed_ms": 0.0,
+          "max_depth_m": 0.0,
+          "boundary_adjacent": false
+        },
+        {
+          "group": "us40_hebron__channel",
+          "n_cells": 347,
+          "min_dist_to_edge_cells": 28,
+          "max_speed_ms": 0.0,
+          "max_depth_m": 0.0,
+          "boundary_adjacent": false
+        }
+      ],
+      "contaminated_probe_groups": [],
+      "boundary_adjacent_probe_groups": []
+    }
+  ]
+}

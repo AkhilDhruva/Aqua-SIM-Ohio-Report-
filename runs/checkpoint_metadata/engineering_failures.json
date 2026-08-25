@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-08-23T07:06:17.451677+00:00",
+  "updated_utc": "2026-08-25",
   "purpose": "Engineering failures and measured limitations are part of the reproducibility record, not noise to be deleted.",
   "entries": [
     {
@@ -91,7 +91,37 @@
           }
         },
         "consequence": "all three corridor runs converge on ~1 model-hour per wall-hour once their channels fill, because a few dozen outflow cells set the global timestep for the whole domain. This is a property of the OPEN boundary at a deep-water exit, not of any one site.",
-        "note": "franklinton's INTERIOR maximum (26.28 m/s) is itself high, unlike buckeye's (3.47 m/s). That is worth investigating separately before franklinton's results are interpreted; it is NOT explained by the boundary alone."
+        "resolution": {
+          "utc": "2026-08-25 (this session)",
+          "finding": "the earlier 'franklinton INTERIOR 26.28 m/s' reading was WRONG, and wrong because of a flaw in the diagnostic, not in the model. See EF-6. Recomputed correctly, ML-3 explains franklinton and buckeye COMPLETELY: excluding a single cell ring from every edge drops franklinton's domain maximum from 26.48 to 4.96 m/s and leaves ZERO faces above 5 m/s anywhere in 875,362 interior faces. Buckeye has no face above 5 m/s at all, and falls from 3.12 to 0.68 m/s at two rings.",
+          "measured_2026_08_25": {
+            "franklinton_c": {
+              "t_h": 12.91,
+              "max_all_faces_ms": 26.48,
+              "max_excluding_1_ring_ms": 4.96,
+              "faces_over_5ms_beyond_1_ring": 0,
+              "verdict": "BOUNDARY_ARTIFACT_CONFINED_TO_EDGE_ROWS"
+            },
+            "buckeye_c": {
+              "t_h": 7.73,
+              "max_all_faces_ms": 3.12,
+              "max_excluding_2_rings_ms": 0.68,
+              "faces_over_5ms_anywhere": 0,
+              "verdict": "NO_FACE_ANYWHERE_EXCEEDS_5_M_S"
+            },
+            "pataskala_c": {
+              "t_h": 15.67,
+              "max_all_faces_ms": 8.35,
+              "max_excluding_5_rings_ms": 7.67,
+              "faces_over_5ms_beyond_5_rings": 35,
+              "verdict": "INTERIOR_VELOCITY_NOT_EXPLAINED_BY_BOUNDARY"
+            }
+          },
+          "pataskala_is_the_exception_and_it_is_physical": "pataskala is the only nest with fast flow deep in the interior: 35 faces above 5 m/s more than 5 cell rings from any edge. Those are NOT a numerical thin film. Median conveyance depth is 2.43 m and median Froude 1.39, with 21 of 35 carrying more than 1 m of water at channel roughness (n = 0.024-0.035) \u2014 this is the South Fork Licking mainstem in flood, which is what the nest was built to resolve. The remaining 6 (conveyance depth ~0.2 m, Froude ~4, road roughness n = 0.013) are shallow sheet flow spilling road embankments; they carry negligible volume and are the expected local-inertial behaviour at an embankment crest.",
+          "consequence_for_interpretation": "the blocker on franklinton is REMOVED. Its results may be interpreted. No corridor probe in any nest sits in fast water attributable to the boundary: franklinton's science probes are 82-96 cells inside the domain at 0.35-0.42 m/s, and buckeye's are 28-296 cells inside and still dry at hour 7.73.",
+          "caveats_created": "two probe groups touch the domain edge and must carry a declared caveat rather than being read as interior results: franklinton olentangy_gauge_03227107 (and its __channel pair) at 0 cells from the edge, and pataskala us40_etna__channel at 1 cell. Both are currently slow (0.65 and 0.58 m/s) so neither is contaminated at present, but their values are boundary-influenced by construction and are reported as such.",
+          "evidence": "analysis/boundary_velocity_audit.py + analysis/boundary_velocity_audit.json (read-only recomputation from the checkpointed states; nothing written back into any run)"
+        }
       }
     },
     {
@@ -102,6 +132,17 @@
       "consequence": "polling on an hourly watchdog cannot finish these runs. Remaining compute at measured rates: franklinton ~57 min, pataskala ~37 min, buckeye ~6.8 hours (buckeye inflated ~5x by the ML-3 boundary CFL throttle). At a few minutes of compute per tick, buckeye alone would need on the order of 100 ticks.",
       "affected_scientific_results": "none \u2014 no result is altered, only deferred. The Case B determination rests on surveyed geometry and observed gauge timing, neither of which depends on these runs.",
       "implication_for_future_work": "sustained simulation needs an execution environment that persists between interactions. This is the concrete justification for moving compute off this platform before any regional-scale benchmark."
+    },
+    {
+      "id": "EF-6",
+      "title": "Self-caught measurement error: 'interior' velocity diagnostic did not exclude the boundary CELL ROW",
+      "what_i_reported": "that franklinton's interior maximum face velocity was 26.28 m/s, unlike buckeye's 3.47 m/s, and that this was 'NOT explained by the boundary alone' and 'worth investigating separately before franklinton's results are interpreted'. That was committed to this repository at b4900d8 and was wrong.",
+      "root_cause": "the diagnostic separated 'interior' from 'edge' by excluding the solver's BOUNDARY FACES \u2014 the ghost faces outside the edge cells. But the faces BETWEEN adjacent cells within the edge row are interior faces by that classification, and they are exactly the faces carrying the lateral drawdown that feeds the free outfall. Excluding boundary faces therefore does not isolate the interior; whole cell ROWS must be excluded.",
+      "how_it_was_caught": "by asking where the fast faces actually are instead of only how fast they are. All five franklinton faces above 5 m/s sit at j=697 \u2014 the last row of a 698-row domain \u2014 at distance 0 from the edge.",
+      "correction": "recomputed as a function of how many cell rings are excluded from every edge. franklinton 26.48 -> 4.96 m/s after one ring, with zero faces above 5 m/s thereafter. Recorded under ML-3.resolution.",
+      "impact_of_the_error": "it would have suppressed or delayed interpretation of a franklinton result that is in fact sound. It did not affect any model output, forcing, geometry or parameter \u2014 the defect was in the diagnostic only, and the diagnostic is read-only.",
+      "lesson": "a scalar extremum is not a diagnosis. Report WHERE an extremum lives before concluding WHAT it is; a spatial profile would have shown in one line what a maximum concealed.",
+      "kept_visible": "the incorrect claim is not deleted from history \u2014 commit b4900d8 stands and this entry names it."
     }
   ]
 }
