@@ -69,7 +69,30 @@
       ],
       "physics_impact": "none identified in the interior. The affected cells are the outflow boundary itself; the corridor probes are far inside. The free-outfall OPEN boundary is the pre-registered configuration and behaves as designed.",
       "decision": "NOT changed. Altering the boundary treatment or the CFL velocity mid-experiment would change the frozen configuration and invalidate the comparison. The cost is wall-clock time only, and it is recorded rather than optimised away.",
-      "for_future_work": "a domain-edge outflow treatment (e.g. normal-depth or critical-depth outflow instead of free drop to bed), or excluding boundary faces from the global CFL reduction, would remove this throttle. Both are engine changes and belong to the aqua-sim backlog, not to this study."
+      "for_future_work": "a domain-edge outflow treatment (e.g. normal-depth or critical-depth outflow instead of free drop to bed), or excluding boundary faces from the global CFL reduction, would remove this throttle. Both are engine changes and belong to the aqua-sim backlog, not to this study.",
+      "generalisation": {
+        "finding": "NOT specific to buckeye. As water deepened, franklinton and pataskala became velocity-limited by the SAME open-boundary free-outfall mechanism.",
+        "measured": {
+          "franklinton_c": {
+            "stored_max_face_v_m_s": 47.21,
+            "interior_max_m_s": 26.28,
+            "edge_max_m_s": 47.21,
+            "worst_edge": "bottom",
+            "cells_over_5_m_s": 23,
+            "dt_s": 0.08
+          },
+          "pataskala_c": {
+            "stored_max_face_v_m_s": 27.24,
+            "interior_max_m_s": 8.35,
+            "edge_max_m_s": 27.24,
+            "worst_edge": "top",
+            "cells_over_5_m_s": 24,
+            "dt_s": 0.163
+          }
+        },
+        "consequence": "all three corridor runs converge on ~1 model-hour per wall-hour once their channels fill, because a few dozen outflow cells set the global timestep for the whole domain. This is a property of the OPEN boundary at a deep-water exit, not of any one site.",
+        "note": "franklinton's INTERIOR maximum (26.28 m/s) is itself high, unlike buckeye's (3.47 m/s). That is worth investigating separately before franklinton's results are interpreted; it is NOT explained by the boundary alone."
+      }
     },
     {
       "id": "ML-4",
