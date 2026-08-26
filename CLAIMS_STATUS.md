@@ -161,9 +161,11 @@ progress rather than reconstructed afterwards:
 | 16.45 | 209 | 1.72 | 87.7 m/s | 3.16 × 10⁶ m³ |
 | 20.00 | 265 | 1.68 | 56.7 m/s | 4.83 × 10⁶ m³ |
 
-Froude falls monotonically as depth grows, volume rises monotonically, no cell
-is ever negative or non-finite, and the thin-film fraction of the fast faces
-falls from 82/211 to **13/265** — at the final state 218 of 265 carry more than
+Froude falls from 3.53 to 1.68 as depth grows — not perfectly monotonically:
+there is a single 0.02 reversal between h=16.45 and h=17.33, which is noise on
+this quantity and is stated rather than smoothed. Volume rises monotonically at
+every sample, no cell is ever negative or non-finite, and the thin-film fraction
+of the fast faces falls from 82/211 to **13/265** — at the final state 218 of 265 carry more than
 1 m of water at median conveyance depth 1.92 m. The high-Froude episode
 coincided with the pluvial peak around h≈14 and resolved as the rivers filled.
 Franklinton's *final-state* velocities are inside the local-inertial scheme's
