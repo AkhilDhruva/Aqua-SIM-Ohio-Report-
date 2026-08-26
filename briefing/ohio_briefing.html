@@ -214,9 +214,13 @@ footer a{color:var(--water)}
   <p class="standfirst">A blind reconstruction of the Franklin and Licking County flood, tested against
   what actually happened — and a specific, quantified limit on using regional flood screening for
   road-closure decisions.</p>
+  <p class="standfirst" style="font-size:16px;margin-top:12px">This revision adds the completed
+  six- and eight-metre corridor simulations, which both confirm the central finding and place a
+  limit on it.</p>
   <div class="metarow">
-    <span><b>Prepared</b> 23 August 2026</span>
+    <span><b>Prepared</b> 23 August 2026 &middot; <b>revised</b> 26 August</span>
     <span><b>Domain</b> Greater Columbus &amp; western Licking County</span>
+    <span><b>Corridor runs</b> 2 of 3 complete at 6–8&nbsp;m</span>
     <span><b>Forcing</b> NOAA MRMS radar QPE</span>
     <span><b>Terrain</b> USGS 3DEP 1&nbsp;m LiDAR</span>
     <span><b>Status</b> Research — not operationally validated</span>
@@ -246,6 +250,13 @@ footer a{color:var(--water)}
       <p><b>The apparent 11.6-hour warning on the I-70 closure does not survive scrutiny.</b> The
       model's early signal arrived before the upstream river gauge had even peaked, so it cannot be
       the flood wave that closed the road. We report it as a false positive, not a lead time.</p></li>
+    <li><span class="chip watch">Newly qualified</span>
+      <p><b>An elevation mismatch marks a closure as unverified, not as false.</b> Two corridors were
+      re-run at six and eight metres. Where the flooding would have to come from a channel, the
+      coarse signal was smearing — at SR-310 the stream carried 4.28&nbsp;m while the road stayed
+      below its closure threshold. But at W&nbsp;Broad Street, which has the largest elevation
+      mismatch in the study, the road floods anyway, because rain ponds there and no stream is
+      present. Five of twelve corridor points could be scored: four confirmed, one refuted.</p></li>
     <li><span class="chip watch">Operationally useful</span>
       <p><b>The observed routing lag is the real warning asset.</b> The South Fork crest took roughly
       28 hours to travel from Kirkersville to the Buckeye Lake reach. That lag — measured, not
@@ -374,7 +385,7 @@ footer a{color:var(--water)}
           </tr>
         </thead>
         <tbody>
-          <tr class="flag"><td class="name">W Broad St, Hilltop</td><td class="n">218.82</td><td class="n">222.97</td><td class="n">+4.15</td><td class="verdict bad">floods a dry road</td></tr>
+          <tr><td class="name">W Broad St, Hilltop</td><td class="n">218.82</td><td class="n">222.97</td><td class="n">+4.15</td><td class="verdict mid">tested at 6 m — road really floods</td></tr>
           <tr class="flag"><td class="name">SR-310 at South Fork</td><td class="n">313.30</td><td class="n">316.73</td><td class="n">+3.44</td><td class="verdict bad">floods a dry road</td></tr>
           <tr class="flag"><td class="name">I-70 at South Fork</td><td class="n">267.75</td><td class="n">269.51</td><td class="n">+1.77</td><td class="verdict bad">floods a dry road</td></tr>
           <tr class="good"><td class="name">SR-79 / Hebron Rd</td><td class="n">269.49</td><td class="n">269.41</td><td class="n">−0.08</td><td class="verdict fine">grid ≈ pavement</td></tr>
@@ -393,13 +404,94 @@ footer a{color:var(--water)}
     carriageway above the water surface at which the 60&nbsp;m grid declares that road impassable.
     A positive value means the grid reports a flooded road while the pavement is still dry by that
     margin. A negative value means the grid's ground sits above the real road, so genuine street
-    flooding goes unseen. Three of twelve points invent closures; four would miss them.</figcaption>
+    flooding goes unseen. On elevation alone, three of twelve points look like invented closures and
+    four look like missed ones. <b>Two of those twelve have since been tested against fine-resolution
+    runs, and one of the three suspected invented closures did not survive the test</b> — see the
+    next section.</figcaption>
   </figure>
 </section>
 
 <section>
   <div class="shead">
     <div class="snum">03</div>
+    <h2>What the fine-resolution runs actually settled</h2>
+    <p class="sub">The elevation test finds where a coarse grid <i>can</i> be wrong, not where it <i>is</i></p>
+  </div>
+  <div class="col">
+    <p>The freeboard measurement above is a statement about terrain. It says nothing about whether
+    water ever arrives. To find out, two corridors were re-run at six and eight metres — fine enough
+    to separate a carriageway from the channel beside it — each carrying radar rainfall on every cell
+    and taking its boundary water levels from the coarse model around it.</p>
+    <p>Both runs completed their full twenty-hour window. They did not simply confirm the elevation
+    test. One of them broke it, and that is the more useful result.</p>
+  </div>
+
+  <figure>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Corridor point</th>
+            <th>Freeboard</th>
+            <th>What elevation alone predicted</th>
+            <th>Fine-grid road depth</th>
+            <th>Channel beside it</th>
+            <th>Outcome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="good"><td class="name">SR-310 at South Fork</td><td class="n">+3.44</td><td>floods a dry road</td><td class="n">0.20</td><td class="n">4.28</td><td class="verdict fine">confirmed</td></tr>
+          <tr class="good"><td class="name">Main St at Broad, Pataskala</td><td class="n">−0.18</td><td>grid ≈ pavement</td><td class="n">3.69</td><td class="n">4.47</td><td class="verdict fine">confirmed</td></tr>
+          <tr class="good"><td class="name">South Fork at Kirkersville</td><td class="n">−0.36</td><td>grid ≈ pavement</td><td class="n">2.99</td><td class="n">2.99</td><td class="verdict fine">confirmed</td></tr>
+          <tr class="good"><td class="name">Franklinton core</td><td class="n">−0.38</td><td>grid ≈ pavement</td><td class="n">1.70</td><td class="n">—</td><td class="verdict fine">confirmed</td></tr>
+          <tr class="flag"><td class="name">W Broad St, Hilltop</td><td class="n">+4.15</td><td>floods a dry road</td><td class="n">2.22</td><td class="n">—</td><td class="verdict bad">prediction failed</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption>Depths in metres. Only these five of the twelve corridor points can be scored: four
+    lie in the Buckeye Lake corridor, whose fine run is held for off-platform completion; one sits on
+    a model boundary where its water level is imposed rather than computed; and two carry a
+    prediction that the coarse grid <i>misses</i> flooding, which cannot be confirmed because the
+    fine grid does not flood those roads either. <b>Five scoreable, four confirmed, one failed.</b></figcaption>
+  </figure>
+
+  <div class="col">
+    <p><b>SR-310 is the mechanism caught in the act.</b> The coarse grid calls that crossing
+    impassable. At eight metres the channel beside it carries 4.28&nbsp;m of water while the
+    carriageway never reaches the 0.30&nbsp;m closure threshold — a difference of over four metres
+    between the road and the stream the coarse cell had averaged together. That is exactly the error
+    the elevation test was designed to detect, and here it is, operating.</p>
+    <p><b>W Broad Street is the correction.</b> It carries the largest freeboard measured anywhere in
+    this study: its coarse cell sits 4.15&nbsp;m below the pavement, so on elevation alone it looked
+    like the clearest invented closure of the twelve. At six metres the road floods regardless, to
+    2.22&nbsp;m. The terrain explains why — that location has <i>no stream in it at all</i>. The
+    water is rainfall ponding in a local low point on a hilltop, not channel water borrowed from a
+    neighbouring cell.</p>
+  </div>
+
+  <div class="pull">
+    <p>A large elevation mismatch marks a coarse-grid closure as <i>unverified</i>, not as false.
+    Where the flooding would have to come from a channel, the signal is likely smearing. Where rain
+    can pond on the spot, it may be real.</p>
+    <p class="attrib">The distinguishing question — is there a watercourse in this cell — is answerable
+    from maps, before any model is run</p>
+  </div>
+
+  <div class="col">
+    <p>One further number deserves to be stated with its own caveat rather than quoted. In the
+    Franklinton run the modelled river peak at the Olentangy gauge lands within
+    <span class="mono">31&nbsp;minutes</span> of the observed peak, with a shape correlation of
+    <span class="mono">0.917</span>. That is a good number and it is close to meaningless as a test:
+    that gauge sits on the edge of the fine model's domain, where its water level is dictated by the
+    coarse model rather than computed. The honest comparison is the Pataskala gauge, which sits well
+    inside its domain and peaks <b>153 minutes early</b>. The fine grid resolves <i>where</i> water
+    goes considerably better than <i>when</i> it arrives.</p>
+  </div>
+</section>
+
+<section>
+  <div class="shead">
+    <div class="snum">04</div>
     <h2>Why the early I-70 signal was not a warning</h2>
     <p class="sub">A flood wave cannot arrive downstream before it peaks upstream</p>
   </div>
@@ -483,7 +575,7 @@ footer a{color:var(--water)}
 
 <section>
   <div class="shead">
-    <div class="snum">04</div>
+    <div class="snum">05</div>
     <h2>What the model could not do at all</h2>
     <p class="sub">Multi-day river routing is outside its represented physics</p>
   </div>
@@ -504,7 +596,7 @@ footer a{color:var(--water)}
 
 <section>
   <div class="shead">
-    <div class="snum">05</div>
+    <div class="snum">06</div>
     <h2>What this means for Ohio infrastructure decisions</h2>
     <p class="sub">Four recommendations that follow directly from the measurements above</p>
   </div>
@@ -545,7 +637,7 @@ footer a{color:var(--water)}
 
 <section>
   <div class="shead">
-    <div class="snum">06</div>
+    <div class="snum">07</div>
     <h2>Limitations</h2>
     <p class="sub">Stated plainly, because they bound every claim above</p>
   </div>
@@ -562,11 +654,23 @@ footer a{color:var(--water)}
     Closure and rescue times come from press accounts, some phrased as "around" a given hour, and at
     least one closure start is inferred rather than stated. Two independently reported accounts of
     the I-70 closure time disagree by roughly ninety minutes.</p></div>
-    <div class="limit"><span class="dot"></span><p><b>Fine-scale simulations are still running.</b>
-    The corridor models at 6–8&nbsp;m will confirm the mechanism identified here by showing directly
-    whether carriageway cells wet during the storm. The direction of the finding does not depend on
-    them — it rests on surveyed elevations and observed gauge timing — but the dynamic confirmation
-    is not yet complete.</p></div>
+    <div class="limit"><span class="dot"></span><p><b>Only five of twelve corridor points can be
+    scored.</b> Two of the three fine-scale corridor models are complete. The third, covering the
+    Buckeye Lake and I-70 crossings, is held mid-run for completion on other hardware, which leaves
+    four points untested — including the I-70 crossing that opens this document. One further point
+    sits on a model boundary where its water level is imposed rather than computed, and two carry a
+    prediction that the coarse grid <i>misses</i> flooding, which cannot be confirmed because the
+    fine grid does not flood those roads either.</p></div>
+    <div class="limit"><span class="dot"></span><p><b>The fine grid's timing is worse than its
+    geography.</b> At the one gauge that sits well inside a fine domain, the modelled peak arrives
+    <b>153 minutes early</b>. The fine models resolve where water goes considerably better than when
+    it arrives, and nothing here should be read as a timing capability.</p></div>
+    <div class="limit"><span class="dot"></span><p><b>One fine-scale run passed through a numerically
+    strained phase.</b> During the Franklinton rainfall peak the solver briefly carried flow at
+    Froude numbers around 3.5, outside the validity range of the simplified momentum equation it
+    uses. Velocities in that window are not defensible; depths, which the closure thresholds actually
+    use, are far less sensitive to it, and the condition relaxed as the rivers filled. It is recorded
+    rather than smoothed over.</p></div>
     <div class="limit"><span class="dot"></span><p><b>Buildings are not represented.</b> Building
     footprint sources were unreachable from the study environment, so urban flow obstruction in
     Franklinton is modelled by terrain alone.</p></div>
