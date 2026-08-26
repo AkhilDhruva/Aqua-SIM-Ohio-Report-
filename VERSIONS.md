@@ -21,7 +21,7 @@ not reconstructed afterwards.
 
 | Version | Contents |
 |---|---|
-| `v0.5` | Franklinton corridor result (numbered after v0.4 because Pataskala finished first — version order follows completion, not the nest list) |
+
 | `v0.6` | Buckeye Lake / I-70 corridor result, resumed off-platform from the frozen checkpoint |
 | `v0.7` | sensitivity members (no-drain, infiltration, no-boundary-stage) |
 | `v1.0` | frozen Phase-2 report |

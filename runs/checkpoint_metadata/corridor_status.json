@@ -6,7 +6,12 @@
     "pataskala_c_B": {
       "status": "COMPLETE",
       "model_hours_reached": 20.0,
-      "dx_m": 8.0, "grid": [1239, 619], "culverts": 57,
+      "dx_m": 8.0,
+      "grid": [
+        1239,
+        619
+      ],
+      "culverts": 57,
       "peak_depth_m": 5.104,
       "probe_samples": 1201,
       "probes_json_sha256": "6ba050137c7c3860017293ccecadeaa85e89bb84018188850f62e30809bfa6ea",
@@ -14,20 +19,31 @@
       "note": "finished at t=20.0000 h, then crashed writing meta.json (EF-7). Relaunched after the fix; restored from checkpoint, executed zero steps, wrote meta.json. probes.json and peak.npz md5-identical across that restart."
     },
     "franklinton_c_B": {
-      "status": "RUNNING",
-      "model_hours_reached_at_last_check": 14.95,
-      "dx_m": 6.0, "grid": [628, 698],
-      "throughput_model_h_per_wall_h": 0.38,
-      "limitation": "ML-3 open-boundary free-outfall throttle, escalating: the outfall ghost face on the eastern edge reached 169 m/s on 4.23 m of conveyance depth as the Scioto rose, collapsing dt to 0.024 s (152,000 steps per model-hour). Removing the ghost faces from the CFL would give an 8.5x larger dt, and a wave-only limit 20x — but that changes the numerical trajectory and so may not be applied to the frozen primary configuration.",
-      "remaining_cost_estimate": "5.0 model-h at 0.38 model-h/wall-h = ~13 wall-hours of ACTIVE-TURN compute (ML-4), and slowing as the boundary stage rises",
-      "why_it_cannot_be_truncated": "the parent boundary forcing rises from 0.75 m at h=14.5 to 3.79 m at h=20 — 98% of its eventual 3.87 m asymptote. franklinton_core is at 100% of its running peak and still rising at +0.20 m/h. The Scioto interaction the nest exists to test is entirely ahead of the current time, not behind it.",
-      "interpretation_caveat": "between h=12.91 and h=14.27 the domain developed 211 interior faces above 5 m/s at median Froude 3.65, reaching 12.1 m/s on the wbroad_hilltop probe. Water surfaces there are smooth and monotone and no depths are negative or non-finite, and Manning equilibrium for the same geometry gives 8.5 m/s, so this is not a numerical blow-up. But Fr 3.65 is outside the validity envelope of the Bates local-inertial scheme, which omits advection. Franklinton VELOCITIES on those cells are not defensible; depths are far less sensitive to the momentum closure and the road thresholds use depth."
+      "status": "COMPLETE",
+      "model_hours_reached": 20.0,
+      "dx_m": 6.0,
+      "grid": [
+        628,
+        698
+      ],
+      "culverts": 4,
+      "peak_depth_m": 9.818,
+      "probe_samples": 1201,
+      "probes_json_sha256": "bde4ab8accdc4113e4c64219026731fe699a5ef1f632b3b8bf48aef5700f7649",
+      "completion_verified_by": "probe series reaches meta['hours'] (EF-2 rule); the run also printed COMPLETE, which the EF-7 fix restored",
+      "throughput_note": "0.31-0.46 model-h/wall-h through the pluvial peak, recovering to 0.87-1.22 after h=16.4 as the outfall ghost velocity fell from 169 to 57 m/s. Total ~362 wall-minutes of ACTIVE-TURN compute (ML-4).",
+      "interpretation": "final state is INSIDE the local-inertial envelope (median Froude 1.68 on 1.92 m conveyance depth, 218 of 265 fast faces channel-like). The h~14 transient at Froude 3.65 is NOT, and Franklinton velocities in that window remain undefensible. Depths are far less sensitive to the momentum closure and the road thresholds use depth.",
+      "structural_limitation": "only olentangy_gauge_03227107 has a __channel pair and it sits at distance 0 from the domain edge, where the Dirichlet stage is imposed. Franklinton cannot run the road-vs-channel discriminator, and its gauge timing is substantially the parent's."
     },
     "buckeye_c_B": {
-      "status": "HELD — frozen for off-platform continuation",
+      "status": "HELD \u2014 frozen for off-platform continuation",
       "model_hours_reached": 7.7322,
       "probe_samples": 463,
-      "dx_m": 6.0, "grid": [727, 937],
+      "dx_m": 6.0,
+      "grid": [
+        727,
+        937
+      ],
       "hold": "corridor_buckeye_c_B/.hold",
       "note": "checkpoint, setup cache, forcing, terrain, parameters and runner commit preserved exactly as-is per instruction. Packaged in handoff/buckeye_primary/ with a cross-host numerical equivalence gate that must PASS before the scientific run resumes. Domain and OPEN boundary NOT re-scoped."
     }

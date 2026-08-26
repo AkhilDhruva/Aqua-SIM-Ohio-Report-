@@ -1,0 +1,29 @@
+{
+  "nest": "franklinton_c",
+  "tag": "B",
+  "dx": 6.0,
+  "bbox": [
+    -83.058,
+    39.948,
+    -83.015,
+    39.985
+  ],
+  "crs": "EPSG:32617",
+  "transform": [
+    6.0,
+    0.0,
+    324189.844073291,
+    0.0,
+    -6.0,
+    4428120.688731284
+  ],
+  "nx": 628,
+  "ny": 698,
+  "hours": 20.0,
+  "infil_mm_hr": 0.0,
+  "no_drain": false,
+  "bc": "boundary_stages_franklinton_c.json",
+  "culverts": 4,
+  "culvert_log": [],
+  "peak_depth_m": 9.818
+}

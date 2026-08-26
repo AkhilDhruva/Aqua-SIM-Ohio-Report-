@@ -1,0 +1,51 @@
+{
+  "run_dir": "corridor_franklinton_c_B",
+  "observed_source": "NOAA NWM v3 analysis_assim (USGS-nudged proxy); discharge only \u2014 no stage, so no stage RMSE",
+  "note": "comparison is TIMING and SHAPE, not absolute magnitude",
+  "gauges": [
+    {
+      "probe": "olentangy_gauge_03227107",
+      "site_no": "03227107",
+      "model": {
+        "rise_start_h": 7.300055555555556,
+        "rise_start_utc": "08-20 01:18Z",
+        "peak_h": 18.516666666666666,
+        "peak_utc": "08-20 12:31Z",
+        "rise_to_peak_h": 11.22,
+        "baseline": 0.0,
+        "peak_value": 2.1673
+      },
+      "observed_nwm": {
+        "rise_start_h": -42.0,
+        "rise_start_utc": "08-18 00:00Z",
+        "peak_h": 18.0,
+        "peak_utc": "08-20 12:00Z",
+        "rise_to_peak_h": 60.0,
+        "baseline": 516.3,
+        "peak_value": 15553.6
+      },
+      "peak_time_error_min": 31.0,
+      "rise_start_error_min": 2958.0,
+      "shape_corr": 0.917,
+      "overlap_window_h": [
+        0.0,
+        20.0
+      ],
+      "truncated": true
+    },
+    {
+      "probe": "olentangy_gauge_03227107__channel",
+      "site_no": "channel",
+      "model": {
+        "rise_start_h": 7.300055555555556,
+        "rise_start_utc": "08-20 01:18Z",
+        "peak_h": 18.516666666666666,
+        "peak_utc": "08-20 12:31Z",
+        "rise_to_peak_h": 11.22,
+        "baseline": 0.0,
+        "peak_value": 2.1673
+      },
+      "observed_nwm": null
+    }
+  ]
+}

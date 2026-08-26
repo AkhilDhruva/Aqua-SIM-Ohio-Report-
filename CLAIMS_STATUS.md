@@ -81,7 +81,7 @@ wrongly modelled as solid embankment creates a dam that does not exist.
 → `analysis/culvert_audit/`
 
 **C8. Fine-resolution nests confirm the smearing mechanism dynamically.**
-SUPPORTED at Pataskala; still PENDING at Franklinton and Buckeye.
+SUPPORTED at Pataskala; BOUNDED at Franklinton; still PENDING at Buckeye.
 
 `pataskala_c` (8 m, 1239×619) completed its full 20 h window. The static
 freeboard diagnostic in `analysis/geometry_audit/` had made three falsifiable
@@ -105,6 +105,71 @@ than confirmed.
 This is dynamic confirmation of the *mechanism* only. It does not change the
 direction of C4/C5, which rest on surveyed elevations and observed gauge timing.
 → `analysis/corridor_analysis_pataskala_c.json`, `runs/pataskala_c_B/`
+
+**C8b. Franklinton bounds the mechanism: a large freeboard does not by itself
+mean the coarse signal is false.**
+SUPPORTED. `franklinton_c` (6 m, 628×698) completed its full 20 h window.
+
+| probe | freeboard to pavement | static prediction | nest road peak | outcome |
+|---|---|---|---|---|
+| `wbroad_hilltop` | **+4.15 m** — the largest in the study | 60 m floods a road that is dry | **2.22 m** | **prediction FAILS — the road really floods** |
+| `franklinton_core` | −0.38 m | 60 m bed ≈ pavement, signal real | 1.70 m | confirmed |
+| `olentangy_gauge_03227107` | −5.04 m | — | 2.17 m | **not usable — see below** |
+
+`wbroad_hilltop` is the instructive one. Its 60 m cell sits 4.15 m below the
+carriageway, so the freeboard test predicts the coarse "impassable" signal there
+is channel smearing. At 6 m the carriageway floods anyway, to 2.22 m. The reason
+is visible in the terrain: that probe has **zero channel cells** — it is a
+hilltop with no stream in it. The water is rain-on-grid ponding in a local
+depression, not channel water borrowed from a neighbouring cell.
+
+So the freeboard diagnostic identifies where the coarse grid *can* manufacture a
+false road signal, not where it *does*. Pataskala shows the mechanism operating
+(SR-310, 4.07 m road-minus-channel differential); Franklinton shows a large
+freeboard coexisting with genuine flooding. Both are needed: a screening test
+that only ever confirms itself is not a test.
+
+**Structural limitation.** Only `olentangy_gauge_03227107` carries a `__channel`
+pair, and it sits at distance **0** from the domain edge, where the Dirichlet
+stage boundary imposes its water level. Franklinton therefore **cannot** run the
+road-versus-channel discriminator that produced Pataskala's result, and its one
+channel-paired probe is boundary-driven rather than independently resolved.
+→ `analysis/corridor_analysis_franklinton_c.json`, `runs/franklinton_c_B/`
+
+**C8c. The Franklinton nest reproduces the Olentangy gauge peak to +31 minutes.**
+REPORTED, NOT CLAIMED AS SKILL. Model peak 08-20 12:31Z against 12:00Z observed,
+normalised shape r = 0.917. The number is good and it is nearly meaningless as a
+test of the nest: **the gauge probe sits on the domain boundary**, where the
+parent's stage is imposed as a Dirichlet condition. That timing is substantially
+the 60 m parent's, propagated through the boundary, not physics the 6 m nest
+generated. It is recorded because suppressing a favourable number would be as
+selective as featuring it — but it must not be read as independent validation.
+The observed series also begins before t0 already above the rise threshold, so
+only the peak comparison is meaningful, and the model window truncates the
+recession. Contrast Pataskala's gauge, which is 78 cells inside its domain and
+peaks 153 minutes EARLY — that one is a real test, and the nest fails it.
+→ `analysis/gauge_timing_corridor_franklinton_c_B.json`
+
+**C8d. The Froude-3.65 episode at Franklinton was transient, not divergence.**
+SUPPORTED. Ten samples spanning h=14.28 → 20.00, recorded while the run was in
+progress rather than reconstructed afterwards:
+
+| model hour | interior faces >5 m/s | median Froude | outfall ghost max | domain volume |
+|---|---|---|---|---|
+| 14.28 | 198 | 3.53 | 169.0 m/s | 1.97 × 10⁶ m³ |
+| 15.66 | 122 | 2.45 | 169.1 m/s | 2.84 × 10⁶ m³ |
+| 16.45 | 209 | 1.72 | 87.7 m/s | 3.16 × 10⁶ m³ |
+| 20.00 | 265 | 1.68 | 56.7 m/s | 4.83 × 10⁶ m³ |
+
+Froude falls monotonically as depth grows, volume rises monotonically, no cell
+is ever negative or non-finite, and the thin-film fraction of the fast faces
+falls from 82/211 to **13/265** — at the final state 218 of 265 carry more than
+1 m of water at median conveyance depth 1.92 m. The high-Froude episode
+coincided with the pluvial peak around h≈14 and resolved as the rivers filled.
+Franklinton's *final-state* velocities are inside the local-inertial scheme's
+envelope; its transient peak velocities around h=14 are not, and remain
+undefensible.
+→ `analysis/fast_face_log.jsonl`, `analysis/boundary_velocity_audit.json`
 
 **C8a. The nest reproduces observed hydrograph timing at a gauged reach.**
 PARTIALLY SUPPORTED. At South Fork Licking below Kirkersville (03144816) the
