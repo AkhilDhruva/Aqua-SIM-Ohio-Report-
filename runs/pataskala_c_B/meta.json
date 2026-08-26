@@ -1,0 +1,29 @@
+{
+  "nest": "pataskala_c",
+  "tag": "B",
+  "dx": 8.0,
+  "bbox": [
+    -82.7,
+    39.955,
+    -82.585,
+    39.998
+  ],
+  "crs": "EPSG:32617",
+  "transform": [
+    8.0,
+    0.0,
+    354789.52043405396,
+    0.0,
+    -8.0,
+    4428919.254568584
+  ],
+  "nx": 1239,
+  "ny": 619,
+  "hours": 20.0,
+  "infil_mm_hr": 0.0,
+  "no_drain": false,
+  "bc": "boundary_stages_pataskala_c.json",
+  "culverts": 57,
+  "culvert_log": [],
+  "peak_depth_m": 5.104
+}

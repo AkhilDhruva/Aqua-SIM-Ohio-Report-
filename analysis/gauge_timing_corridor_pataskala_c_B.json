@@ -1,0 +1,51 @@
+{
+  "run_dir": "corridor_pataskala_c_B",
+  "observed_source": "NOAA NWM v3 analysis_assim (USGS-nudged proxy); discharge only \u2014 no stage, so no stage RMSE",
+  "note": "comparison is TIMING and SHAPE, not absolute magnitude",
+  "gauges": [
+    {
+      "probe": "kirkersville_gauge_03144816",
+      "site_no": "03144816",
+      "model": {
+        "rise_start_h": 14.0,
+        "rise_start_utc": "08-20 08:00Z",
+        "peak_h": 16.45,
+        "peak_utc": "08-20 10:27Z",
+        "rise_to_peak_h": 2.45,
+        "baseline": 0.0,
+        "peak_value": 2.9914
+      },
+      "observed_nwm": {
+        "rise_start_h": 15.0,
+        "rise_start_utc": "08-20 09:00Z",
+        "peak_h": 19.0,
+        "peak_utc": "08-20 13:00Z",
+        "rise_to_peak_h": 4.0,
+        "baseline": 90.8,
+        "peak_value": 8480.1
+      },
+      "peak_time_error_min": -153.0,
+      "rise_start_error_min": -60.0,
+      "shape_corr": 0.854,
+      "overlap_window_h": [
+        0.0,
+        20.0
+      ],
+      "truncated": true
+    },
+    {
+      "probe": "kirkersville_gauge_03144816__channel",
+      "site_no": "channel",
+      "model": {
+        "rise_start_h": 14.0,
+        "rise_start_utc": "08-20 08:00Z",
+        "peak_h": 16.45,
+        "peak_utc": "08-20 10:27Z",
+        "rise_to_peak_h": 2.45,
+        "baseline": 0.0,
+        "peak_value": 2.9914
+      },
+      "observed_nwm": null
+    }
+  ]
+}

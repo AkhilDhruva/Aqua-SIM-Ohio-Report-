@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-08-25",
+  "updated_utc": "2026-08-26",
   "purpose": "Engineering failures and measured limitations are part of the reproducibility record, not noise to be deleted.",
   "entries": [
     {
@@ -143,6 +143,24 @@
       "impact_of_the_error": "it would have suppressed or delayed interpretation of a franklinton result that is in fact sound. It did not affect any model output, forcing, geometry or parameter \u2014 the defect was in the diagnostic only, and the diagnostic is read-only.",
       "lesson": "a scalar extremum is not a diagnosis. Report WHERE an extremum lives before concluding WHAT it is; a spatial profile would have shown in one line what a maximum concealed.",
       "kept_visible": "the incorrect claim is not deleted from history \u2014 commit b4900d8 stands and this entry names it."
+    },
+    {
+      "id": "EF-7",
+      "title": "Run crashed writing meta.json AFTER completing, because the setup-cache path leaves a variable unbound",
+      "what_happened": "corridor_pataskala_c_B reached its target t=20.0000 h and wrote state.npz, probes.json, peak.npz and snaps.npz \u2014 every scientific output \u2014 then died with UnboundLocalError on 'bcp' while serialising meta.json, and never printed COMPLETE.",
+      "root_cause": "'bcp' (the boundary-stage file path) is assigned only inside the COLD-SETUP branch. The ML-2 setup-cache fix added a second path that skips that branch entirely, so any run that restored from cache \u2014 which is every long run, by design \u2014 reached the metadata writer with 'bcp' unbound. The two fixes were individually correct and jointly broken.",
+      "why_it_mattered_more_than_it_looks": "the run looked failed. Without checking the log against the state file it would have been natural to relaunch it as if hours of compute had been lost, or to mark the nest incomplete. The EF-2 discipline \u2014 completeness means the probe series reaches meta['hours'], not that a file exists \u2014 is what made the true state legible.",
+      "fix": "derive the label from the CLI argument a.bcfile, which is defined on both paths, instead of the branch-local bcp.",
+      "recovery": "relaunched after the fix. The run restored from checkpoint at model hour 20.00, executed zero steps, wrote meta.json, and printed COMPLETE. probes.json and peak.npz were rewritten BYTE-IDENTICALLY (md5 verified before and after) \u2014 an unplanned live confirmation of the checkpoint-equivalence property that test_checkpoint_equivalence.py asserts synthetically.",
+      "lesson": "a caching fast path is a second control-flow path, and every variable the slow path binds must be bound on it too. The failure surfaced at the last line of the program, which is the most expensive place to find it."
+    },
+    {
+      "id": "EF-8",
+      "title": "gauge_timing.py used ndarray.ptp(), removed in NumPy 2.0",
+      "what_happened": "AttributeError: 'numpy.ndarray' object has no attribute 'ptp' when computing the normalised shape correlation.",
+      "root_cause": "the method form was removed in NumPy 2.0; this environment pins numpy 2.4.6. The line had never executed before because it is reached only when BOTH a model series and an observed series are present and overlap by more than an hour \u2014 i.e. only on a completed run with a gauge inside the nest.",
+      "fix": "np.ptp(x) function form.",
+      "lesson": "the code path that only runs at the very end of a successful experiment is the least-tested code in the project. Worth exercising deliberately on a smoke run rather than discovering at the finish line."
     }
   ]
 }

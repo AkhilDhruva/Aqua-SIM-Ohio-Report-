@@ -356,7 +356,12 @@ def main():
                "bbox": list(spec["bbox"]), "crs": str(grid.crs),
                "transform": list(gt[:6]), "nx": nx, "ny": ny,
                "hours": a.hours, "infil_mm_hr": a.infil, "no_drain": a.no_drain,
-               "bc": os.path.basename(bcp) if stage_bc else None,
+               # EF-7: bcp is bound only on the cold-setup path, so a run
+               # that restored from the setup cache (ML-2) crashed HERE, after
+               # every scientific output was already on disk. Derive the label
+               # from the CLI argument, which is defined on both paths.
+               "bc": (os.path.basename(a.bcfile or "boundary_stages.json")
+                      if stage_bc else None),
                "culverts": len(culverts), "culvert_log": culvert_log,
                "peak_depth_m": round(float(peak.max()), 3)},
               open(os.path.join(out, "meta.json"), "w"), indent=2)

@@ -81,10 +81,41 @@ wrongly modelled as solid embankment creates a dam that does not exist.
 → `analysis/culvert_audit/`
 
 **C8. Fine-resolution nests confirm the smearing mechanism dynamically.**
-PENDING. Corridor nests at 6–8 m were still solving at archival time. They can
-strengthen or complicate the *mechanism*; they cannot change the direction of
-C4/C5, which rest on surveyed elevations and observed gauge timing.
-→ `runs/checkpoint_metadata/corridor_status.json`
+SUPPORTED at Pataskala; still PENDING at Franklinton and Buckeye.
+
+`pataskala_c` (8 m, 1239×619) completed its full 20 h window. The static
+freeboard diagnostic in `analysis/geometry_audit/` had made three falsifiable
+predictions *before* the nest was run, from terrain alone. All three held:
+
+| probe | freeboard to pavement | static prediction | nest road peak | nest channel peak | verdict |
+|---|---|---|---|---|---|
+| `main_broad_pataskala` | −0.18 m | 60 m bed ≈ pavement, so its signal is real | 3.69 m | 4.47 m | CONFIRMED |
+| `kirkersville_gauge_03144816` | −0.36 m | 60 m bed ≈ pavement, so its signal is real | 2.99 m | 2.99 m | CONFIRMED |
+| `sr310_sf_crossing` | **+3.44 m** | 60 m would flood a road that is dry | **0.20 m** | **4.28 m** | PARTIAL — road never reaches 0.30 m while the channel beside it carries 4.28 m |
+
+The 4.07 m road-minus-channel differential at SR-310 is the smearing mechanism
+caught in the act: the coarse grid reports that crossing as flooded because one
+60 m cell averages carriageway and channel invert together, and at 8 m the two
+separate cleanly. The two remaining probes (`us40_etna`, `us40_east`) carry
+*negative* freeboard, meaning the coarse bed sits above the real road and the
+prediction is under-reporting; both are dry-to-partial at 8 m as well, so
+nothing was available to under-report and those predictions are untested rather
+than confirmed.
+
+This is dynamic confirmation of the *mechanism* only. It does not change the
+direction of C4/C5, which rest on surveyed elevations and observed gauge timing.
+→ `analysis/corridor_analysis_pataskala_c.json`, `runs/pataskala_c_B/`
+
+**C8a. The nest reproduces observed hydrograph timing at a gauged reach.**
+PARTIALLY SUPPORTED. At South Fork Licking below Kirkersville (03144816) the
+nest peaks 08-20 10:27Z against 13:00Z observed — **153 minutes early** — with
+rise onset 60 minutes early and normalised shape correlation r = 0.854 over the
+overlapping window. The comparison is timing and shape only: the observed series
+is NWM v3 analysis_assim discharge (USGS-nudged), so no stage RMSE is
+computable, and the model window ends at 14:00Z so the recession is truncated.
+A 2.5 h early peak on a flashy 8 m nest is a real error, not a success, and it
+is in the direction expected from omitting channel storage and baseflow.
+→ `analysis/gauge_timing_corridor_pataskala_c_B.json`
 
 ## Consequence chain
 
@@ -97,6 +128,21 @@ detours routing over US-40 in both directions.
 NOT TESTABLE. Only anticipatory statements were found; OHGO and all traffic data
 hosts were egress-blocked. Designation of a detour is not evidence of
 displacement, and the two are kept separate.
+
+**C10a. US-40 (National Road) through Etna/Pataskala remained passable while
+Main Street flooded — i.e. the detour's physical precondition held.**
+SUPPORTED (model, cause-side). In the completed 8 m nest, US-40 never reaches
+the 0.30 m impassable threshold anywhere along either probed segment
+(`us40_etna` peak 0.04 m — dry; `us40_east` peak 0.22 m — caution only, from
+08:42Z), while `main_broad_pataskala` crosses caution at 05:58Z, crosses
+impassable at 06:12Z and peaks at 3.69 m of water on the carriageway.
+
+This is deliberately the weaker of the two possible claims. It says the
+designated detour was hydraulically available, which is a statement about water
+and elevation that this model can make. It does **not** say flooding rerouted
+traffic onto National Road — that requires traffic observations this study never
+obtained, and remains C10, NOT TESTABLE.
+→ `analysis/corridor_analysis_pataskala_c.json`
 
 **C11. Upstream gauges give usable lead time for the I-70 corridor.**
 SUPPORTED (observational). The measured Kirkersville→Buckeye Lake routing lag is

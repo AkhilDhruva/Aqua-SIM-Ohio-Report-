@@ -1,89 +1,35 @@
 {
-  "updated_utc": "2026-08-25T19:15:29.631052+00:00",
-  "execution_note": "The study host recycles every few hours. Corridor solves checkpoint atomically every 10 model-minutes and resume automatically.",
-  "observed_recycles": 4,
-  "resume_evidence": [
-    {
-      "event": "recycle 2",
-      "resumed_at_model_hours": [
-        6.1,
-        7.33,
-        4.5
-      ],
-      "probe_history_preserved": [
-        366,
-        441,
-        271
-      ],
-      "note": "probe series continuous across the boundary; no gap or duplicate"
+  "updated_utc": "2026-08-26",
+  "t0_utc": "2026-08-19T18:00:00Z",
+  "target_window_h": 20.0,
+  "runs": {
+    "pataskala_c_B": {
+      "status": "COMPLETE",
+      "model_hours_reached": 20.0,
+      "dx_m": 8.0, "grid": [1239, 619], "culverts": 57,
+      "peak_depth_m": 5.104,
+      "probe_samples": 1201,
+      "probes_json_sha256": "6ba050137c7c3860017293ccecadeaa85e89bb84018188850f62e30809bfa6ea",
+      "completion_verified_by": "probe series reaches meta['hours'] (EF-2 rule), not by the presence of a file",
+      "note": "finished at t=20.0000 h, then crashed writing meta.json (EF-7). Relaunched after the fix; restored from checkpoint, executed zero steps, wrote meta.json. probes.json and peak.npz md5-identical across that restart."
     },
-    {
-      "event": "recycle 4",
-      "resumed_at_model_hours": [
-        6.27,
-        7.83,
-        6.83
-      ],
-      "note": "scheduling changed to SEQUENTIAL PRIORITY after this recycle \u2014 three concurrent solves on four cores were not converging before the next recycle, so runs now execute one at a time in priority order"
+    "franklinton_c_B": {
+      "status": "RUNNING",
+      "model_hours_reached_at_last_check": 14.95,
+      "dx_m": 6.0, "grid": [628, 698],
+      "throughput_model_h_per_wall_h": 0.38,
+      "limitation": "ML-3 open-boundary free-outfall throttle, escalating: the outfall ghost face on the eastern edge reached 169 m/s on 4.23 m of conveyance depth as the Scioto rose, collapsing dt to 0.024 s (152,000 steps per model-hour). Removing the ghost faces from the CFL would give an 8.5x larger dt, and a wave-only limit 20x — but that changes the numerical trajectory and so may not be applied to the frozen primary configuration.",
+      "remaining_cost_estimate": "5.0 model-h at 0.38 model-h/wall-h = ~13 wall-hours of ACTIVE-TURN compute (ML-4), and slowing as the boundary stage rises",
+      "why_it_cannot_be_truncated": "the parent boundary forcing rises from 0.75 m at h=14.5 to 3.79 m at h=20 — 98% of its eventual 3.87 m asymptote. franklinton_core is at 100% of its running peak and still rising at +0.20 m/h. The Scioto interaction the nest exists to test is entirely ahead of the current time, not behind it.",
+      "interpretation_caveat": "between h=12.91 and h=14.27 the domain developed 211 interior faces above 5 m/s at median Froude 3.65, reaching 12.1 m/s on the wbroad_hilltop probe. Water surfaces there are smooth and monotone and no depths are negative or non-finite, and Manning equilibrium for the same geometry gives 8.5 m/s, so this is not a numerical blow-up. But Fr 3.65 is outside the validity envelope of the Bates local-inertial scheme, which omits advection. Franklinton VELOCITIES on those cells are not defensible; depths are far less sensitive to the momentum closure and the road thresholds use depth."
+    },
+    "buckeye_c_B": {
+      "status": "HELD — frozen for off-platform continuation",
+      "model_hours_reached": 7.7322,
+      "probe_samples": 463,
+      "dx_m": 6.0, "grid": [727, 937],
+      "hold": "corridor_buckeye_c_B/.hold",
+      "note": "checkpoint, setup cache, forcing, terrain, parameters and runner commit preserved exactly as-is per instruction. Packaged in handoff/buckeye_primary/ with a cross-host numerical equivalence gate that must PASS before the scientific run resumes. Domain and OPEN boundary NOT re-scoped."
     }
-  ],
-  "priority_order": [
-    "buckeye_c (I-70 Case A/B confirmation)",
-    "franklinton_c (urban pluvial + Scioto)",
-    "pataskala_c (flash-pluvial + gauged reach)"
-  ],
-  "runs": [
-    {
-      "nest": "buckeye_c",
-      "target_model_hours": 20.0,
-      "status": "IN PROGRESS",
-      "probe_samples": 380,
-      "model_hours_covered": [
-        0.02,
-        6.33
-      ],
-      "probe_groups": 8
-    },
-    {
-      "nest": "franklinton_c",
-      "target_model_hours": 20.0,
-      "status": "IN PROGRESS",
-      "probe_samples": 480,
-      "model_hours_covered": [
-        0.02,
-        7.98
-      ],
-      "probe_groups": 4
-    },
-    {
-      "nest": "pataskala_c",
-      "target_model_hours": 20.0,
-      "status": "IN PROGRESS",
-      "probe_samples": 400,
-      "model_hours_covered": [
-        0.02,
-        6.65
-      ],
-      "probe_groups": 10
-    }
-  ],
-  "buckeye_primary_handoff": {
-    "status": "HELD on the study host for off-platform continuation",
-    "frozen_at_model_hour": 7.7322,
-    "probe_samples": 463,
-    "reason": "ML-4 \u2014 the study host tears the container down between turns (~10% duty cycle); ~6.7 core-hours remain to reach hour 20",
-    "preserved_exactly": [
-      "solver",
-      "setup cache (terrain, roughness, culverts, probe cells, rain index map, stage BC)",
-      "MRMS QPE-B forcing",
-      "domain extent",
-      "OPEN boundary treatment",
-      "all parameters",
-      "engine commit 0b452c9d5"
-    ],
-    "explicitly_not_changed": "the domain is NOT re-scoped and the OPEN boundary is NOT modified. A smaller or repositioned Buckeye domain may be run later only as an explicitly labelled post-hoc sensitivity member, never as a replacement for this primary run.",
-    "gate": "crosshost_equivalence.py advances the frozen checkpoint 600 model-s and compares SHA-256 of h, qx, qy and peak plus max_h, max_face_v, volume and probe count against reference.json. PASS is required before resuming; FAIL means different host arithmetic and the run must not be continued as the same experiment.",
-    "gate_self_test": "PASS on the originating host (deterministic, verified twice)",
-    "bundle": "handoff/buckeye_primary/ (scripts, Dockerfile, pinned requirements, reference hashes); the 21 MB data payload \u2014 frozen checkpoint, setup cache and forcing \u2014 is delivered separately as an archive"
   }
 }

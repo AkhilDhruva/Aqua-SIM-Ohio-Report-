@@ -1,0 +1,73 @@
+[
+  {
+    "nest": "pataskala_c",
+    "complete": true,
+    "covered_model_hours": [
+      0.02,
+      20.0
+    ],
+    "n_samples": 1201,
+    "t0_utc": "2026-08-19T18:00:00Z",
+    "thresholds_m": {
+      "caution": 0.15,
+      "impassable": 0.3
+    },
+    "probes": [
+      {
+        "probe": "us40_etna",
+        "n_road_cells": 186,
+        "road_peak_m": 0.042,
+        "road_peak_utc": "08-20 09:56Z",
+        "road_caution_utc": null,
+        "road_impassable_utc": null,
+        "channel_peak_m": 0.227,
+        "road_minus_channel_peak_m": -0.185,
+        "diagnosis": "DRY"
+      },
+      {
+        "probe": "us40_east",
+        "n_road_cells": 203,
+        "road_peak_m": 0.219,
+        "road_peak_utc": "08-20 10:03Z",
+        "road_caution_utc": "08-20 08:42Z",
+        "road_impassable_utc": null,
+        "channel_peak_m": 1.47,
+        "road_minus_channel_peak_m": -1.251,
+        "diagnosis": "PARTIAL"
+      },
+      {
+        "probe": "main_broad_pataskala",
+        "n_road_cells": 400,
+        "road_peak_m": 3.695,
+        "road_peak_utc": "08-20 09:23Z",
+        "road_caution_utc": "08-20 05:58Z",
+        "road_impassable_utc": "08-20 06:12Z",
+        "channel_peak_m": 4.466,
+        "road_minus_channel_peak_m": -0.771,
+        "diagnosis": "CONFIRMED_ROAD_INUNDATION"
+      },
+      {
+        "probe": "sr310_sf_crossing",
+        "n_road_cells": 79,
+        "road_peak_m": 0.201,
+        "road_peak_utc": "08-20 10:00Z",
+        "road_caution_utc": "08-20 07:05Z",
+        "road_impassable_utc": null,
+        "channel_peak_m": 4.275,
+        "road_minus_channel_peak_m": -4.073,
+        "diagnosis": "PARTIAL"
+      },
+      {
+        "probe": "kirkersville_gauge_03144816",
+        "n_road_cells": 171,
+        "road_peak_m": 2.991,
+        "road_peak_utc": "08-20 10:27Z",
+        "road_caution_utc": "08-20 07:11Z",
+        "road_impassable_utc": "08-20 07:51Z",
+        "channel_peak_m": 2.991,
+        "road_minus_channel_peak_m": 0.0,
+        "diagnosis": "CONFIRMED_ROAD_INUNDATION"
+      }
+    ]
+  }
+]
