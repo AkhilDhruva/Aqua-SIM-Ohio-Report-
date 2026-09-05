@@ -123,6 +123,21 @@ is visible in the terrain: that probe has **zero channel cells** — it is a
 hilltop with no stream in it. The water is rain-on-grid ponding in a local
 depression, not channel water borrowed from a neighbouring cell.
 
+*Provenance of the 2.22 m figure, checked only after the hydrograph was
+plotted.* That number is a single-sample overshoot: the probe goes 0.016 m →
+**2.219 m** → 1.457 m in consecutive 60 s samples at hour 13.25. Excluding that
+one sample the maximum is **2.2082 m** — an 11 mm difference — reached at hour
+19.98 and held to the end of the run, so the quoted value stands. The abrupt
+arrival is not a false alarm either: after hour 13.25 the depth never falls
+below 0.797 m and **100 %** of subsequent samples stay above the 0.30 m
+threshold, so the sustained ≥5-minute crossing is identical to the reported
+first crossing at 08-20 07:15Z. What the hydrograph shows is a steep wetting
+front with a small overshoot on its leading edge, characteristic of this scheme
+at a dry-to-wet interface. It is the only such spike among the fourteen probe
+series. Recorded because a peak statistic that happens to sit on a numerical
+overshoot should say so, even when the number survives.
+→ `figures/fig1_road_vs_channel.png`
+
 So the freeboard diagnostic identifies where the coarse grid *can* manufacture a
 false road signal, not where it *does*. Pataskala shows the mechanism operating
 (SR-310, 4.07 m road-minus-channel differential); Franklinton shows a large

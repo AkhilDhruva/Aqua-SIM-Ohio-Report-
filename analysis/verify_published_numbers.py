@@ -98,6 +98,35 @@ def main():
     chk('volume monotonically non-decreasing',
         all(b >= a for a, b in zip(vol, vol[1:])), True)
 
+    # --- C8b provenance: the wbroad_hilltop peak is a single-sample overshoot
+    # on a genuine wetting front. Assert both halves, so neither the quoted peak
+    # nor the "not a false alarm" defence can drift without this failing.
+    import numpy as _np
+    ser = json.load(open('runs/franklinton_c_B/probe_series.json'))
+    tt = _np.asarray(ser['t_s'], float) / 3600.0
+    wb = _np.asarray(ser['groups']['wbroad_hilltop']['depth_max_m'], float)
+    kmax = int(_np.argmax(wb))
+    chk('wbroad quoted peak', round(float(wb[kmax]), 3), 2.219, 0.0006)
+    chk('wbroad sustained peak excluding the overshoot',
+        round(float(_np.delete(wb, kmax).max()), 4), 2.2082, 0.0006)
+    chk('wbroad overshoot is exactly one sample',
+        sum(1 for i in range(1, len(wb) - 1)
+            if wb[i] > wb[i - 1] + 0.5 and wb[i] > wb[i + 1] + 0.5), 1)
+    chk('wbroad never drops below 0.30 m after the front',
+        bool((wb[kmax:] >= 0.30).all()), True)
+    chk('wbroad minimum in the hour after the front',
+        round(float(wb[kmax + 1:kmax + 61].min()), 3), 0.797, 0.0006)
+    # no OTHER probe series may contain a spike
+    spiky = []
+    for run in ('pataskala_c_B', 'franklinton_c_B'):
+        dd = json.load(open(f'runs/{run}/probe_series.json'))
+        for g, v in dd['groups'].items():
+            a = _np.asarray(v['depth_max_m'], float)
+            if any(a[i] > a[i - 1] + 0.5 and a[i] > a[i + 1] + 0.5
+                   for i in range(1, len(a) - 1)):
+                spiky.append(g)
+    chk('probe series containing a single-sample spike', sorted(spiky), ['wbroad_hilltop'])
+
     # --- run metadata -----------------------------------------------------
     chk('franklinton peak depth', json.load(open('runs/franklinton_c_B/meta.json'))['peak_depth_m'],
         9.818, 0.0005)
