@@ -1,0 +1,15 @@
+Aqua-SIM handoff summary
+
+Two repositories. The engine is akhildhruva/aqua-sim, frozen at commit 0b452c9 and never modified by this study. The study record is AkhilDhruva/Aqua-SIM-Ohio-Report- at 2bd244c, which holds the derived data, analysis, figures and reproduction scripts.
+
+The entry point is reproduction/run_corridor.py, a restart-resilient runner that takes a nest name and a QPE tag. It solves the two-dimensional local-inertial shallow-water equations of Bates and colleagues, forced by MRMS radar rainfall applied per cell, with Dirichlet stage boundaries interpolated from a sixty-metre parent run, subgrid culvert orifices, and paired carriageway and channel probes sampled every sixty seconds. The timestep is Courant-limited and adaptive.
+
+The environment is Python 3.11 on Ubuntu 24.04 with numpy 2.4.6, scipy 1.17.1, rasterio 1.4.4, fiona 1.10.1 and shapely 2.1.2, all pinned because a cross-host equivalence gate depends on them.
+
+A full twenty-hour corridor run took about one hundred and seventy-five wall-minutes for Pataskala and three hundred and sixty-two for Franklinton, at rates between 0.31 and 1.22 model-hours per wall-hour. The solver is entirely single-core NumPy; only one core is ever busy, and parallelism comes solely from running separate nests side by side.
+
+Outputs are written to a per-run directory containing the checkpoint state, the probe series, the peak-depth raster, hourly snapshots, a setup cache and run metadata. Raster files are excluded from version control.
+
+Status: Franklinton and Pataskala are complete at twenty model-hours; Buckeye is frozen mid-run at 7.73 hours awaiting off-platform resume. Five of twelve corridor points are scoreable, four confirmed and one refuted.
+
+Open items: eight engineering failures and four measured limitations are recorded, the outstanding ones being the open-boundary velocity throttle, the container's intermittent duty cycle, a blocked artifact republish, and three unrun sensitivity members.
