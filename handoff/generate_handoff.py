@@ -41,6 +41,72 @@ def tracked():
     return [p for p in sh("git", "ls-files").splitlines() if p]
 
 
+ENGINE = os.environ.get("AQUA_SIM_ENGINE", "/home/user/aqua-sim")
+
+
+def engine_present():
+    return os.path.isdir(os.path.join(ENGINE, ".git"))
+
+
+def engine_commits():
+    if not engine_present():
+        return []
+    raw = R(["git", "-C", ENGINE, "log", "--reverse", "--date=iso-strict",
+             "--pretty=format:%H\x1f%ad\x1f%s\x1e"], capture_output=True, text=True).stdout
+    out = []
+    for c in raw.split("\x1e"):
+        c = c.strip("\n")
+        if not c:
+            continue
+        a = c.split("\x1f")
+        if len(a) >= 3:
+            out.append({"sha": a[0], "date": a[1], "subj": a[2], "repo": "ENGINE"})
+    return out
+
+
+def engine_files():
+    if not engine_present():
+        return []
+    files = [f for f in R(["git", "-C", ENGINE, "ls-files"], capture_output=True,
+                          text=True).stdout.splitlines() if f]
+    rows = []
+    for f in files:
+        fp = os.path.join(ENGINE, f)
+        if os.path.exists(fp) and not f.startswith("viz/vendor/"):
+            rows.append((f, sha(fp), os.path.getsize(fp)))
+    return rows
+
+
+ENGINE_WHY = {
+ "docs/PLANNING.md": "Master plan. States that aqua-sim supersedes and hardens the original Project Deluge note.",
+ "docs/VALIDATION.md": "The historical-validation programme. Event 1 is Hurricane Ida over Manhattan, scored as a drainage-sensitivity POD matrix, with the failed first attempt kept in the record.",
+ "docs/validation/ida2021_report.json": "Scored Ida report: POD 0/6, 0/6, 1/6 across drainage blockage 0 / 0.5 / 1.0; run_id per case.",
+ "docs/ARCHITECTURE.md": "System layers, physics engine, offline-solve design, data flow.",
+ "docs/DATA_INGESTION.md": "DEM / LiDAR / photogrammetry input formats and how they converge to one grid.",
+ "docs/DATA_SOURCING.md": "What a DEM is; the public Manhattan datasets used (USGS 3DEP, NYC LiDAR).",
+ "src/aqua_sim/physics/swe.py": "Reference local-inertial solver (pure Python). Mass-conserving, well-balanced, non-negative depths, CFL-adaptive.",
+ "src/aqua_sim/physics/swe_numpy.py": "Vectorised NumPy twin of the reference solver; equivalence enforced to <=1e-9 depth by tests. THE solver the Ohio study ran.",
+ "src/aqua_sim/physics/stability.py": "CFL timestep.",
+ "src/aqua_sim/physics/boundary.py": "OPEN / CLOSED / inflow boundary types. OPEN is the free-outfall whose ghost cell drives ML-3.",
+ "src/aqua_sim/physics/infiltration.py": "Infiltration losses.",
+ "src/aqua_sim/physics/friction.py": "Manning friction.",
+ "src/aqua_sim/ingestion/dem.py": "DEMSource: GeoTIFF ingestion, reprojection, tile mosaicking (first-path-wins), resampling to target dx.",
+ "src/aqua_sim/ingestion/buildings.py": "BuildingsSource: footprints -> coverage fraction -> closed obstacle cells. Built for the NYC demo; unused in Ohio (sources unreachable).",
+ "src/aqua_sim/export/frames.py": "Frame export and the content-derived run_id: sha256 over the canonical provenance block, including a terrain digest.",
+ "src/aqua_sim/scenario.py": "build_manhattan_demo, build_scenario_from_dem, build_nyc_metro_scenario (five boroughs, 2.57M cells at 30 m), run_scenario.",
+ "src/aqua_sim/validation/ida2021.py": "Hurricane Ida 2021 Manhattan validation: hyetograph, six documented-flooded stations, sink-node probing, POD matrix.",
+ "src/aqua_sim/risk/sink_nodes.py": "Subterranean sink nodes (orifice inflow when head exceeds the lip).",
+ "src/aqua_sim/risk/alerts.py": "Alert matrix and breach records.",
+ "src/aqua_sim/risk/hazard.py": "Depth x velocity hazard classes.",
+ "src/aqua_sim/config.py": "SimConfig / SolverConfig / StormConfig; GRAVITY.",
+ "src/aqua_sim/grid.py": "Structured raster Grid: z, obstacle, manning, mask, crest fields, transform, CRS.",
+ "tests/test_swe_numpy.py": "Backend equivalence: NumPy vs reference, cell-by-cell.",
+ "tests/test_swe.py": "Analytic benchmarks: mass conservation, lake-at-rest, dam-break, non-negativity.",
+ "viz/app.js": "Three.js telemetry dashboard.",
+ "viz/buildings-layer.js": "Extruded-footprint layer with LOD and per-tile culling.",
+}
+
+
 # --- what each path is, and why it exists. Keyed by exact path or by prefix. --
 WHY = {
  "README.md": ("Entry point and the three-level evidence rule the study is scored under.", "spec"),
@@ -141,10 +207,39 @@ def main():
       "bare-earth DTM as the flow floor with buildings as obstacles, a well-balanced\n"
       "wet/dry treatment, infiltration and drainage as explicit losses, and real\n"
       "boundary conditions. **aqua-sim is what Deluge became, not a separate project.**\n")
+    W("**Lineage, corrected.** The engine was built in July 2026 with **New York** as\n"
+      "its validation ground: a Manhattan demo scenario and the Hurricane Ida (2021)\n"
+      "validation on real USGS terrain landed on 2026-07-05, a five-borough NYC metro\n"
+      "scenario with the NumPy backend on 2026-07-20, and a building-aware NYC\n"
+      "demonstration from official footprints on 2026-07-22. An earlier version of\n"
+      "this document stated that no New York work existed; that was wrong \u2014 it is\n"
+      "in the engine repository under `validation/`, `scenario.py` and\n"
+      "`ingestion/buildings.py`, named by the storm rather than the city. The Ohio\n"
+      "study is the engine's **second** event, run against the engine frozen at its\n"
+      "fifteenth and final commit `0b452c9`.\n")
     W("This repository is not the engine. It is the *study record* for one\n"
       "application of it: a blind hindcast of the Central Ohio flood of\n"
       "19\u201320 August 2026, asking a narrow question \u2014 can a rainfall flood model\n"
       "be trusted to decide whether a road is open?\n")
+
+    # ---------------- 1b. the New York work --------------------------------
+    W("## 1b. The New York work (engine repository, July 2026)\n")
+    W("| Date | What | Where | Outcome |\n|---|---|---|---|")
+    for a, b, c_, d in [
+      ("2026-07-05", "Manhattan demo scenario", "`scenario.build_manhattan_demo`", "First runnable scenario on the reference solver."),
+      ("2026-07-05", "**Hurricane Ida 2021 validation** \u2014 the record 80 mm hour at Central Park over USGS 3DEP 10 m terrain, scored against six subway stations documented as flooded",
+       "`validation/ida2021.py`, `docs/VALIDATION.md`, `docs/validation/ida2021_report.json`",
+       "POD **0/6** at design drainage, **0/6** surcharged-to-half, **1/6** with drainage failed (Dyckman St, breach at t\u224883 min). Basin-scale behaviour reproduced (~3.6 \u00d7 10\u2076 m\u00b3 ponded over ~62,000 wet cells); street-scale detection not. The first attempt scored 0/6 and is kept in the record; the corrections that followed are argued from event documentation, not tuned to the score. False-alarm rate explicitly out of scope. Verdict in the engine's own words: *partial validation honestly scored \u2014 not failed, not passed.*"),
+      ("2026-07-20", "NumPy backend + DEM mosaicking + **five-borough NYC metro scenario** (2.57 M cells at 30 m over n41w074 + n41w075)", "`physics/swe_numpy.py`, `ingestion/dem.py`, `scenario.build_nyc_metro_scenario`", "~20\u00d7 faster than the reference solver; equivalence enforced to \u22641e-9 depth by `tests/test_swe_numpy.py`. This is the solver the Ohio study used."),
+      ("2026-07-22", "**Building-aware NYC demonstration** from the official NYC Open Data footprints (nqwf-w8eh)", "`ingestion/buildings.py`, `viz/buildings-layer.js`", "Coverage-fraction rasterisation, closed obstacle cells at dx \u2264 10 m, extruded viewer layer with LOD. Provenance includes dataset id, licence, CRS chain and source SHA-256."),
+    ]:
+        W(f"| {a} | {b} | {c_} | {d} |")
+    W("")
+    W("Why it matters for Ohio: the NumPy backend, DEM mosaicking, sink-node probing,\n"
+      "content-derived `run_id`, and the honesty conventions (keep the failed attempt,\n"
+      "state what is not claimed, never tune to the score) were all built for New York\n"
+      "and carried unchanged into the Ohio study. Buildings were *not* used in Ohio\n"
+      "because footprint sources were unreachable from that host.\n")
 
     # ---------------- 2. tech stack ---------------------------------------
     W("## 2. Technology stack\n")
@@ -253,10 +348,15 @@ def main():
     W("## 5. Chronology with provenance\n")
     W("Every row is a real Git transaction: the timestamp is recorded by Git at the\n"
       "moment of the change, and the SHA is content-derived over the tree.\n")
-    W("| # | UTC | Commit | Change and why it mattered |\n|---|---|---|---|")
-    for i, cm in enumerate(commits, 1):
+    merged = sorted(engine_commits() + [dict(c, repo="STUDY") for c in commits],
+                    key=lambda c: c["date"])
+    if not engine_present():
+        W(f"*(engine repository not found at `{ENGINE}`; only study commits listed \u2014 "
+          "set AQUA_SIM_ENGINE to include it)*\n")
+    W("| # | UTC | Repo | Commit | Change and why it mattered |\n|---|---|---|---|---|")
+    for i, cm in enumerate(merged, 1):
         first = cm["subj"].replace("|", "\\|")
-        W(f"| {i} | {cm['date'][:16].replace('T',' ')} | `{cm['sha'][:7]}` | {first} |")
+        W(f"| {i} | {cm['date'][:16].replace('T',' ')} | {cm['repo']} | `{cm['sha'][:7]}` | {first} |")
     W("")
 
     # ---------------- 6. file inventory -----------------------------------
@@ -273,6 +373,19 @@ def main():
         W("| Path | Bytes | SHA-256 | What it holds, and why |\n|---|---|---|---|")
         for p, hsh, sz, w in sorted(bykind[kind]):
             W(f"| `{p}` | {sz:,} | `{hsh[:16]}\u2026` | {w} |")
+        W("")
+
+    # ---------------- 6b. engine inventory --------------------------------
+    W("## 6b. Engine file inventory (akhildhruva/aqua-sim @ 0b452c9)\n")
+    ef = engine_files()
+    if not ef:
+        W(f"*(engine repository not present at `{ENGINE}`)*\n")
+    else:
+        W(f"{len(ef)} tracked files (vendored viewer libraries under `viz/vendor/` omitted). "
+          "SHA-256 computed at generation time.\n")
+        W("| Path | Bytes | SHA-256 | What it holds |\n|---|---|---|---|")
+        for f, hsh, sz in ef:
+            W(f"| `{f}` | {sz:,} | `{hsh[:16]}\u2026` | {ENGINE_WHY.get(f, '')} |")
         W("")
 
     # ---------------- 7. missing artefacts --------------------------------

@@ -7,7 +7,7 @@
 > to the Chronology section by hand. Regenerating on every change wastes
 > effort and, in an agent session, tokens.
 
-Generated `2026-09-07 09:54:19Z` at commit `d82ae9a` · 126 tracked files · 23 commits
+Generated `2026-09-09 22:37:55Z` at commit `c91f131` · 128 tracked files · 24 commits
 
 ---
 
@@ -22,10 +22,36 @@ bare-earth DTM as the flow floor with buildings as obstacles, a well-balanced
 wet/dry treatment, infiltration and drainage as explicit losses, and real
 boundary conditions. **aqua-sim is what Deluge became, not a separate project.**
 
+**Lineage, corrected.** The engine was built in July 2026 with **New York** as
+its validation ground: a Manhattan demo scenario and the Hurricane Ida (2021)
+validation on real USGS terrain landed on 2026-07-05, a five-borough NYC metro
+scenario with the NumPy backend on 2026-07-20, and a building-aware NYC
+demonstration from official footprints on 2026-07-22. An earlier version of
+this document stated that no New York work existed; that was wrong — it is
+in the engine repository under `validation/`, `scenario.py` and
+`ingestion/buildings.py`, named by the storm rather than the city. The Ohio
+study is the engine's **second** event, run against the engine frozen at its
+fifteenth and final commit `0b452c9`.
+
 This repository is not the engine. It is the *study record* for one
 application of it: a blind hindcast of the Central Ohio flood of
 19–20 August 2026, asking a narrow question — can a rainfall flood model
 be trusted to decide whether a road is open?
+
+## 1b. The New York work (engine repository, July 2026)
+
+| Date | What | Where | Outcome |
+|---|---|---|---|
+| 2026-07-05 | Manhattan demo scenario | `scenario.build_manhattan_demo` | First runnable scenario on the reference solver. |
+| 2026-07-05 | **Hurricane Ida 2021 validation** — the record 80 mm hour at Central Park over USGS 3DEP 10 m terrain, scored against six subway stations documented as flooded | `validation/ida2021.py`, `docs/VALIDATION.md`, `docs/validation/ida2021_report.json` | POD **0/6** at design drainage, **0/6** surcharged-to-half, **1/6** with drainage failed (Dyckman St, breach at t≈83 min). Basin-scale behaviour reproduced (~3.6 × 10⁶ m³ ponded over ~62,000 wet cells); street-scale detection not. The first attempt scored 0/6 and is kept in the record; the corrections that followed are argued from event documentation, not tuned to the score. False-alarm rate explicitly out of scope. Verdict in the engine's own words: *partial validation honestly scored — not failed, not passed.* |
+| 2026-07-20 | NumPy backend + DEM mosaicking + **five-borough NYC metro scenario** (2.57 M cells at 30 m over n41w074 + n41w075) | `physics/swe_numpy.py`, `ingestion/dem.py`, `scenario.build_nyc_metro_scenario` | ~20× faster than the reference solver; equivalence enforced to ≤1e-9 depth by `tests/test_swe_numpy.py`. This is the solver the Ohio study used. |
+| 2026-07-22 | **Building-aware NYC demonstration** from the official NYC Open Data footprints (nqwf-w8eh) | `ingestion/buildings.py`, `viz/buildings-layer.js` | Coverage-fraction rasterisation, closed obstacle cells at dx ≤ 10 m, extruded viewer layer with LOD. Provenance includes dataset id, licence, CRS chain and source SHA-256. |
+
+Why it matters for Ohio: the NumPy backend, DEM mosaicking, sink-node probing,
+content-derived `run_id`, and the honesty conventions (keep the failed attempt,
+state what is not claimed, never tune to the score) were all built for New York
+and carried unchanged into the Ohio study. Buildings were *not* used in Ohio
+because footprint sources were unreachable from that host.
 
 ## 2. Technology stack
 
@@ -136,35 +162,51 @@ only cross-host gate this study has.
 Every row is a real Git transaction: the timestamp is recorded by Git at the
 moment of the change, and the SHA is content-derived over the tree.
 
-| # | UTC | Commit | Change and why it mattered |
-|---|---|---|---|
-| 1 | 2026-08-23 06:24 | `8d83f19` | Archive Columbus blind-hindcast validation state |
-| 2 | 2026-08-23 06:25 | `fc996c4` | Record version identity by commit SHA (tag refs blocked by proxy) |
-| 3 | 2026-08-23 06:28 | `c5ff389` | v0.2 corridor checkpoint runner and restart-resilience evidence |
-| 4 | 2026-08-23 06:29 | `841c1a9` | Record v0.2 in version history |
-| 5 | 2026-08-23 07:06 | `da244b2` | v0.2.1 wall-aware checkpointing + wet-phase bitwise equivalence proof |
-| 6 | 2026-08-23 07:06 | `af05b77` | Record v0.2.1 in version history |
-| 7 | 2026-08-23 08:03 | `13b2aec` | v0.2.2 cache deterministic setup to survive a fast-recycling host |
-| 8 | 2026-08-23 08:38 | `88a617a` | v0.2.3 fix checkpoint livelock (interval exceeded host lifetime) |
-| 9 | 2026-08-23 09:01 | `e7f2397` | v0.2.4 restore parallel corridor execution (sequential was a misdiagnosis) |
-| 10 | 2026-08-23 10:08 | `6430528` | Record ML-3: open-boundary outflow throttles the Buckeye CFL |
-| 11 | 2026-08-23 11:19 | `19ce79a` | Record ML-4: solver only runs during active turns (~10% duty cycle) |
-| 12 | 2026-08-25 19:15 | `8e454f8` | Prepare Buckeye primary run for off-platform continuation |
-| 13 | 2026-08-25 21:17 | `f1ca0fa` | Interim: dynamics confirm the geometric smearing prediction at Pataskala |
-| 14 | 2026-08-25 22:50 | `b4900d8` | ML-3 generalises: open-boundary outflow throttles ALL corridor runs |
-| 15 | 2026-08-25 23:59 | `6369a98` | Resolve ML-3 for franklinton; record EF-6 (my own diagnostic was wrong) |
-| 16 | 2026-08-26 03:04 | `194397d` | pataskala_c COMPLETE at h=20.00 — smearing mechanism confirmed dynamically |
-| 17 | 2026-08-26 05:42 | `2046939` | VERSIONS: record v0.2.2 and v0.4 by commit SHA |
-| 18 | 2026-08-26 13:02 | `3801a38` | franklinton_c COMPLETE at h=20.00 — the mechanism gets a boundary, not just a confirmation |
-| 19 | 2026-08-26 13:03 | `bd65d02` | VERSIONS v0.5; consolidated corridor table that keeps its failures |
-| 20 | 2026-08-26 13:09 | `38cf3c7` | Briefing revised for the completed corridor runs; PDF regenerated |
-| 21 | 2026-08-26 13:12 | `e47f859` | Add a claims-vs-data verifier; it immediately caught an overstatement of mine |
-| 22 | 2026-09-05 19:55 | `2bd244c` | Render the corridor figures; plotting them caught an overshoot the audits missed |
-| 23 | 2026-09-07 09:51 | `d82ae9a` | Commit the handoff summary so its SHA-256 binds to a commit |
+| # | UTC | Repo | Commit | Change and why it mattered |
+|---|---|---|---|---|
+| 1 | 2026-07-04 21:52 | ENGINE | `cb17b7c` | Plan Flood Zone Risk Simulator engine + Phase 0 scaffold |
+| 2 | 2026-07-04 23:50 | ENGINE | `b4b2379` | Initial commit |
+| 3 | 2026-07-04 23:52 | ENGINE | `b3fd8ec` | Add ready-to-go project scaffold |
+| 4 | 2026-07-05 01:17 | ENGINE | `653338f` | Implement local-inertial shallow-water solver + Manhattan scenario |
+| 5 | 2026-07-05 01:20 | ENGINE | `8ae378e` | Add per-frame provenance headers and solver-side breach records |
+| 6 | 2026-07-05 01:32 | ENGINE | `f68bd0e` | Implement Phase 1: real GeoTIFF DEM ingestion (DEMSource) |
+| 7 | 2026-07-05 02:46 | ENGINE | `c1b65f7` | Implement Phase 4: Three.js flood telemetry dashboard |
+| 8 | 2026-07-05 03:09 | ENGINE | `619caf8` | Fix 10 verified review findings across solver, ingestion, export, viewer |
+| 9 | 2026-07-05 06:08 | ENGINE | `b7f7c79` | Add Hurricane Ida 2021 historical validation on real USGS terrain |
+| 10 | 2026-07-05 06:42 | ENGINE | `e8fd8c6` | UI: station markers, kinetic-speckle fix, node export, wider run input |
+| 11 | 2026-07-18 03:07 | ENGINE | `45fb25d` | Merge pull request #1 from AkhilDhruva/claude/flood-simulator-planning-myqfs0 |
+| 12 | 2026-07-20 07:08 | ENGINE | `13268b6` | Add NumPy solver backend, DEM mosaicking, NYC metro scenario + review fixes |
+| 13 | 2026-07-22 05:37 | ENGINE | `dbd06db` | Merge pull request #2 from AkhilDhruva/claude/flood-simulator-planning-myqfs0 |
+| 14 | 2026-07-22 08:11 | ENGINE | `b86bd40` | Add NYC building-aware demonstration: official footprints, physics + viewer |
+| 15 | 2026-07-22 08:58 | ENGINE | `0e03afb` | Fix building-review findings: determinism, MultiPolygon, provenance, viewer |
+| 16 | 2026-08-23 06:24 | STUDY | `8d83f19` | Archive Columbus blind-hindcast validation state |
+| 17 | 2026-08-23 06:25 | STUDY | `fc996c4` | Record version identity by commit SHA (tag refs blocked by proxy) |
+| 18 | 2026-08-23 06:28 | STUDY | `c5ff389` | v0.2 corridor checkpoint runner and restart-resilience evidence |
+| 19 | 2026-08-23 06:29 | STUDY | `841c1a9` | Record v0.2 in version history |
+| 20 | 2026-08-23 07:06 | STUDY | `da244b2` | v0.2.1 wall-aware checkpointing + wet-phase bitwise equivalence proof |
+| 21 | 2026-08-23 07:06 | STUDY | `af05b77` | Record v0.2.1 in version history |
+| 22 | 2026-08-23 08:03 | STUDY | `13b2aec` | v0.2.2 cache deterministic setup to survive a fast-recycling host |
+| 23 | 2026-08-23 08:38 | STUDY | `88a617a` | v0.2.3 fix checkpoint livelock (interval exceeded host lifetime) |
+| 24 | 2026-08-23 09:01 | STUDY | `e7f2397` | v0.2.4 restore parallel corridor execution (sequential was a misdiagnosis) |
+| 25 | 2026-08-23 10:08 | STUDY | `6430528` | Record ML-3: open-boundary outflow throttles the Buckeye CFL |
+| 26 | 2026-08-23 11:19 | STUDY | `19ce79a` | Record ML-4: solver only runs during active turns (~10% duty cycle) |
+| 27 | 2026-08-25 19:15 | STUDY | `8e454f8` | Prepare Buckeye primary run for off-platform continuation |
+| 28 | 2026-08-25 21:17 | STUDY | `f1ca0fa` | Interim: dynamics confirm the geometric smearing prediction at Pataskala |
+| 29 | 2026-08-25 22:50 | STUDY | `b4900d8` | ML-3 generalises: open-boundary outflow throttles ALL corridor runs |
+| 30 | 2026-08-25 23:59 | STUDY | `6369a98` | Resolve ML-3 for franklinton; record EF-6 (my own diagnostic was wrong) |
+| 31 | 2026-08-26 03:04 | STUDY | `194397d` | pataskala_c COMPLETE at h=20.00 — smearing mechanism confirmed dynamically |
+| 32 | 2026-08-26 05:42 | STUDY | `2046939` | VERSIONS: record v0.2.2 and v0.4 by commit SHA |
+| 33 | 2026-08-26 13:02 | STUDY | `3801a38` | franklinton_c COMPLETE at h=20.00 — the mechanism gets a boundary, not just a confirmation |
+| 34 | 2026-08-26 13:03 | STUDY | `bd65d02` | VERSIONS v0.5; consolidated corridor table that keeps its failures |
+| 35 | 2026-08-26 13:09 | STUDY | `38cf3c7` | Briefing revised for the completed corridor runs; PDF regenerated |
+| 36 | 2026-08-26 13:12 | STUDY | `e47f859` | Add a claims-vs-data verifier; it immediately caught an overstatement of mine |
+| 37 | 2026-09-05 19:55 | STUDY | `2bd244c` | Render the corridor figures; plotting them caught an overshoot the audits missed |
+| 38 | 2026-09-07 09:51 | STUDY | `d82ae9a` | Commit the handoff summary so its SHA-256 binds to a commit |
+| 39 | 2026-09-07 09:54 | STUDY | `c91f131` | HANDOFF.md: full provenance, chronology and file inventory — plus one blocker |
 
 ## 6. File inventory with content hashes
 
-All 126 tracked files, SHA-256 computed at generation time.
+All 128 tracked files, SHA-256 computed at generation time.
 
 ### spec
 
@@ -330,12 +372,127 @@ All 126 tracked files, SHA-256 computed at generation time.
 | `handoff/buckeye_primary/reference.json` | 615 | `e33a34965d90b2af…` | Handoff material. |
 | `handoff/buckeye_primary/requirements.txt` | 213 | `54b9f36eb7f895cb…` | Handoff material. |
 | `handoff/buckeye_primary/resume_buckeye.sh` | 777 | `10176c21d01d282a…` | Handoff material. |
+| `handoff/generate_handoff.py` | 31,398 | `c7727447d019d29f…` | This generator. |
 
 ### other
 
 | Path | Bytes | SHA-256 | What it holds, and why |
 |---|---|---|---|
 | `.gitignore` | 190 | `560dae57cd8d796c…` | — |
+| `HANDOFF.md` | 34,956 | `04373450b0724ca7…` | — |
+
+## 6b. Engine file inventory (akhildhruva/aqua-sim @ 0b452c9)
+
+106 tracked files (vendored viewer libraries under `viz/vendor/` omitted). SHA-256 computed at generation time.
+
+| Path | Bytes | SHA-256 | What it holds |
+|---|---|---|---|
+| `.gitignore` | 289 | `4ad7ed23c32693db…` |  |
+| `README.md` | 5,897 | `fcb5338eb204c00b…` |  |
+| `docs/ARCHITECTURE.md` | 16,947 | `637f0804acdca58f…` | System layers, physics engine, offline-solve design, data flow. |
+| `docs/DATA_INGESTION.md` | 7,642 | `5c9c386f04b0c99d…` | DEM / LiDAR / photogrammetry input formats and how they converge to one grid. |
+| `docs/DATA_SOURCING.md` | 6,897 | `993c1e81b358cda9…` | What a DEM is; the public Manhattan datasets used (USGS 3DEP, NYC LiDAR). |
+| `docs/PLANNING.md` | 11,405 | `3ea15e1bf94f3556…` | Master plan. States that aqua-sim supersedes and hardens the original Project Deluge note. |
+| `docs/VALIDATION.md` | 7,207 | `09c7dac73b1a7a2a…` | The historical-validation programme. Event 1 is Hurricane Ida over Manhattan, scored as a drainage-sensitivity POD matrix, with the failed first attempt kept in the record. |
+| `docs/validation/ida2021_report.json` | 3,923 | `e08f3d1be10596f7…` | Scored Ida report: POD 0/6, 0/6, 1/6 across drainage blockage 0 / 0.5 / 1.0; run_id per case. |
+| `pyproject.toml` | 739 | `8c8e9742d35d0c59…` |  |
+| `src/aqua_sim/__init__.py` | 73 | `d8e11b02bdbeee81…` |  |
+| `src/aqua_sim/__main__.py` | 88 | `1505c02da18505b4…` |  |
+| `src/aqua_sim/config.py` | 3,966 | `216e840b292b609a…` | SimConfig / SolverConfig / StormConfig; GRAVITY. |
+| `src/aqua_sim/export/__init__.py` | 78 | `b45129e074e925b2…` |  |
+| `src/aqua_sim/export/frames.py` | 9,943 | `3b62869cd030f6c3…` | Frame export and the content-derived run_id: sha256 over the canonical provenance block, including a terrain digest. |
+| `src/aqua_sim/geofence.py` | 806 | `b2220d791dc70089…` |  |
+| `src/aqua_sim/grid.py` | 3,112 | `043f41d6bdd7c98d…` | Structured raster Grid: z, obstacle, manning, mask, crest fields, transform, CRS. |
+| `src/aqua_sim/ingestion/__init__.py` | 330 | `cdd632de345916bf…` |  |
+| `src/aqua_sim/ingestion/base.py` | 996 | `64b8929db4fa0a3e…` |  |
+| `src/aqua_sim/ingestion/buildings.py` | 21,013 | `7bbad83a528ad000…` | BuildingsSource: footprints -> coverage fraction -> closed obstacle cells. Built for the NYC demo; unused in Ohio (sources unreachable). |
+| `src/aqua_sim/ingestion/dem.py` | 8,116 | `2a8810f522a088ce…` | DEMSource: GeoTIFF ingestion, reprojection, tile mosaicking (first-path-wins), resampling to target dx. |
+| `src/aqua_sim/ingestion/fetch.py` | 4,296 | `e6b74a36e1d5f0de…` |  |
+| `src/aqua_sim/ingestion/lidar.py` | 823 | `2c2f2a9be5f85864…` |  |
+| `src/aqua_sim/ingestion/photogrammetry.py` | 1,462 | `0b75838eba127fd7…` |  |
+| `src/aqua_sim/ingestion/synthetic.py` | 2,386 | `f3e5b84b10fd3bc2…` |  |
+| `src/aqua_sim/main.py` | 3,625 | `d8708e52b177206e…` |  |
+| `src/aqua_sim/physics/__init__.py` | 412 | `faebb8273493b3d6…` |  |
+| `src/aqua_sim/physics/boundary.py` | 636 | `ba696396b4052e1c…` | OPEN / CLOSED / inflow boundary types. OPEN is the free-outfall whose ghost cell drives ML-3. |
+| `src/aqua_sim/physics/friction.py` | 1,254 | `e59debc081e512de…` | Manning friction. |
+| `src/aqua_sim/physics/infiltration.py` | 564 | `6ea92d7ca7f5b58f…` | Infiltration losses. |
+| `src/aqua_sim/physics/stability.py` | 1,673 | `1b184a18d357cf05…` | CFL timestep. |
+| `src/aqua_sim/physics/swe.py` | 15,839 | `4c3c95ea5fce1667…` | Reference local-inertial solver (pure Python). Mass-conserving, well-balanced, non-negative depths, CFL-adaptive. |
+| `src/aqua_sim/physics/swe_numpy.py` | 11,780 | `36dacdcfa47124ab…` | Vectorised NumPy twin of the reference solver; equivalence enforced to <=1e-9 depth by tests. THE solver the Ohio study ran. |
+| `src/aqua_sim/risk/__init__.py` | 472 | `f907310a26b5576f…` |  |
+| `src/aqua_sim/risk/alerts.py` | 1,393 | `32a1937691c13e48…` | Alert matrix and breach records. |
+| `src/aqua_sim/risk/hazard.py` | 2,210 | `4511bc6843ffba77…` | Depth x velocity hazard classes. |
+| `src/aqua_sim/risk/sink_nodes.py` | 2,258 | `72079ed72e20cb99…` | Subterranean sink nodes (orifice inflow when head exceeds the lip). |
+| `src/aqua_sim/scenario.py` | 15,288 | `4e04aed1d17b567c…` | build_manhattan_demo, build_scenario_from_dem, build_nyc_metro_scenario (five boroughs, 2.57M cells at 30 m), run_scenario. |
+| `src/aqua_sim/validation/__init__.py` | 85 | `4446fe7f8927666a…` |  |
+| `src/aqua_sim/validation/ida2021.py` | 13,491 | `ce43565f07db0dbb…` | Hurricane Ida 2021 Manhattan validation: hyetograph, six documented-flooded stations, sink-node probing, POD matrix. |
+| `tests/test_buildings_source.py` | 11,234 | `4bc02e929475bcc9…` |  |
+| `tests/test_dem_ingestion.py` | 3,331 | `ccd7cb43dc3231a6…` |  |
+| `tests/test_ida_pieces.py` | 2,770 | `33d97bcbcf8a9be4…` |  |
+| `tests/test_risk.py` | 1,365 | `a6642f91e8556207…` |  |
+| `tests/test_scenario.py` | 5,576 | `ed65fcaad4b3eb31…` |  |
+| `tests/test_smoke.py` | 169 | `ea6bc68a9209d007…` |  |
+| `tests/test_stability.py` | 748 | `5041382e277f1e15…` |  |
+| `tests/test_swe.py` | 6,582 | `96c869becfab1c7e…` | Analytic benchmarks: mass conservation, lake-at-rest, dam-break, non-negativity. |
+| `tests/test_swe_numpy.py` | 4,814 | `5189736c98346761…` | Backend equivalence: NumPy vs reference, cell-by-cell. |
+| `tests/test_terrain_and_grid.py` | 1,157 | `36df090382560336…` |  |
+| `viz/README.md` | 3,453 | `b05b6030ccd152a3…` |  |
+| `viz/app.js` | 24,645 | `be6bffbaee0b35da…` | Three.js telemetry dashboard. |
+| `viz/buildings-layer.js` | 7,328 | `a56ea2c25e36044c…` | Extruded-footprint layer with LOD and per-tile culling. |
+| `viz/index.html` | 7,779 | `19fb9d5a1b144aba…` |  |
+| `viz/palettes.js` | 4,159 | `5769a151270e9c31…` |  |
+| `viz/sample_run/alerts.json` | 383 | `bce76fc569706309…` |  |
+| `viz/sample_run/frame_001.json` | 24,560 | `90a5606d9e8a4ce9…` |  |
+| `viz/sample_run/frame_002.json` | 36,302 | `d30e88188f5a6e22…` |  |
+| `viz/sample_run/frame_003.json` | 35,284 | `9e71b0bcf8fd2ceb…` |  |
+| `viz/sample_run/frame_004.json` | 36,204 | `3fee1f52ac1267dc…` |  |
+| `viz/sample_run/frame_005.json` | 36,095 | `09f418d711a9803a…` |  |
+| `viz/sample_run/frame_006.json` | 36,058 | `514872913ddfb661…` |  |
+| `viz/sample_run/frame_007.json` | 35,973 | `bfc16dada3a966c9…` |  |
+| `viz/sample_run/frame_008.json` | 36,262 | `8a8344f1e38d333b…` |  |
+| `viz/sample_run/frame_009.json` | 36,246 | `030534a643629d56…` |  |
+| `viz/sample_run/frame_010.json` | 36,229 | `162bb94e596c0cbd…` |  |
+| `viz/sample_run/frame_011.json` | 36,215 | `b2edce633a3e9207…` |  |
+| `viz/sample_run/frame_012.json` | 36,210 | `e12de8f85a5c26e3…` |  |
+| `viz/sample_run/frame_013.json` | 36,296 | `9407edc53b4633b4…` |  |
+| `viz/sample_run/frame_014.json` | 36,279 | `5af726f05ec7acd5…` |  |
+| `viz/sample_run/frame_015.json` | 36,290 | `e14a003bb63d624b…` |  |
+| `viz/sample_run/frame_016.json` | 36,272 | `f953edff754d36e9…` |  |
+| `viz/sample_run/frame_017.json` | 36,276 | `e8f40a72a7550d51…` |  |
+| `viz/sample_run/frame_018.json` | 36,278 | `07899ad84016d7cf…` |  |
+| `viz/sample_run/frame_019.json` | 36,252 | `7bf0f56e2f82c452…` |  |
+| `viz/sample_run/frame_020.json` | 36,240 | `afa12c920fa9a4bc…` |  |
+| `viz/sample_run/frame_021.json` | 36,244 | `45855bca542d1440…` |  |
+| `viz/sample_run/frame_022.json` | 36,231 | `7b7c03c174b96226…` |  |
+| `viz/sample_run/frame_023.json` | 36,242 | `e46e49a0cd059848…` |  |
+| `viz/sample_run/frame_024.json` | 36,244 | `12b56a40d2877fcd…` |  |
+| `viz/sample_run/frame_025.json` | 36,258 | `12a50ced4d1b7434…` |  |
+| `viz/sample_run/frame_026.json` | 36,264 | `a405d2be880ca2b8…` |  |
+| `viz/sample_run/frame_027.json` | 36,269 | `6f9b69abcc847596…` |  |
+| `viz/sample_run/frame_028.json` | 36,270 | `86100e13567da5bb…` |  |
+| `viz/sample_run/frame_029.json` | 36,254 | `8de360a409e4bd5f…` |  |
+| `viz/sample_run/frame_030.json` | 36,265 | `58bdc328347b56be…` |  |
+| `viz/sample_run/frame_031.json` | 36,261 | `bc7b36a0f2fa84d8…` |  |
+| `viz/sample_run/frame_032.json` | 36,260 | `fe4307a1514e39d8…` |  |
+| `viz/sample_run/frame_033.json` | 36,248 | `f204ed708edd1142…` |  |
+| `viz/sample_run/frame_034.json` | 36,233 | `e9971455b8d79d98…` |  |
+| `viz/sample_run/frame_035.json` | 36,242 | `f153759e012defa5…` |  |
+| `viz/sample_run/frame_036.json` | 36,238 | `a7a75b8cc74b8adc…` |  |
+| `viz/sample_run/frame_037.json` | 36,255 | `ef838c5b232ab8d1…` |  |
+| `viz/sample_run/frame_038.json` | 36,258 | `3073266303de0f7d…` |  |
+| `viz/sample_run/frame_039.json` | 36,250 | `289b3ef44611d6d5…` |  |
+| `viz/sample_run/frame_040.json` | 36,270 | `17599d210c403f38…` |  |
+| `viz/sample_run/frame_041.json` | 36,267 | `fb181f2180670893…` |  |
+| `viz/sample_run/frame_042.json` | 36,266 | `a41239720c7f618e…` |  |
+| `viz/sample_run/frame_043.json` | 36,257 | `9e8e2eb134ef7748…` |  |
+| `viz/sample_run/frame_044.json` | 36,253 | `3ed81798cb30b87c…` |  |
+| `viz/sample_run/frame_045.json` | 36,266 | `c49fbc1019a4022b…` |  |
+| `viz/sample_run/frame_046.json` | 36,266 | `c75bd3927a30acfb…` |  |
+| `viz/sample_run/frame_047.json` | 36,254 | `f851e0efab45def3…` |  |
+| `viz/sample_run/frame_048.json` | 36,269 | `792e1fbacbbe8618…` |  |
+| `viz/sample_run/frame_049.json` | 36,254 | `947281cbb8d1d402…` |  |
+| `viz/sample_run/manifest.json` | 8,949 | `d9233bb060e80a35…` |  |
+| `viz/sample_run/terrain.json` | 43,203 | `7c04ef0bcbfd7656…` |  |
 
 ## 7. Missing artefacts — what cannot be reproduced from this repository
 
