@@ -7,7 +7,7 @@
 > to the Chronology section by hand. Regenerating on every change wastes
 > effort and, in an agent session, tokens.
 
-Generated `2026-09-09 22:37:55Z` at commit `c91f131` · 128 tracked files · 24 commits
+Generated `2026-09-09 22:55:12Z` at commit `f08a8f2` · 130 tracked files · 27 commits
 
 ---
 
@@ -174,39 +174,48 @@ moment of the change, and the SHA is content-derived over the tree.
 | 8 | 2026-07-05 03:09 | ENGINE | `619caf8` | Fix 10 verified review findings across solver, ingestion, export, viewer |
 | 9 | 2026-07-05 06:08 | ENGINE | `b7f7c79` | Add Hurricane Ida 2021 historical validation on real USGS terrain |
 | 10 | 2026-07-05 06:42 | ENGINE | `e8fd8c6` | UI: station markers, kinetic-speckle fix, node export, wider run input |
-| 11 | 2026-07-18 03:07 | ENGINE | `45fb25d` | Merge pull request #1 from AkhilDhruva/claude/flood-simulator-planning-myqfs0 |
-| 12 | 2026-07-20 07:08 | ENGINE | `13268b6` | Add NumPy solver backend, DEM mosaicking, NYC metro scenario + review fixes |
-| 13 | 2026-07-22 05:37 | ENGINE | `dbd06db` | Merge pull request #2 from AkhilDhruva/claude/flood-simulator-planning-myqfs0 |
-| 14 | 2026-07-22 08:11 | ENGINE | `b86bd40` | Add NYC building-aware demonstration: official footprints, physics + viewer |
-| 15 | 2026-07-22 08:58 | ENGINE | `0e03afb` | Fix building-review findings: determinism, MultiPolygon, provenance, viewer |
-| 16 | 2026-08-23 06:24 | STUDY | `8d83f19` | Archive Columbus blind-hindcast validation state |
-| 17 | 2026-08-23 06:25 | STUDY | `fc996c4` | Record version identity by commit SHA (tag refs blocked by proxy) |
-| 18 | 2026-08-23 06:28 | STUDY | `c5ff389` | v0.2 corridor checkpoint runner and restart-resilience evidence |
-| 19 | 2026-08-23 06:29 | STUDY | `841c1a9` | Record v0.2 in version history |
-| 20 | 2026-08-23 07:06 | STUDY | `da244b2` | v0.2.1 wall-aware checkpointing + wet-phase bitwise equivalence proof |
-| 21 | 2026-08-23 07:06 | STUDY | `af05b77` | Record v0.2.1 in version history |
-| 22 | 2026-08-23 08:03 | STUDY | `13b2aec` | v0.2.2 cache deterministic setup to survive a fast-recycling host |
-| 23 | 2026-08-23 08:38 | STUDY | `88a617a` | v0.2.3 fix checkpoint livelock (interval exceeded host lifetime) |
-| 24 | 2026-08-23 09:01 | STUDY | `e7f2397` | v0.2.4 restore parallel corridor execution (sequential was a misdiagnosis) |
-| 25 | 2026-08-23 10:08 | STUDY | `6430528` | Record ML-3: open-boundary outflow throttles the Buckeye CFL |
-| 26 | 2026-08-23 11:19 | STUDY | `19ce79a` | Record ML-4: solver only runs during active turns (~10% duty cycle) |
-| 27 | 2026-08-25 19:15 | STUDY | `8e454f8` | Prepare Buckeye primary run for off-platform continuation |
-| 28 | 2026-08-25 21:17 | STUDY | `f1ca0fa` | Interim: dynamics confirm the geometric smearing prediction at Pataskala |
-| 29 | 2026-08-25 22:50 | STUDY | `b4900d8` | ML-3 generalises: open-boundary outflow throttles ALL corridor runs |
-| 30 | 2026-08-25 23:59 | STUDY | `6369a98` | Resolve ML-3 for franklinton; record EF-6 (my own diagnostic was wrong) |
-| 31 | 2026-08-26 03:04 | STUDY | `194397d` | pataskala_c COMPLETE at h=20.00 — smearing mechanism confirmed dynamically |
-| 32 | 2026-08-26 05:42 | STUDY | `2046939` | VERSIONS: record v0.2.2 and v0.4 by commit SHA |
-| 33 | 2026-08-26 13:02 | STUDY | `3801a38` | franklinton_c COMPLETE at h=20.00 — the mechanism gets a boundary, not just a confirmation |
-| 34 | 2026-08-26 13:03 | STUDY | `bd65d02` | VERSIONS v0.5; consolidated corridor table that keeps its failures |
-| 35 | 2026-08-26 13:09 | STUDY | `38cf3c7` | Briefing revised for the completed corridor runs; PDF regenerated |
-| 36 | 2026-08-26 13:12 | STUDY | `e47f859` | Add a claims-vs-data verifier; it immediately caught an overstatement of mine |
-| 37 | 2026-09-05 19:55 | STUDY | `2bd244c` | Render the corridor figures; plotting them caught an overshoot the audits missed |
-| 38 | 2026-09-07 09:51 | STUDY | `d82ae9a` | Commit the handoff summary so its SHA-256 binds to a commit |
-| 39 | 2026-09-07 09:54 | STUDY | `c91f131` | HANDOFF.md: full provenance, chronology and file inventory — plus one blocker |
+| 11 | 2026-07-20 07:08 | ENGINE | `13268b6` | Add NumPy solver backend, DEM mosaicking, NYC metro scenario + review fixes |
+| 12 | 2026-07-22 08:11 | ENGINE | `b86bd40` | Add NYC building-aware demonstration: official footprints, physics + viewer |
+| 13 | 2026-07-22 08:58 | ENGINE | `0e03afb` | Fix building-review findings: determinism, MultiPolygon, provenance, viewer |
+| 14 | 2026-07-22 13:05 | ENGINE | `407bd02` | Phase 6A: NYC hydraulic surface conditioning |
+| 15 | 2026-07-23 01:21 | ENGINE | `f603039` | Fix building rendering noise: terrain double-draw, slivers, lighting |
+| 16 | 2026-07-23 01:23 | ENGINE | `c5795f7` | Ignore viz/ny_run (regenerable complete-NY area run, ~58 MB) |
+| 17 | 2026-07-24 18:14 | ENGINE | `48bb358` | Add named-area scenario builder + multi-tile CLI |
+| 18 | 2026-07-24 18:15 | ENGINE | `014c6c6` | Document named-area CLI in README |
+| 19 | 2026-07-24 18:30 | ENGINE | `2c5d514` | Viewer: cap breach banners, constant-size sensor markers |
+| 20 | 2026-07-24 22:44 | ENGINE | `49d49bc` | Add session checkpoint + full operating instructions in README |
+| 21 | 2026-07-24 22:45 | ENGINE | `0b452c9` | Remove stray empty cmpg_keys.txt |
+| 22 | 2026-08-23 06:24 | STUDY | `8d83f19` | Archive Columbus blind-hindcast validation state |
+| 23 | 2026-08-23 06:25 | STUDY | `fc996c4` | Record version identity by commit SHA (tag refs blocked by proxy) |
+| 24 | 2026-08-23 06:28 | STUDY | `c5ff389` | v0.2 corridor checkpoint runner and restart-resilience evidence |
+| 25 | 2026-08-23 06:29 | STUDY | `841c1a9` | Record v0.2 in version history |
+| 26 | 2026-08-23 07:06 | STUDY | `da244b2` | v0.2.1 wall-aware checkpointing + wet-phase bitwise equivalence proof |
+| 27 | 2026-08-23 07:06 | STUDY | `af05b77` | Record v0.2.1 in version history |
+| 28 | 2026-08-23 08:03 | STUDY | `13b2aec` | v0.2.2 cache deterministic setup to survive a fast-recycling host |
+| 29 | 2026-08-23 08:38 | STUDY | `88a617a` | v0.2.3 fix checkpoint livelock (interval exceeded host lifetime) |
+| 30 | 2026-08-23 09:01 | STUDY | `e7f2397` | v0.2.4 restore parallel corridor execution (sequential was a misdiagnosis) |
+| 31 | 2026-08-23 10:08 | STUDY | `6430528` | Record ML-3: open-boundary outflow throttles the Buckeye CFL |
+| 32 | 2026-08-23 11:19 | STUDY | `19ce79a` | Record ML-4: solver only runs during active turns (~10% duty cycle) |
+| 33 | 2026-08-25 19:15 | STUDY | `8e454f8` | Prepare Buckeye primary run for off-platform continuation |
+| 34 | 2026-08-25 21:17 | STUDY | `f1ca0fa` | Interim: dynamics confirm the geometric smearing prediction at Pataskala |
+| 35 | 2026-08-25 22:50 | STUDY | `b4900d8` | ML-3 generalises: open-boundary outflow throttles ALL corridor runs |
+| 36 | 2026-08-25 23:59 | STUDY | `6369a98` | Resolve ML-3 for franklinton; record EF-6 (my own diagnostic was wrong) |
+| 37 | 2026-08-26 03:04 | STUDY | `194397d` | pataskala_c COMPLETE at h=20.00 — smearing mechanism confirmed dynamically |
+| 38 | 2026-08-26 05:42 | STUDY | `2046939` | VERSIONS: record v0.2.2 and v0.4 by commit SHA |
+| 39 | 2026-08-26 13:02 | STUDY | `3801a38` | franklinton_c COMPLETE at h=20.00 — the mechanism gets a boundary, not just a confirmation |
+| 40 | 2026-08-26 13:03 | STUDY | `bd65d02` | VERSIONS v0.5; consolidated corridor table that keeps its failures |
+| 41 | 2026-08-26 13:09 | STUDY | `38cf3c7` | Briefing revised for the completed corridor runs; PDF regenerated |
+| 42 | 2026-08-26 13:12 | STUDY | `e47f859` | Add a claims-vs-data verifier; it immediately caught an overstatement of mine |
+| 43 | 2026-09-05 19:55 | STUDY | `2bd244c` | Render the corridor figures; plotting them caught an overshoot the audits missed |
+| 44 | 2026-09-07 09:51 | STUDY | `d82ae9a` | Commit the handoff summary so its SHA-256 binds to a commit |
+| 45 | 2026-09-07 09:54 | STUDY | `c91f131` | HANDOFF.md: full provenance, chronology and file inventory — plus one blocker |
+| 46 | 2026-09-09 22:38 | STUDY | `807e459` | HANDOFF: correct the record — the New York work exists, and is the engine's validation ground |
+| 47 | 2026-09-09 22:47 | STUDY | `cce318a` | Cross-host gate, first half: every input reproduces on a fresh host |
+| 48 | 2026-09-09 22:51 | STUDY | `f08a8f2` | Report assembler: journal -> HTML/PDF/DOCX with every number traceable to a file |
 
 ## 6. File inventory with content hashes
 
-All 128 tracked files, SHA-256 computed at generation time.
+All 130 tracked files, SHA-256 computed at generation time.
 
 ### spec
 
@@ -258,6 +267,7 @@ All 128 tracked files, SHA-256 computed at generation time.
 | `analysis/corridor_analysis/smearing_analysis.py` | 12,031 | `8fb4281dbdf0e6a8…` | Analysis output. |
 | `analysis/corridor_analysis_franklinton_c.json` | 1,391 | `a42942c0bc50b4ed…` | Analysis output. |
 | `analysis/corridor_analysis_pataskala_c.json` | 2,036 | `95eecd0c097009b1…` | Analysis output. |
+| `analysis/crosshost_gate_pataskala_inputs.json` | 31,912 | `1c0ad8d53f8af272…` | Analysis output. |
 | `analysis/culvert_audit/audit_culverts.py` | 5,443 | `034c737fd1a806c1…` | Blinded fixed-seed culvert re-tests against 1 m LiDAR, reported as precision. |
 | `analysis/culvert_audit/culvert_audit_buckeye.json` | 4,559 | `0d4cb5f588698bbf…` | Blinded fixed-seed culvert re-tests against 1 m LiDAR, reported as precision. |
 | `analysis/culvert_audit/culvert_audit_franklinton.json` | 2,132 | `b1265b97aefd2412…` | Blinded fixed-seed culvert re-tests against 1 m LiDAR, reported as precision. |
@@ -379,20 +389,23 @@ All 128 tracked files, SHA-256 computed at generation time.
 | Path | Bytes | SHA-256 | What it holds, and why |
 |---|---|---|---|
 | `.gitignore` | 190 | `560dae57cd8d796c…` | — |
-| `HANDOFF.md` | 34,956 | `04373450b0724ca7…` | — |
+| `HANDOFF.md` | 49,518 | `224b2e48790177b4…` | — |
+| `report/build_report.py` | 24,110 | `37b611933796d5d1…` | — |
 
 ## 6b. Engine file inventory (akhildhruva/aqua-sim @ 0b452c9)
 
-106 tracked files (vendored viewer libraries under `viz/vendor/` omitted). SHA-256 computed at generation time.
+142 tracked files (vendored viewer libraries under `viz/vendor/` omitted). SHA-256 computed at generation time.
 
 | Path | Bytes | SHA-256 | What it holds |
 |---|---|---|---|
-| `.gitignore` | 289 | `4ad7ed23c32693db…` |  |
-| `README.md` | 5,897 | `fcb5338eb204c00b…` |  |
+| `.gitignore` | 318 | `3d922484b0867563…` |  |
+| `Last operation results.md` | 9,427 | `1dcfde47c0f722f7…` |  |
+| `README.md` | 12,331 | `23b198efccf0d187…` |  |
 | `docs/ARCHITECTURE.md` | 16,947 | `637f0804acdca58f…` | System layers, physics engine, offline-solve design, data flow. |
+| `docs/CONDITIONING.md` | 5,939 | `7e194b9e1ac3f9d9…` |  |
 | `docs/DATA_INGESTION.md` | 7,642 | `5c9c386f04b0c99d…` | DEM / LiDAR / photogrammetry input formats and how they converge to one grid. |
 | `docs/DATA_SOURCING.md` | 6,897 | `993c1e81b358cda9…` | What a DEM is; the public Manhattan datasets used (USGS 3DEP, NYC LiDAR). |
-| `docs/PLANNING.md` | 11,405 | `3ea15e1bf94f3556…` | Master plan. States that aqua-sim supersedes and hardens the original Project Deluge note. |
+| `docs/PLANNING.md` | 11,833 | `d3d851d19ef7cb4c…` | Master plan. States that aqua-sim supersedes and hardens the original Project Deluge note. |
 | `docs/VALIDATION.md` | 7,207 | `09c7dac73b1a7a2a…` | The historical-validation programme. Event 1 is Hurricane Ida over Manhattan, scored as a drainage-sensitivity POD matrix, with the failed first attempt kept in the record. |
 | `docs/validation/ida2021_report.json` | 3,923 | `e08f3d1be10596f7…` | Scored Ida report: POD 0/6, 0/6, 1/6 across drainage blockage 0 / 0.5 / 1.0; run_id per case. |
 | `pyproject.toml` | 739 | `8c8e9742d35d0c59…` |  |
@@ -402,32 +415,38 @@ All 128 tracked files, SHA-256 computed at generation time.
 | `src/aqua_sim/export/__init__.py` | 78 | `b45129e074e925b2…` |  |
 | `src/aqua_sim/export/frames.py` | 9,943 | `3b62869cd030f6c3…` | Frame export and the content-derived run_id: sha256 over the canonical provenance block, including a terrain digest. |
 | `src/aqua_sim/geofence.py` | 806 | `b2220d791dc70089…` |  |
-| `src/aqua_sim/grid.py` | 3,112 | `043f41d6bdd7c98d…` | Structured raster Grid: z, obstacle, manning, mask, crest fields, transform, CRS. |
+| `src/aqua_sim/grid.py` | 4,623 | `d877fed83611ebba…` | Structured raster Grid: z, obstacle, manning, mask, crest fields, transform, CRS. |
 | `src/aqua_sim/ingestion/__init__.py` | 330 | `cdd632de345916bf…` |  |
 | `src/aqua_sim/ingestion/base.py` | 996 | `64b8929db4fa0a3e…` |  |
-| `src/aqua_sim/ingestion/buildings.py` | 21,013 | `7bbad83a528ad000…` | BuildingsSource: footprints -> coverage fraction -> closed obstacle cells. Built for the NYC demo; unused in Ohio (sources unreachable). |
+| `src/aqua_sim/ingestion/buildings.py` | 22,420 | `dbfaa636aaab935a…` | BuildingsSource: footprints -> coverage fraction -> closed obstacle cells. Built for the NYC demo; unused in Ohio (sources unreachable). |
+| `src/aqua_sim/ingestion/conditioning.py` | 16,212 | `62c691203ff68869…` |  |
 | `src/aqua_sim/ingestion/dem.py` | 8,116 | `2a8810f522a088ce…` | DEMSource: GeoTIFF ingestion, reprojection, tile mosaicking (first-path-wins), resampling to target dx. |
 | `src/aqua_sim/ingestion/fetch.py` | 4,296 | `e6b74a36e1d5f0de…` |  |
 | `src/aqua_sim/ingestion/lidar.py` | 823 | `2c2f2a9be5f85864…` |  |
 | `src/aqua_sim/ingestion/photogrammetry.py` | 1,462 | `0b75838eba127fd7…` |  |
 | `src/aqua_sim/ingestion/synthetic.py` | 2,386 | `f3e5b84b10fd3bc2…` |  |
-| `src/aqua_sim/main.py` | 3,625 | `d8708e52b177206e…` |  |
+| `src/aqua_sim/main.py` | 4,931 | `dd13bd81e4db5142…` |  |
 | `src/aqua_sim/physics/__init__.py` | 412 | `faebb8273493b3d6…` |  |
 | `src/aqua_sim/physics/boundary.py` | 636 | `ba696396b4052e1c…` | OPEN / CLOSED / inflow boundary types. OPEN is the free-outfall whose ghost cell drives ML-3. |
 | `src/aqua_sim/physics/friction.py` | 1,254 | `e59debc081e512de…` | Manning friction. |
 | `src/aqua_sim/physics/infiltration.py` | 564 | `6ea92d7ca7f5b58f…` | Infiltration losses. |
 | `src/aqua_sim/physics/stability.py` | 1,673 | `1b184a18d357cf05…` | CFL timestep. |
-| `src/aqua_sim/physics/swe.py` | 15,839 | `4c3c95ea5fce1667…` | Reference local-inertial solver (pure Python). Mass-conserving, well-balanced, non-negative depths, CFL-adaptive. |
-| `src/aqua_sim/physics/swe_numpy.py` | 11,780 | `36dacdcfa47124ab…` | Vectorised NumPy twin of the reference solver; equivalence enforced to <=1e-9 depth by tests. THE solver the Ohio study ran. |
+| `src/aqua_sim/physics/swe.py` | 20,990 | `36fe3399c418c13b…` | Reference local-inertial solver (pure Python). Mass-conserving, well-balanced, non-negative depths, CFL-adaptive. |
+| `src/aqua_sim/physics/swe_numpy.py` | 15,647 | `04f272f12e9dbc21…` | Vectorised NumPy twin of the reference solver; equivalence enforced to <=1e-9 depth by tests. THE solver the Ohio study ran. |
 | `src/aqua_sim/risk/__init__.py` | 472 | `f907310a26b5576f…` |  |
 | `src/aqua_sim/risk/alerts.py` | 1,393 | `32a1937691c13e48…` | Alert matrix and breach records. |
 | `src/aqua_sim/risk/hazard.py` | 2,210 | `4511bc6843ffba77…` | Depth x velocity hazard classes. |
 | `src/aqua_sim/risk/sink_nodes.py` | 2,258 | `72079ed72e20cb99…` | Subterranean sink nodes (orifice inflow when head exceeds the lip). |
-| `src/aqua_sim/scenario.py` | 15,288 | `4e04aed1d17b567c…` | build_manhattan_demo, build_scenario_from_dem, build_nyc_metro_scenario (five boroughs, 2.57M cells at 30 m), run_scenario. |
+| `src/aqua_sim/scenario.py` | 18,406 | `a48062f6f2cd9f19…` | build_manhattan_demo, build_scenario_from_dem, build_nyc_metro_scenario (five boroughs, 2.57M cells at 30 m), run_scenario. |
 | `src/aqua_sim/validation/__init__.py` | 85 | `4446fe7f8927666a…` |  |
+| `src/aqua_sim/validation/hydraulic.py` | 6,433 | `16ba00c18dde4d30…` |  |
 | `src/aqua_sim/validation/ida2021.py` | 13,491 | `ce43565f07db0dbb…` | Hurricane Ida 2021 Manhattan validation: hyetograph, six documented-flooded stations, sink-node probing, POD matrix. |
+| `tests/test_area_scenarios.py` | 3,381 | `968c34a21130820c…` |  |
 | `tests/test_buildings_source.py` | 11,234 | `4bc02e929475bcc9…` |  |
+| `tests/test_conditioned_physics.py` | 8,681 | `f80c6a0c38bcd185…` |  |
+| `tests/test_conditioning.py` | 8,203 | `61d9649907eabf99…` |  |
 | `tests/test_dem_ingestion.py` | 3,331 | `ccd7cb43dc3231a6…` |  |
+| `tests/test_hydraulic_validation.py` | 2,850 | `d867c8d850ea3e0b…` |  |
 | `tests/test_ida_pieces.py` | 2,770 | `33d97bcbcf8a9be4…` |  |
 | `tests/test_risk.py` | 1,365 | `a6642f91e8556207…` |  |
 | `tests/test_scenario.py` | 5,576 | `ed65fcaad4b3eb31…` |  |
@@ -437,9 +456,37 @@ All 128 tracked files, SHA-256 computed at generation time.
 | `tests/test_swe_numpy.py` | 4,814 | `5189736c98346761…` | Backend equivalence: NumPy vs reference, cell-by-cell. |
 | `tests/test_terrain_and_grid.py` | 1,157 | `36df090382560336…` |  |
 | `viz/README.md` | 3,453 | `b05b6030ccd152a3…` |  |
-| `viz/app.js` | 24,645 | `be6bffbaee0b35da…` | Three.js telemetry dashboard. |
-| `viz/buildings-layer.js` | 7,328 | `a56ea2c25e36044c…` | Extruded-footprint layer with LOD and per-tile culling. |
-| `viz/index.html` | 7,779 | `19fb9d5a1b144aba…` |  |
+| `viz/app.js` | 31,656 | `f7d68a0c0ce360b3…` | Three.js telemetry dashboard. |
+| `viz/buildings-layer.js` | 8,641 | `949bf5080ef33f6f…` | Extruded-footprint layer with LOD and per-tile culling. |
+| `viz/index.html` | 8,908 | `4aa1a41cec27ef0b…` |  |
+| `viz/ny_run/alerts.json` | 2,141 | `2a08cacd83e14ebd…` |  |
+| `viz/ny_run/frame_001.json` | 1,887,024 | `5385f4f6f05329d1…` |  |
+| `viz/ny_run/frame_002.json` | 1,887,026 | `669678cb4fcbe8a7…` |  |
+| `viz/ny_run/frame_003.json` | 1,887,027 | `1d3b6bb2764946cb…` |  |
+| `viz/ny_run/frame_004.json` | 1,887,027 | `1daf021b367df570…` |  |
+| `viz/ny_run/frame_005.json` | 1,887,027 | `b0cf3e6f4b5a7180…` |  |
+| `viz/ny_run/frame_006.json` | 2,423,506 | `cfc601e563fa4535…` |  |
+| `viz/ny_run/frame_007.json` | 2,404,149 | `7427b86c75deadfd…` |  |
+| `viz/ny_run/frame_008.json` | 2,436,263 | `b43bd1b88394b1a6…` |  |
+| `viz/ny_run/frame_009.json` | 2,425,008 | `efcdf6b07137ddf5…` |  |
+| `viz/ny_run/frame_010.json` | 2,449,391 | `e827e5abb146ac6c…` |  |
+| `viz/ny_run/frame_011.json` | 2,445,800 | `f518570d546c4fb5…` |  |
+| `viz/ny_run/frame_012.json` | 2,461,704 | `a18e183d9f45c6fe…` |  |
+| `viz/ny_run/frame_013.json` | 2,461,087 | `be5bb8d992eed017…` |  |
+| `viz/ny_run/frame_014.json` | 2,469,152 | `bab7a0a71fd2f35b…` |  |
+| `viz/ny_run/frame_015.json` | 2,469,047 | `20917774d855008e…` |  |
+| `viz/ny_run/frame_016.json` | 2,455,356 | `3e9d3ab957c14d65…` |  |
+| `viz/ny_run/frame_017.json` | 2,425,942 | `e83c58c57b9fb641…` |  |
+| `viz/ny_run/frame_018.json` | 2,251,151 | `adcdb869f36b2c4f…` |  |
+| `viz/ny_run/frame_019.json` | 2,200,953 | `1f7baf21ae01baa1…` |  |
+| `viz/ny_run/frame_020.json` | 2,175,741 | `1e6ea11e16770058…` |  |
+| `viz/ny_run/frame_021.json` | 2,160,280 | `715b0c757a51d7b9…` |  |
+| `viz/ny_run/frame_022.json` | 2,148,636 | `9574870083d8a0b3…` |  |
+| `viz/ny_run/frame_023.json` | 2,139,784 | `f82e7fd033d0ffc1…` |  |
+| `viz/ny_run/frame_024.json` | 2,133,014 | `978d28a31ab4b4dd…` |  |
+| `viz/ny_run/frame_025.json` | 2,126,912 | `0ee916ab85c9e005…` |  |
+| `viz/ny_run/manifest.json` | 6,382 | `b8a9246cefb29083…` |  |
+| `viz/ny_run/terrain.json` | 3,450,617 | `07034078fcd81d49…` |  |
 | `viz/palettes.js` | 4,159 | `5769a151270e9c31…` |  |
 | `viz/sample_run/alerts.json` | 383 | `bce76fc569706309…` |  |
 | `viz/sample_run/frame_001.json` | 24,560 | `90a5606d9e8a4ce9…` |  |
