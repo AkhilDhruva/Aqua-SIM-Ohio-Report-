@@ -1,0 +1,418 @@
+{
+ "purpose": "Input-identity half of the Pataskala cross-host equivalence gate: every bulk input re-fetched on a fresh host by recorded identity, re-hashed by an independent verifier, and the setup path dry-run against the committed record.",
+ "generated_utc": "2026-09-09T22:47:34Z",
+ "host": {
+  "platform": "linux",
+  "python": "3.11.15",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "rasterio": "1.4.4",
+  "fiona": "1.10.1",
+  "shapely": "2.1.2",
+  "engine_commit": "0b452c9d5ccffd88ea8308322087b09807242b4b",
+  "cpus": 4
+ },
+ "workflow_run_id": "wf_6f306cdf-b5e",
+ "agents": 9,
+ "agent_errors": 0,
+ "fetches": [
+  {
+   "task": "fetch:qpe-B",
+   "ok": true,
+   "n_files": 27,
+   "failures": [],
+   "notes": "All 27 product-B MultiSensor_QPE_01H_Pass2 files (2026-08-19 18Z through 2026-08-20 20Z) downloaded from noaa-mrms-pds via curl (one object per Bash call), gunzipped, and sha256-verified against the inventory; 0 failures. Product A (RadarOnly, 108 files) was DELIBERATELY SKIPPED and not downloaded: /tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/qpe_inventory.json was rewritten with products.A.files = [] (all other A fields and the rest of the document preserved; a sentence noting the skip was appended to the top-level \"notes\" string), so prep_qpe.py should print \"product A: MISSING\" and skip it. Original inventory backed up at .../qpe/qpe_inventory.orig.json. Helper script: .../columbus_side_task/fetch_one.sh. Nothing under /home/user/aqua-sim was modified.",
+   "files": [
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-180000.grib2",
+     "bytes": 442577,
+     "sha256": "24654ec50374895f04cb6a9967f829a8d6241f39437c91372fe7effae8b20281",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[0].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-190000.grib2",
+     "bytes": 466778,
+     "sha256": "02462b1eb5d3da194531d406c2d04c86162f75e0cca0bb47118f18d62593144a",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[1].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-200000.grib2",
+     "bytes": 525891,
+     "sha256": "2cf166bbaba256a8403ad43ef7ff8bf63909245cf9bbc7a5813ec02b140400b5",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[2].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-210000.grib2",
+     "bytes": 612169,
+     "sha256": "b4b0305afc46d8effc38acd26d5693a007ac8aaf6caa53d9255433c28bbae643",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[3].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-220000.grib2",
+     "bytes": 627100,
+     "sha256": "ad3223c8bbdf0c1315285335afab6d0176f53c516b4aa914e5b3bd964b95309e",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[4].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260819-230000.grib2",
+     "bytes": 616610,
+     "sha256": "21300c963d4a7c7b76c80d7464bc9a5751a18ed928381370255c1f87ab4e2269",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[5].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-000000.grib2",
+     "bytes": 601865,
+     "sha256": "0ebe20f687c67020f6a36048cde30d2fbb7a2fa732bb398164caa6840d1535bf",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[6].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-010000.grib2",
+     "bytes": 541055,
+     "sha256": "be1e34966fb919c54ecc6139fd7c51a10e807a9efb09ba7a01f0918bf2001830",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[7].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-020000.grib2",
+     "bytes": 498318,
+     "sha256": "528dc488a1ce8e28f172634c67904fd40434083f1fc4252e176d4616fe83c886",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[8].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-030000.grib2",
+     "bytes": 465524,
+     "sha256": "e9a854df13ea7960a844fc1dd325a61aaa24c4f83f170ffb31012b51b747627b",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[9].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-040000.grib2",
+     "bytes": 428024,
+     "sha256": "edf48766f6d52a4796b383a77e110d07e2f833c688e58094eab7168a95a6973e",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[10].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-050000.grib2",
+     "bytes": 405171,
+     "sha256": "f77ed8165585fd4c31fcea86448beb1c25c22d899a7a0d080a61d53e0e69ec0d",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[11].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-060000.grib2",
+     "bytes": 382435,
+     "sha256": "e21924ca31c7c9a43909d68c4b1ab94ac61a7dd0d50e81ef19690d253be0d7f5",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[12].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-070000.grib2",
+     "bytes": 371515,
+     "sha256": "4a4eb38c46ac0fdfd1e699b84f91d26c4597e0ee852de3623b8c0e399a8adb35",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[13].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-080000.grib2",
+     "bytes": 365709,
+     "sha256": "f1db7c382aeb108764586c204a70b1ac75c00a87dcdafc3f119355fa43133d17",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[14].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-090000.grib2",
+     "bytes": 372266,
+     "sha256": "8fb5ebe5391249bd833882ef49b133686c35e006f858257f27e181c690754e99",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[15].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-100000.grib2",
+     "bytes": 357906,
+     "sha256": "7d169cbf2f1082ca6202c235af287e30fe2cbcd50713855addf166810c49a87b",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[16].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-110000.grib2",
+     "bytes": 374112,
+     "sha256": "980488b616a2ed472ff53b5aed990113c7b98f16a1d235515780da010c5277c0",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[17].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-120000.grib2",
+     "bytes": 384094,
+     "sha256": "12bf4f7b5ecf121551bd68bc472a09f8caceb8c53815fc55dba8a004fa2a4326",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[18].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-130000.grib2",
+     "bytes": 373152,
+     "sha256": "8319dac852ec13caa096f98a5adfba419f206bce0162a45bdf71b842377c5cc3",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[19].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-140000.grib2",
+     "bytes": 364285,
+     "sha256": "518b809d558bca31be2eec106796cd7702d12542e3f3515a0da4a46d2f9d64b7",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[20].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-150000.grib2",
+     "bytes": 356495,
+     "sha256": "435af71a28b3f167254a41df8f79fa90d950f2119ec1cf4235551682f7b711cd",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[21].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-160000.grib2",
+     "bytes": 372982,
+     "sha256": "95d5d9ee76bdc8e1265ebb7847e795f318ee59ff2a22293f6686db74ed870294",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[22].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-170000.grib2",
+     "bytes": 384742,
+     "sha256": "a7a2df3b11b451b5efd980054122b227a5c2bef5066c1e6350700ff6f9826beb",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[23].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-180000.grib2",
+     "bytes": 428555,
+     "sha256": "b137ad8e279aa099ca4ddb718e87e1d6883c921fe3cce307e6794278e29de366",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[24].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-190000.grib2",
+     "bytes": 474966,
+     "sha256": "5d0df8c8cb6910c346ee5fb993cc3e99e89557be3327a9c34b73a2ff3018f9ab",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[25].sha256"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/MRMS_MultiSensor_QPE_01H_Pass2_00.00_20260820-200000.grib2",
+     "bytes": 529624,
+     "sha256": "65926ef6098241f7d1878daac5bef21b19c8ec2f320badbde2d49ccdaa3cfc78",
+     "status": "verified",
+     "verified_against": "qpe_inventory.json products.B.files[26].sha256"
+    }
+   ]
+  },
+  {
+   "task": "fetch:lidar-1m",
+   "ok": true,
+   "n_files": 7,
+   "failures": [],
+   "notes": "All 7 pataskala/buckeye tiles (x35y443, x35y444, x36y442, x36y443, x36y444, x37y442, x37y443; total 2,027,513,927 B) downloaded via curl from prd-tnm.s3.amazonaws.com, one per Bash call, no retries needed. Every tile: first-1MB sha256 matches inventory exactly; rasterio opens it; CRS EPSG:26917; 1.0 m resolution; 10,012 x 10,012 m footprint. The two franklinton-only Phase3_2021_B21 tiles (x32y443, x33y443) were NOT fetched. Note on the size check: the inventory's size_mb is decimal MB (1e6 bytes), not MiB -- e.g. 290,980,202 B = 290.98 MB vs size_mb 291.0. Against size_mb*1048576 every tile would be ~4.6% low (fails the 1% band), but against size_mb*1e6 every tile is within 0.03%, so the size check is treated as passed on the decimal interpretation. The 'sha256' field above is the full-file hash computed now (inventory only records a first-1MB hash). Helper script left at .../dem1m/fetch_one.sh. Nothing under /home/user/aqua-sim was modified.",
+   "files": [
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x35y443_OH_Statewide_Phase2_2020_B20.tif",
+     "bytes": 290980202,
+     "sha256": "83415f808e35208fd8edf536673ba9fa73bea8455af2c7ff796f986922cd9dbf",
+     "status": "verified",
+     "verified_against": "inventory sha256_first_1MB e809f9f1... (match); size 290,980,202 B vs size_mb 291.0 decimal MB (match, 0.007%); rasterio crs=EPSG:26917 res=(1.0,1.0) bounds=(349993.99995883805, 4419994.0000287555, 360005.99995883805, 4430006.0000287555). Full-file sha256 computed now (no recorded full hash)."
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x35y444_OH_Statewide_Phase2_2020_B20.tif",
+     "bytes": 295754625,
+     "sha256": "b8d3636d39f56a6100dfc77b41434edf3a20f1a0199302ecdff7fce77e57e713",
+     "status": "verified",
+     "verified_against": "inventory sha256_first_1MB 115335be... (match); size 295,754,625 B vs 295.8 MB (match); rasterio crs=EPSG:26917 res=(1.0,1.0) bounds=(349993.99997834745, 4429994.000054759, 360005.99997834745, 4440006.000054759). Full-file sha256 computed now."
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x36y442_OH_Statewide_Phase2_2020_B20.tif",
+     "bytes": 283627361,
+     "sha256": "9ec06b337d87bc67b86aab826d52b7187d7d3af5634c3fb1e602d3d3f4c2817c",
+     "status": "verified",
+     "verified_against": "inventory sha256_first_1MB c9ca1dde... (match); size 283,627,361 B vs 283.6 MB (match); rasterio crs=EPSG:26917 res=(1.0,1.0) bounds=(359994.00001102773, 4409994.00002162, 370006.00001102773, 4420006.00002162). Full-file sha256 computed now."
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x36y443_OH_Statewide_Phase2_2020_B20.tif",
+     "bytes": 292465960,
+     "sha256": "087e2b3cdda487c585d091f3aae280fe0fc6dd93f5d1547bb45077ead2ab278a",
+     "status": "verified",
+     "verified_against": "inventory sha256_first_1MB 0b021dd3... (match); size 292,465,960 B vs 292.5 MB (match); rasterio crs=EPSG:26917 res=(1.0,1.0) bounds=(359994.0000110816, 4419994.000003932, 370006.0000110816, 4430006.000003932). Full-file sha256 computed now."
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x36y444_OH_Statewide_Phase2_2020_B20.tif",
+     "bytes": 306716255,
+     "sha256": "60659298541ebae9a7863f3482cecd4af9796af25941bdbd1541214e43126e59",
+     "status": "verified",
+     "verified_against": "inventory sha256_first_1MB c3f533d4... (match); size 306,716,255 B vs 306.7 MB (match); rasterio crs=EPSG:26917 res=(1.0,1.0) bounds=(359993.999982851, 4429994.000048311, 370005.999982851, 4440006.000048311). Full-file sha256 computed now."
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x37y442_OH_Statewide_Phase2_2020_B20.tif",
+     "bytes": 281117126,
+     "sha256": "07c58f7b0ceb18ab52401c16f22cf029e58644156fccaf20269453bd309295d7",
+     "status": "verified",
+     "verified_against": "inventory sha256_first_1MB c3c5adb0... (match); size 281,117,126 B vs 281.1 MB (match); rasterio crs=EPSG:26917 res=(1.0,1.0) bounds=(369993.9999854678, 4409994.00002162, 380005.9999854678, 4420006.00002162). Full-file sha256 computed now."
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/USGS_1M_17_x37y443_OH_Statewide_Phase2_2020_B20.tif",
+     "bytes": 276852398,
+     "sha256": "31226fe340997fa9a9a5d128d91d0756a64563146c8c34dc53da998f784e026f",
+     "status": "verified",
+     "verified_against": "inventory sha256_first_1MB a320ac18... (match); size 276,852,398 B vs 276.9 MB (match); rasterio crs=EPSG:26917 res=(1.0,1.0) bounds=(369994.0000029337, 4419994.000023003, 380006.0000029337, 4430006.000023003). Full-file sha256 computed now."
+    }
+   ]
+  },
+  {
+   "task": "fetch:parent-terrain",
+   "ok": true,
+   "n_files": 4,
+   "failures": [],
+   "notes": "All four downloads succeeded on first attempt via curl through the proxy (one per Bash call). Every tile opens in rasterio 1.4.4: CRS EPSG:4269 (geographic NAD83), shape 10812x10812, bounds cover the expected 1x1 degree cell with the standard ~6-pixel (0.00056 deg) 3DEP overlap collar: n41w083 [-83.00056, 39.99944, -81.99944, 41.00056]; n41w084 [-84.00056, 39.99944, -82.99944, 41.00056]; n40w083 [-83.00056, 38.99944, -81.99944, 40.00056]; n40w084 [-84.00056, 38.99944, -82.99944, 40.00056]. Sizes range 415-482 MB (the task's ~448 MB was a rough figure; sizes vary per tile). No recorded hash existed in the study, so the sha256 values above are freshly computed and should be entered into the record. ok=true per the caller's rule (all four present and readable); note the hashes are not verified against any prior reference. Nothing under /home/user/aqua-sim was touched.",
+   "files": [
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/tiles/USGS_13_n41w083.tif",
+     "bytes": 447563111,
+     "sha256": "c2d9916a648acfa5af985c5bf09fe68e76d12fb01735efb2b6645ee1867ba73d",
+     "status": "present_unverified",
+     "verified_against": "no recorded hash \u2014 computed now"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/tiles/USGS_13_n41w084.tif",
+     "bytes": 414844198,
+     "sha256": "fb1682679eb38a9280f53cf8ecb992400440c77bd86b154038e91eaaa75d6d0c",
+     "status": "present_unverified",
+     "verified_against": "no recorded hash \u2014 computed now"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/tiles/USGS_13_n40w083.tif",
+     "bytes": 482047968,
+     "sha256": "0af92866bc8cbc631c9f631e87a3bb223ecba877b2a776f924afe474ed8acf1d",
+     "status": "present_unverified",
+     "verified_against": "no recorded hash \u2014 computed now"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/tiles/USGS_13_n40w084.tif",
+     "bytes": 431802062,
+     "sha256": "4faaeb637e096cd55bf1b8564ecce77e8234802ffe481c26093a2a8a3ca3eda7",
+     "status": "present_unverified",
+     "verified_against": "no recorded hash \u2014 computed now"
+    }
+   ]
+  },
+  {
+   "task": "fetch:vectors",
+   "ok": true,
+   "n_files": 7,
+   "failures": [],
+   "notes": "All downloads succeeded on first attempt via curl. Roads zip contains a top-level Shape/ directory (files dated 2026-02-12), so it was extracted into roads/TRAN_Ohio/ giving the exact hardcoded layout roads/TRAN_Ohio/Shape/Trans_RoadSegment_{0,1}.{shp,dbf,shx,prj}; only the RoadSegment_* members were extracted (the other layers, including a 262 MB BPFeatureToMetadata.dbf, were skipped). Shapefile CRS is EPSG:4269. Feature counts match the study exactly: 550000 and 395437. Hydro zips contain the .gdb directory at the top level, extracted in place to hydro/. NHDFlowline counts: Licking 05040006 = 3531, Scioto 05060001 = 9054. Both .shp and both NHDFlowline layers open with nonzero counts, so ok=true. No recorded hashes existed for comparison; sha256 values above are freshly computed for the record.",
+   "files": [
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/roads/TRAN_Ohio_State_Shape.zip",
+     "bytes": 251730266,
+     "sha256": "7afdb513af7f97214c2b28d0440a0f60e93a8c294aac17a7d459bfc0c37171ad",
+     "status": "present_unverified",
+     "verified_against": "no recorded hash \u2014 computed now"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/roads/TRAN_Ohio/Shape/Trans_RoadSegment_0.shp",
+     "bytes": 97163132,
+     "sha256": "7eda4f4ba80c7e423f842607c0482590a531dc28733eb37e77509f86bf442bdc",
+     "status": "verified",
+     "verified_against": "fiona feature count 550000 == study-recorded 550000 (no recorded hash \u2014 computed now)"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/roads/TRAN_Ohio/Shape/Trans_RoadSegment_1.shp",
+     "bytes": 69275728,
+     "sha256": "d3e74991819ac385cce9371f2f7ababb4689eef575e518a397ef9e74a574b48c",
+     "status": "verified",
+     "verified_against": "fiona feature count 395437 == study-recorded 395437 (no recorded hash \u2014 computed now)"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/hydro/NHD_H_05040006_HU8_GDB.zip",
+     "bytes": 5824641,
+     "sha256": "cc372b64235d2a0e633c0d1f8b13f2e6286060a1977259cfe732d10fd4b351b8",
+     "status": "present_unverified",
+     "verified_against": "no recorded hash \u2014 computed now"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/hydro/NHD_H_05060001_HU8_GDB.zip",
+     "bytes": 11730671,
+     "sha256": "98ba90f35ca80b361ca1b76fc22964aa5a5cd9c9c49e09b62507ec44d483b315",
+     "status": "present_unverified",
+     "verified_against": "no recorded hash \u2014 computed now"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/hydro/NHD_H_05040006_HU8_GDB.gdb",
+     "status": "verified",
+     "verified_against": "fiona opens gdb; 41 layers; NHDFlowline present with 3531 features"
+    },
+    {
+     "path": "/tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/hydro/NHD_H_05060001_HU8_GDB.gdb",
+     "status": "verified",
+     "verified_against": "fiona opens gdb; 41 layers; NHDFlowline present with 9054 features"
+    }
+   ]
+  }
+ ],
+ "independent_verification": [
+  {
+   "task": "verify:lidar-1m",
+   "all_verified": true,
+   "n_checked": 7,
+   "discrepancies": [],
+   "notes": "Recomputed independently from bytes on disk for all 7 claimed tiles under /tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/dem1m/. For every tile: file exists; stat byte size equals fetcher's claimed bytes exactly (290980202, 295754625, 283627361, 292465960, 306716255, 281117126, 276852398; sum 2,027,513,927 B matches claim); full-file sha256 (sha256sum) equals the fetcher's claimed sha256 exactly; first-1MB sha256 equals inventory.json sha256_first_1MB exactly. rasterio (PYTHONPATH=/home/user/aqua-sim/src) opens each tile: CRS EPSG:26917, res (1.0,1.0), dtype float32, nodata -999999.0, 10012x10012 px, bounds equal inventory bounds_utm17 to within 1e-4 m; a 64x64 window at offset (4000,4000) is all finite, all valid (non-nodata), plausible elevations 267-361 m. Size vs inventory size_mb: ratio 0.9998-1.0001 on the decimal-MB (1e6) interpretation, 0.9535-0.9538 on MiB -- confirms the fetcher's note that size_mb is decimal MB; no discrepancy. The two Phase3_2021_B21 franklinton tiles (x32y443, x33y443) are absent on disk, consistent with the claim that they were not fetched. git status in /home/user/aqua-sim is clean (no modifications). Helper script dem1m/fetch_one.sh present as stated. QPE/NTD/NHD checks not applicable to this task's claim."
+  },
+  {
+   "task": "verify:qpe-B",
+   "all_verified": true,
+   "n_checked": 27,
+   "discrepancies": [],
+   "notes": "Recomputed from bytes on disk: all 27 files under /tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/B/ exist; every actual byte size and full sha256 matches both the fetcher's claim and qpe_inventory.json products.B.files[i].sha256 (and the backed-up qpe_inventory.orig.json), verified_against indices are correct, key basenames match local_path basenames, no extra or missing files in qpe/B. All 27 start with GRIB magic and open via rasterio (PYTHONPATH=/home/user/aqua-sim/src): CRS is GRIB-native geographic (sphere a=6378160), shape 3500x7000, transform origin (-130.0, 55.0) at 0.01 deg, and a 100x100 window read returns all-finite data in every file. qpe_inventory.json parses; products.B.files has 27 entries whose local_path files all exist; products.A.files == [] while all other A fields (name, cadence_min, aoi_mean_series, aoi_mean_series_hourly, aoi_mean_total_mm, point_totals_mm) are preserved; the rest of the document is identical to the original except the appended sentence in top-level notes (original notes text preserved as prefix). Original (108 A entries, 27 B entries) retained at qpe/qpe_inventory.orig.json. git status in /home/user/aqua-sim shows no modifications. Zero discrepancies found."
+  },
+  {
+   "task": "verify:parent-terrain",
+   "all_verified": true,
+   "n_checked": 4,
+   "discrepancies": [],
+   "notes": "Recomputed independently from bytes on disk under /tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/tiles/: all four files exist; sizes (447563111 / 414844198 / 482047968 / 431802062) and full sha256sum values match the fetcher's claim exactly for n41w083, n41w084, n40w083, n40w084. No inventory in the study records a hash for these 3DEP 1/3-arc-second tiles (qpe_inventory.json covers QPE only; dem1m/inventory.json covers 1 m LiDAR only), so the fetcher's 'present_unverified / no recorded hash' status is accurate. rasterio 1.4.4 (PYTHONPATH=/home/user/aqua-sim/src) opens every tile: CRS EPSG:4269, 10812x10812, 1 band float32, nodata -999999, bounds exactly as claimed (1-degree cell + 0.00056 deg collar); a 256x256 central window and a 64x64 corner window each return all-finite data with plausible elevations (241-371 m). Side checks also performed: qpe/qpe_inventory.json parses, products.B.files has 27 entries, every local_path exists and every file's full sha256 matches the inventory's recorded value (0 mismatches). `git status --porcelain` in /home/user/aqua-sim is empty, consistent with the claim that nothing under the repo was touched. Zero discrepancies found."
+  },
+  {
+   "task": "verify:vectors",
+   "all_verified": true,
+   "n_checked": 7,
+   "discrepancies": [],
+   "notes": "All 7 listed paths exist. Recomputed byte sizes and full sha256 for the 5 files match the fetcher's claim exactly: roads/TRAN_Ohio_State_Shape.zip 251730266 B 7afdb513...71ad; Trans_RoadSegment_0.shp 97163132 B 7eda4f4b...2bdc; Trans_RoadSegment_1.shp 69275728 B d3e74991...b48c; NHD_H_05040006_HU8_GDB.zip 5824641 B cc372b64...51b8; NHD_H_05060001_HU8_GDB.zip 11730671 B 98ba90f3...b315. fiona: RoadSegment_0 = 550000 features, RoadSegment_1 = 395437 features, both EPSG:4269 LineString (matches claim). Both .gdb directories open in fiona with 41 layers each, NHDFlowline present: 05040006 = 3531, 05060001 = 9054 (EPSG:5498), matching claim. unzip -t reports no errors for both hydro zips and for the 8 Shape/Trans_RoadSegment_* members of the roads zip; extracted sidecar sizes (.dbf/.shx/.prj) equal the zip member lengths. No recorded hash exists in any inventory for NTD/NHD, consistent with the claim. QPE cross-check: qpe/qpe_inventory.json parses, products.B.files has 27 entries and all local_path files exist. One caveat, not a discrepancy in bytes: the fetcher's phrase \"study-recorded 550000/395437\" could not be located in any file under /home/user/aqua-sim or the scratchpad (grep found no such numbers), so that provenance claim is unverifiable from disk; the counts themselves are confirmed."
+  }
+ ],
+ "setup_dry_run": {
+  "qpe_compiled": true,
+  "qpe_n_intervals": 27,
+  "qpe_shape": "accum_mm (27, 70, 105) float32",
+  "grid_ny": 619,
+  "grid_nx": 1239,
+  "grid_dx": 8,
+  "grid_crs": "EPSG:32617",
+  "grid_matches_committed_619x1239": true,
+  "roads_features": 1902,
+  "flowline_features": 155,
+  "culverts_found": 57,
+  "culverts_match_committed_57": true,
+  "probe_groups": 10,
+  "probe_groups_match_committed_10": true,
+  "gate_prognosis": "LIKELY_PASS",
+  "diagnosis": "All SETUP-path outputs reproduce the committed pataskala_c_B record exactly. (1) prep_qpe.py printed 'product A: MISSING from inventory' (deliberate) and compiled /tmp/claude-0/-home-user-aqua-sim/3501f8ed-2621-5156-b327-4da2a46d8730/scratchpad/columbus_side_task/qpe/fields_B.npz: accum_mm shape (27, 70, 105) float32, 27 intervals 2026-08-19 18:00Z..20:00Z (intervals_from_npz -> 27), AOI-crop mean total 56.0 mm, peak interval mean 11.96 mm. (2) DEMSource on 7 tiles (pataskala + buckeye members) at dx=8 m, bbox (-82.7, 39.955, -82.585, 39.998) -> ny=619, nx=1239, dx=8.0, EPSG:32617; the affine transform (8.0, 0.0, 354789.52043405396, 0.0, -8.0, 4428919.254568584) is bit-identical to /home/user/aqua-sim-ohio-report-/runs/pataskala_c_B/meta.json. (3) smearing_analysis.build_nest_context('pataskala_c') gives the same 619x1239 grid; roads = 1902 features (other 1686, us40 96, sr310 60, sr16 38, i70 22; 'any' excluded as run_corridor does), flowlines = 155 features; RN.find_culverts -> 57 culverts (87 crossing log entries), matching committed 57. The committed meta's empty culvert_log is an artifact of run_corridor.py's load_setup cache branch (line 224 sets culvert_log = []), not a geometry divergence. (4) smearing_analysis.probe_cells + run_corridor's group construction -> 10 probe groups (5 sites: us40_etna, us40_east, main_broad_pataskala, sr310_sf_crossing, kirkersville_gauge_03144816, each with road + __channel; all channel groups non-empty), matching the 10 groups in the committed probe_series.json. No simulation was run and no files under /home/user/aqua-sim were modified. Only a harmless RuntimeWarning (All-NaN slice in run_nest.py:225 sample_z during culvert search) was emitted.",
+  "_agent_label": "dry-run:setup"
+ },
+ "verdict": "INPUTS_REPRODUCE",
+ "what_this_does_and_does_not_establish": "Establishes that terrain ingestion, hydraulic geometry, probe placement and rainfall compilation on this host reproduce the original host's setup exactly (grid dims, affine transform, culvert count, probe groups). It does NOT establish solver-output equivalence; that is the second half of the gate, decided by sha256(probes.json) after the full 20-hour re-run."
+}
