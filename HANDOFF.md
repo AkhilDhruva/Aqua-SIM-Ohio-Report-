@@ -7,7 +7,7 @@
 > to the Chronology section by hand. Regenerating on every change wastes
 > effort and, in an agent session, tokens.
 
-Generated `2026-09-09 22:55:12Z` at commit `f08a8f2` · 130 tracked files · 27 commits
+Generated `2026-10-17 09:37:10Z` at commit `666ff9a` · 130 tracked files · 28 commits
 
 ---
 
@@ -212,6 +212,8 @@ moment of the change, and the SHA is content-derived over the tree.
 | 46 | 2026-09-09 22:38 | STUDY | `807e459` | HANDOFF: correct the record — the New York work exists, and is the engine's validation ground |
 | 47 | 2026-09-09 22:47 | STUDY | `cce318a` | Cross-host gate, first half: every input reproduces on a fresh host |
 | 48 | 2026-09-09 22:51 | STUDY | `f08a8f2` | Report assembler: journal -> HTML/PDF/DOCX with every number traceable to a file |
+| 49 | 2026-09-09 22:55 | STUDY | `666ff9a` | Engine checkout was eight commits behind the frozen 0b452c9; corrected, HANDOFF hashes regenerated |
+| 50 | 2026-10-17 09:36 | ENGINE | `eb194fe` | viz/holo: holographic tactical-table rendering of a run |
 
 ## 6. File inventory with content hashes
 
@@ -382,19 +384,21 @@ All 130 tracked files, SHA-256 computed at generation time.
 | `handoff/buckeye_primary/reference.json` | 615 | `e33a34965d90b2af…` | Handoff material. |
 | `handoff/buckeye_primary/requirements.txt` | 213 | `54b9f36eb7f895cb…` | Handoff material. |
 | `handoff/buckeye_primary/resume_buckeye.sh` | 777 | `10176c21d01d282a…` | Handoff material. |
-| `handoff/generate_handoff.py` | 31,398 | `c7727447d019d29f…` | This generator. |
+| `handoff/generate_handoff.py` | 32,461 | `50d3371209848f81…` | This generator. |
 
 ### other
 
 | Path | Bytes | SHA-256 | What it holds, and why |
 |---|---|---|---|
 | `.gitignore` | 190 | `560dae57cd8d796c…` | — |
-| `HANDOFF.md` | 49,518 | `224b2e48790177b4…` | — |
+| `HANDOFF.md` | 53,180 | `0d3b3fe9df0f6d3a…` | — |
 | `report/build_report.py` | 24,110 | `37b611933796d5d1…` | — |
 
-## 6b. Engine file inventory (akhildhruva/aqua-sim @ 0b452c9)
+## 6b. Engine file inventory (akhildhruva/aqua-sim @ eb194fe)
 
-142 tracked files (vendored viewer libraries under `viz/vendor/` omitted). SHA-256 computed at generation time.
+The study pins the engine at `0b452c9`. Checkout HEAD is `eb194fe` (a descendant of the pin); solver sources under `src/` and `pyproject.toml` are **identical** to the pin, so every hash below is the study engine. Commits after the pin touching only `viz/`, `docs/` or `tests/` do not change the solver and are permitted; any gate must assert this same condition rather than HEAD equality.
+
+145 tracked files (vendored viewer libraries under `viz/vendor/` omitted). SHA-256 computed at generation time.
 
 | Path | Bytes | SHA-256 | What it holds |
 |---|---|---|---|
@@ -455,9 +459,12 @@ All 130 tracked files, SHA-256 computed at generation time.
 | `tests/test_swe.py` | 6,582 | `96c869becfab1c7e…` | Analytic benchmarks: mass conservation, lake-at-rest, dam-break, non-negativity. |
 | `tests/test_swe_numpy.py` | 4,814 | `5189736c98346761…` | Backend equivalence: NumPy vs reference, cell-by-cell. |
 | `tests/test_terrain_and_grid.py` | 1,157 | `36df090382560336…` |  |
-| `viz/README.md` | 3,453 | `b05b6030ccd152a3…` |  |
+| `viz/README.md` | 5,857 | `3807aaefb3b656e5…` |  |
 | `viz/app.js` | 31,656 | `f7d68a0c0ce360b3…` | Three.js telemetry dashboard. |
 | `viz/buildings-layer.js` | 8,641 | `949bf5080ef33f6f…` | Extruded-footprint layer with LOD and per-tile culling. |
+| `viz/holo/build_artifact.py` | 4,646 | `c7fed3becc662121…` |  |
+| `viz/holo/holo.js` | 42,834 | `1c1ca0dee34de006…` |  |
+| `viz/holo/index.html` | 14,650 | `554fc6e52144ff31…` |  |
 | `viz/index.html` | 8,908 | `4aa1a41cec27ef0b…` |  |
 | `viz/ny_run/alerts.json` | 2,141 | `2a08cacd83e14ebd…` |  |
 | `viz/ny_run/frame_001.json` | 1,887,024 | `5385f4f6f05329d1…` |  |

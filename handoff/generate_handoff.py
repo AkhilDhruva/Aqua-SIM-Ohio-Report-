@@ -376,11 +376,21 @@ def main():
         W("")
 
     # ---------------- 6b. engine inventory --------------------------------
-    W("## 6b. Engine file inventory (akhildhruva/aqua-sim @ 0b452c9)\n")
+    ehead = sh("git", "-C", ENGINE, "rev-parse", "HEAD") if engine_present() else ""
+    W(f"## 6b. Engine file inventory (akhildhruva/aqua-sim @ {ehead[:7] or 'absent'})\n")
     ef = engine_files()
     if not ef:
         W(f"*(engine repository not present at `{ENGINE}`)*\n")
     else:
+        pinned = "0b452c9d5ccffd88ea8308322087b09807242b4b"
+        same_src = sh("git", "-C", ENGINE, "diff", "--stat", pinned, "HEAD", "--", "src/", "pyproject.toml") == ""
+        desc = R(["git", "-C", ENGINE, "merge-base", "--is-ancestor", pinned, "HEAD"]).returncode == 0
+        W(f"The study pins the engine at `0b452c9`. Checkout HEAD is `{ehead[:7]}`"
+          f"{' (the pinned commit itself)' if ehead == pinned else (' (a descendant of the pin)' if desc else ' (**NOT a descendant of the pin**)')}; "
+          f"solver sources under `src/` and `pyproject.toml` are "
+          f"{'**identical** to the pin, so every hash below is the study engine' if same_src else '**DIFFERENT** from the pin: the hashes below are NOT the study engine'}. "
+          f"Commits after the pin touching only `viz/`, `docs/` or `tests/` do not change the solver and are permitted; "
+          f"any gate must assert this same condition rather than HEAD equality.\n")
         W(f"{len(ef)} tracked files (vendored viewer libraries under `viz/vendor/` omitted). "
           "SHA-256 computed at generation time.\n")
         W("| Path | Bytes | SHA-256 | What it holds |\n|---|---|---|---|")
